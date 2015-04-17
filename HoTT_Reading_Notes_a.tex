@@ -1,0 +1,286 @@
+% HoTT_Reading_Notes_a
+% https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit
+% 
+% http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes
+% !TEX encoding = UTF-8 Unicode
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage[a4paper]{geometry}
+\usepackage{datetime}
+\addtolength{\parskip}{.5\baselineskip}
+%\pagestyle{empty}
+\newcommand{\cc}{\cdot}
+\newcommand{\dd}{\displaystyle}
+\newcommand{\ee}{\equiv}
+%\newcommand{\la}{\lambda}
+\newcommand{\msf}{\mathsf}
+\newcommand{\nn}{\noindent}
+\newcommand{\oo}{\operatorname}
+\newcommand{\p}{\varphi}
+\newcommand{\sm}{\scriptstyle}
+\newcommand{\ap}{\mathsf{ap}}
+\newcommand{\id}{\mathsf{id}}
+\newcommand{\ind}{\mathsf{ind}}
+\newcommand{\pr}{\mathsf{pr}}
+\newcommand{\refl}{\mathsf{refl}}
+\newcommand{\uniq}{\mathsf{uniq}}
+\newcommand{\U}{\mathcal U}
+\title{HoTT Reading Notes}
+\author{Pierre-Yves Gaillard}
+\date{\today, \currenttime}
+\begin{document}
+% $$\text{mathbf }\mathbf1,\text{ pmb }\pmb1,\text{ boldsymbol }\boldsymbol1$$ \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+
+\maketitle%\nn\today, \currenttime
+
+\nn This text is available at 
+
+\nn{\small\verb"http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes"}
+
+This is an informal set of comments on the HoTT Book:
+
+\nn\verb"http://homotopytypetheory.org/book/"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$\textbf{ Exercise 1.3.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
+
+\nn\emph{Solution.} It suffices to handle $\Sigma$-types. 
+
+\nn(a) We assume that, for all type family $B:A\to\U$ we have a map 
+$$
+\pr_1:\left(\sum_{a:A}B(a)\right)\to A,
+$$ 
+a dependent function 
+$$
+\pr_2:\prod_{x:\sum_{a:A}B(a)}B(\pr_1(x))
+$$
+satisfying
+\begin{equation}\label{131}
+\pr_1(a,b)\equiv a,\quad\pr_2(a,b)\equiv b
+\end{equation}
+for all $a:A$ and all $b:B(a)$.
+
+\nn(b) We also assume that, for all type family $B:A\to\U$ we have a dependent function 
+$$
+\uniq_{\sum_{a:A}B(a)}:\prod_{x:\sum_{a:A}B(a)}(\pr_1(x),\pr_2(x))=x
+$$ 
+such that 
+\begin{equation}\label{132}
+\uniq_{\sum_{a:A}B(a)}(a,b)\equiv\refl_{(a,b)}
+\end{equation}
+for all $a:A$ and all $b:B(a)$. 
+
+\nn(c) We define
+$$
+\ind_{\sum_{a:A}B(a)} : \prod_{C:\sum_{a:A}B(a)\to\U} 
+\left(\prod_{a:A}\prod_{b:B(a)} C(a,b)\right) 
+\to \prod_{x:\sum_{a:A}B(a)} C(x)
+$$
+thanks to the transport principle, which is indeed a concept from Chapter~2, by
+\begin{equation}\label{133}
+\ind_{\sum_{a:A}B(a)}(C,g,x):
+\equiv\uniq_{\sum_{a:A}B(a)}(x)_*\Big(g(\pr_1(x))(\pr_2(x))\Big).
+\end{equation}
+(d) We must prove 
+$$
+\ind_{\sum_{a:A}B(a)}(C,g,(a,b))\equiv g(a)(b)
+$$
+for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} and \eqref{133}.
+
+%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Comment after Corollary 2.7.3.
+
+If $w,w':\sum_{x:A}P(x)$, then 
+$$
+\msf{pair}^=:\left(\sum_{p:p_1w=p_1w'}(p_*p_2w=p_2w')\right)\to(w=w').
+$$ 
+(It would be more rigorous to write $\msf{pair}^=(w,w')$ instead of $\msf{pair}^=$.)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Theorem 2.11.1. 
+
+Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that $\ap_f:(a=a')\to (fa=fa')$ is an equivalence.
+
+Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be a quasi-inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
+$$
+\varphi:(gfa=gfa')\to(a=a')\quad\text{by}\quad\varphi(q):\equiv\beta_a^{-1}\cdot q\cdot\beta_{a'}.
+$$ 
+Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
+
+Step 2. Since $\varphi$ is easily seen to be an equivalence, $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. This implies that $\ap_f$ and $\ap_g$ are equivalences.
+
+%old: https://docs.google.com/document/d/1OvMAEN0uvE18rTCHAmZAIYKiILQ_FNT5JJqNH3HH760/edit
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Lemma 4.1.2.
+
+The claim
+
+\nn ``It remains to show that $h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
+$$
+h(s)=h(p)\cdot h'(p)^{-1}\cdot h'(s)
+$$ 
+for any $s:a=x$''
+
+\nn in the proof of Lemma 4.1.2 in the HoTT Book follows immediately from Theorem 2.7.2 and the Lemma below, which is easily proved by path induction:
+
+\nn \textbf{Lemma.} Let $A$ be a type; let $a,x:A$; let $q:a=a$; let $P:(x=x)\to\U$ be defined by 
+$$
+P(r):\equiv\prod_{s:a=x}(r=s^{-1}\cdot q\cdot s);
+$$ 
+let $r,r':x=x,\ t:r=r',\ h:P(r),\ s:a=x$. Then 
+$$
+\oo{transport}^P(t,h)(s)=t^{-1}\cdot h(s).
+$$ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Lemma 4.1.2.
+
+End of the proof: To complete the proof, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{(x:A)}B(x)$.
+%https://github.com/HoTT/book/blob/master/equivalences.tex#L107
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\nn$\bullet$ Proof of Theorem 4.1.3.
+
+%The fact that $\mathbf2\simeq\mathbf2$ is a set follows from univalence and Examples 3.1.2 and 3.1.5.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Theorem 4.7.6
+
+Let us check Equivalence $(*)$ in the proof of Theorem 4.7.6: For $a:A$ and $p:a=x$ put 
+$$
+Q(a,p):\equiv\sum_{u:P(a)}p_*(f(a,u))=v.
+$$ 
+We claim 
+$$
+\sum_{a:A}\sum_{p:a=x}Q(a,p)\overset{(1)}{\simeq}
+\sum_{q:\sum_{a:A}(a=x)}Q(q)\overset{(2)}{\simeq}
+Q(x,\oo{refl}_x).
+$$
+Equivalence (1) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_{a:A}\ (a=x)$$ is contractible with center $(x,\oo{refl}_x)$, Equivalence (2) follows from Lemma 3.11.9 (ii). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Theorem 4.8.3. 
+
+Here are some details about the last sentence of the proof of Theorem 4.8.3:
+
+Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $t$ we have 
+\begin{equation}\label{2.9.4}
+t^{A\to B}(p,f,a_2)=t^B(p,f(t^A(p^{-1},x)))
+\end{equation}
+for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
+
+Now let us move to last sentence of the proof of Theorem 4.8.3. Put
+$$
+F:\equiv\sum_{b:B}\oo{fib}_f(b),
+$$ 
+and let $p_1:F\to B$ be the first projection. We must show 
+\begin{equation}\label{2}
+(F,p_1)=_{\sum_{X:\U}(X\to B)}(A,f).
+\end{equation} 
+We have $e:F\simeq A$. Put $q:\equiv\oo{ua}(e)$. We have $q:F=A$. We claim 
+\begin{equation}\label{3}
+q_*(p_1)=f.
+\end{equation} 
+By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ C(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
+$$
+t^{I\to C}(q,p_1)=f.
+$$ 
+Let $a:A$. We must show 
+$$
+t^{I\to C}(q,p_1,a)=f(a).
+$$ 
+We get 
+$$
+t^{I\to C}(q,p_1,a)\overset{\text{(a)}}=t^C(q,p_1(t^I(q^{-1},a)))\overset{\text{(b)}}=p_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
+$$ 
+where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Theorem 4.8.4.
+
+The proof of Theorem 4.8.4 uses the following lemma: For $A:\U$ we have 
+$$
+A\simeq\sum_{X:\U}(X=A)\times X.
+$$
+More precisely, we shall define maps 
+$$
+A\rightleftarrows\sum_{X:\U}(X=A)\times X
+$$ 
+and check that they are mutual quasi-inverses. To $a:A$ we attach $(A,\oo{refl}_A,a)$, and to $(B,p,b)$ we attach $t^{X\mapsto X}(p,b)$. Here and in the sequel we write $t$ for "transport". We have 
+$$
+a\mapsto(A,\oo{refl}_A,a)\mapsto t^{X\mapsto X}(\oo{refl}_A,a)\equiv a.
+$$ 
+We have 
+$$
+(B,p,b)\mapsto t^{X\mapsto X}(p,b)\mapsto(A,\oo{refl}_A,t^{X\mapsto X}(p,b)),
+$$ 
+and we must show 
+$$
+(B,p,b)=(A,\oo{refl}_A,t^{X\mapsto X}(p,b)).
+$$ 
+By Theorem 2.7.2 it suffices to verify 
+$$
+t^{X\mapsto (X=A)\times X}(p,(p,b))=(\oo{refl}_A,t^{X\mapsto X}(p,b)).
+$$ 
+By Theorem 2.6.4 it suffices to prove 
+$$
+t^{X\mapsto (X=A)}(p,p)=\oo{refl}_A.
+$$ 
+But this follows from Lemma 2.11.2.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Display (6.2.2).
+
+In the setting of Lemma 2.3.4, we have 
+$$
+\msf{adp}_f(p):f(x)=^P_pf(y).
+$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Corollary 6.4.3. 
+
+Recall the following facts: 
+
+A type $A$ is a set if and only if $x=y$ is a mere proposition for all $x,y:A$ (observation stated just before Lemma 3.3.4). 
+
+A mere proposition is a set (Lemma 3.3.4).
+
+A type is contractible if and only if it is an inhabited mere proposition (Lemma 3.11.3). 
+
+The proof of Corollary 6.4.3 uses the following fact:
+
+Let $A$ and $B$ be types, let $f,g:A\to B$, let $u:\mathsf{isequiv}(f),\ u:\mathsf{isequiv}(g)$, so that $(f,u),(g,v):A\simeq B$. Put $C:\equiv\mathsf{isequiv}(g), D(p):\equiv(p_*(u)=_Cv)$. By Theorem 2.7.2 we have 
+$$
+((f,u)=(g,v))\simeq\sum_{p:f=g}D(p).
+$$ 
+We claim that the first projection 
+$$
+p_1\sum_{p:f=g}D(p)\to(f=g)
+$$ 
+is an equivalence. This will imply 
+$$
+((f,u)=(g,v))\simeq(f=g).
+$$ 
+By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p$, and Lemma 3.11.9 (i) implies that $p_1$ is indeed an equivalence.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nn$\bullet$ Proof of Lemma 6.5.1.
+
+The first display follows from Theorem 2.11.3.
+
+\end{document}
