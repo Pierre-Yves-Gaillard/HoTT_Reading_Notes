@@ -1,7 +1,9 @@
 % HoTT_Reading_Notes_a
+% http://goo.gl/Dz6r8g
 % https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit
-% 
+% https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes
 % http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes
+% https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit?usp=sharing
 % !TEX encoding = UTF-8 Unicode
 \documentclass[12pt]{article}
 \usepackage[T1]{fontenc}
@@ -39,13 +41,17 @@
 
 \nn{\small\verb"http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes"}
 
+\nn\verb"https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes"
+
+\nn\verb"http://goo.gl/Dz6r8g"
+
 This is an informal set of comments on the HoTT Book:
 
-\nn\verb"http://homotopytypetheory.org/book/"
+\nn\verb"http://homotopytypetheory.org/book/"\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$\textbf{ Exercise 1.3.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
+\section{Exercise 1.3.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
 
 \nn\emph{Solution.} It suffices to handle $\Sigma$-types. 
 
@@ -92,7 +98,7 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 %%%%%%%%%%%%%%%
 
-\nn$\bullet$ Comment after Corollary 2.7.3.
+\section{Comment after Corollary 2.7.3}
 
 If $w,w':\sum_{x:A}P(x)$, then 
 $$
@@ -102,7 +108,7 @@ $$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Theorem 2.11.1. 
+\section{Proof of Theorem 2.11.1}
 
 Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that $\ap_f:(a=a')\to (fa=fa')$ is an equivalence.
 
@@ -118,7 +124,7 @@ Step 2. Since $\varphi$ is easily seen to be an equivalence, $\ap_g\circ\ap_f$ i
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Lemma 4.1.2.
+\section{Proof of Lemma 4.1.2}
 
 The claim
 
@@ -141,7 +147,7 @@ $$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Lemma 4.1.2.
+\section{Proof of Lemma 4.1.2}
 
 End of the proof: To complete the proof, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{(x:A)}B(x)$.
 %https://github.com/HoTT/book/blob/master/equivalences.tex#L107
@@ -154,7 +160,7 @@ End of the proof: To complete the proof, we set $f(x):\ee\msf{pr}_1(k(x))$ with 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Theorem 4.7.6
+\section{Proof of Theorem 4.7.6}
 
 Let us check Equivalence $(*)$ in the proof of Theorem 4.7.6: For $a:A$ and $p:a=x$ put 
 $$
@@ -170,7 +176,7 @@ Equivalence (1) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Theorem 4.8.3. 
+\section{Proof of Theorem 4.8.3}
 
 Here are some details about the last sentence of the proof of Theorem 4.8.3:
 
@@ -208,7 +214,7 @@ where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Theorem 4.8.4.
+\section{Proof of Theorem 4.8.4}
 
 The proof of Theorem 4.8.4 uses the following lemma: For $A:\U$ we have 
 $$
@@ -242,7 +248,7 @@ But this follows from Lemma 2.11.2.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Display (6.2.2).
+\section{Display (6.2.2)}
 
 In the setting of Lemma 2.3.4, we have 
 $$
@@ -251,7 +257,7 @@ $$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Corollary 6.4.3. 
+\section{Proof of Corollary 6.4.3}
 
 Recall the following facts: 
 
@@ -279,7 +285,7 @@ By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p$, a
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nn$\bullet$ Proof of Lemma 6.5.1.
+\section{Proof of Lemma 6.5.1}
 
 The first display follows from Theorem 2.11.3.
 
