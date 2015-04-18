@@ -123,10 +123,10 @@ $$
 Let $g_0:A',g_1:B'$ be given. We must define 
 $$
 \ind_{A+B}(C,g_0,g_1):\prod_{x:A+B}C(x).
+$$ 
+Set $T:\equiv\rec_{\mathbf2}(\U,A,B):\mathbf2\to\U$. We define $D:\mathbf2\to\U$ by 
 $$
-We define $D:\mathbf2\to\U$ by 
-$$
-D(n):\equiv\prod_{u:\rec_{\mathbf2}(\U,A,B,n)}C(n,u).
+D(n):\equiv\prod_{u:T(n)}C(n,u).
 $$ 
 Note that $D(0_{\mathbf2})\equiv A'$ and $D(1_{\mathbf2})\equiv B'$. Recall that 
 $$
@@ -134,15 +134,15 @@ $$
 $$ 
 In particular we have 
 $$
-\ind_{\mathbf2}(D,g_0,g_1):\prod_{n:\mathbf2}\ \prod_{u:\rec_{\mathbf2}(\U,A,B,n)}C(n,u).
+\ind_{\mathbf2}(D,g_0,g_1):\prod_{n:\mathbf2}\ \prod_{u:T(n)}C(n,u).
 $$ 
 Since 
 $$
-\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)}(C):\left(\prod_{n:\mathbf2}\ \prod_{u:\rec_{\mathbf2}(\U,A,B,n)}C(n,u)\right)\to\prod_{x:A+B}C(x),
+\ind_{\sum_{n:\mathbf2}T(n)}(C):\left(\prod_{n:\mathbf2}\ \prod_{u:T(n)}C(n,u)\right)\to\prod_{x:A+B}C(x),
 $$ 
-we can set 
+we can put 
 $$
-\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)}(C,\ind_{\mathbf2}(D,g_0,g_1)).
+\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mathbf2}T(n)}(C,\ind_{\mathbf2}(D,g_0,g_1)).
 $$ 
 We must check 
 \begin{equation}\label{15a}
@@ -153,13 +153,13 @@ We must check
 \end{equation} 
 We have 
 \begin{align*}
-\ind_{A+B}(C,g_0,g_1,(0_{\mathbf2},a))&\equiv\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)}(C,\ind_{\mathbf2}(D,g_0,g_1)\\ 
+\ind_{A+B}(C,g_0,g_1,(0_{\mathbf2},a))&\equiv\ind_{\sum_{n:\mathbf2}T(n)}(C,\ind_{\mathbf2}(D,g_0,g_1)\\ 
 &\equiv\ind_{\mathbf2}(D,g_0,g_1)(0_{\mathbf2})(a)\\ 
 &\equiv g_0(a),
 \end{align*}
 the three definitional equalities following respectively from the definitions of the dependent functions
 $$
-\ind_{A+B},\quad\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)},\quad\ind_{\mathbf2}.
+\ind_{A+B},\quad\ind_{\sum_{n:\mathbf2}T(n)},\quad\ind_{\mathbf2}.
 $$ 
 This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
