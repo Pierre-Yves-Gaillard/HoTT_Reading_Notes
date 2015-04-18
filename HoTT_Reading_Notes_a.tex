@@ -12,7 +12,7 @@
 \usepackage[a4paper]{geometry}
 \usepackage{datetime}
 \addtolength{\parskip}{.5\baselineskip}
-\renewcommand{\baselinestretch}{1.1}
+%\renewcommand{\baselinestretch}{1.1}
 %\pagestyle{empty}
 \newcommand{\cc}{\cdot}
 \newcommand{\dd}{\displaystyle}
@@ -26,6 +26,8 @@
 \newcommand{\ap}{\mathsf{ap}}
 \newcommand{\id}{\mathsf{id}}
 \newcommand{\ind}{\mathsf{ind}}
+\newcommand{\inl}{\mathsf{inl}}
+\newcommand{\inr}{\mathsf{inr}}
 \newcommand{\pr}{\mathsf{pr}}
 \newcommand{\refl}{\mathsf{refl}}
 \newcommand{\uniq}{\mathsf{uniq}}
@@ -48,11 +50,13 @@
 
 This is an informal set of comments on the HoTT Book:
 
-\nn\verb"http://homotopytypetheory.org/book/"%\newpage
+\nn\verb"http://homotopytypetheory.org/book/"
+
+This is work in progress.
 
 \tableofcontents%\newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Exercise 1.3.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
 
@@ -99,7 +103,7 @@ $$
 $$
 for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} and \eqref{133}.
 
-%%%%%%%%%%%%%%%
+%%
 
 \section{Comment after Corollary 2.7.3}
 
@@ -109,7 +113,7 @@ $$
 $$ 
 (It would be more rigorous to write $\msf{pair}^=(w,w')$ instead of $\msf{pair}^=$.)
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Theorem 2.11.1}
 
@@ -125,7 +129,7 @@ Step 2. Since $\varphi$ is easily seen to be an equivalence, $\ap_g\circ\ap_f$ i
 
 %old: https://docs.google.com/document/d/1OvMAEN0uvE18rTCHAmZAIYKiILQ_FNT5JJqNH3HH760/edit
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Lemma 4.1.2}
 
@@ -148,20 +152,20 @@ $$
 \oo{transport}^P(t,h)(s)=t^{-1}\cdot h(s).
 $$ 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Lemma 4.1.2}
 
 End of the proof: To complete the proof, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{(x:A)}B(x)$.
 %https://github.com/HoTT/book/blob/master/equivalences.tex#L107
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 %\nn$\bullet$ Proof of Theorem 4.1.3.
 
 %The fact that $\mathbf2\simeq\mathbf2$ is a set follows from univalence and Examples 3.1.2 and 3.1.5.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Theorem 4.7.6}
 
@@ -177,7 +181,7 @@ Q(x,\oo{refl}_x).
 $$
 Equivalence (1) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_{a:A}\ (a=x)$$ is contractible with center $(x,\oo{refl}_x)$, Equivalence (2) follows from Lemma 3.11.9 (ii). 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Theorem 4.8.3}
 
@@ -215,7 +219,7 @@ t^{I\to C}(q,p_1,a)\overset{\text{(a)}}=t^C(q,p_1(t^I(q^{-1},a)))\overset{\text{
 $$ 
 where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Theorem 4.8.4}
 
@@ -249,7 +253,7 @@ t^{X\mapsto (X=A)}(p,p)=\oo{refl}_A.
 $$ 
 But this follows from Lemma 2.11.2.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Display (6.2.2)}
 
@@ -258,7 +262,7 @@ $$
 \msf{adp}_f(p):f(x)=^P_pf(y).
 $$
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Corollary 6.4.3}
 
@@ -286,10 +290,16 @@ $$
 $$ 
 By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p$, and Lemma 3.11.9 (i) implies that $p_1$ is indeed an equivalence.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
 
 \section{Proof of Lemma 6.5.1}
 
 The first display follows from Theorem 2.11.3.
+
+%%
+
+\section{Appendix A}
+
+It seems to me that the expression $\lambda x.b$ is defined in two conflicting ways, firstly at the beginning of A.1, and secondly in the last sentence of A.2.4. 
 
 \end{document}
