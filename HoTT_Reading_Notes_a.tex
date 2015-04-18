@@ -1,7 +1,7 @@
 % HoTT_Reading_Notes_a
 % http://goo.gl/Dz6r8g
 % https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit
-% https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes 
+% https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes/blob/master/HoTT_Reading_Notes_a.tex 
 % http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes
 % https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit?usp=sharing
 % !TEX encoding = UTF-8 Unicode
@@ -29,6 +29,7 @@
 \newcommand{\inl}{\mathsf{inl}}
 \newcommand{\inr}{\mathsf{inr}}
 \newcommand{\pr}{\mathsf{pr}}
+\newcommand{\rec}{\mathsf{rec}}
 \newcommand{\refl}{\mathsf{refl}}
 \newcommand{\uniq}{\mathsf{uniq}}
 \newcommand{\U}{\mathcal U}
@@ -58,7 +59,9 @@ This is work in progress.
 
 %%
 
-\section{Exercise 1.3.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
+\section{Exercise 1.3} 
+
+\emph{Statement.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
 
 \nn\emph{Solution.} It suffices to handle $\Sigma$-types. 
 
@@ -102,6 +105,63 @@ $$
 \ind_{\sum_{a:A}B(a)}(C,g,(a,b))\equiv g(a)(b)
 $$
 for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} and \eqref{133}.
+
+%%
+
+\section{Exercise 1.5}
+
+\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\mathbf2}\rec_{\mathbf2}(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
+
+\nn\emph{Solution.} We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_{\mathbf2},a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
+$$
+A':\equiv\prod_{a:A}C(\inl(a)),\quad B':\equiv\prod_{b:B}C(\inr(b)).
+$$
+We must define 
+$$
+\ind_{A+B}:\prod_{C:A+B\to\U}A'\to B'\to\prod_{x:A+B}C(x).
+$$ 
+Let $g_0:A',g_1:B'$ be given. We must define 
+$$
+\ind_{A+B}(C,g_0,g_1):\prod_{x:A+B}C(x).
+$$
+We define $D:\mathbf2\to\U$ by 
+$$
+D(n):\equiv\prod_{u:\rec_{\mathbf2}(\U,A,B,n)}C(n,u).
+$$ 
+Note that $D(0_{\mathbf2})\equiv A'$ and $D(1_{\mathbf2})\equiv B'$. Recall that 
+$$
+\ind_{\mathbf2}(D):D(0_{\mathbf2})\to D(1_{\mathbf2})\to\prod_{n:\mathbf2}D(n).
+$$ 
+In particular we have 
+$$
+\ind_{\mathbf2}(D,g_0,g_1):\prod_{n:\mathbf2}\ \prod_{u:\rec_{\mathbf2}(\U,A,B,n)}C(n,u).
+$$ 
+Since 
+$$
+\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)}(C):\left(\prod_{n:\mathbf2}\ \prod_{u:\rec_{\mathbf2}(\U,A,B,n)}C(n,u)\right)\to\prod_{x:A+B}C(x),
+$$ 
+we can set 
+$$
+\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)}(C,\ind_{\mathbf2}(D,g_0,g_1)).
+$$ 
+We must check 
+\begin{equation}\label{15a}
+\ind_{A+B}(C,g_0,g_1,(0_{\mathbf2},a))\equiv g_0(a),
+\end{equation}
+\begin{equation}\label{15b}
+\ind_{A+B}(C,g_0,g_1,(1_{\mathbf2},b))\equiv g_1(b).
+\end{equation} 
+We have 
+\begin{align*}
+\ind_{A+B}(C,g_0,g_1,(0_{\mathbf2},a))&\equiv\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)}(C,\ind_{\mathbf2}(D,g_0,g_1)\\ 
+&\equiv\ind_{\mathbf2}(D,g_0,g_1)(0_{\mathbf2})(a)\\ 
+&\equiv g_0(a),
+\end{align*}
+the three definitional equalities following respectively from the definitions of the dependent functions
+$$
+\ind_{A+B},\quad\ind_{\sum_{n:\mathbf2}\rec_{\mathbf2}(\U,A,B,n)},\quad\ind_{\mathbf2}.
+$$ 
+This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
 %%
 
