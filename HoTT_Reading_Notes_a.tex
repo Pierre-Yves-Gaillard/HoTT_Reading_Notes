@@ -10,20 +10,23 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
 \usepackage[a4paper]{geometry}
+\usepackage[pdfusetitle]{hyperref}
 \usepackage{datetime}
 \addtolength{\parskip}{.5\baselineskip}
 %\renewcommand{\baselinestretch}{1.1}
 %\pagestyle{empty}
+\newcommand{\msf}{\mathsf}
 \newcommand{\cc}{\cdot}
 \newcommand{\dd}{\displaystyle}
 \newcommand{\ee}{\equiv}
 %\newcommand{\la}{\lambda}
-\newcommand{\msf}{\mathsf}
+\newcommand{\two}{\mathbf2}
 \newcommand{\nn}{\noindent}
 \newcommand{\oo}{\operatorname}
 \newcommand{\p}{\varphi}
 \newcommand{\sm}{\scriptstyle}
 \newcommand{\ap}{\mathsf{ap}}
+\newcommand{\fu}{\mathsf{funext}}
 \newcommand{\id}{\mathsf{id}}
 \newcommand{\ind}{\mathsf{ind}}
 \newcommand{\inl}{\mathsf{inl}}
@@ -110,9 +113,9 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 \section{Exercise 1.5}
 
-\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\mathbf2}\rec_{\mathbf2}(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
+\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
 
-\nn\emph{Solution.} We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_{\mathbf2},a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
+\nn\emph{Solution.} We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\two,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
 $$
 A':\equiv\prod_{a:A}C(\inl(a)),\quad B':\equiv\prod_{b:B}C(\inr(b)).
 $$
@@ -124,44 +127,96 @@ Let $g_0:A',g_1:B'$ be given. We must define
 $$
 \ind_{A+B}(C,g_0,g_1):\prod_{x:A+B}C(x).
 $$ 
-Set $T:\equiv\rec_{\mathbf2}(\U,A,B):\mathbf2\to\U$. We define $D:\mathbf2\to\U$ by 
+Set $T:\equiv\rec_\two(\U,A,B):\two\to\U$. We define $D:\two\to\U$ by 
 $$
 D(n):\equiv\prod_{u:T(n)}C(n,u).
 $$ 
-Note that $D(0_{\mathbf2})\equiv A'$ and $D(1_{\mathbf2})\equiv B'$. Recall that 
+Note that $D(0_\two)\equiv A'$ and $D(1_\two)\equiv B'$. Recall that 
 $$
-\ind_{\mathbf2}(D):D(0_{\mathbf2})\to D(1_{\mathbf2})\to\prod_{n:\mathbf2}D(n).
+\ind_\two(D):D(0_\two)\to D(1_\two)\to\prod_{n:\two}D(n).
 $$ 
 In particular we have 
 $$
-\ind_{\mathbf2}(D,g_0,g_1):\prod_{n:\mathbf2}\ \prod_{u:T(n)}C(n,u).
+\ind_\two(D,g_0,g_1):\prod_{n:\two}\ \prod_{u:T(n)}C(n,u).
 $$ 
 Since 
 $$
-\ind_{\sum_{n:\mathbf2}T(n)}(C):\left(\prod_{n:\mathbf2}\ \prod_{u:T(n)}C(n,u)\right)\to\prod_{x:A+B}C(x),
+\ind_{\sum_{n:\two}T(n)}(C):\left(\prod_{n:\two}\ \prod_{u:T(n)}C(n,u)\right)\to\prod_{x:A+B}C(x),
 $$ 
 we can put 
 $$
-\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mathbf2}T(n)}(C,\ind_{\mathbf2}(D,g_0,g_1)).
+\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\two}T(n)}(C,\ind_\two(D,g_0,g_1)).
 $$ 
 We must check 
 \begin{equation}\label{15a}
-\ind_{A+B}(C,g_0,g_1,(0_{\mathbf2},a))\equiv g_0(a),
+\ind_{A+B}(C,g_0,g_1,(0_\two,a))\equiv g_0(a),
 \end{equation}
 \begin{equation}\label{15b}
-\ind_{A+B}(C,g_0,g_1,(1_{\mathbf2},b))\equiv g_1(b).
+\ind_{A+B}(C,g_0,g_1,(1_\two,b))\equiv g_1(b).
 \end{equation} 
 We have 
 \begin{align*}
-\ind_{A+B}(C,g_0,g_1,(0_{\mathbf2},a))&\equiv\ind_{\sum_{n:\mathbf2}T(n)}(C,\ind_{\mathbf2}(D,g_0,g_1)\\ 
-&\equiv\ind_{\mathbf2}(D,g_0,g_1)(0_{\mathbf2})(a)\\ 
+\ind_{A+B}(C,g_0,g_1,(0_\two,a))&\equiv\ind_{\sum_{n:\two}T(n)}(C,\ind_\two(D,g_0,g_1)\\ 
+&\equiv\ind_\two(D,g_0,g_1)(0_\two)(a)\\ 
 &\equiv g_0(a),
 \end{align*}
 the three definitional equalities following respectively from the definitions of the dependent functions
 $$
-\ind_{A+B},\quad\ind_{\sum_{n:\mathbf2}T(n)},\quad\ind_{\mathbf2}.
+\ind_{A+B},\quad\ind_{\sum_{n:\two}T(n)},\quad\ind_\two.
 $$ 
 This proves \eqref{15a}. The proof of \eqref{15b} is similar.
+
+%%
+
+\section{Exercise 1.6}
+
+\emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
+
+\nn\emph{Solution.} As above put $T:\equiv\rec_\two(\U,A,B):\two\to\U$, so that $A\times B:\equiv\prod_{n:\two}T(n)$, and 
+$$
+\ind_\two(T):A\to B\to A\times B.
+$$ 
+For $a:A,b:B$ we abbreviate $\ind_\two(T,a,b)$ by $(a,b)$; in particular we have 
+$$
+(a,b):A\times B,\quad(a,b)(0_\two)\equiv a,\quad(a,b)(1_\two)\equiv b.
+$$ 
+Let $C:A\times B\to\U$. We must define 
+$$
+\ind_{A\times B}(C):\left(\prod_{a:A}\prod_{b:B}C((a,b))\right)\to\prod_{u:A\times B}C(u).
+$$ 
+Define $D:\two\to\U$ by 
+$$
+D(n):\equiv\Big(\big(u(0_\two),u(1_\two)\big)(n)=u(n)\Big)
+$$ 
+and recall that 
+$$
+\ind_\two(D):D(0_\two)\to D(1_\two)\to\prod_{n\in\two}D(n)
+$$ 
+and that 
+$$
+\fu:\prod_{n\in\two}D(n)\to\Big(\big(u(0_\two),u(1_\two)\big)=u\Big).
+$$
+We get 
+$$
+\alpha:\equiv\ind_\two(D,\refl_{u(0_\two)},\refl_{u(1_\two)}):\prod_{n\in\two}D(n),\quad\fu(\alpha):\Big(\big(u(0_\two),u(1_\two)\big)=u\Big),
+$$
+$$
+\fu(\alpha)_*:C((u(0_\two),u(1_\two)))\to C(u).
+$$
+In particular we can set
+$$
+\ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*(g(u(0_\two))(g(u(1_\two)).
+$$
+
+To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u:\equiv(a,b)$. In particular we have 
+$$
+\alpha:\prod_{n\in\two}\Big((a,b)(n)=(a,b)(n)\Big).
+$$ 
+It is easy to prove $\alpha(n)=\refl_{(a,b)(n)}$ by induction. This gives 
+$$
+\ind_{A\times B}(C,g,(a,b))=g(a)(b),
+$$ 
+as required.
 
 %%
 
@@ -235,7 +290,7 @@ End of the proof: To complete the proof, we set $f(x):\ee\msf{pr}_1(k(x))$ with 
 
 %\nn$\bullet$ Proof of Theorem 4.1.3.
 
-%The fact that $\mathbf2\simeq\mathbf2$ is a set follows from univalence and Examples 3.1.2 and 3.1.5.
+%The fact that $\two\simeq\two$ is a set follows from univalence and Examples 3.1.2 and 3.1.5.
 
 %%
 
