@@ -37,6 +37,7 @@
 \newcommand{\pr}{\mathsf{pr}}
 \newcommand{\rec}{\mathsf{rec}}
 \newcommand{\refl}{\mathsf{refl}}
+\newcommand{\ua}{\mathsf{ua}}
 \newcommand{\uniq}{\mathsf{uniq}}
 \newcommand{\U}{\mathcal U}
 \title{HoTT Reading Notes}
@@ -98,7 +99,7 @@ for all $a:A$ and all $b:B(a)$.
 \nn(c) We define
 $$
 \ind_{\sum_{a:A}B(a)} : \prod_{C:\sum_{a:A}B(a)\to\U} 
-\left(\prod_{a:A}\prod_{b:B(a)} C(a,b)\right) 
+\left(\prod_{a:A}\prod_{b:B(a)} C((a,b))\right) 
 \to \prod_{x:\sum_{a:A}B(a)} C(x)
 $$
 thanks to the transport principle, which is indeed a concept from Chapter~2, by
@@ -132,7 +133,7 @@ $$
 $$ 
 Set $T:\equiv\rec_\two(\U,A,B):\two\to\U$. We define $D:\two\to\U$ by 
 $$
-D(n):\equiv\prod_{u:T(n)}C(n,u).
+D(n):\equiv\prod_{u:T(n)}C((n,u)).
 $$ 
 Note that $D(0_\two)\equiv A'$ and $D(1_\two)\equiv B'$. Recall that 
 $$
@@ -140,11 +141,11 @@ $$
 $$ 
 In particular we have 
 $$
-\ind_\two(D,g_0,g_1):\prod_{n:\two}\ \prod_{u:T(n)}C(n,u).
+\ind_\two(D,g_0,g_1):\prod_{n:\two}\ \prod_{u:T(n)}C((n,u)).
 $$ 
 Since 
 $$
-\ind_{\sum_{n:\two}T(n)}(C):\left(\prod_{n:\two}\ \prod_{u:T(n)}C(n,u)\right)\to\prod_{x:A+B}C(x),
+\ind_{\sum_{n:\two}T(n)}(C):\left(\prod_{n:\two}\ \prod_{u:T(n)}C((n,u))\right)\to\prod_{x:A+B}C(x),
 $$ 
 we can put 
 $$
@@ -211,7 +212,7 @@ $$
 \ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*(g(u(0_\two))(g(u(1_\two)).
 $$
 
-To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u:\equiv(a,b)$. In particular we have 
+To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
 $$
 \alpha:\prod_{n\in\two}\Big((a,b)(n)=(a,b)(n)\Big).
 $$ 
@@ -250,7 +251,11 @@ $$
 
 \section{Proof of Theorem 2.11.1}
 
-Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that $\ap_f:(a=a')\to (fa=fa')$ is an equivalence.
+Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that 
+$$
+\ap_f:(a=a')\to (fa=fa')
+$$ 
+is an equivalence.
 
 Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be a quasi-inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
 $$
@@ -297,11 +302,7 @@ $$
 \oo{transport}^P(t,h)(s)=t^{-1}\cdot h(s).
 $$ 
 
-%%
-
-\section{Proof of Lemma 4.1.2}
-
-End of the proof: To complete the proof, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{(x:A)}B(x)$.
+To complete the proof of Lemma 4.1.2, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
 %https://github.com/HoTT/book/blob/master/equivalences.tex#L107
 
 %%
@@ -320,11 +321,11 @@ Q(a,p):\equiv\sum_{u:P(a)}p_*(f(a,u))=v.
 $$ 
 We claim 
 $$
-\sum_{a:A}\sum_{p:a=x}Q(a,p)\overset{(1)}{\simeq}
-\sum_{q:\sum_{a:A}(a=x)}Q(q)\overset{(2)}{\simeq}
-Q(x,\oo{refl}_x).
+\sum_{a:A}\sum_{p:a=x}Q(a,p)\overset{(\text a)}{\simeq}
+\sum_{q:\sum_{a:A}(a=x)}Q(q)\overset{(\text b)}{\simeq}
+Q(x,\refl_x).
 $$
-Equivalence (1) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_{a:A}\ (a=x)$$ is contractible with center $(x,\oo{refl}_x)$, Equivalence (2) follows from Lemma 3.11.9 (ii). 
+Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_{a:A}\ (a=x)$$ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). 
 
 %%
 
@@ -344,9 +345,9 @@ F:\equiv\sum_{b:B}\oo{fib}_f(b),
 $$ 
 and let $p_1:F\to B$ be the first projection. We must show 
 \begin{equation}\label{2}
-(F,p_1)=_{\sum_{X:\U}(X\to B)}(A,f).
+(F,p_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
-We have $e:F\simeq A$. Put $q:\equiv\oo{ua}(e)$. We have $q:F=A$. We claim 
+We have $e:F\simeq A$. Put $q:\equiv\ua(e)$. We have $q:F=A$. We claim 
 \begin{equation}\label{3}
 q_*(p_1)=f.
 \end{equation} 
@@ -370,31 +371,31 @@ where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for 
 
 The proof of Theorem 4.8.4 uses the following lemma: For $A:\U$ we have 
 $$
-A\simeq\sum_{X:\U}(X=A)\times X.
+A\simeq\sum_{X:\U}\ (X=A)\times X.
 $$
 More precisely, we shall define maps 
 $$
-A\rightleftarrows\sum_{X:\U}(X=A)\times X
+A\rightleftarrows\sum_{X:\U}\ (X=A)\times X
 $$ 
-and check that they are mutual quasi-inverses. To $a:A$ we attach $(A,\oo{refl}_A,a)$, and to $(B,p,b)$ we attach $t^{X\mapsto X}(p,b)$. Here and in the sequel we write $t$ for "transport". We have 
+and check that they are mutual quasi-inverses. To $a:A$ we attach $(A,\refl_A,a)$, and to $(B,p,b)$ we attach $t^{X\mapsto X}(p,b)$. Here and in the sequel we write $t$ for "transport". We have 
 $$
-a\mapsto(A,\oo{refl}_A,a)\mapsto t^{X\mapsto X}(\oo{refl}_A,a)\equiv a.
+a\mapsto(A,\refl_A,a)\mapsto t^{X\mapsto X}(\refl_A,a)\equiv a.
 $$ 
 We have 
 $$
-(B,p,b)\mapsto t^{X\mapsto X}(p,b)\mapsto(A,\oo{refl}_A,t^{X\mapsto X}(p,b)),
+(B,p,b)\mapsto t^{X\mapsto X}(p,b)\mapsto(A,\refl_A,t^{X\mapsto X}(p,b)),
 $$ 
 and we must show 
 $$
-(B,p,b)=(A,\oo{refl}_A,t^{X\mapsto X}(p,b)).
+(B,p,b)=(A,\refl_A,t^{X\mapsto X}(p,b)).
 $$ 
 By Theorem 2.7.2 it suffices to verify 
 $$
-t^{X\mapsto (X=A)\times X}(p,(p,b))=(\oo{refl}_A,t^{X\mapsto X}(p,b)).
+t^{X\mapsto (X=A)\times X}(p,(p,b))=(\refl_A,t^{X\mapsto X}(p,b)).
 $$ 
 By Theorem 2.6.4 it suffices to prove 
 $$
-t^{X\mapsto (X=A)}(p,p)=\oo{refl}_A.
+t^{X\mapsto (X=A)}(p,p)=\refl_A.
 $$ 
 But this follows from Lemma 2.11.2.
 
@@ -427,7 +428,7 @@ $$
 $$ 
 We claim that the first projection 
 $$
-p_1\sum_{p:f=g}D(p)\to(f=g)
+p_1:\sum_{p:f=g}D(p)\to(f=g)
 $$ 
 is an equivalence. This will imply 
 $$
