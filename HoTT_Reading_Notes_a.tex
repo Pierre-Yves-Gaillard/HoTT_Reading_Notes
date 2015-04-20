@@ -223,6 +223,21 @@ as required.
 
 %%
 
+\section{Exercise 1.8}
+
+\emph{Statement.} Define multiplication and exponentiation using $\rec_\N$. Verify that $(\N,+,0,\times,1)$ is a semiring using only $\ind_\N$. You will probably also need to use symmetry and transitivity of equality, Lemmas 2.1.1 and 2.1.2.
+
+\nn\emph{Solution.} We put
+$$
+\msf{mult}:\equiv\rec_\N(\N\to\N,\la m.0,\la m.\la g.\la n.m+g(m)),
+$$
+$$
+\msf{exp}:\equiv\rec_\N(\N\to\N,\la m.1,\la m.\la g.\la n.mg(m)).
+$$ 
+We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring.
+
+%%
+
 \section{Comment after Corollary 2.7.3}
 
 If $w,w':\sum_{x:A}P(x)$, then 
