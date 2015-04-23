@@ -297,6 +297,18 @@ $$
 
 %%
 
+\section{Exercise 1.13}
+
+\emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
+
+\nn\emph{Solution.} We define $f:\neg(P+\neg P)\to\mbf0$ by 
+$$
+f(g):\equiv (g\circ\inr)(g\circ\inl).
+$$ 
+This makes sense because $g\circ\inr:\neg P\to\mbf0$ and $g\circ\inl:\neg P$.
+
+%%
+
 \section{Comment after Corollary 2.7.3}
 
 If $w,w':\sum_{x:A}P(x)$, then 
