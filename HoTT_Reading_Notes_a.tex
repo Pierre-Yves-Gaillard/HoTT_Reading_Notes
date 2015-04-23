@@ -301,17 +301,21 @@ $$
 
 \emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
 
-\nn\emph{Solution.} We define $f:\neg(P+\neg P)\to\mbf0$ by 
-$$
-f(g):\equiv (g\circ\inr)(g\circ\inl).
-$$ 
-This makes sense because $g\circ\inr:\neg P\to\mbf0$ and $g\circ\inl:\neg P$.
+\nn\emph{Solution.} Here is a slightly stronger statement: For any types $A,B,C$ the types
 
-Slightly different phrasing: Compose the natural maps
-\begin{align*}
-\neg(P+\neg P)\to\ &(\neg P\times\neg\neg P)\\
-                   &(\neg P\times\neg\neg P)\to\mbf0.
-\end{align*}
+(a) $\big((A+B)\to C\big)\to\big((A\to C)\times(B\to C)\big)$,
+
+(b) $\big((A\to C)\times(B\to C)\big)\to\big((A+B)\to C\big)$,
+
+(c) $(A\to B)\to A\to B$,
+
+(d) $\Big(\big(A+(A\to B)\big)\to B\Big)\to\Big((A\to B)\times\big((A\to B)\to B\big)\Big)$, 
+
+(e) $\Big((A\to B)\times\big((A\to B)\to B\big)\Big)\to B$,
+
+(f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
+
+\nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mbf0$ in (f) gives the desired result.
 
 %%
 
