@@ -10,8 +10,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
 \usepackage[a4paper]{geometry}
-\usepackage[pdfusetitle]{hyperref}
 \usepackage{datetime}
+\usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \addtolength{\parskip}{.5\baselineskip}
 %\renewcommand{\baselinestretch}{1.1}
 %\pagestyle{empty}
@@ -54,6 +54,8 @@
 \nn This text is available at 
 
 \nn\href{http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes}{http://iecl.univ-lorraine.fr/$\sim$Pierre-Yves.Gaillard/HoTT/ReadingNotes}
+
+%\nn\href{http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes}{http://iecl.univ-lorraine.fr/\textasciitilde Pierre-Yves.Gaillard/HoTT/ReadingNotes}
 
 \nn\href{https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes}{https://github.com/Pierre-Yves-Gaillard/HoTT\_Reading\_Notes}
 
@@ -377,6 +379,14 @@ where $z,w:\sum_{a:A}B(a)$ and $p:z=w$, satisfying
 $$
 \gamma(z,z,\refl_z)\equiv\refl_{\refl_{f(z)}}.
 $$
+
+%%
+
+\section{Exercise 2.14}
+
+\emph{Statement.} Suppose we add to type theory the \emph{equality reflection rule} which says that if there is an element $p:x=y$, then in fact $x:\equiv y$. Prove that for any $p:x=x$ we have $p:\equiv\refl_x$. (This implies that every type is a \emph{set} in the sense to be introduced in \S3.1; see \S7.2.)
+
+\nn\emph{Solution.} Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $x\equiv y$ by the equality reflection rule.
 
 %%
 
