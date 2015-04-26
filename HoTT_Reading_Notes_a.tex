@@ -33,6 +33,7 @@
 \newcommand{\nn}{\noindent}
 \newcommand{\oo}{\operatorname}
 \newcommand{\p}{\varphi}
+\newcommand{\pa}{\mathsf{pair}^=}
 \newcommand{\pr}{\mathsf{pr}}
 \newcommand{\rec}{\mathsf{rec}}
 \newcommand{\refl}{\mathsf{refl}}
@@ -346,6 +347,36 @@ Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$
 Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. This implies that $\ap_f$ and $\ap_g$ are equivalences.
 
 %old: https://docs.google.com/document/d/1OvMAEN0uvE18rTCHAmZAIYKiILQ_FNT5JJqNH3HH760/edit
+
+%%
+
+\section{Exercise 2.7}
+
+\emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
+
+\nn\emph{Solution.} We denote respectively by $\alpha$ and $\beta$ the functions $f$ and $g$ in the proof of Theorem 2.7.2. Note that we have 
+$$
+\beta(z,z,\refl_{\pr_2(f(z))})\equiv\refl_z.
+$$
+
+Let 
+$$
+B:A\to\U,\quad B':A'\to\U,\quad g:A\to A',\quad h:\prod_{a:A}B(a)\to B'(g(a)).
+$$ 
+Cleary, there is a map 
+$$
+f:\sum_{a:A}B(a)\to\sum_{a':A'}B'(a')
+$$ 
+satisfying $f(a,b)\equiv (g(a),h(a,b))$ for all $a:A$ and all $b:B(a)$. 
+
+By path induction, we get a family of paths 
+$$
+\gamma(z,w,p):f(p)=\beta\Big(f(z),f(w),\alpha\big(f(z),f(w),f(p)\big)\Big),
+$$ 
+where $z,w:\sum_{a:A}B(a)$ and $p:z=w$, satisfying 
+$$
+\gamma(z,z,\refl_z)\equiv\refl_{\refl_{f(z)}}.
+$$
 
 %%
 
