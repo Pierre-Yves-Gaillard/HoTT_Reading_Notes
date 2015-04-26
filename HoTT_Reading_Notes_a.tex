@@ -386,7 +386,7 @@ $$
 
 \emph{Statement.} Suppose we add to type theory the \emph{equality reflection rule} which says that if there is an element $p:x=y$, then in fact $x:\equiv y$. Prove that for any $p:x=x$ we have $p:\equiv\refl_x$. (This implies that every type is a \emph{set} in the sense to be introduced in \S3.1; see \S7.2.)
 
-\nn\emph{Solution.} Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $x\equiv y$ by the equality reflection rule.
+\nn\emph{Solution.} Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $y\equiv x$ by the equality reflection rule.
 
 %%
 
