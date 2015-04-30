@@ -390,6 +390,23 @@ $$
 
 %%
 
+\section{Proof of Lemma 3.1.8}
+
+Let $x,y:A$ and $p:x=y$. By assumption there is a dependent function 
+$$
+g:\prod_{q:x=y}p=q.
+$$ 
+Let $q,r:x=y$ and $t:q=r$. Lemmas 2.3.4 and 2.12.2 yield successively 
+$$
+\msf{apd}_g(t):\msf{transport}^{s\mapsto(q=s)}(t,g(q))=g(r) 
+$$
+and $g(q)\cdot t=g(r)$. As a result, there is a dependent function $h$ satisfying $$t=h(x,y,p,q,r)$$ whenever $p,q,r:x=y$ and $t:q=r$. For $p,q:x=y$ and $t,u:p=q$ we get 
+$$
+t=h(x,y,p,p,q)=u.
+$$
+
+%%
+
 \section{Section 3.7}
 
 A question about Propositional Truncation:
