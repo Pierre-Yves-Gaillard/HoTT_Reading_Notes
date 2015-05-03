@@ -433,6 +433,20 @@ Let $A$ be a mere proposition. We must show that $A+\neg A$ is a mere propositio
 
 %%
 
+\section{Exercise 3.7}
+
+We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$. We claim that $A+B$ is also a mere proposition. It suffices to prove $x=y$ in the following cases:
+
+(a) $x=\msf{inl}(a),\ y=\msf{inl}(a')$,
+
+(b) $x=\msf{inr}(b),\ y=\msf{inr}(b')$,
+
+(c) $x=\msf{inl}(a),\ y=\msf{inr}(b)$.
+
+\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mbf0$ and $g:\mbf0\to(\msf{inl}(a)=\msf{inr}(b))$. We get $g(f(a,b)):\msf{inl}(a)=\msf{inr}(b)$.
+
+%%
+
 \section{Proof of Lemma 4.1.2}
 
 The claim
