@@ -447,6 +447,65 @@ We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$. We
 
 %%
 
+\section{Exercise 3.9}
+
+We admit the Law of Excluded Middle $\msf{LEM}$ defined in (3.4.1) by 
+$$
+\msf{LEM}:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A),
+$$ 
+and we want to prove 
+\begin{equation}\label{e39}
+\sum_{A:\U}\msf{isProp}(A)\simeq\mbf2.
+\end{equation}
+
+For any type $A$ we put 
+$$
+P(A):\equiv\msf{isProp}(A),\quad Q_1(A):\equiv(\mbf1\simeq A),
+$$
+$$
+Q_0(A):\equiv(\mbf0\simeq A),\quad Q(A):\equiv Q_1(A)+Q_0(A).
+$$ 
+
+We claim
+
+\nn(a) For any type $A$ there is a map $f_a:P(A)\times A\to Q_1(A)$. This follows from Lemma 3.3.2. (More precisely, we define $f_a$ as the map given by Lemma 3.3.2.)
+
+\nn(b) For any type $A$ there is a map $f_b:P(A)\times\neg A\to Q_0(A)$.
+
+\nn(c) For any types $A,B,C$ there is an equivalence $A\times(B+C)\simeq(A\times B)+(A\times C)$.
+
+\nn(d) For any type $A$ there is a map $f_d:Q(A)\to P(A)$.
+
+\nn(e) For any type $A$ there are maps 
+$$
+\begin{matrix}
+f_e:P(A)&\to &P(A)\times(A+\neg A)\\ 
+        &g_e:&P(A)\times(A+\neg A)&\to &(P(A)\times A)+(P(A)\times\neg A)\\ 
+        &    &                    &h_e:&(P(A)\times A)+(P(A)\times\neg A)&\to Q(A)
+\end{matrix}
+$$ 
+such that $f_e(p):\equiv(p,\msf{LEM}(A,p))$, $g_e$ is given by (c), and $h_e$ is given by (a) and (b). Let $i_e:P(A)\to Q(A)$ be the composition $h_e\circ g_e\circ f_e$.
+
+\nn(f) For any type $A$ there is a map $f_f:Q(A)\to P(Q(A))$.
+
+\nn(g) The maps $f_d$ and $i_e$ are quasi-inverse.
+
+\nn(h) For any type families $C,D:A\to\U$, there is an equivalence 
+$$
+\sum_{a:A}C(a)+D(a)\simeq\left(\sum_{a:A}C(a)\right)+\sum_{a:A}D(a).
+$$
+\nn(i) The types $\sum_{A:\U}Q_1(A)$ and $\sum_{A:\U}Q_0(A)$ are contractible (with obvious centers).
+
+\nn(j) There are equivalences 
+$$
+\sum_{A:\U}P(A)\simeq\sum_{A:\U}Q(A)\simeq\left(\sum_{A:\U}Q_1(A)\right)+\sum_{A:\U}Q_0(A)\simeq\mbf1+\mbf1,
+$$ 
+following respectively from (g), (h) and (i). This implies \eqref{e39}.
+
+Since we have $P(P(A))$ by Lemma 3.3.5 and $P(Q(A))$ by (f), Statement~(g) follows from (d), (e) and Lemma 3.3.3. The other claims are left to the reader.
+
+%%
+
 \section{Proof of Lemma 4.1.2}
 
 The claim
