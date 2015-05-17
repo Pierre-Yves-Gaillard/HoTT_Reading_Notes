@@ -326,9 +326,9 @@ $$
 \section{Proof of Theorem 2.7.2}
 
 The map 
-$$
+\begin{equation}\label{272}
 (w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}p_*(\pr_2(w))=\pr_2(w')
-$$ 
+\end{equation}
 can also be defined by the formula 
 $$
 r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r)).
@@ -338,11 +338,22 @@ $$
 
 \section{Comment after Corollary 2.7.3}
 
-If $w,w':\sum_{x:A}P(x)$, then 
+We write 
 $$
-\msf{pair}^=:\left(\sum_{p:p_1w=p_1w'}(p_*p_2w=p_2w')\right)\to(w=w').
+\pa:\left(\sum_{p:\pr_1w=\pr_1w'}(\pr_*\pr_2w=\pr_2w')\right)\to(w=w').
 $$ 
-(It would be more rigorous to write $\msf{pair}^=(w,w')$ instead of $\msf{pair}^=$.)
+for ``the'' inverse of \eqref{272}. We then have the propositional computation rules 
+$$
+\ap_{\pr_1}(\pa(p,q))=p,
+$$
+$$
+\apd_{\pr_2}(\pa(p,q))=q
+$$
+for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}p_*(\pr_2(w))=\pr_2(w')$, and the propositional uniqueness principle 
+$$
+r=\pa(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
+$$ 
+for $r:w=w'$.
 
 %%
 
