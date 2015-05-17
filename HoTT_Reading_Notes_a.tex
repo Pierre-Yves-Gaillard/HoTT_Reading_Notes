@@ -20,6 +20,7 @@
 \newcommand{\msf}{\mathsf}
 \newcommand{\ack}{\mathsf{ack}}
 \newcommand{\ap}{\mathsf{ap}}
+\newcommand{\apd}{\mathsf{apd}}
 \newcommand{\cc}{\cdot}
 \newcommand{\dd}{\displaystyle}
 \newcommand{\ee}{\equiv}
@@ -319,6 +320,19 @@ $$
 (f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
 
 \nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mbf0$ in (f) gives the desired result.
+
+%%
+
+\section{Proof of Theorem 2.7.2}
+
+The map 
+$$
+(w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}p_*(\pr_2(w))=\pr_2(w')
+$$ 
+can also be defined by the formula 
+$$
+r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r)).
+$$
 
 %%
 
