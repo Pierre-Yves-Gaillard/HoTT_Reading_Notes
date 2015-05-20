@@ -22,6 +22,7 @@
 \newcommand{\ap}{\mathsf{ap}}
 \newcommand{\apd}{\mathsf{apd}}
 \newcommand{\cc}{\cdot}
+\newcommand{\code}{\mathsf{code}}
 \newcommand{\dd}{\displaystyle}
 \newcommand{\ee}{\equiv}
 \newcommand{\fu}{\mathsf{funext}}
@@ -374,6 +375,41 @@ Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$
 Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. This implies that $\ap_f$ and $\ap_g$ are equivalences.
 
 %old: https://docs.google.com/document/d/1OvMAEN0uvE18rTCHAmZAIYKiILQ_FNT5JJqNH3HH760/edit
+
+%%
+
+\section{The type family \textsf{code} in Section 2.13}
+
+One can prove, at the beginning of \S2.13, that there is a type family $\code$ satisfying 
+$$
+\code:\N\to\N\to\U,
+$$
+$$
+\code(0,0):\equiv\mbf1,
+$$
+$$
+\code(\su(m),0):\equiv\mbf0,
+$$
+$$
+\code(0,\su(n)):\equiv\mbf0,
+$$
+$$
+\code(\su(m),\su(n)):\equiv \code(m,n)
+$$
+for all $m,n:\N$ as follows:
+
+Define $\code(0):\N\to\U$ by 
+$$
+\code(0):\equiv\rec_\N(\U,\mbf1,n\mapsto X\mapsto\mbf0).
+$$
+For $Y:\N\to\U$, define $Y':\N\to\U$ by 
+$$
+Y':\equiv\rec_\N(\U,\mbf0,n\mapsto X\mapsto Y(n)).
+$$
+Then $\code:\N\to\N\to\U$ can be defined by 
+$$
+\code:\equiv\rec_\N(\N\to\U,\code(0),m\mapsto Y\mapsto Y').
+$$
 
 %%
 
