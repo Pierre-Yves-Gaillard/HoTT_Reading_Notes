@@ -41,6 +41,7 @@
 \newcommand{\refl}{\mathsf{refl}}
 \newcommand{\sm}{\scriptstyle}
 \newcommand{\su}{\mathsf{succ}}
+\newcommand{\tr}{\mathsf{transport}}
 \newcommand{\two}{\mathbf2}
 \newcommand{\U}{\mathcal U}
 \newcommand{\ua}{\mathsf{ua}}
@@ -358,6 +359,15 @@ for $r:w=w'$.
 
 %%
 
+\section{Theorem 2.7.4}
+
+We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\msf t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Note that the three type families $P,Q$ and $Q'$ are involved in the formula:
+$$
+\msf t^{Q'}(p,(u,z))=\Bigg(\msf t^P(p,u),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big),z\bigg)\Bigg).
+$$
+
+%%
+
 \section{Proof of Theorem 2.11.1}
 
 Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that 
@@ -411,6 +421,10 @@ $$
 is defined by 
 $$
 c_s(n,y):\equiv i(m,n,x(n)).
+$$ 
+One can also define $f$ by the single formula
+$$
+f\equiv\rec_\N\Bigg(\N\to C,g,m\mapsto x\mapsto\rec_\N\bigg(C,h(m),n\mapsto y\mapsto i\big(m,n,x(n)\big)\bigg)\Bigg).
 $$
 
 %%
