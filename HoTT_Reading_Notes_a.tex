@@ -378,37 +378,39 @@ Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_
 
 %%
 
-\section{The type family \textsf{code} in Section 2.13}
+\section{Double recursion in \S2.13}
 
-One can prove, at the beginning of \S2.13, that there is a type family $\code$ satisfying 
-$$
-\code:\N\to\N\to\U,
-$$
-$$
-\code(0,0):\equiv\mbf1,
-$$
-$$
-\code(\su(m),0):\equiv\mbf0,
-$$
-$$
-\code(0,\su(n)):\equiv\mbf0,
-$$
-$$
-\code(\su(m),\su(n)):\equiv \code(m,n)
-$$
-for all $m,n:\N$ as follows:
+The statement below is used several times in \S2.13.
 
-Define $\code(0):\N\to\U$ by 
+For any type $C$, any maps 
 $$
-\code(0):\equiv\rec_\N(\U,\mbf1,n\mapsto X\mapsto\mbf0).
+g,h:\N\to C,\quad i:\N\to\N\to C\to C,
+$$ 
+there is a map $f:\N\to\N\to C$ satisfying 
 $$
-For $Y:\N\to\U$, define $Y':\N\to\U$ by 
+f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv i(m,n,f(m,n))
+$$ 
+for all $m,n:\N$.
+
+Indeed, it suffices to put 
 $$
-Y':\equiv\rec_\N(\U,\mbf0,n\mapsto X\mapsto Y(n)).
+f:\equiv\rec_\N(\N\to C,g,d_s),
+$$ 
+where 
 $$
-Then $\code:\N\to\N\to\U$ can be defined by 
+d_s:\N\to(\N\to C)\to(\N\to C)
+$$ 
+is defined by 
 $$
-\code:\equiv\rec_\N(\N\to\U,\code(0),m\mapsto Y\mapsto Y').
+d_s(m,x):\equiv\rec_\N(C,h(m),c_s),
+$$ 
+where 
+$$
+c_s:\N\to C\to C
+$$ 
+is defined by 
+$$
+c_s(n,y):\equiv i(m,n,x(n)).
 $$
 
 %%
