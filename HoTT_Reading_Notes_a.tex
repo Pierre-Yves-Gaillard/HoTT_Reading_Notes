@@ -361,9 +361,13 @@ for $r:w=w'$.
 
 \section{Theorem 2.7.4}
 
-We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\msf t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Note that the three type families $P,Q$ and $Q'$ are involved in the formula:
+We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\msf t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
 $$
 \msf t^{Q'}(p,(u,z))=\Bigg(\msf t^P(p,u),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big),z\bigg)\Bigg).
+$$ 
+The key step to check that the above equality is well-typed is the judgment  
+$$
+\pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\msf t^P(p,u)\big).
 $$
 
 %%
