@@ -372,6 +372,37 @@ $$
 
 %%
 
+\section{Lemma 2.9.7}
+
+Recall the statement of the Lemma: Given type families $A:X\to\U$ and $B:\prod_{x:X}A(x)\to\U$ and $p=x=y$, and also $f:\prod_{a:A(x)}B(x,a)$ and $g:\prod_{a:A(y)}B(y,a)$, we have an equivalence 
+$$
+\big(p_*(f)=g\big)\simeq\prod_{a:A(x)}\tr^{\widehat B}\Big(\pa(p,\refl_{p_*(a)}),f(a)\Big)=g(p_*(a)).
+$$ 
+
+It is written, after the Lemma: ``We leave it to the reader to prove this and to formulate a suitable computation rule''. I think this means the following:
+
+If $q:p_*(f)=g$ corresponds unde this equivalence to $\widehat q$, then for $a:A(x)$, the path 
+$$
+\msf{happly}(q,p_*(x)):(p_*(f))(p_*(a))=g(p_*(a))
+$$ 
+is equal to the composite 
+$$
+\big(p_*(f)\big)\big(p_*(a)\big)=
+\tr^{\widehat B}\bigg(\pa\left(p^{-1},\refl_{p^{-1}_*(p_*(a))}\right)^{-1},f\Big(p^{-1}_*\big(p_*(a)\big)\Big)\bigg)
+$$
+$$
+=\tr^{\widehat B}\Big(\pa\left(p,\refl_{p_*(a)}\right),f(a)\Big)=g\big(p_*(a)\big),
+$$ 
+where the first path is given by the display preceding (2.9.5), and the last path is given by $\widehat q$. Note the judgments
+$$
+\pa\left(p^{-1},\refl_{p^{-1}_*(p_*(a))}\right):\big(y,p_*(a)\big)=_{\sum_{x:X}A(x)}\Big(x,p^{-1}_*\big(p_*(a)\big)\Big),
+$$ 
+$$
+\pa\left(p,\refl_{p_*(a)}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_*(a)\big).
+$$
+
+%%
+
 \section{Display preceding (2.9.5)}
 
 Note that $p^{-1}_*(a)$ and $\tr^A(p^{-1},a)$ designate the same object, and that we have 
