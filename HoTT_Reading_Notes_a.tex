@@ -474,7 +474,9 @@ $$
 
 %%
 
-\section{\S2.14.1}
+\section{Section 2.14.1}
+
+\subsection{Use of Theorem 2.7.4}
 
 We apply Theorem 2.7.4 by setting $A\de\U,P(A)\de(A\to A\to A)$ for $A:\U$, 
 $$
@@ -489,6 +491,29 @@ $$
 \msf t^{Q'}(p,(m,a))=\Bigg(\msf t^P(p,m),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
 with $p\de\msf{ua}(e)$.
+
+\subsection{A general comment}
+
+The main purpose of \S2.14.1 is to obtain the formulas
+$$
+m'(b_1,b_2)=e(m(e^{-1}(b_1),e^{-1}(b_2)))
+$$ 
+and
+\begin{equation*}
+  \begin{aligned}
+    m'(m'(b_1,b_2),b_3)
+    &= e(m(e^{-1}(m'(b_1,b_2)),e^{-1}(b_3))) \\
+    &= e(m(e^{-1}(e(m(e^{-1}(b_1),e^{-1}(b_2)))),e^{-1}(b_3))) \\
+    &= e(m(m(e^{-1}(b_1),e^{-1}(b_2)),e^{-1}(b_3))) \\
+    &= e(m(e^{-1}(b_1),m(e^{-1}(b_2),e^{-1}(b_3)))) \\
+    &= e(m(e^{-1}(b_1),e^{-1}(e(m(e^{-1}(b_2),e^{-1}(b_3)))))) \\
+    &= e(m(e^{-1}(b_1),e^{-1}(m'(b_2,b_3)))) \\
+    &= m'(b_1,m'(b_2,b_3)).
+\end{aligned}
+\end{equation*}
+(We refer the reader to the book for the precise notation. The above chain of equalities is preceded by the sentence ``Moreover, though we do not show the proof, one can calculate that the induced proof that $m'$ is associative \dots\ is equal to a function sending $b_1,b_2,b_3:B$ to a path given by the following steps''. The main ingredient is Theorem 2.7.4.)
+
+It seems to me one could argue as follows: state the above two formulas, check that they are well-typed, check that they hold when $A\ee B$ and $p$ is reflexivity, conclude by path induction that they hold in general.
 
 %%
 
