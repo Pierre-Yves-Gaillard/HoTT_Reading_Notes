@@ -24,6 +24,7 @@
 \newcommand{\cc}{\cdot}
 \newcommand{\code}{\mathsf{code}}
 \newcommand{\dd}{\displaystyle}
+\newcommand{\de}{:\equiv}
 \newcommand{\ee}{\equiv}
 \newcommand{\fu}{\mathsf{funext}}
 \newcommand{\id}{\mathsf{id}}
@@ -359,7 +360,7 @@ for $r:w=w'$.
 
 %%
 
-\section{Theorem 2.7.4}
+\section{Theorem 2.7.4}\label{274}
 
 We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\msf t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
 $$
@@ -470,6 +471,24 @@ One can also define $f$ by the single formula
 $$
 f\equiv\rec_\N\Bigg(\N\to C,g,m\mapsto x\mapsto\rec_\N\bigg(C,h(m),n\mapsto y\mapsto i\big(m,n,x(n)\big)\bigg)\Bigg).
 $$
+
+%%
+
+\section{\S2.14.1}
+
+We apply Theorem 2.7.4 by setting $A\de\U,P(A)\de(A\to A\to A)$ for $A:\U$, 
+$$
+Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m)\de(m(x,m(y,z))=m(m(x,y),z)).
+$$ 
+As \S\ref{274} we put 
+$$
+Q'(A)\de(m(x,m(y,z))=m(m(x,y),z))
+$$ 
+for $A:\U$. In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads 
+$$
+\msf t^{Q'}(p,(m,a))=\Bigg(\msf t^P(p,m),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,m)}\Big),a\bigg)\Bigg)
+$$ 
+with $p\de\msf{ua}(e)$.
 
 %%
 
