@@ -79,7 +79,9 @@ This is a work in progress. John Dougherty's text
 
 %%
 
-\section{Exercise 1.3} 
+\section{Solution to some exercises in Chapter 1}
+
+\subsection{Exercise 1.3} 
 
 \emph{Statement.} Derive the induction principle for products $\ind_{A\times B}$, using only the projections and the propositional uniqueness principle $\uniq_{A\times B}$. Verify that the definitional equalities are valid. Generalize $\uniq_{A\times B}$ to $\Sigma$-types, and do the same for $\Sigma$-types. \emph{(This requires concepts from Chapter~2.)}
 
@@ -128,7 +130,7 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 %%
 
-\section{Exercise 1.5}
+\subsection{Exercise 1.5}
 
 \emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
 
@@ -185,7 +187,7 @@ This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
 %%
 
-\section{Exercise 1.6}
+\subsection{Exercise 1.6}
 
 \emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
 
@@ -237,7 +239,7 @@ as required.
 
 %%
 
-\section{Exercise 1.8}
+\subsection{Exercise 1.8}
 
 \emph{Statement.} Define multiplication and exponentiation using $\rec_\N$. Verify that $(\N,+,0,\times,1)$ is a semiring using only $\ind_\N$. You will probably also need to use symmetry and transitivity of equality, Lemmas 2.1.1 and 2.1.2.
 
@@ -252,7 +254,7 @@ We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring.
 
 %%
 
-\section{Exercise 1.10}
+\subsection{Exercise 1.10}
 
 \emph{Statement.} Show that the Ackermann function $\ack :\N\to\N\to\N$ is definable using only $\rec_\N$ satisfying the following equations:
 \begin{align*}
@@ -304,7 +306,7 @@ $$
 
 %%
 
-\section{Exercise 1.13}
+\subsection{Exercise 1.13}
 
 \emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
 
@@ -326,7 +328,9 @@ $$
 
 %%
 
-\section{Proof of Theorem 2.7.2}
+\section{Chapter 2}
+
+\subsection{Proof of Theorem 2.7.2}
 
 The map 
 \begin{equation}\label{272}
@@ -339,7 +343,7 @@ $$
 
 %%
 
-\section{Comment after Corollary 2.7.3}
+\subsection{Comment after Corollary 2.7.3}
 
 We write 
 $$
@@ -360,20 +364,20 @@ for $r:w=w'$.
 
 %%
 
-\section{Theorem 2.7.4}\label{274}
+\subsection{Theorem 2.7.4}\label{274}
 
 We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\msf t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
 $$
 \msf t^{Q'}(p,(u,z))=\Bigg(\msf t^P(p,u),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big),z\bigg)\Bigg).
 $$ 
-The key step to check that the above equality is well-typed is the judgment  
+The key step to check that the above equality is well-typed is the judgment 
 $$
 \pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\msf t^P(p,u)\big).
 $$
 
 %%
 
-\section{Lemma 2.9.7}
+\subsection{Lemma 2.9.7}
 
 Recall the statement of the Lemma: Given type families $A:X\to\U$ and $B:\prod_{x:X}A(x)\to\U$ and $p=x=y$, and also $f:\prod_{a:A(x)}B(x,a)$ and $g:\prod_{a:A(y)}B(y,a)$, we have an equivalence 
 $$
@@ -404,7 +408,7 @@ $$
 
 %%
 
-\section{Display preceding (2.9.5)}
+\subsection{Display preceding (2.9.5)}
 
 Note that $p^{-1}_*(a)$ and $\tr^A(p^{-1},a)$ designate the same object, and that we have 
 $$
@@ -413,7 +417,7 @@ $$
 
 %%
 
-\section{Proof of Theorem 2.11.1}
+\subsection{Proof of Theorem 2.11.1}
 
 Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that 
 $$
@@ -433,7 +437,7 @@ Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_
 
 %%
 
-\section{Double recursion in \S2.13}
+\subsection{Double recursion in \S2.13}
 
 The statement below is used several times in Section 2.13.
 
@@ -474,9 +478,9 @@ $$
 
 %%
 
-\section{Section 2.14.1}
+\subsection{Section 2.14.1}
 
-\subsection{Use of Theorem 2.7.4}
+\subsubsection{Use of Theorem 2.7.4}
 
 We apply Theorem 2.7.4 by setting $A\de\U,P(A)\de(A\to A\to A)$ for $A:\U$, 
 $$
@@ -492,7 +496,7 @@ $$
 $$ 
 with $p\de\msf{ua}(e)$.
 
-\subsection{A general comment}
+\subsubsection{A general comment}
 
 The main purpose of \S2.14.1 is to obtain the formulas
 $$
@@ -517,7 +521,7 @@ It seems to me one could argue as follows: state the above two formulas, check t
 
 %%
 
-\section{Exercise 2.7}
+\subsection{Exercise 2.7}
 
 \emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
 
@@ -547,7 +551,7 @@ $$
 
 %%
 
-\section{Exercise 2.14}
+\subsection{Exercise 2.14}
 
 \emph{Statement.} Suppose we add to type theory the \emph{equality reflection rule} which says that if there is an element $p:x=y$, then in fact $x:\equiv y$. Prove that for any $p:x=x$ we have $p:\equiv\refl_x$. (This implies that every type is a \emph{set} in the sense to be introduced in \S3.1; see \S7.2.)
 
@@ -555,25 +559,23 @@ $$
 
 %%
 
-\section{Proof of Lemma 3.1.8}
+\section{Chapter 3}
+
+\subsection{Proof of Lemma 3.1.8}
 
 Recall the statement: If $A$ is a set (that is, $\msf{isSet}(A)$ is inhabited), then $A$ is a 1-type. Here is a slightly different wording of the proof:
 
-Suppose $f:\msf{isSet}(A)$; then for any $x,y:A$ and $p,q:x=y$ we have $f(x,y,p,q):p=q$. Let $q':x=y$ and $r:q=q'$. We prove  
+Suppose $f:\msf{isSet}(A)$; then for any $x,y:A$ and $p,q:x=y$ we have $f(x,y,p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
 $$
-f(x,y,p,q)\cdot r=f(x,y,p,q')
+r=f(x,y,p,q)^{-1}\cdot f(x,y,p,q')
 $$ 
-by path induction on $r$. This implies 
-$$
-r=f(x,y,p,q)^{-1}\cdot f(x,y,p,q').
-$$ 
-In particular, $r$ depends only, up to definitional equality, on $x,y,p,q$ and $q'$.
+by path induction on $r$. %This implies $$r=f(x,y,p,q)^{-1}\cdot f(x,y,p,q').$$ In particular, $r$ depends only, up to definitional equality, on $x,y,p,q$ and $q'$.
 
 % old Let $x,y:A$ and $p:x=y$. By assumption there is a dependent function $$g:\prod_{q:x=y}p=q.$$ Let $q,r:x=y$ and $t:q=r$. Lemmas 2.3.4 and 2.12.2 yield successively $$\msf{apd}_g(t):\msf{transport}^{s\mapsto(q=s)}(t,g(q))=g(r)$$ and $g(q)\cdot t=g(r)$. As a result, there is a dependent function $h$ satisfying $$t=h(x,y,p,q,r)$$ whenever $p,q,r:x=y$ and $t:q=r$. For $p,q:x=y$ and $t,u:p=q$ we get $$t=h(x,y,p,p,q)=u.$$
 
 %%
 
-\section{Theorem 3.2.2}
+\subsection{Theorem 3.2.2}
 
 The proof of Theorem 3.2.2 shows the following:
 
@@ -581,11 +583,11 @@ If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition
 
 %%
 
-%\section{Section 3.7} A question about Propositional Truncation: Is the type $$\left(\prod_{A\in\mathcal U}\ \lVert A\rVert\to A\right)\to\mathbf0$$ inhabited?
+%\subsection{Section 3.7} A question about Propositional Truncation: Is the type $$\left(\prod_{A\in\mathcal U}\ \lVert A\rVert\to A\right)\to\mathbf0$$ inhabited?
 
 %%
 
-\section{Exercise 3.6}
+\subsection{Exercise 3.6}
 
 Let $A$ be a mere proposition. We must show that $A+\neg A$ is a mere proposition. Let $x,y:A+\neg A$. It suffices to prove $x=y$ in the following cases:
 
@@ -599,7 +601,7 @@ Let $A$ be a mere proposition. We must show that $A+\neg A$ is a mere propositio
 
 %%
 
-\section{Exercise 3.7}
+\subsection{Exercise 3.7}
 
 We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$. We claim that $A+B$ is also a mere proposition. It suffices to prove $x=y$ in the following cases:
 
@@ -613,7 +615,7 @@ We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$. We
 
 %%
 
-\section{Exercise 3.9}
+\subsection{Exercise 3.9}
 
 We admit the Law of Excluded Middle $\msf{LEM}$ defined in (3.4.1) by 
 $$
@@ -672,7 +674,9 @@ Since we have $P(P(A))$ by Lemma 3.3.5 and $P(Q(A))$ by (f), Statement~(g) follo
 
 %%
 
-\section{Proof of Lemma 4.1.2}
+\section{Chapter 4}
+
+\subsection{Proof of Lemma 4.1.2}
 
 The claim
 
@@ -704,7 +708,7 @@ To complete the proof of Lemma 4.1.2, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:
 
 %%
 
-\section{Proof of Theorem 4.7.6}
+\subsection{Proof of Theorem 4.7.6}
 
 Let us check Equivalence $(*)$ in the proof of Theorem 4.7.6: For $a:A$ and $p:a=x$ put 
 $$
@@ -720,7 +724,7 @@ Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_
 
 %%
 
-\section{Proof of Theorem 4.8.3}
+\subsection{Proof of Theorem 4.8.3}
 
 Here are some details about the last sentence of the proof of Theorem 4.8.3:
 
@@ -758,7 +762,7 @@ where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for 
 
 %%
 
-\section{Proof of Theorem 4.8.4}
+\subsection{Proof of Theorem 4.8.4}
 
 The proof of Theorem 4.8.4 uses the following lemma: For $A:\U$ we have 
 $$
@@ -792,7 +796,7 @@ But this follows from Lemma 2.11.2.
 
 %%
 
-\section{Exercise 4.6 (iii)}
+\subsection{Exercise 4.6 (iii)}
 
 \emph{Statement.} For $A,B:\mathcal U$, define
 $$
@@ -830,7 +834,9 @@ For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ becaus
 
 %%
 
-\section{Display (6.2.2)}
+\section{Chapter 6}
+
+\subsection{Display (6.2.2)}
 
 In the setting of Lemma 2.3.4, we have 
 $$
@@ -839,7 +845,7 @@ $$
 
 %%
 
-\section{Proof of Corollary 6.4.3}
+\subsection{Proof of Corollary 6.4.3}
 
 Recall the following facts: 
 
@@ -867,7 +873,7 @@ By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p$, a
 
 %%
 
-\section{Proof of Lemma 6.5.1}
+\subsection{Proof of Lemma 6.5.1}
 
 The first display follows from Theorem 2.11.3.
 
