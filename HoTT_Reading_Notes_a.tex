@@ -79,7 +79,7 @@ This is a work in progress. John Dougherty's text
 
 %%
 
-\section{Solution to some exercises in Chapter 1}
+\section{Chapter 1}
 
 \subsection{Exercise 1.3} 
 
@@ -589,21 +589,15 @@ If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition
 
 \subsection{Exercise 3.6}
 
-Let $A$ be a mere proposition. We must show that $A+\neg A$ is a mere proposition. Let $x,y:A+\neg A$. It suffices to prove $x=y$ in the following cases:
+\emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
 
-(a) $x=\msf{inl}(a),\ y=\msf{inl}(b)$,
-
-(b) $x=\msf{inr}(u),\ y=\msf{inr}(v)$,
-
-(c) $x=\msf{inl}(a),\ y=\msf{inr}(u)$.
-
-\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:\mbf0\to(\msf{inl}(a)=\msf{inr}(u))$ and note that $f(u(a)):\msf{inl}(a)=\msf{inr}(u)$.
+\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\msf{inl}(a_1)=\msf{inl}(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\msf{inr}(a_1')=\msf{inr}(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\msf{inl}(a)=\msf{inr}(a')$. Let $f:\mbf0\to(\msf{inl}(a)=\msf{inr}(a'))$, and note that $f(a'(a)):\msf{inl}(a)=\msf{inr}(a')$.
 
 %%
 
 \subsection{Exercise 3.7}
 
-We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$. We claim that $A+B$ is also a mere proposition. It suffices to prove $x=y$ in the following cases:
+We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is inhabited. We claim that $A+B$ is a mere proposition. It suffices to prove $x=y$ in the following cases:
 
 (a) $x=\msf{inl}(a),\ y=\msf{inl}(a')$,
 
@@ -671,6 +665,20 @@ $$
 following respectively from (g), (h) and (i). This implies \eqref{e39}.
 
 Since we have $P(P(A))$ by Lemma 3.3.5 and $P(Q(A))$ by (f), Statement~(g) follows from (d), (e) and Lemma 3.3.3. The other claims are left to the reader.
+
+%%
+
+\subsection{Exercise 3.18}
+
+\emph{Statement.} Show that the law of excluded middle (3.4.1) and the law of double negation (3.4.2) are logically equivalent.
+
+\nn\emph{Proof.} To prove that the law of excluded middle implies the law of double negation, we assume that the types 
+$$
+P(A),\quad A+\neg A,\quad \neg\neg A
+$$ 
+are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\ee\msf{inl}(a)$ for some $a:A$ we are done. If $x\ee\msf{inr}(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
+
+To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x')\de(x'\circ\msf{inr})(x'\circ\msf{inl})$.
 
 %%
 
