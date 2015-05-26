@@ -589,7 +589,9 @@ If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition
 
 \subsection{Proof of Lemma 3.11.4} 
 
-Recall the statement: For any type $A$, the type $\msf{isContr}(A)$ is a mere proposition.
+Recall the statement: 
+
+For any type $A$, the type $\msf{isContr}(A)$ is a mere proposition.
 
 Here is a minor variant of the proof:
 
@@ -597,6 +599,18 @@ Let $c,c:\msf{isContr}(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.
 $$
 \msf{isContr}(A)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}a=x\right)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}\mbf1\right)=\left(\sum_{a:\mbf1}\mbf1\right)=\mbf1.
 $$
+
+%%
+
+\subsection{Proof of Lemma 3.11.8} 
+
+Recall the statement: 
+
+For any $A$ and any $a:A$, the type $\sum_{x:A}a=x$ is contractible with center $(a,\refl_a)$. 
+
+Here is a minor variant of the proof:
+
+We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}a=x$ by based path induction.
 
 %%
 
