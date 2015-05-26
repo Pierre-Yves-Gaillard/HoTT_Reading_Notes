@@ -587,6 +587,19 @@ If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition
 
 %%
 
+\subsection{Proof of Lemma 3.11.4} 
+
+Recall the statement: For any type $A$, the type $\msf{isContr}(A)$ is a mere proposition.
+
+Here is a minor variant of the proof:
+
+Let $c,c:\msf{isContr}(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mbf1$, and thus 
+$$
+\msf{isContr}(A)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}a=x\right)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}\mbf1\right)=\left(\sum_{a:\mbf1}\mbf1\right)=\mbf1.
+$$
+
+%%
+
 \subsection{Exercise 3.6}
 
 \emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
