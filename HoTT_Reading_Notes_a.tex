@@ -561,17 +561,19 @@ $$
 
 \section{Chapter 3}
 
-\subsection{Proof of Lemma 3.1.8}
+\subsection{Proof of Lemma 3.1.8}\label{318}
 
-Recall the statement: If $A$ is a set (that is, $\msf{isSet}(A)$ is inhabited), then $A$ is a 1-type. Here is a slightly different wording of the proof:
+Recall the statement: 
 
-Suppose $f:\msf{isSet}(A)$; then for any $x,y:A$ and $p,q:x=y$ we have $f(x,y,p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
+If $A$ is a set (that is, $\msf{isSet}(A)$ is inhabited), then $A$ is a 1-type. 
+
+Here is a slightly different wording of the proof:
+
+Suppose $f:\msf{isSet}(A)$ and let $x,y:A$. For any $p,q:x=y$ we have $f(p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
 $$
-r=f(x,y,p,q)^{-1}\cdot f(x,y,p,q')
+r=f(p,q)^{-1}\cdot f(p,q')
 $$ 
-by path induction on $r$. %This implies $$r=f(x,y,p,q)^{-1}\cdot f(x,y,p,q').$$ In particular, $r$ depends only, up to definitional equality, on $x,y,p,q$ and $q'$.
-
-% old Let $x,y:A$ and $p:x=y$. By assumption there is a dependent function $$g:\prod_{q:x=y}p=q.$$ Let $q,r:x=y$ and $t:q=r$. Lemmas 2.3.4 and 2.12.2 yield successively $$\msf{apd}_g(t):\msf{transport}^{s\mapsto(q=s)}(t,g(q))=g(r)$$ and $g(q)\cdot t=g(r)$. As a result, there is a dependent function $h$ satisfying $$t=h(x,y,p,q,r)$$ whenever $p,q,r:x=y$ and $t:q=r$. For $p,q:x=y$ and $t,u:p=q$ we get $$t=h(x,y,p,p,q)=u.$$
+by path induction on $r$.
 
 %%
 
@@ -583,7 +585,9 @@ If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition
 
 %%
 
-%\subsection{Section 3.7} A question about Propositional Truncation: Is the type $$\left(\prod_{A\in\mathcal U}\ \lVert A\rVert\to A\right)\to\mathbf0$$ inhabited?
+\subsection{Proof of Lemma 3.3.4}
+
+Recall the statement: Every mere proposition is a set. In the proof of Lemma 3.1.8 in \S\ref{318} we derived the conclusion that $x=y$ is a set using only the assumption that $x=y$ is a mere proposition.
 
 %%
 
