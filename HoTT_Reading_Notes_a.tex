@@ -618,6 +618,24 @@ We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}a=x$ by based path inducti
 
 %%
 
+\subsection{Exercise 3.5}
+
+\emph{Statement.} Show that $\msf{isProp}(A)\simeq(A\to\msf{isContr}(A))$. 
+
+\nn\emph{Solution.} Recall the definitions: 
+$$
+\msf{isProp}(A)\de\prod_{a,b:A}a=b,\quad\msf{isContr}(A)\de\sum_{a:A}\prod_{b:A}a=b.
+$$
+
+By Lemma 3.3.5 the type $\msf{isProp}(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\msf{isContr}(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\msf{isProp}(A)$ and $A\to\msf{isContr}(A)$ are logically equivalent. 
+
+We define $u:\msf{isProp}(A)\to(A\to\msf{isContr}(A))$ by $u(f)(a)\de(a,f(a,-))$. 
+
+We define $v:(A\to\msf{isContr}(A))\to\msf{isProp}(A)$ as follows. Let $g:A\to\msf{isContr}(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
+
+
+%%
+
 \subsection{Exercise 3.6}
 
 \emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
