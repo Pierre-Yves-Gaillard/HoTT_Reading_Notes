@@ -755,13 +755,19 @@ $$
 $$ 
 
 To complete the proof of Lemma 4.1.2, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
-%https://github.com/HoTT/book/blob/master/equivalences.tex#L107
 
 %%
 
-%\nn$\bullet$ Proof of Theorem 4.1.3.
+\subsection{Corollary 4.4.6}
 
-%The fact that $\two\simeq\two$ is a set follows from univalence and Examples 3.1.2 and 3.1.5.
+Here is a slightly more general statement:
+
+For any type family $P$ over a type $A$ there is a map
+$$
+f:\left(A\to\prod_{a:A}P(a)\right)\to\prod_{a:A}P(a).
+$$ 
+
+Indeed it suffices to set $f(g,a)\de g(a)$.
 
 %%
 
