@@ -10,6 +10,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
 \usepackage[a4paper]{geometry}
+%\usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \addtolength{\parskip}{.5\baselineskip}
@@ -977,7 +978,7 @@ This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb 
 
 %%
 
-\subsection{Proof of Corollary 6.4.3}
+\subsection{Proof of Corollary 6.4.3, version 1}
 
 Recall the following facts: 
 
@@ -1002,6 +1003,24 @@ $$
 ((f,u)=(g,v))\simeq(f=g).
 $$ 
 By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p$, and Lemma 3.11.9 (i) implies that $p_1$ is indeed an equivalence.
+
+%%
+
+\subsection{Proof of Corollary 6.4.3, version 2}
+
+This is a second version of the previous subsection. I'm planning keep only one these two subsections in the next versions of this text.
+
+%Recall the statement of Theorem 4.4.5: For any $f:A\to B$ we have $\msf{isContr}(f)\simeq\msf{ishae}(f)$.
+
+The proof of Corollary 6.4.3 uses the following claim:
+
+\nn If $A$ and $B$ are types, if $\pr_1:(A\simeq B)\to(A\to B)$ is the first projection, and if $u,v:A\simeq B$, then $\msf{ap}_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))$ is an equivalence.
+
+\nn Proof of the claim. By Theorem 4.4.5 it suffices to prove that the fibers of $\msf{ap}_{\pr_1}$ are contractible. By Theorem 2.7.2 there is a quasi-invertible map 
+$$
+f:(u=v)\to\sum_{p_1:\pr_1(u)=\pr_1(v)}p_{1*}(\pr_2(u))=\pr_2(v)
+$$ 
+such that $\pr_1\circ f=\msf{ap}_{\pr_1}$. Let $q:\pr_1(u)=\pr_1(v)$. We have $\msf{fib}_{\msf{ap}_{\pr_1}}(q)\simeq\msf{fib}_{\pr_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_*(\pr_2(u))=_{\msf{ishae}(f)}\pr_2(v)$. As $\msf{ishae}(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_*(\pr_2(u))=_{\msf{ishae}(f)}\pr_2(v)$ is contractible.
 
 %%
 
