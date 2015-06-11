@@ -861,25 +861,25 @@ Now let us move to last sentence of the proof of Theorem 4.8.3. Put
 $$
 F:\equiv\sum_{b:B}\oo{fib}_f(b),
 $$ 
-and let $p_1:F\to B$ be the first projection. We must show 
+and let $\pr_1:F\to B$ be the first projection. We must show 
 \begin{equation}\label{2}
-(F,p_1)=_{\sum_{X:\U}X\to B}(A,f).
+(F,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
 We have $e:F\simeq A$. Put $q:\equiv\ua(e)$. We have $q:F=A$. We claim 
 \begin{equation}\label{3}
-q_*(p_1)=f.
+q_*(\pr_1)=f.
 \end{equation} 
 By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ C(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
 $$
-t^{I\to C}(q,p_1)=f.
+t^{I\to C}(q,\pr_1)=f.
 $$ 
 Let $a:A$. We must show 
 $$
-t^{I\to C}(q,p_1,a)=f(a).
+t^{I\to C}(q,\pr_1,a)=f(a).
 $$ 
 We get 
 $$
-t^{I\to C}(q,p_1,a)\overset{\text{(a)}}=t^C(q,p_1(t^I(q^{-1},a)))\overset{\text{(b)}}=p_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
+t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=t^C(q,\pr_1(t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
 $$ 
 where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$.
 
@@ -990,19 +990,19 @@ A type is contractible if and only if it is an inhabited mere proposition (Lemma
 
 The proof of Corollary 6.4.3 uses the following fact:
 
-Let $A$ and $B$ be types, let $f,g:A\to B$, let $u:\mathsf{isequiv}(f),\ u:\mathsf{isequiv}(g)$, so that $(f,u),(g,v):A\simeq B$. Put $C:\equiv\mathsf{isequiv}(g), D(p):\equiv(p_*(u)=_Cv)$. By Theorem 2.7.2 we have 
+Let $A$ and $B$ be types, let $f,g:A\to B$, let $u:\mathsf{isequiv}(f),\ u:\mathsf{isequiv}(g)$, so that $(f,u),(g,v):A\simeq B$. Put $C:\equiv\mathsf{isequiv}(g), D(p):\equiv(p_*(u)=_Cv)$ for all $p:f=g$. By Theorem 2.7.2 we have 
 $$
 ((f,u)=(g,v))\simeq\sum_{p:f=g}D(p).
 $$ 
 We claim that the first projection 
 $$
-p_1:\sum_{p:f=g}D(p)\to(f=g)
+\pr_1:\sum_{p:f=g}D(p)\to(f=g)
 $$ 
 is an equivalence. This will imply 
 $$
 ((f,u)=(g,v))\simeq(f=g).
 $$ 
-By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p$, and Lemma 3.11.9 (i) implies that $p_1$ is indeed an equivalence.
+By Theorem 4.2.13 and the above reminders, $D(p)$ is contractible for all $p:f=g$, and Lemma 3.11.9 (i) implies that $\pr_1$ is indeed an equivalence.
 
 %%
 
@@ -1016,7 +1016,7 @@ The proof of Corollary 6.4.3 uses the following claim:
 
 \nn If $A$ and $B$ are types, if $\pr_1:(A\simeq B)\to(A\to B)$ is the first projection, and if $u,v:A\simeq B$, then $\msf{ap}_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))$ is an equivalence.
 
-\nn Proof of the claim. By Theorem 4.4.5 it suffices to prove that the fibers of $\msf{ap}_{\pr_1}$ are contractible. By Theorem 2.7.2 there is a quasi-invertible map 
+\nn Proof of the claim. By Theorem 4.4.5 it suffices to show that the fibers of $\msf{ap}_{\pr_1}$ are contractible. By Theorem 2.7.2 there is a quasi-invertible map 
 $$
 f:(u=v)\to\sum_{p_1:\pr_1(u)=\pr_1(v)}p_{1*}(\pr_2(u))=\pr_2(v)
 $$ 
