@@ -374,7 +374,25 @@ $$
 The key step to check that the above equality is well-typed is the judgment 
 $$
 \pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\msf t^P(p,u)\big).
+$$ 
+
+%%
+
+\subsection{Definition of the map \textsf{happly} in (2.9.2)}
+
+The map 
 $$
+\msf{happly}:(f=g)\to\prod_{a:A}f(a)=g(a)
+$$ 
+for $f,g:A\to B$ is defined in the obvious way by path induction. If 
+$$
+e:A\to(A\to B)\to B
+$$ 
+is the evaluation, \emph{i.e.} $e(a,f)\de f(a)$, then we have, again by path induction, 
+$$
+\msf{happly}(p)(a)=\msf{ap}_{e(a)}(p)
+$$ 
+for $p:f=g$ and $a:A$. 
 
 %%
 
