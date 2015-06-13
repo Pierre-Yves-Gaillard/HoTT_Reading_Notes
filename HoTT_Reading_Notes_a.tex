@@ -732,64 +732,6 @@ To prove that the law of double negation implies the law of excluded middle, we 
 
 %%
 
-\subsection{Additional exercise to Chapter 3}
-
-The statement of this additional exercise to Chapter~3 is:
-
-Is the type $\prod_{A:\mathcal U}A\to A$ contractible?
-
-Following an argument given by Jason Gross in 
-
-\nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI},
-
-\nn we prove that, under the Law of Excluded Middle, the type $\prod_{A:\mathcal U}A\to A$ is not contractible.
-
-\nn\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ satisfying the following conditions: $P$ is a type family $P:\U\to\U$, and we have
-$$
-b:\prod_{A:\U}\msf{isProp}(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
-$$ 
-and $d(\mbf2,c)\neq\id_{\mbf2}$. Then $\prod_{A:\mathcal U}A\to A$ is not contractible.
-
-We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
-
-\nn\emph{Proof of the claim.} By the Law of Excluded Middle there is a dependent function 
-$$
-\msf{lem}:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A).
-$$ 
-Define 
-$$
-e:\prod_{A:\U}(A+\neg A)\to A\to A
-$$ 
-by $e(A,\msf{inl}(x))\de d(A,x)$, $e(A,\msf{inr}(x))\de\id_A$; and define 
-$$
-f:\prod_{A:\U}A\to A
-$$ 
-by $f(A)\de e(\msf{lem}(P(A),b(A)))$. The equality $\msf{lem}(P(\mbf2),b(\mbf2))=\msf{inl}(c)$, which is easily checked, implies  
-$$
-f(\mbf2)\de e(\msf{lem}(P(\mbf2),b(\mbf2))=e(\msf{inl}(c))=d(\mbf2,c)\neq\id_{\mbf2}. 
-$$ 
-This shows that $\prod_{A:\mathcal U}A\to A$ is not contractible. qed
-
-\nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\msf{isContr}$ we have a dependent function 
-$$
-\msf{center}:\prod_{A:\U}\msf{isContr}(A)\to A.
-$$ 
-Define $Q:\U\to\U$ by 
-$$
-Q(A)\de\{f:A\to A\ |\ \msf{isequiv}(f)\text{ and }\exists\ (a:A)\ .\ f(a)\neq a\}.
-$$ 
-In particular we have the map 
-$
-\msf{pr}_1:Q(A)\to A\to A.
-$ 
-We define $P(A)$ by 
-$$
-P(A)\de\msf{isContr}(Q(A)).
-$$ 
-The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by $d(A,x)\de\msf{pr}_1(\msf{center}(x))$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. qed
-
-%%
-
 \section{Chapter 4}
 
 \subsection{Proof of Lemma 4.1.2}
@@ -997,6 +939,66 @@ such that $\pr_1\circ f=\msf{ap}_{\pr_1}$. Let $q:\pr_1(u)=\pr_1(v)$. We have $\
 \subsection{Proof of Lemma 6.5.1}
 
 The first display follows from Theorem 2.11.3.
+
+%%
+
+\subsection{Exercise 6.9}
+
+Recall the statement:
+
+Assuming $\msf{LEM}$, construct a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2):\mbf2\to\mbf2$ is the nonidentity automorphism.
+
+%The statement of this additional exercise to Chapter~3 is:Is the type $\prod_{A:\mathcal U}A\to A$ contractible?
+
+We shall follow an argument given by Jason Gross in 
+
+\nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
+
+%\nn we prove that, under the Law of Excluded Middle, the type $\prod_{A:\mathcal U}A\to A$ is not contractible.
+
+\nn\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ satisfying the following conditions: $P$ is a type family $P:\U\to\U$, and we have
+$$
+b:\prod_{A:\U}\msf{isProp}(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
+$$ 
+such that $d(\mbf2,c)$ is propositionaly equal to the nonidentity automorphism. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
+
+We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
+
+\nn\emph{Proof of the claim.} By the Law of Excluded Middle there is a dependent function 
+$$
+\msf{lem}:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A).
+$$ 
+Define 
+$$
+e:\prod_{A:\U}(A+\neg A)\to A\to A
+$$ 
+by $e(A,\msf{inl}(x))\de d(A,x)$, $e(A,\msf{inr}(x))\de\id_A$; and define 
+$$
+f:\prod_{A:\U}A\to A
+$$ 
+by $f(A)\de e(\msf{lem}(P(A),b(A)))$. The equality $\msf{lem}(P(\mbf2),b(\mbf2))=\msf{inl}(c)$, which is easily checked, implies  
+$$
+f(\mbf2)\de e(\msf{lem}(P(\mbf2),b(\mbf2))=e(\msf{inl}(c))=d(\mbf2,c).\text{ qed} 
+$$ 
+%This shows that $\prod_{A:\mathcal U}A\to A$ is not contractible. qed
+
+\nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\msf{isContr}$ we have a dependent function 
+$$
+\msf{center}:\prod_{A:\U}\msf{isContr}(A)\to A.
+$$ 
+Define $Q:\U\to\U$ by 
+$$
+Q(A)\de\{f:A\to A\ |\ \msf{isequiv}(f)\text{ and }\exists\ (a:A)\ .\ f(a)\neq a\}.
+$$ 
+In particular we have the map 
+$
+\msf{pr}_1:Q(A)\to A\to A.
+$ 
+We define $P(A)$ by 
+$$
+P(A)\de\msf{isContr}(Q(A)).
+$$ 
+The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by $d(A,x)\de\msf{pr}_1(\msf{center}(x))$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. qed
 
 %%
 
