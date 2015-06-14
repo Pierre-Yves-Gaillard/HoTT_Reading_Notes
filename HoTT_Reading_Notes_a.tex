@@ -384,15 +384,15 @@ The map
 $$
 \msf{happly}:(f=g)\to\prod_{a:A}f(a)=g(a)
 $$ 
-for $f,g:A\to B$ is defined in the obvious way by path induction. If 
+for $f,g:\prod_{x:A}B(x)$ is defined in the obvious way by path induction. If 
 $$
-e:A\to(A\to B)\to B
+e:\prod_{x:A}\left(\prod_{y:A}B(y)\right)\to B(x)
 $$ 
-is the evaluation, \emph{i.e.} $e(a,f)\de f(a)$, then we have, again by path induction, 
+is the evaluation, \emph{i.e.} $e(x)(f)\de f(x)$, then we have, again by path induction, 
 $$
-\msf{happly}(p)(a)=\msf{ap}_{e(a)}(p)
+\msf{happly}(p)(x)=\msf{ap}_{e(x)}(p)
 $$ 
-for $p:f=g$ and $a:A$. 
+for $p:f=g$ and $x:A$. 
 
 %%
 
