@@ -27,6 +27,7 @@
 \newcommand{\dd}{\displaystyle}
 \newcommand{\de}{:\equiv}
 \newcommand{\ee}{\equiv}
+\newcommand{\fib}{\mathsf{fib}}
 \newcommand{\fu}{\mathsf{funext}}
 \newcommand{\id}{\mathsf{id}}
 \newcommand{\ind}{\mathsf{ind}}
@@ -875,13 +876,82 @@ By Theorem 2.6.4 it suffices to prove
 $$
 t^{X\mapsto (X=A)}(p,p)=\refl_A.
 $$ 
-But this follows from Lemma 2.11.2.
+But this follows from Lemma 2.11.2. 
+
+%%
+
+\subsection{Exercise 4.4}
+
+\emph{Statement.} (The unstable octahedral axiom). Suppose $f:A\to B$ and $g:B\to C$ and $b:B$.
+
+\nn(i) Show that there is a natural map $\fib_{g\circ f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_g(b) )$ is equivalent to $\fib_f(b)$.
+
+\nn(ii) Show that $\fib_{g\circ f}(c)\simeq\sum_{(w:\fib_g(c))}\fib_f(\pr_1w)$.
+
+\nn\emph{Solution.} (i) We define 
+$$
+h:\left(\sum_{x:A}g(f(x))=g(b)\right)\to\sum_{y:B}g(y)=g(b)
+$$ 
+by $h(x,p)\de(f(x),p)$. We get 
+$$
+\fib_h(b,\refl_{g(b)})\de\sum_{w:\sum_{x:A}g(f(x))=g(b)}h(w)=(b,\refl_{g(b)})
+$$ 
+$$
+=\left(\sum_{x:A}\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})\right).
+$$ 
+For each $x:A$ we have
+$$
+\left(\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})\right)
+$$ 
+$$
+=\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\msf{transport}^{\lambda y.y=g(b)}(q,p)=\refl_{g(b)}\right)
+$$ 
+$$
+=\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\ap_g(q)^{-1}\cdot p=\refl_{g(b)}\right)
+$$ 
+$$
+=\left(\sum_{(q:f(x)=b)}\sum_{(p:g(f(x))=g(b))}p=\ap_g(q)\right)
+$$ 
+
+$$
+=(f(x)=b).
+$$ 
+
+\nn(ii) We have 
+$$
+\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)
+$$ 
+$$
+=\left(\sum_{(w:\sum_{y:B}g(y)=c)}\sum_{(x:A)}f(x)=\pr_1w\right)
+$$ 
+$$
+=\left(\sum_{(y:B)}\sum_{(q:g(y)=c)}\sum_{(x:A)}f(x)=y\right)
+$$ 
+$$
+=\left(\sum_{(x:A)}\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)
+$$ 
+For each $x:A$ we check that the maps 
+$$
+\p:\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)\to(g(f(x))=c)
+$$ 
+and 
+$$
+\psi:(g(f(x))=c)\to\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)
+$$ 
+defined by 
+$$
+\p(y,q,p)\de\ap_g(p)\cdot q,\quad\psi(r)\de(f(x),r,\refl_{f(x)})
+$$ 
+are mutual quasi-inverses. This gives 
+$$
+\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{(x:A)}(g(f(x))=c)\right)=\fib_{g\circ f}(c).
+$$
 
 %%
 
 \subsection{Exercise 4.5}\label{45}
 
-\emph{Statement.} Prove that equivalences satisfy the 2-out-of-6 property: given $f : A\to B$ and $g : B\to C$ and $h : C\to D$, if $g\circ f$ and $h\circ g$ are equivalences, so are $f,g,h$, and $h\circ g\circ f$. Use this to give a higher-level proof of Theorem 2.11.1.
+\emph{Statement.} Prove that equivalences satisfy the 2-out-of-6 property: given $f:A\to B$ and $g:B\to C$ and $h:C\to D$, if $g\circ f$ and $h\circ g$ are equivalences, so are $f,g,h$, and $h\circ g\circ f$. Use this to give a higher-level proof of Theorem 2.11.1.
 
 \nn\emph{Solution.} Setting $k\de f\circ (g\circ h)^{-1}$, we get 
 \begin{align*}
