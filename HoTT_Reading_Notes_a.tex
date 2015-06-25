@@ -1181,13 +1181,26 @@ The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the 
 
 \section{Chapter 11}
 
-\subsection{The definition of \textbf Q in Section 11.1}
+\subsection{The definition of Q in Section 11.1}
 
 The type $\mbb Q$ is defined in \S11.1 as $\mbb Q\de(\mbb Z\times\mbb N)/\approx$, where $\approx$ is defined by 
 $$
 (u,a)\approx(v,b)\de(u(b+1)=v(a+1)).
 $$ 
 One may add something like ``We leave it to the reader to check that $\approx$ is an equivalence relation''.
+
+%%
+
+\subsection{Section 11.2.1}
+%\subsection{Injectivity of the map from Q to Rd (Section 11.2.1)}
+
+It is asserted just before \S11.2.1 that the map $f:\mbb Q\to\mbb R_d$, $q\mapsto(L_q,U_q)$ is an embedding, but the claim is not proved. The claim results from the following more precise observations, which could be made just before Lemma 11.2.2: 
+
+For $x,y:\mbb R_d$ the inequality $x<y$ implies $x\neq y$. Moreover we have
+$$
+f(q)<f(r)\iff q<r,\quad f(q)\le f(r)\iff q\le r.
+$$ 
+In particular $f$ is injective.
 
 %%
 
