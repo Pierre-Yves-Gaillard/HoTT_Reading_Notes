@@ -17,30 +17,34 @@
 \addtolength{\parskip}{.5\baselineskip}
 %\renewcommand{\baselinestretch}{1.1}
 %\pagestyle{empty}
-\newcommand{\mbb}{\mathbb}
-\newcommand{\mbf}{\mathbf}
-\newcommand{\msf}{\mathsf}
+\newcommand{\mbb}{\mathbb}\newcommand{\bb}{\mathbb}
+\newcommand{\mbf}{\mathbf}\newcommand{\mb}{\mathbf}
+\newcommand{\mc}{\mathcal}
+\newcommand{\msf}{\mathsf}\newcommand{\ms}{\mathsf}
 \newcommand{\ack}{\mathsf{ack}}
 \newcommand{\ap}{\mathsf{ap}}
 \newcommand{\apd}{\mathsf{apd}}
-\newcommand{\cc}{\cdot}
+\newcommand{\cd}{\cdot}
 \newcommand{\code}{\mathsf{code}}
-\newcommand{\dd}{\displaystyle}
-\newcommand{\e}{\varepsilon}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ep}{\varepsilon}
 \newcommand{\de}{:\equiv}
-\newcommand{\ee}{\equiv}
+\newcommand{\eq}{\equiv}
 \newcommand{\fib}{\mathsf{fib}}
 \newcommand{\fu}{\mathsf{funext}}
 \newcommand{\id}{\mathsf{id}}
+\newcommand{\inc}{\subseteq}
 \newcommand{\ind}{\mathsf{ind}}
 \newcommand{\inl}{\mathsf{inl}}
 \newcommand{\inr}{\mathsf{inr}}
+%\newcommand{\is}{\mathcal{IS}}
 \newcommand{\la}{\lambda}
 \newcommand{\N}{\mathbb N}
 \newcommand{\nn}{\noindent}
 \newcommand{\oo}{\operatorname}
-\newcommand{\p}{\varphi}
+\newcommand{\ps}{\mathcal P}
 \newcommand{\pa}{\mathsf{pair}^=}
+\newcommand{\ph}{\varphi}
 \newcommand{\pr}{\mathsf{pr}}
 \newcommand{\rec}{\mathsf{rec}}
 \newcommand{\refl}{\mathsf{refl}}
@@ -51,6 +55,7 @@
 \newcommand{\U}{\mathcal U}
 \newcommand{\ua}{\mathsf{ua}}
 \newcommand{\uniq}{\mathsf{uniq}}
+\newcommand{\vide}{\varnothing}
 \title{HoTT Reading Notes}
 \author{Pierre-Yves Gaillard}
 \date{\today, \currenttime}
@@ -461,15 +466,15 @@ Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_
 
 \subsection{Double recursion in \S2.13}
 
-The statement below is used several times in Section 2.13.
+The statement below is used several times in \S2.13 of the book.
 
 For any type $C$, any maps 
 $$
-g,h:\N\to C,\quad i:\N\to\N\to C\to C,
+g,h:\N\to C,\quad k:\N\to\N\to C\to C,
 $$ 
 there is a map $f:\N\to\N\to C$ satisfying 
 $$
-f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv i(m,n,f(m,n))
+f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv k(m,n,f(m,n))
 $$ 
 for all $m,n:\N$.
 
@@ -491,11 +496,49 @@ c_s:\N\to C\to C
 $$ 
 is defined by 
 $$
-c_s(n,y):\equiv i(m,n,x(n)).
+c_s(n,y):\equiv k(m,n,x(n)).
 $$ 
 One can also define $f$ by the single formula
 $$
-f\equiv\rec_\N\Bigg(\N\to C,g,m\mapsto x\mapsto\rec_\N\bigg(C,h(m),n\mapsto y\mapsto i\big(m,n,x(n)\big)\bigg)\Bigg).
+f\equiv\rec_\N\Bigg(\N\to C,g,m\mapsto x\mapsto\rec_\N\bigg(C,h(m),n\mapsto y\mapsto k\big(m,n,x(n)\big)\bigg)\Bigg).
+$$
+
+%%
+
+\subsection{Double induction}
+
+For any type family $C:\N\to\N\to\U$, any dependent functions
+$$
+g:\prod_{n:N}C(0,n),\quad h:\prod_{m:N}C(\su(m),0),
+$$
+$$
+k:\prod_{m,n:N}C(m,n)\to C(\su(m),\su(n)),
+$$ 
+there is a dependent function $f:\prod_{m,n:\N}C(m,n)$ satisfying 
+$$
+f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv k(m,n,f(m,n))
+$$ 
+for all $m,n:\N$.
+
+Indeed, it suffices to put 
+$$
+f:\equiv\ind_\N\left(\prod_{m:\N}\prod_{n:\N}C(m,n),g,d_s\right),
+$$ 
+where 
+$$
+d_s:\prod_{m:\N}\left(\prod_{n:\N}C(m,n)\right)\to\prod_{n:\N}C(\su(m),n)
+$$ 
+is defined by 
+$$
+d_s(m,x):\equiv\ind_\N\Big(C\big(\su(m),-\big),h(m),c_s\Big),
+$$ 
+where 
+$$
+c_s:\prod_{n:\N}C(\su(m),n)\to C(\su(m),\su(n))
+$$ 
+is defined by 
+$$
+c_s(n,y):\equiv k(m,n,x(n)).
 $$
 
 %%
@@ -539,7 +582,7 @@ and
 \end{equation*}
 (We refer the reader to the book for the precise notation. The above chain of equalities is preceded by the sentence ``Moreover, though we do not show the proof, one can calculate that the induced proof that $m'$ is associative \dots\ is equal to a function sending $b_1,b_2,b_3:B$ to a path given by the following steps''. The main ingredient is Theorem 2.7.4.)
 
-It seems to me one could argue as follows: state the above two formulas, check that they are well-typed, check that they hold when $A\ee B$ and $p$ is reflexivity, conclude by path induction that they hold in general.
+It seems to me one could argue as follows: state the above two formulas, check that they are well-typed, check that they hold when $A\eq B$ and $p$ is reflexivity, conclude by path induction that they hold in general.
 
 %%
 
@@ -747,7 +790,7 @@ Since we have $P(P(A))$ by Lemma 3.3.5 and $P(Q(A))$ by (f), Statement~(g) follo
 $$
 P(A),\quad A+\neg A,\quad \neg\neg A
 $$ 
-are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\ee\msf{inl}(a)$ for some $a:A$ we are done. If $x\ee\msf{inr}(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
+are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\msf{inl}(a)$ for some $a:A$ we are done. If $x\eq\msf{inr}(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
 To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x')\de(x'\circ\msf{inr})(x'\circ\msf{inl})$.
 
@@ -776,7 +819,7 @@ $$
 \oo{transport}^P(t,h)(s)=t^{-1}\cdot h(s).
 $$ 
 
-To complete the proof of Lemma 4.1.2, we set $f(x):\ee\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
+To complete the proof of Lemma 4.1.2, we set $f(x):\eq\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
 
 %%
 
@@ -944,7 +987,7 @@ $$
 $$ 
 For each $x:A$ we check that the maps 
 $$
-\p:\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)\to(g(f(x))=c)
+\ph:\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)\to(g(f(x))=c)
 $$ 
 and 
 $$
@@ -952,7 +995,7 @@ $$
 $$ 
 defined by 
 $$
-\p(y,q,p)\de\ap_g(p)\cdot q,\quad\psi(r)\de(f(x),r,\refl_{f(x)})
+\ph(y,q,p)\de\ap_g(p)\cdot q,\quad\psi(r)\de(f(x),r,\refl_{f(x)})
 $$ 
 are mutual quasi-inverses. This gives 
 $$
@@ -1206,7 +1249,7 @@ $$
 
 %It seems to me that the absolute value of a Dedekind real occurs for the first time in Display (11.2.9), and has not been previously defined. Perhaps one can simply set 
 %$$
-%(\lvert x\rvert<\e)\de(-\e<x)\wedge(x<\e).
+%(\lvert x\rvert<\ep)\de(-\ep<x)\wedge(x<\ep).
 %$$
 
 %%
@@ -1217,7 +1260,7 @@ If $q,r:\mbb Q$ and $q<r$ and $x:\mbb R_d$, then we merely have $q<x$ or $x<r$ b
 
 \subsection{Proof of Theorem 11.2.12}
 
-The claim ``Since $q+2\e<r-2\e$ merely $L_{x_\e}(q+2\e)$ or $U_{x_\e}(q-2\e)$'' follows from \S\ref{1122}.
+The claim ``Since $q+2\ep<r-2\ep$ merely $L_{x_\ep}(q+2\ep)$ or $U_{x_\ep}(q-2\ep)$'' follows from \S\ref{1122}.
 
 %%
 
