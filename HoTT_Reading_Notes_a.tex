@@ -1176,7 +1176,21 @@ for $p:x=y$ by based path induction.
 
 \subsection{n-truncated types (Section 7.3)}
 
-The phrase ``$A$ is $n$-truncated'' means ``$A$ is an $n$-type''. The definition of $n$-truncated map is given in Definition 7.6.1: a map is $n$-truncated if all its fibers are $n$-types.
+The phrase ``$A$ is $n$-truncated'' means ``$A$ is an $n$-type'' (Definition 7.1.1). The definition of $n$-truncated map is given in Definition 7.6.1: a map is $n$-truncated if all its fibers are $n$-types.
+
+%%
+
+\subsection{Proof of Theorem 7.3.2}
+
+The existence of $u$ and $v$ in the proof of Theorem 7.3.2 results from the following statement:
+
+If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if $$\msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))$$ is contractible for all $a:A$.
+
+This follows from Theorem 7.2.9 and the equivalence 
+$$
+\msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))\simeq\Omega^{n+1}(A,a)
+$$ 
+at the end of \S6.5 of the HoTT Book.
 
 %%
 
