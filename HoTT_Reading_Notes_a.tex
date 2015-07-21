@@ -1200,26 +1200,35 @@ we get $(t,\refl_u),(c_u,\refl_u):M$. As $M$ is contractible, there is a path $v
 
 \subsection{Proof of Theorem 7.3.12}
 
-To define 
+For $x,y:A$ define 
 $$
-\msf{decode}:\prod_{u,v:\lVert A\rVert_{n+1}}P(u,v)\to(u=v)
+f(x,y):(x=y)\to(\lvert x\rvert_{n+1}=\lvert y\rvert_{n+1})
 $$ 
-it suffices, by induction, to define 
+by 
+$$
+f(x,y)(p)\de\msf{ap}_{\lvert-\rvert_{n+1}}(p).
+$$ 
+By recursion we get a section 
+$$
+g:\prod_{x,y:A}\lVert x=y\rVert_n\to(\lvert x\rvert_{n+1}=\lvert y\rvert_{n+1}),
+$$
+that is 
 $$
 g:\prod_{x,y:A}P(\lvert x\rvert_{n+1},\lvert y\rvert_{n+1})\to(\lvert x\rvert_{n+1}=\lvert y\rvert_{n+1}),
 $$ 
-that is 
+such that 
 $$
-g:\prod_{x,y:A}\lvert x=y\rvert_n\to(\lvert x\rvert_{n+1}=\lvert y\rvert_{n+1}),
+g(x,y)(\lvert p\rvert_n)\equiv f(x,y)(p)\equiv\msf{ap}_{\lvert-\rvert_{n+1}}(p)
 $$ 
-and to set $\msf{decode}(\lvert x\rvert_{n+1},\lvert y\rvert_{n+1})\de g(x,y)$. To define $g$ it suffices, by recursion, to define 
+for all $x,y:A$ and all $p:x=y$. By induction on $u,v:\lVert A\rVert_{n+1}$ we get a section 
 $$
-h:\prod_{x,y:A}(x=y)\to(\lvert x\rvert_{n+1}=\lvert y\rvert_{n+1})
+\msf{decode}:\prod_{u,v:\lVert A\rVert_{n+1}}P(u,v)\to(u=v)
 $$ 
-and to set $g(x,y)(\lvert p\rvert_n)\de h(x,y)(p)$. Finally, we define $h$ by 
+such that 
 $$
-h(x,y)(p)\de\msf{ap}_{\lvert-\rvert_{n+1}}(p).
-$$
+\msf{decode}(\lvert x\rvert_{n+1},\lvert y\rvert_{n+1})\equiv g(x,y)
+$$ 
+for all $x,y:A$. 
 
 %%
 
