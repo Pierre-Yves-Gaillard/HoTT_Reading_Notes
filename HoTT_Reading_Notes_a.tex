@@ -1182,15 +1182,19 @@ The phrase ``$A$ is $n$-truncated'' means ``$A$ is an $n$-type'' (Definition 7.1
 
 \subsection{Proof of Theorem 7.3.2}
 
-The existence of $u$ and $v$ in the proof of Theorem 7.3.2 results from the following statement:
+Claim: If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if $$\msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))$$ is contractible for all $a:A$.
 
-If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if $$\msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))$$ is contractible for all $a:A$.
-
-This follows from Theorem 7.2.9 and the equivalence 
+\nn Proof: Use Theorem 7.2.9 and the equivalence 
 $$
 \msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))\simeq\Omega^{n+1}(A,a)
 $$ 
-at the end of \S6.5 of the HoTT Book.
+at the end of \S6.5 of the HoTT Book. $\square$
+
+We prove the existence of $u$ and $v$ as follows. Defining $t:\mbb S^{n+1}\to P(h(r))$ as in the book and setting $h(r,r')\de u\de t(\msf{base})$, $c_u(x)\de u$ for all $x:\mbb S^{n+1}$ and 
+$$
+M\de\msf{Map}_*((\mbb S^{n+1},\msf{base}),(P(h(r)),u)),
+$$ 
+we get $(t,\refl_u),(c_u,\refl_u):M$. As $M$ is contractible, there is a path $v:t=c_u$.
 
 %%
 
