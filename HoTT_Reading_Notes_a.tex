@@ -1217,7 +1217,15 @@ The double induction principle says:
 
 To each couple $(P,f)$ with $$P:\lVert A\rVert_n\to\lVert A\rVert_n\to n\msf{-Type}$$ and $f:\prod_{x,y:A}P(\lvert x\rvert_n,\lvert y\rvert_n)$ is attach a section $f'':\prod_{u,v:\lVert A\rVert_n}P(u,v)$ satisfying $f''(\lvert x\rvert_n,\lvert y\rvert_n)\equiv f(x,y)$ for all $x,y:A$.
 
-We derive the double induction principle from the simple induction principle as follows. From $$f:\prod_{x:A}\left(\prod_{y:A}P(\lvert x\rvert_n,\lvert y\rvert_n)\right)$$ we get $f':\prod_{u:\lVert A\rVert_n}P(u,\lvert y\rvert_n)$ satisfying $f'(\lvert x\rvert_n)(y)\equiv f(x,y)$ for all $x,y:A$. From $f'(u):\prod_{y:A}P(u,\lvert y\rvert_n)$ we get $f'(u)':\prod_{v:\lVert A\rVert_n}P(u,v)$ satisfying $f'(u)'(\lvert y\rvert_n)\equiv f'(u,y)$ for all $u:\lVert A\rVert_n$, $y:A$. As we have 
+We derive the double induction principle from the simple induction principle as follows. From 
+$$
+f:\prod_{x:A}\left(\prod_{y:A}P(\lvert x\rvert_n,\lvert y\rvert_n)\right)
+$$ 
+we get 
+$$
+f':\prod_{u:\lVert A\rVert_n}\left(\prod_{y:A}P(u,\lvert y\rvert_n)\right)
+$$ 
+satisfying $f'(\lvert x\rvert_n)(y)\equiv f(x,y)$ for all $x,y:A$. From $f'(u):\prod_{y:A}P(u,\lvert y\rvert_n)$ we get $f'(u)':\prod_{v:\lVert A\rVert_n}P(u,v)$ satisfying $f'(u)'(\lvert y\rvert_n)\equiv f'(u,y)$ for all $u:\lVert A\rVert_n$, $y:A$. As we have 
 $$
 f'(\lvert x\rvert_n)'(\lvert y\rvert_n)\equiv f'(\lvert x\rvert_n)(y)\equiv f(x,y) 
 $$ 
