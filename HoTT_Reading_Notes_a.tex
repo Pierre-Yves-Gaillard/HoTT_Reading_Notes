@@ -1039,15 +1039,15 @@ by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ 
 
 \nn(ii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ can be used instead of univalence in the proof of Theorem 4.1.3.
 
-\nn(iii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of **0**). Thus, the use of a "good" version of $\mathsf{isequiv}$ is essential in the statement of univalence.
+\nn(iii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mbf0$). Thus, the use of a ``good'' version of $\mathsf{isequiv}$ is essential in the statement of univalence.
 
-\nn\emph{Solution.} In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\mathsf{qinv}(f)$ is a mere proposition. 
+\nn\emph{Solution.} We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\mathsf{qinv}(f)$ is a mere proposition. 
 
 For any types $A$ and $B$ we put 
 $$
 (A\simeq B):\equiv\sum_{f:A\to B}\mathsf{ishae}(f),\quad(A\backsimeq B):\equiv\sum_{f:A\to B}\mathsf{qinv}(f).
 $$ 
-(Recall that $\mathsf{ishae}(f)$ stands for "$f$ is a half-adjoint equivalence".) By Theorem 4.2.3 and the comment preceding it, there are dependent functions 
+(Recall that $\mathsf{ishae}(f)$ stands for ``$f$ is a half-adjoint equivalence''.) By Theorem 4.2.3 and the comment preceding it, there are dependent functions 
 $$
 i:\prod_{A,B:\mathcal U}\prod_{f:A\to B}\mathsf{ishae}(f)\to\mathsf{qinv}(f),\quad p:\prod_{A,B:\mathcal U}\prod_{f:A\to B}\mathsf{qinv}(f)\to\mathsf{ishae}(f).
 $$ 
