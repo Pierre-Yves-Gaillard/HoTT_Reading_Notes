@@ -845,13 +845,17 @@ In particular $\fib_f$ is a type family over $B$. The corresponding transport ca
 
 Here is a slightly more general statement:
 
-For any type family $P$ over a type $A$ there is a map
+To each pair of maps $f:A\to B,P:B\to\U$ is attach a map 
 $$
-f:\left(A\to\prod_{a:A}P(a)\right)\to\prod_{a:A}P(a).
+g:\left(\prod_{b:B}P(b)\right)\to\prod_{a:A}P(f(a))
 $$ 
-In words: If $A$ implies $\prod_{a:A}P(a)$, then $\prod_{a:A}P(a)$ is true.
+defined by 
+$$
+g(h)(a)\de h(f(a)).
+$$
+%For any type family $P$ over a type $A$ there is a map $$f:\left(A\to\prod_{a:A}P(a)\right)\to\prod_{a:A}P(a).$$ In words: If $A$ implies $\prod_{a:A}P(a)$, then $\prod_{a:A}P(a)$ is true.
 
-Indeed it suffices to set $f(g,a)\de g(a,a)$.
+%Indeed it suffices to set $f(g,a)\de g(a,a)$.
 
 %%
 
