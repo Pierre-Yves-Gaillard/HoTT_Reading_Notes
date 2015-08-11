@@ -1078,9 +1078,21 @@ B\equiv A,\quad f\equiv\mathsf{id}_A,\quad x\equiv e(A,A,\mathsf{refl}_A),
 $$ 
 and the claim follows easily from the definition of $i,p$ and $e$.
 
-For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required.
+For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required. 
 
-%%
+%% 
+
+\section{Chapter 5}
+
+\subsection{Proof of Theorem 5.8.2}
+
+Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2. 
+
+\nn$\bullet\ \msf{ppmap}(R,S)$ is inhabited: Setting $D(b,r)\de S(b),d\de s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)\equiv s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r)\de f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)\equiv s_0$, as required. 
+
+\nn$\bullet\ \msf{ppmap}(R,S)$ is a mere proposition: Let $(f,p),(g,q):\msf{ppmap}(R,S)$. We must prove $(f,p)=(g,q)$. Setting $D(b,r)\de(f(b,r)=g(b,r)),d\de p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)\equiv p\cdot q^{-1}$, and thus $t:f=g$, by function extensionality. It suffices to show $t_*(p)=q$, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+
+%%%
 
 \section{Chapter 6}
 
