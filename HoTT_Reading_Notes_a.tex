@@ -1150,6 +1150,38 @@ The first display follows from Theorem 2.11.3.
 
 %%
 
+\subsection{\S6.8}
+
+Here is the induction principle for the pushout $Z\de A\sqcup^CB$ attached to 
+$$
+f:C\to A,\quad g:C\to B:
+$$ 
+Let $D:Z\to\U$ be a type family, let 
+$$
+\alpha:\prod_{a:A}D(\msf{inl}(a)),\quad\beta:\prod_{b:B}D(\msf{inr}(b)),
+$$
+$$
+\gamma:\prod_{c:C}\ \alpha\big(\msf{inl}(f(c))\big)=^D_{\msf{glue}(c)}\beta\big(\msf{inr}(g(c))\big).
+$$ 
+Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \msf{inl}\equiv\alpha$, $h\circ \msf{inr}\equiv\beta$ and $\msf{apd}_h(\msf{glue}(c))=\gamma(c)$ for all $c:C$. 
+
+Here are more details about the end of the proof of Lemma 6.8.2:
+
+Let $u\de\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z)\de(u(z)=t(z)$, set 
+$$
+\alpha(a):u(\msf{inl}(a))=t(\msf{inl}(a)),\quad\beta(b):u(\msf{inr}(b))=t(\msf{inr}(b))
+$$ 
+for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type 
+$$
+\Big(\alpha(\msf{inl}(f(c)))=^D_{\msf{glue}(c)}\beta(\msf{inr}(g(c)))\Big)
+$$ 
+$$ 
+=\Big(u(\msf{glue}(c))^{-1}\cdot\alpha(\msf{inl}(f(c)))\cdot t(\msf{glue}(c))=\beta(\msf{inr}(g(c)))\Big).
+$$ 
+Then the induction principle yields $h:\prod_{z:Z}u(z)=t(z)$.
+
+%%
+
 \subsection{Exercise 6.9}
 
 Recall the statement:
