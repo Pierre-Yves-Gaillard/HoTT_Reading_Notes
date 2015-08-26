@@ -1112,7 +1112,16 @@ Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in
 
 %% 
 
-%\subsection{Proof of Theorem 5.8.4}
+\subsection{Proof of Theorem 5.8.4}
+
+By Theorem 2.15.7 the type 
+$$
+\sum_{(g:\prod_{(a,b:A)}R(a,b)\to S(a,b))}\quad\prod_{(a:A)}\quad g(a,a,r_0(a))=s_0(a)
+$$ 
+is equivalent to the type
+$$
+\prod_{(a:A)}\quad\sum_{(g(a):\prod_{(b:a)}R(a,b)\to S(a,b))}\quad g(a,a,r_0(a))=s_0(a).
+$$
 
 %\nn(ii)$\implies$(iii) follows from (i)$\implies$(ii) in Theorem 5.8.2 (see \S\ref{582}).
 
