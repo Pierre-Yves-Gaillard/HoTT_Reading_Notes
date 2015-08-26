@@ -1108,7 +1108,7 @@ Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in
 
 \nn$\bullet\ \msf{ppmap}(R,S)$ is inhabited: Setting $D(b,r)\de S(b),d\de s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)\equiv s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r)\de f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)\equiv s_0$, as required. 
 
-\nn$\bullet\ \msf{ppmap}(R,S)$ is a mere proposition: Let $(f,p),(g,q):\msf{ppmap}(R,S)$. We must prove $(f,p)=(g,q)$. Setting $D(b,r)\de(f(b,r)=g(b,r)),d\de p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)\equiv p\cdot q^{-1}$, and thus $t:f=g$, by function extensionality. It suffices to show $t_*(p)=q$, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+\nn$\bullet\ \msf{ppmap}(R,S)$ is a mere proposition: Let $(f,p),(g,q):\msf{ppmap}(R,S)$. We must prove $(f,p)=(g,q)$. Setting $D(b,r)\de(f(b,r)=g(b,r)),d\de p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)\equiv p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_*(p)=q$; this follows from the equalities $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
 
 %% 
 
