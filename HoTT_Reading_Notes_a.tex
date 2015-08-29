@@ -1198,14 +1198,15 @@ Let $u\de\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z)\de(u(z)=t(z))$, de
 $$
 \alpha(a):u(\msf{inl}(a))=t(\msf{inl}(a)),\quad\beta(b):u(\msf{inr}(b))=t(\msf{inr}(b))
 $$ 
-for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type 
+for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type
 $$
-\Big(\alpha(\msf{inl}(f(c)))=^D_{\msf{glue}(c)}\beta(\msf{inr}(g(c)))\Big)
+\alpha(\msf{inl}(f(c)))=^D_{\msf{glue}(c)}\beta(\msf{inr}(g(c))),
 $$ 
+which is equivalent to the type 
 $$ 
-=\Big(u(\msf{glue}(c))^{-1}\cdot\alpha(\msf{inl}(f(c)))\cdot t(\msf{glue}(c))=\beta(\msf{inr}(g(c)))\Big).
+u(\msf{glue}(c))^{-1}\cdot\alpha(f(c))\cdot t(\msf{glue}(c))=\beta(g(c)).
 $$ 
-Then the induction principle yields $h:\prod_{z:Z}u(z)=t(z)$.
+Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
 
 %%
 
