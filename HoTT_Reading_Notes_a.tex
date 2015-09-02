@@ -1237,6 +1237,20 @@ the second and third paths being respectively $\msf{ap}_{s\mapsto s_*(u)}(r)$ an
 
 %%
 
+\subsection{Beginning of Section 6.10}
+
+To spell out the induction principle for $A/R$, let $\alpha(a,b):q(a)=q(b)$ be the path given from $q(a)$ to $q(b)$ whenever $R(a,b)$. 
+
+Given $P:A/R\to\U$ together with $f:\prod_{a:A}P(q(a))$ and 
+$$
+\beta(a,b):f(a)=^P_{\alpha(a,b)}f(b)
+$$ 
+for all $a,b$ such that $R(a,b)$, we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$, and $\msf{apd}_g(\alpha(a,b))=\beta(a,b)$ for all $a,b$ such that $R(a,b)$.
+
+It is easy to see that if our type family $P:A/R\to\U$ is such that $P(q(b))$ is a mere proposition whenever $R(a,b)$, and if we are just given an $f:\prod_{a:A}P(q(a))$, then we get a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv g(q(b))$ for all $a,b$ such that $R(a,b)$.
+
+%%
+
 \subsection{Exercise 6.9}
 
 Recall the statement:
