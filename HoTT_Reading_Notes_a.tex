@@ -414,11 +414,11 @@ for $p:f=g$ and $x:A$.
 
 Recall the statement of the Lemma: Let 
 $$
-A:X\to\U,\quad B:\prod_{x:X}A(x)\to\U
+A:X\to\U,\quad B:\prod_{x:X}A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}A(x)\right)\to\U
 $$ 
-be type families, let $p:x=y$, and let 
+be type families such that $\widehat B(w)\de B(\pr_1w,\pr_2w)$ for all $w:\sum_{x:X}A(x)$, and let 
 $$
-f:\prod_{a:A(x)}B(x,a),\quad g:\prod_{a:A(y)}B(y,a).
+p:x=y,\quad f:\prod_{a:A(x)}B(x,a),\quad g:\prod_{a:A(y)}B(y,a).
 $$ 
 Then we have an equivalence 
 $$
