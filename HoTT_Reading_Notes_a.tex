@@ -149,7 +149,11 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 \emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
 
-\nn\emph{Solution.} We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\two,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
+\nn\emph{Solution.} Recall that we have 
+$$
+\rec_\two:\prod_{C:\U}C\to C\to\two\to C,\quad\rec_\two(C,c_0,c_1,0_\two)\de c_0,\quad\rec_\two(C,c_0,c_1,1_\two)\de c_1.
+$$
+We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\two,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
 $$
 A':\equiv\prod_{a:A}C(\inl(a)),\quad B':\equiv\prod_{b:B}C(\inr(b)).
 $$
