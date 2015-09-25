@@ -10,7 +10,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
-\usepackage[a4paper]{geometry}
+%\usepackage[a4paper]{geometry}
+\usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
 %\usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
@@ -260,7 +261,7 @@ as required.
 
 \subsection{Exercise 1.8}
 
-\emph{Statement.} Define multiplication and exponentiation using $\rec_\N$. Verify that $(\N,+,0,\times,1)$ is a semiring using only $\ind_\N$. You will probably also need to use symmetry and transitivity of equality, Lemmas 2.1.1 and 2.1.2.
+\emph{Statement.} Define multiplication and exponentiation using $\rec_\N$. Verify that $$(\N,+,0,\times,1)$$ is a semiring using only $\ind_\N$. You will probably also need to use symmetry and transitivity of equality, Lemmas 2.1.1 and 2.1.2.
 
 \nn\emph{Solution.} We put 
 $$
@@ -297,17 +298,26 @@ c_s(i,f):\equiv\rec_\N(D,d_0(i,f),d_s(i,f))
 \end{equation}
 for $D:\U,d_0(i,f):D,d_s(i,f):\N\to D\to D$. We get $D:\equiv\N$. We have
 \begin{align*}
-\ack(\su(n))&\equiv\rec_\N(C,\su,c_s,\su(m))\\
+\ack(\su(m))&\equiv\rec_\N(C,\su,c_s,\su(m))\\
 &\equiv c_s(m,\rec_\N(C,\su,c_s,m))\\
 &\equiv c_s(m,\ack(m))\\
 &\equiv\rec_\N(\N,d_0(m,\ack(m)),d_s(m,\ack(m))),
 \end{align*}
-and evaluation at 0 yields $d_0(m,\ack(m))\equiv\ack(m)(1)$, prompting us to set $$d_0(i,f):\equiv f(1).$$ We have 
-\begin{align*}
+and evaluation at 0 yields $d_0(m,\ack(m))\equiv\ack(m)(1)$, prompting us to set 
+$$
+d_0(i,f):\equiv f(1),
+$$ 
+yielding 
+$$
+\ack(\su(m))\equiv\rec_\N(\N,\ack(m,1),d_s(m,\ack(m))).
+$$
+We have 
+\begin{align*}%£
 \ack(m)\big(\ack(\su(m),n)\big)&\equiv\ack\big(m,\ack(\su(m),n)\big)\\ 
 &\equiv\ack(\su(m),\su(n))\\ 
 &\equiv\rec_\N\big(\N,\ack(m,1),d_s(m,\ack(m)),\su(n)\big)\\
-&\equiv d_s\big(m,\ack(m)\big)\big(n,\ack(\su(m),n)\big),
+&\equiv d_s\big(m,\ack(m)\big)\bigg(n,\rec_N\Big(\N,\ack(m,1),d_s\big(m,\ack(m)\big)\Big)\bigg)\\
+&\equiv d_s\big(m,\ack(m)\big)\Big(n,\ack\big(\su(m),n\big)\Big),
 \end{align*}
 prompting us to set $d_s(i,f)(x,y):\equiv f(y)$. 
 
