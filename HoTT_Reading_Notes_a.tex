@@ -12,7 +12,7 @@
 \usepackage{amssymb,amsmath}
 %\usepackage[a4paper]{geometry}
 \usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
-%\usepackage{comment}
+\usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \usepackage[all]{xy}
@@ -344,7 +344,11 @@ $$
 
 \emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
 
-\nn\emph{Solution.} Here is a slightly stronger statement: For any types $A,B,C$ the types
+\nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\msf{inr})(g\ci\msf{inl}).$ Putting $B:\equiv\mbf0$ gives the desired result.
+
+\begin{comment}
+
+Here is a slightly stronger statement: For any types $A,B,C$ the types
 
 (a) $\big((A+B)\to C\big)\to\big((A\to C)\times(B\to C)\big)$,
 
@@ -359,6 +363,8 @@ $$
 (f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
 
 \nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mbf0$ in (f) gives the desired result.
+
+\end{comment}
 
 %%
 
