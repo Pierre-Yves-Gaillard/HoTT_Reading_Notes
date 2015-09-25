@@ -262,13 +262,14 @@ as required.
 
 \emph{Statement.} Define multiplication and exponentiation using $\rec_\N$. Verify that $(\N,+,0,\times,1)$ is a semiring using only $\ind_\N$. You will probably also need to use symmetry and transitivity of equality, Lemmas 2.1.1 and 2.1.2.
 
-\nn\emph{Solution.} We put
+\nn\emph{Solution.} We put 
 $$
-\msf{mult}:\equiv\rec_\N(\N\to\N,\la m.0,\la m.\la g.\la n.m+g(m)),
+mn:\equiv\rec_\N(\ \N\to\N\ ,\ \la n.0\ ,\ \la m.\la g.\la n.n+g(n)\ ,\ m\ ,\ n\ ),
 $$
 $$
-\msf{exp}:\equiv\rec_\N(\N\to\N,\la m.1,\la m.\la g.\la n.mg(m)).
+n^m:\equiv\rec_\N(\ \N\to\N\ ,\ \la n.1\ ,\ \la m.\la g.\la n.ng(n)\ ,\ m\ ,\ n\ ).
 $$ 
+%$$\msf{mult}:\equiv\rec_\N(\N\to\N,\la m.0,\la m.\la g.\la n.m+g(m)),$$ $$\msf{exp}:\equiv\rec_\N(\N\to\N,\la m.1,\la m.\la g.\la n.mg(m)).$$ 
 We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring.
 
 %%
