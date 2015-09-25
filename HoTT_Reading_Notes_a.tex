@@ -222,7 +222,7 @@ Let $C:A\times B\to\U$. We must define
 $$
 \ind_{A\times B}(C):\left(\prod_{a:A}\prod_{b:B}C((a,b))\right)\to\prod_{u:A\times B}C(u).
 $$ 
-Define $D:\two\to\U$ by 
+Let $u:A\times B$ and define $D:\two\to\U$ by 
 $$
 D(n):\equiv\Big(\big(u(0_\two),u(1_\two)\big)(n)=u(n)\Big)
 $$ 
@@ -232,18 +232,18 @@ $$
 $$ 
 and that 
 $$
-\fu:\prod_{n\in\two}D(n)\to\Big(\big(u(0_\two),u(1_\two)\big)=u\Big).
+\fu:\left(\prod_{n\in\two}D(n)\right)\to\Big(\big(u(0_\two),u(1_\two)\big)=u\Big).
 $$
 We get 
 $$
-\alpha:\equiv\ind_\two(D,\refl_{u(0_\two)},\refl_{u(1_\two)}):\prod_{n\in\two}D(n),\quad\fu(\alpha):\Big(\big(u(0_\two),u(1_\two)\big)=u\Big),
+\alpha:\equiv\ind_\two(D,\refl_{u(0_\two)},\refl_{u(1_\two)}):\prod_{n\in\two}D(n),\quad\fu(\alpha):\big(u(0_\two),u(1_\two)\big)=u,
 $$
 $$
-\fu(\alpha)_*:C((u(0_\two),u(1_\two)))\to C(u).
+\fu(\alpha)_*:C\Big(\big(u(0_\two),u(1_\two)\big)\Big)\to C(u).
 $$
 In particular we can set
 $$
-\ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*(g(u(0_\two))(g(u(1_\two)).
+\ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*\Big(g\big(u(0_\two)\big)\big(u(1_\two)\big)\Big).
 $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
