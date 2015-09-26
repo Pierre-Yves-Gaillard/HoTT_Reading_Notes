@@ -274,13 +274,12 @@ $$
 We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring.
 
 For the reader's convenience we briefly recall the definition of the recursor for $\N$:
-$$
-\rec_\N:\prod_{C:\U}C\to(\N\to C\to C)\to\N\to C
-$$
-\begin{align*}
-\rec_\N(C,c_0,c_s,0)&:\eq c_0,\\
-\rec_\N(C,c_0,c_s,\su(n))&:\eq c_s(n,\rec_\N(C,c_0,c_s,n)).
-\end{align*}
+
+$$\rec_\N:\prod_{C:\U}C\to(\N\to C\to C)\to\N\to C$$
+
+$$\rec_\N(C,c_0,c_s,0):\eq c_0,$$
+
+$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
 
 %%
 
@@ -560,13 +559,12 @@ $$
 f\equiv\rec_\N\Bigg(\N\to C,g,m\mapsto x\mapsto\rec_\N\bigg(C,h(m),n\mapsto y\mapsto k\big(m,n,x(n)\big)\bigg)\Bigg).
 $$ 
 For the reader's convenience we briefly recall the definition of the recursor for $\N$:
-$$
-\rec_\N:\prod_{C:\U}C\to(\N\to C\to C)\to\N\to C
-$$
-\begin{align*}
-\rec_\N(C,c_0,c_s,0)&:\eq c_0,\\
-\rec_\N(C,c_0,c_s,\su(n))&:\eq c_s(n,\rec_\N(C,c_0,c_s,n)).
-\end{align*}
+
+$$\rec_\N:\prod_{C:\U}C\to(\N\to C\to C)\to\N\to C$$
+
+$$\rec_\N(C,c_0,c_s,0):\eq c_0,$$
+
+$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
 
 %%
 
@@ -606,13 +604,12 @@ $$
 c_s(n,y):\equiv k(m,n,x(n)).
 $$ 
 For the reader's convenience we briefly recall the definition of the induction principle for $\N$:
-$$
-\ind_\N:\prod_{C:\N\to\U}C(0)\to\left(\prod_{n:\N}C(n)\to C(\su(n))\right)\to\prod_{n:\N} C(n)
-$$
-\begin{align*}
-\ind_\N(C,c_0,c_s,0)&:\eq c_0,\\
-\ind_\N(C,c_0,c_s,\su(n))&:\eq c_s(n,\ind_\N(C,c_0,c_s,n)).
-\end{align*}
+
+$$\ind_\N:\prod_{C:\N\to\U}C(0)\to\left(\prod_{n:\N}C(n)\to C(\su(n))\right)\to\prod_{n:\N} C(n)$$
+
+$$\ind_\N(C,c_0,c_s,0):\eq c_0,$$
+
+$$\ind_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\ind_\N(C,c_0,c_s,n)).$$
 
 %%
 
