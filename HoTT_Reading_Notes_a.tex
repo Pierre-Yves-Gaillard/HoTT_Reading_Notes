@@ -59,7 +59,7 @@
 \nc{\su}{\mathsf{succ}}
 \nc{\tr}{\mathsf{transport}}
 \nc{\two}{\mathbf2}
-\nc{\U}{\mathcal U}
+\nc{\U}{\mathcal U}\nc{\V}{\mathcal V}
 \nc{\ua}{\mathsf{ua}}
 \nc{\uniq}{\mathsf{uniq}}
 \nc{\vide}{\varnothing}
@@ -618,15 +618,20 @@ $$\ind_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\ind_\N(C,c_0,c_s,n)).$$
 
 \subsubsection{Use of Theorem 2.7.4}
 
-We apply Theorem 2.7.4 by setting $A\de\U,P(A)\de(A\to A\to A)$ for $A:\U$, 
+We apply Theorem 2.7.4 to \S2.14.1 by letting $\U,\V$ be universes with $\U:\V$, by defining $P:\U\to\V$ by $P(A):\eq(A\to A\to A)$, by defining 
 $$
-Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m)\de(m(x,m(y,z))=m(m(x,y),z)).
+Q:\left(\sum_{A:\U}P(A)\right)\to\V
 $$ 
-As \S\ref{274} we put 
+by 
 $$
-Q'(A)\de(m(x,m(y,z))=m(m(x,y),z))
+Q(A,m):\eq\prod_{x,y,z:A}m(x,m(y,z))=m(m(x,y),z),
 $$ 
-for $A:\U$. In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads 
+and by defining $Q':\U\to\V$ by 
+$$ 
+Q'(A):\eq\sum_{m:P(A)}Q(A,m).
+$$
+%setting $A\de\U,P(A)\de(A\to A\to A)$ for $A:\U$, $$Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m)\de(m(x,m(y,z))=m(m(x,y),z)).$$ As \S\ref{274} we put $$Q'(A)\de(m(x,m(y,z))=m(m(x,y),z))$$ for $A:\U$. 
+In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads 
 $$
 \msf t^{Q'}(p,(m,a))=\Bigg(\msf t^P(p,m),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
