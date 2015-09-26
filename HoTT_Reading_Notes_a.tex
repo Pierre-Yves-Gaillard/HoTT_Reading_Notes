@@ -784,9 +784,20 @@ $$
 
 By Lemma 3.3.5 the type $\msf{isProp}(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\msf{isContr}(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\msf{isProp}(A)$ and $A\to\msf{isContr}(A)$ are logically equivalent. 
 
-We define $u:\msf{isProp}(A)\to(A\to\msf{isContr}(A))$ by $u(f)(a)\de(a,f(a,-))$. 
+We define 
+$$
+u:\msf{isProp}(A)\to(A\to\msf{isContr}(A)),\quad v:(A\to\msf{isContr}(A))\to\msf{isProp}(A)
+$$ 
+by 
+$$
+\big(u(f)(a)\big)(b)\de(a,f(a,b)),\quad v(g)(a,b)\de\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
+$$%$u(f)(a)\de(a,f(a,-))$. 
 
-We define $v:(A\to\msf{isContr}(A))\to\msf{isProp}(A)$ as follows. Let $g:A\to\msf{isContr}(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
+%We define $u:\msf{isProp}(A)\to(A\to\msf{isContr}(A))$ by $\big(u(f)(a)\big)(b)\de(a,f(a,b))$.%$u(f)(a)\de(a,f(a,-))$. 
+
+%We define $v:(A\to\msf{isContr}(A))\to\msf{isProp}(A)$ by $v(g)(a,b)\de\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
+
+%as follows. Let $g:A\to\msf{isContr}(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
 
 
 %%
