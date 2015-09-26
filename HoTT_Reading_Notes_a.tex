@@ -581,9 +581,13 @@ f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv k(m,n,f(m
 $$ 
 for all $m,n:\N$.
 
-Indeed, it suffices to put 
+Indeed, it suffices to define $C':\N\to\U$ by 
 $$
-f:\equiv\ind_\N\left(\prod_{m:\N}\prod_{n:\N}C(m,n),g,d_s\right),
+C'(m):\eq\prod_{n:\N}C(m,n)
+$$ 
+and to put 
+$$
+f:\equiv\ind_\N\left(C',g,d_s\right),
 $$ 
 where 
 $$
@@ -591,7 +595,7 @@ d_s:\prod_{m:\N}\left(\prod_{n:\N}C(m,n)\right)\to\prod_{n:\N}C(\su(m),n)
 $$ 
 is defined by 
 $$
-d_s(m,x):\equiv\ind_\N\Big(C\big(\su(m),-\big),h(m),c_s\Big),
+d_s(m,x):\equiv\ind_\N\Big(C'(\su(m)),h(m),c_s\Big),
 $$ 
 where 
 $$
