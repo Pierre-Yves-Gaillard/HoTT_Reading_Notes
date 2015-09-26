@@ -48,6 +48,7 @@
 \nc{\N}{\mathbb N}
 \nc{\na}{\mathsf{nat}}
 \nc{\nn}{\noindent}
+\nc{\one}{\mathbf1}
 \nc{\oo}{\operatorname}
 \nc{\ps}{\mathcal P}
 \nc{\pa}{\mathsf{pair}^=}
@@ -63,6 +64,7 @@
 \nc{\ua}{\mathsf{ua}}
 \nc{\uniq}{\mathsf{uniq}}
 \nc{\vide}{\varnothing}
+\nc{\zero}{\mathbf0}
 \title{HoTT Reading Notes}
 \author{Pierre-Yves Gaillard}
 \date{\today, \currenttime}
@@ -832,54 +834,58 @@ $$
 $$ 
 and we want to prove 
 \begin{equation}\label{e39}
-\sum_{A:\U}\msf{isProp}(A)\simeq\mbf2.
+\left(\sum_{A:\U}\msf{isProp}(A)\right)\simeq\mbf2.
 \end{equation}
 
-For any type $A$ we put 
+By Lemma 3.3.2 we have 
 $$
-P(A):\equiv\msf{isProp}(A),\quad Q_1(A):\equiv(\mbf1\simeq A),
-$$
-$$
-Q_0(A):\equiv(\mbf0\simeq A),\quad Q(A):\equiv Q_1(A)+Q_0(A).
+f_1:\prod_{A:\U}\msf{isProp}(A)\to A\to(A=\one). 
 $$ 
-
-We claim
-
-\nn(a) For any type $A$ there is a map $f_a:P(A)\times A\to Q_1(A)$. This follows from Lemma 3.3.2. (More precisely, we define $f_a$ as the map given by Lemma 3.3.2.)
-
-\nn(b) For any type $A$ there is a map $f_b:P(A)\times\neg A\to Q_0(A)$.
-
-\nn(c) For any types $A,B,C$ there is an equivalence $A\times(B+C)\simeq(A\times B)+(A\times C)$.
-
-\nn(d) For any type $A$ there is a map $f_d:Q(A)\to P(A)$.
-
-\nn(e) For any type $A$ there are maps 
+It is easy that we have 
 $$
-\begin{matrix}
-f_e:P(A)&\to &P(A)\times(A+\neg A)\\ 
-        &g_e:&P(A)\times(A+\neg A)&\to &(P(A)\times A)+(P(A)\times\neg A)\\ 
-        &    &                    &h_e:&(P(A)\times A)+(P(A)\times\neg A)&\to Q(A)
-\end{matrix}
+f_2:\prod_{A:\U}\neg A\to(A=\zero). 
 $$ 
-such that $f_e(p):\equiv(p,\msf{LEM}(A,p))$, $g_e$ is given by (c), and $h_e$ is given by (a) and (b). Let $i_e:P(A)\to Q(A)$ be the composition $h_e\circ g_e\circ f_e$.
-
-\nn(f) For any type $A$ there is a map $f_f:Q(A)\to P(Q(A))$.
-
-\nn(g) The maps $f_d$ and $i_e$ are quasi-inverse.
-
-\nn(h) For any type families $C,D:A\to\U$, there is an equivalence 
+Define 
 $$
-\sum_{a:A}C(a)+D(a)\simeq\left(\sum_{a:A}C(a)\right)+\sum_{a:A}D(a).
-$$
-\nn(i) The types $\sum_{A:\U}Q_1(A)$ and $\sum_{A:\U}Q_0(A)$ are contractible (with obvious centers).
-
-\nn(j) There are equivalences 
-$$
-\sum_{A:\U}P(A)\simeq\sum_{A:\U}Q(A)\simeq\left(\sum_{A:\U}Q_1(A)\right)+\sum_{A:\U}Q_0(A)\simeq\mbf1+\mbf1,
+f_3:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A)\to((A=\one)+(A=\zero))
 $$ 
-following respectively from (g), (h) and (i). This implies \eqref{e39}.
+by 
+$$
+f_3(A,p,\inl(a)):\eq\inl(f_1(A,p,a),\qquad f_3(A,p,\inr(a')):\eq\inr(f_2(A,a').
+$$ 
+Define 
+$$
+f_4:\prod_{A:\U}\msf{isProp}(A)\to\big((A=\one)+(A=\zero)\big)
+$$ 
+by 
+$$
+f_4(A,p):\eq f_3(A,p,\msf{LEM}(A,p)).
+$$ 
+In view of $f_4$ we can define 
+$$
+f_5:\left(\sum_{A:\U}\msf{isProp}(A)\right)\to\two
+$$ 
+by 
+$$
+f_5(A,p):\eq
+\begin{cases}
+1_\two&\text{if }A=\one\\
+0_\two&\text{if }A=\zero.
+\end{cases}
+$$ 
+Let $p_0:\msf{isProp}(\zero)$ and $p_1:\msf{isProp}(\one)$, and define 
+$$
+f_6:\two\to\left(\sum_{A:\U}\msf{isProp}(A)\right)
+$$ 
+by $f_6(0_\two):\eq(\zero,p_0)$ and $f_6(1_\two):\eq(\one,p_1)$.
 
-Since we have $P(P(A))$ by Lemma 3.3.5 and $P(Q(A))$ by (f), Statement~(g) follows from (d), (e) and Lemma 3.3.3. The other claims are left to the reader.
+It is straightforward to check that $f_5\ci f_6=\id_\two$. 
+
+Let $A:\U$ and $p:\msf{isProp}(A)$. We must show 
+\begin{equation}\label{f6f5}
+f_6(f_5(A,p))=(A,p).
+\end{equation}
+In view of $f_4$ it suffices to prove \eqref{f6f5} if $A=\one$ or if $A=\zero$, which is easy.
 
 %%
 
