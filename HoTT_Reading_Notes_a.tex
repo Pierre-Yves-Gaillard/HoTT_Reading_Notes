@@ -42,6 +42,7 @@
 \nc{\inl}{\mathsf{inl}}
 \nc{\inr}{\mathsf{inr}}
 %\nc{\is}{\mathcal{IS}}
+\nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}
 \nc{\la}{\lambda}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}
 \nc{\lV}{\lVert}\nc{\rV}{\rVert}
@@ -777,27 +778,27 @@ is an equivalence.
 
 \subsection{Exercise 3.5}
 
-\emph{Statement.} Show that $\msf{isProp}(A)\simeq(A\to\msf{isContr}(A))$. 
+\emph{Statement.} Show that $\isProp(A)\simeq(A\to\msf{isContr}(A))$. 
 
 \nn\emph{Solution.} Recall the definitions: 
 $$
-\msf{isProp}(A)\de\prod_{a,b:A}a=b,\quad\msf{isContr}(A)\de\sum_{a:A}\prod_{b:A}a=b.
+\isProp(A)\de\prod_{a,b:A}a=b,\quad\msf{isContr}(A)\de\sum_{a:A}\prod_{b:A}a=b.
 $$
 
-By Lemma 3.3.5 the type $\msf{isProp}(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\msf{isContr}(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\msf{isProp}(A)$ and $A\to\msf{isContr}(A)$ are logically equivalent. 
+By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\msf{isContr}(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\msf{isContr}(A)$ are logically equivalent. 
 
 We define 
 $$
-u:\msf{isProp}(A)\to(A\to\msf{isContr}(A)),\quad v:(A\to\msf{isContr}(A))\to\msf{isProp}(A)
+u:\isProp(A)\to(A\to\msf{isContr}(A)),\quad v:(A\to\msf{isContr}(A))\to\isProp(A)
 $$ 
 by 
 $$
 \big(u(f)(a)\big)(b)\de(a,f(a,b)),\quad v(g)(a,b)\de\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
 $$%$u(f)(a)\de(a,f(a,-))$. 
 
-%We define $u:\msf{isProp}(A)\to(A\to\msf{isContr}(A))$ by $\big(u(f)(a)\big)(b)\de(a,f(a,b))$.%$u(f)(a)\de(a,f(a,-))$. 
+%We define $u:\isProp(A)\to(A\to\msf{isContr}(A))$ by $\big(u(f)(a)\big)(b)\de(a,f(a,b))$.%$u(f)(a)\de(a,f(a,-))$. 
 
-%We define $v:(A\to\msf{isContr}(A))\to\msf{isProp}(A)$ by $v(g)(a,b)\de\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
+%We define $v:(A\to\msf{isContr}(A))\to\isProp(A)$ by $v(g)(a,b)\de\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
 
 %as follows. Let $g:A\to\msf{isContr}(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
 
@@ -830,15 +831,15 @@ We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is 
 
 We admit the Law of Excluded Middle $\msf{LEM}$ defined in (3.4.1) by 
 $$
-\msf{LEM}:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A),
+\msf{LEM}:\prod_{A:\U}\isProp(A)\to(A+\neg A),
 $$ 
 and we want to prove 
 \begin{equation}\label{e39}
-\left(\sum_{A:\U}\msf{isProp}(A)\right)\simeq\mbf2.
+\left(\sum_{A:\U}\isProp(A)\right)\simeq\mbf2.
 \end{equation}
 \emph{Proof of \eqref{e39}.} By Lemma 3.3.2 we have 
 $$
-f_1:\prod_{A:\U}\msf{isProp}(A)\to A\to(A=\one). 
+f_1:\prod_{A:\U}\isProp(A)\to A\to(A=\one). 
 $$ 
 It is easy that we have 
 $$
@@ -846,7 +847,7 @@ f_2:\prod_{A:\U}\neg A\to(A=\zero).
 $$ 
 Define 
 $$
-f_3:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A)\to((A=\one)+(A=\zero))
+f_3:\prod_{A:\U}\isProp(A)\to(A+\neg A)\to((A=\one)+(A=\zero))
 $$ 
 by 
 $$
@@ -854,7 +855,7 @@ f_3(A,p,\inl(a)):\eq\inl(f_1(A,p,a),\qquad f_3(A,p,\inr(a')):\eq\inr(f_2(A,a').
 $$ 
 Define 
 $$
-f_4:\prod_{A:\U}\msf{isProp}(A)\to\big((A=\one)+(A=\zero)\big)
+f_4:\prod_{A:\U}\isProp(A)\to\big((A=\one)+(A=\zero)\big)
 $$ 
 by 
 $$
@@ -862,7 +863,7 @@ f_4(A,p):\eq f_3(A,p,\msf{LEM}(A,p)).
 $$ 
 In view of $f_4$ we can define 
 $$
-f_5:\left(\sum_{A:\U}\msf{isProp}(A)\right)\to\two
+f_5:\left(\sum_{A:\U}\isProp(A)\right)\to\two
 $$ 
 by 
 $$
@@ -872,15 +873,15 @@ f_5(A,p):\eq
 0_\two&\text{if }A=\zero.
 \end{cases}
 $$ 
-Let $p_0:\msf{isProp}(\zero)$ and $p_1:\msf{isProp}(\one)$, and define 
+Let $p_0:\isProp(\zero)$ and $p_1:\isProp(\one)$, and define 
 $$
-f_6:\two\to\left(\sum_{A:\U}\msf{isProp}(A)\right)
+f_6:\two\to\left(\sum_{A:\U}\isProp(A)\right)
 $$ 
 by $f_6(0_\two):\eq(\zero,p_0)$ and $f_6(1_\two):\eq(\one,p_1)$.
 
 It is straightforward to check that $f_5\ci f_6=\id_\two$. 
 
-Let $A:\U$ and $p:\msf{isProp}(A)$. We must show 
+Let $A:\U$ and $p:\isProp(A)$. We must show 
 \begin{equation}\label{f6f5}
 f_6(f_5(A,p))=(A,p).
 \end{equation}
@@ -888,7 +889,7 @@ In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\one$ or if 
 
 Note that the Law of Excluded Middle $\msf{LEM}$ is equivalent to 
 $$
-\msf{LEM}':\prod_{A:\U}\msf{isProp}(A)\to\big((A=\one)+(A=\zero)\big)
+\msf{LEM}':\prod_{A:\U}\isProp(A)\to\big((A=\one)+(A=\zero)\big)
 $$ 
 
 %%
@@ -899,7 +900,7 @@ $$
 
 \nn\emph{Proof.} To prove that the law of excluded middle implies the law of double negation, we assume that the types 
 $$
-P(A),\quad A+\neg A,\quad \neg\neg A
+\isProp(A),\quad A+\neg A,\quad \neg\neg A
 $$ 
 are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\msf{inl}(a)$ for some $a:A$ we are done. If $x\eq\msf{inr}(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
@@ -1366,7 +1367,7 @@ We shall follow an argument given by Jason Gross in
 
 \nn\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ satisfying the following conditions: $P$ is a type family $P:\U\to\U$, and we have
 $$
-b:\prod_{A:\U}\msf{isProp}(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
+b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
 $$ 
 such that $d(\mbf2,c)$ is propositionaly equal to the nonidentity automorphism. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
 
@@ -1374,7 +1375,7 @@ We shall prove firstly that the claim holds and secondly that there exists a qua
 
 \nn\emph{Proof of the claim.} By the Law of Excluded Middle there is a dependent function 
 $$
-\msf{lem}:\prod_{A:\U}\msf{isProp}(A)\to(A+\neg A).
+\msf{lem}:\prod_{A:\U}\isProp(A)\to(A+\neg A).
 $$ 
 Define 
 $$
