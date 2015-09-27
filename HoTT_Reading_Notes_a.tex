@@ -836,8 +836,7 @@ and we want to prove
 \begin{equation}\label{e39}
 \left(\sum_{A:\U}\msf{isProp}(A)\right)\simeq\mbf2.
 \end{equation}
-
-By Lemma 3.3.2 we have 
+\emph{Proof of \eqref{e39}.} By Lemma 3.3.2 we have 
 $$
 f_1:\prod_{A:\U}\msf{isProp}(A)\to A\to(A=\one). 
 $$ 
@@ -885,7 +884,12 @@ Let $A:\U$ and $p:\msf{isProp}(A)$. We must show
 \begin{equation}\label{f6f5}
 f_6(f_5(A,p))=(A,p).
 \end{equation}
-In view of $f_4$ it suffices to prove \eqref{f6f5} if $A=\one$ or if $A=\zero$, which is easy.
+In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\one$ or if $A=\zero$, which is easy. $\square$ 
+
+Note that the Law of Excluded Middle $\msf{LEM}$ is equivalent to 
+$$
+\msf{LEM}':\prod_{A:\U}\msf{isProp}(A)\to\big((A=\one)+(A=\zero)\big)
+$$ 
 
 %%
 
