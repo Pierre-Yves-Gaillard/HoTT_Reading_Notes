@@ -1000,7 +1000,7 @@ In particular $\fib_f$ is a type family over $B$. The corresponding transport ca
 p_*(a,q)=(a,q\cdot p).
 \end{equation}
 
-Put $C:\eq\sum_{b:B}\sum_{a:A}f(a):=b$, and define $g:A\to C$ and $h:C\to A$ by 
+Put $C:\eq\sum_{b:B}\sum_{a:A}f(a)=b$, and define $g:A\to C$ and $h:C\to A$ by 
 $$
 g(a):\eq(f(a),a,\re_{f(a)}),\qquad h(b,a,p):\eq a.
 $$ 
@@ -1048,35 +1048,51 @@ where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for 
 
 \subsection{Proof of Theorem 4.8.4}
 
-The proof of Theorem 4.8.4 uses the following lemma: For $A:\U$ we have 
+I don't understand the proof of the equivalence 
 $$
-A\simeq\sum_{X:\U}\ (X=A)\times X.
-$$
-More precisely, we shall define maps 
-$$
-A\rightleftarrows\sum_{X:\U}\ (X=A)\times X
+A\simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ \fib_f(b)=X
 $$ 
-and check that they are mutual quasi-inverses. To $a:A$ we attach $(A,\refl_A,a)$, and to $(B,p,b)$ we attach $t^{X\mapsto X}(p,b)$. Here and in the sequel we write $t$ for "transport". We have 
+at the beginning of the proof of Theorem 4.8.4. Here is how I would present things. 
+
+\nn Claim: For any type $A$ we have 
+\begin{equation}\label{asimeq}
+A\simeq\sum_{X:\U}X\times X=A.
+\end{equation}
+Proof: Write $t$ for ``transport''. Set $C\eq\sum_{X:\U}X\times X=A$, and define 
 $$
-a\mapsto(A,\refl_A,a)\mapsto t^{X\mapsto X}(\refl_A,a)\equiv a.
+f:A\to C,\qquad g:C\to A
 $$ 
-We have 
+by 
 $$
-(B,p,b)\mapsto t^{X\mapsto X}(p,b)\mapsto(A,\refl_A,t^{X\mapsto X}(p,b)),
+f(a):\eq(A,a,\re_A),\qquad g(B,b,p):\eq t^{X\mapsto X}(p,b).
+$$ 
+
+\nn We have $g(f(a))\eq a$ for all $a:A$. Let $(B,b,p):C$. We have 
+$$
+f(g(B,b,p))=(A,t^{X\mapsto X}(p,b),\re_A)
 $$ 
 and we must show 
 $$
-(B,p,b)=(A,\refl_A,t^{X\mapsto X}(p,b)).
-$$ 
+(B,b,p)=(A,t^{X\mapsto X}(p,b),\re_A).
+$$
 By Theorem 2.7.2 it suffices to verify 
 $$
-t^{X\mapsto (X=A)\times X}(p,(p,b))=(\refl_A,t^{X\mapsto X}(p,b)).
+t^{X\mapsto X\times X=A}(p,(b,p))=(t^{X\mapsto X}(p,b),\refl_A).
 $$ 
 By Theorem 2.6.4 it suffices to prove 
 $$
-t^{X\mapsto (X=A)}(p,p)=\refl_A.
+t^{X\mapsto X=A}(p,p)=\refl_A.
 $$ 
-But this follows from Lemma 2.11.2. 
+But this follows from Lemma 2.11.2. $\square$
+
+Going back to the beginning of the proof of Theorem 4.8.4, we get 
+$$
+A\simeq\ga(\sum_{b:B}\ \fib_f(b)\dr)\simeq\ga(\sum_{b:B}\ \sum_{X:\U}\ C\times X=\fib_f(b)\dr)
+$$
+$$
+\simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ \fib_f(b)=X,
+$$ 
+the first equivalence following from Lemma 4.8.2, the second one from \eqref{asimeq}, and the third one being straightforward.
 
 %%
 
