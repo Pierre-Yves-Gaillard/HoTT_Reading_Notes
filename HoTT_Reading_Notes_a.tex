@@ -59,7 +59,7 @@
 \nc{\refl}{\mathsf{refl}}\nc{\re}{\mathsf{refl}}
 \nc{\sm}{\scriptstyle}
 \nc{\su}{\mathsf{succ}}
-\nc{\tr}{\mathsf{transport}}
+\nc{\transport}{\mathsf{transport}}\nc{\tr}{\mathsf{transport}}
 \nc{\two}{\mathbf2}
 \nc{\U}{\mathcal U}\nc{\V}{\mathcal V}
 \nc{\ua}{\mathsf{ua}}
@@ -912,17 +912,23 @@ To prove that the law of double negation implies the law of excluded middle, we 
 
 \subsection{Proof of Lemma 4.1.2}
 
-The claim
+Let us denote by $(*)$ the claim 
 
-\nn ``It remains to show that $h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
+\nn ``$h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
 $$
 h(s)=h(p)\cdot h'(p)^{-1}\cdot h'(s)
 $$ 
 for any $s:a=x$''
 
-\nn in the proof of Lemma 4.1.2 in the HoTT Book follows immediately from Theorem 2.7.2 and the Lemma below, which is easily proved by path induction:
+\nn in the proof of Lemma 4.1.2 in the HoTT Book. We make three observations:
 
-\nn \textbf{Lemma.} Let $A$ be a type; let $a,x:A$; let $q:a=a$; let $P:(x=x)\to\U$ be defined by 
+\nn(1) The fact that $(*)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2. 
+
+\nn(2) The statement $(*)$ itself follows from 
+%The claim \nn ``It remains to show that $h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing $$h(s)=h(p)\cdot h'(p)^{-1}\cdot h'(s)$$ for any $s:a=x$'' \nn in the proof of Lemma 4.1.2 in the HoTT Book follows immediately from Theorem 2.7.2 and 
+the Lemma below, which is easily proved by path induction:
+
+\nn\textbf{Lemma.} Let $A$ be a type; let $a,x:A$; let $q:a=a$; let $P:(x=x)\to\U$ be defined by 
 $$
 P(r):\equiv\prod_{s:a=x}(r=s^{-1}\cdot q\cdot s);
 $$ 
@@ -932,10 +938,10 @@ r,r':x=x,\qquad t:r=r',\qquad h:P(r),\qquad s:a=x.
 $$ 
 Then 
 $$
-\oo{transport}^P(t,h)(s)=t^{-1}\cdot h(s).
+\transport^P(t,h)(s)=t^{-1}\cdot h(s).
 $$ 
 
-To complete the proof of Lemma 4.1.2, we set $f(x):\eq\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
+\nn(3) To complete the proof of Lemma 4.1.2, we set $f(x):\eq\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
 
 %%
 
@@ -1098,7 +1104,7 @@ $$
 \left(\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})\right)
 $$ 
 $$
-=\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\msf{transport}^{\lambda y.y=g(b)}(q,p)=\refl_{g(b)}\right)
+=\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\transport^{\lambda y.y=g(b)}(q,p)=\refl_{g(b)}\right)
 $$ 
 $$
 =\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\ap_g(q)^{-1}\cdot p=\refl_{g(b)}\right)
@@ -1423,7 +1429,7 @@ The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. F
 
 We prove 
 $$
-f(x,x,\rho(x))\cdot p=f(x,y,\msf{transport}^{x=-}(p,\rho(x)))
+f(x,x,\rho(x))\cdot p=f(x,y,\transport^{x=-}(p,\rho(x)))
 $$ 
 for $p:x=y$ by based path induction.
 
