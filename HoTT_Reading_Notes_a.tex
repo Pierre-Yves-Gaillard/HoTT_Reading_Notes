@@ -1105,63 +1105,52 @@ the first equivalence following from Lemma 4.8.2, the second one from \eqref{asi
 \nn(ii) Show that $\fib_{g\circ f}(c)\simeq\sum_{(w:\fib_g(c))}\fib_f(\pr_1w)$.
 
 \nn\emph{Solution.} (i) We define 
-$$
-h:\left(\sum_{x:A}g(f(x))=g(b)\right)\to\sum_{y:B}g(y)=g(b)
-$$ 
-by $h(x,p)\de(f(x),p)$. We get 
-$$
-\fib_h(b,\refl_{g(b)})\de\sum_{w:\sum_{x:A}g(f(x))=g(b)}h(w)=(b,\refl_{g(b)})
-$$ 
-$$
-=\left(\sum_{x:A}\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})\right).
-$$ 
-For each $x:A$ we have
-$$
-\left(\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})\right)
-$$ 
-$$
-=\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\transport^{\lambda y.y=g(b)}(q,p)=\refl_{g(b)}\right)
-$$ 
-$$
-=\left(\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\ap_g(q)^{-1}\cdot p=\refl_{g(b)}\right)
-$$ 
-$$
-=\left(\sum_{(q:f(x)=b)}\sum_{(p:g(f(x))=g(b))}p=\ap_g(q)\right)
-$$ 
 
-$$
-=(f(x)=b).
-$$ 
+$$h:\sum_{x:A}g(f(x))=g(b)\to\sum_{y:B}g(y)=g(b)$$ 
+
+\nn by $h(x,p)\de(f(x),p)$. We get 
+
+$$\fib_h(b,\refl_{g(b)})\de\sum_{w:\sum_{x:A}g(f(x))=g(b)}h(w)=(b,\refl_{g(b)})$$ 
+
+$$=\sum_{x:A}\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)}).$$ 
+
+\nn For each $x:A$ we have
+
+$$\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})$$ 
+
+$$=\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\transport^{\lambda y.y=g(b)}(q,p)=\refl_{g(b)}$$ 
+
+$$=\sum_{(p:g(f(x))=g(b))}\sum_{(q:f(x)=b)}\ap_g(q)^{-1}\cdot p=\refl_{g(b)}$$ 
+
+$$=\sum_{(q:f(x)=b)}\sum_{(p:g(f(x))=g(b))}p=\ap_g(q)$$ 
+
+$$=(f(x)=b).$$ 
 
 \nn(ii) We have 
-$$
-\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)
-$$ 
-$$
-=\left(\sum_{(w:\sum_{y:B}g(y)=c)}\sum_{(x:A)}f(x)=\pr_1w\right)
-$$ 
-$$
-=\left(\sum_{(y:B)}\sum_{(q:g(y)=c)}\sum_{(x:A)}f(x)=y\right)
-$$ 
-$$
-=\left(\sum_{(x:A)}\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)
-$$ 
-For each $x:A$ we check that the maps 
-$$
-\ph:\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)\to(g(f(x))=c)
-$$ 
-and 
-$$
-\psi:(g(f(x))=c)\to\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)
-$$ 
-defined by 
-$$
-\ph(y,q,p)\de\ap_g(p)\cdot q,\quad\psi(r)\de(f(x),r,\refl_{f(x)})
-$$ 
-are mutual quasi-inverses. This gives 
-$$
-\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{(x:A)}(g(f(x))=c)\right)=\fib_{g\circ f}(c).
-$$
+
+$$\sum_{w:\fib_g(c)}\fib_f(\pr_1w)$$ 
+
+$$=\sum_{(w:\sum_{y:B}g(y)=c)}\sum_{(x:A)}f(x)=\pr_1w$$ 
+
+$$=\sum_{(y:B)}\sum_{(q:g(y)=c)}\sum_{(x:A)}f(x)=y$$ 
+
+$$=\sum_{(x:A)}\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)$$ 
+
+\nn For each $x:A$ we check that the maps 
+
+$$\ph:\left(\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)\right)\to(g(f(x))=c)$$ 
+
+\nn and 
+
+$$\psi:(g(f(x))=c)\to\sum_{(y:B)}(q:g(y)=c)\times(f(x)=y)$$ 
+
+\nn defined by 
+
+$$\ph(y,q,p)\de\ap_g(p)\cdot q,\quad\psi(r)\de(f(x),r,\refl_{f(x)})$$ 
+
+\nn are mutual quasi-inverses. This gives 
+
+$$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{(x:A)}(g(f(x))=c)\right)=\fib_{g\circ f}(c).$$
 
 %%
 
