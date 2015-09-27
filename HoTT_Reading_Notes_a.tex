@@ -30,9 +30,10 @@
 \nc{\cd}{\cdot}
 \nc{\ci}{\circ}
 \nc{\code}{\mathsf{code}}
+\nc{\de}{:\equiv}
+\nc{\dr}{\right}\nc{\ga}{\left}
 \nc{\ds}{\displaystyle}
 \nc{\ep}{\varepsilon}
-\nc{\de}{:\equiv}
 \nc{\eq}{\equiv}
 \nc{\fib}{\mathsf{fib}}
 \nc{\fu}{\mathsf{funext}}
@@ -974,11 +975,15 @@ Q(a,p):\equiv\sum_{u:P(a)}p_*(f(a,u))=v.
 $$ 
 We claim 
 $$
-\sum_{a:A}\sum_{p:a=x}Q(a,p)\overset{(\text a)}{\simeq}
-\sum_{q:\sum_{a:A}(a=x)}Q(q)\overset{(\text b)}{\simeq}
+\ga(\sum_{a:A}\sum_{p:a=x}Q(a,p)\dr)\overset{(\text a)}{\simeq}
+\ga(\sum_{q:\sum_{a:A}a=x}Q(q)\dr)\overset{(\text b)}{\simeq}
 Q(x,\refl_x).
 $$
-Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_{a:A}\ (a=x)$$ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). 
+Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
+$$
+\sum_{a:A}\ a=x
+$$ 
+is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). 
 
 %%
 
