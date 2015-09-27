@@ -945,16 +945,6 @@ $$
 
 %%
 
-\subsection{An observation about fibers (Definition 4.2.4)}
-
-\nn Recall Definition 4.2.4: The fiber of a map $f:A\to B$ over a point $b:B$ is 
-$$
-\fib_f(b)\de\sum_{a:A}f(a)=b.
-$$ 
-In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have $p_*(a,q)=(a,q\cdot p)$. Using this one easily proves the equivalence $A\simeq\sum_{b:B}\fib_f(b)$ of Lemma 4.8.2.
-
-%%
-
 \subsection{Proof of Lemma 4.2.11}
 
 Use also Theorem 2.15.7.
@@ -1005,6 +995,27 @@ $$
 Q(x,\refl_x).
 $$
 Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that $$\sum_{a:A}\ (a=x)$$ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). 
+
+%%
+
+\subsection{Lemma 4.8.2}
+
+Here is a minor variant to the proof of Lemma 4.8.2.
+
+Recall Definition 4.2.4: The fiber of a map $f:A\to B$ over a point $b:B$ is 
+$$
+\fib_f(b)\de\sum_{a:A}f(a)=b.
+$$ 
+In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have 
+\begin{equation}\label{paq}
+p_*(a,q)=(a,q\cdot p).
+\end{equation}
+
+Put $C:\eq\sum_{b:B}\sum_{a:A}f(a):=b$, and define $g:A\to C$ and $h:C\to A$ by 
+$$
+g(a):\eq(f(a),a,\re_{f(a)}),\qquad h(b,a,p):\eq a.
+$$ 
+We claim that $g$ and $h$ are quasi-inverse. It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\re_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}.
 
 %%
 
