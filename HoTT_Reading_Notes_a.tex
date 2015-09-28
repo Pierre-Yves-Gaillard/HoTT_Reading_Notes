@@ -43,6 +43,8 @@
 \nc{\inl}{\mathsf{inl}}
 \nc{\inr}{\mathsf{inr}}
 %\nc{\is}{\mathcal{IS}}
+\nc{\isContr}{\mathsf{isContr}}\nc{\co}{\mathsf{isContr}}
+\nc{\isequiv}{\mathsf{isequiv}}\nc{\iseq}{\mathsf{isequiv}}
 \nc{\ishae}{\mathsf{ishae}}\nc{\ish}{\mathsf{ishae}}
 \nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}
 \nc{\la}{\lambda}
@@ -356,7 +358,7 @@ $$
 
 \emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
 
-\nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\msf{inr})(g\ci\msf{inl}).$ Putting $B:\equiv\mbf0$ gives the desired result.
+\nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\inr)(g\ci\inl).$ Putting $B:\equiv\mbf0$ gives the desired result.
 
 \begin{comment}
 
@@ -518,7 +520,7 @@ Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_
 
 The equality 
 $$
-\msf{encode}(\msf{inl}(a),\msf{decode}(\msf{inl}(a),c))=c
+\msf{encode}(\inl(a),\msf{decode}(\inl(a),c))=c
 $$ 
 for $c:a_0=a$ can be proved by based path induction.
 
@@ -739,13 +741,13 @@ Recall the statement: Every mere proposition is a set. In the proof of Lemma 3.1
 
 Recall the statement: 
 
-For any type $A$, the type $\msf{isContr}(A)$ is a mere proposition.
+For any type $A$, the type $\isContr(A)$ is a mere proposition.
 
 Here is a minor variant of the proof:
 
-Let $c,c':\msf{isContr}(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mbf1$, and thus 
+Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mbf1$, and thus 
 $$
-\msf{isContr}(A)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}a=x\right)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}\mbf1\right)=\left(\sum_{a:\mbf1}\mbf1\right)=\mbf1.
+\isContr(A)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}a=x\right)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}\mbf1\right)=\left(\sum_{a:\mbf1}\mbf1\right)=\mbf1.
 $$
 
 %%
@@ -770,7 +772,7 @@ Lemma 3.11.9 (i) yields the following strengthening of Lemma 3.5.1:
 
 In the setting of Lemma 3.5.1, the map 
 $$
-\ap_{\msf{pr}_1}:(u=v)\to(\msf{pr}_1(u)=\msf{pr}_1(v))
+\ap_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))
 $$ 
 is an equivalence.
 
@@ -780,29 +782,29 @@ is an equivalence.
 
 \subsection{Exercise 3.5}
 
-\emph{Statement.} Show that $\isProp(A)\simeq(A\to\msf{isContr}(A))$. 
+\emph{Statement.} Show that $\isProp(A)\simeq(A\to\isContr(A))$. 
 
 \nn\emph{Solution.} Recall the definitions: 
 $$
-\isProp(A)\de\prod_{a,b:A}a=b,\quad\msf{isContr}(A)\de\sum_{a:A}\prod_{b:A}a=b.
+\isProp(A)\de\prod_{a,b:A}a=b,\quad\isContr(A)\de\sum_{a:A}\prod_{b:A}a=b.
 $$
 
-By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\msf{isContr}(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\msf{isContr}(A)$ are logically equivalent. 
+By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\isContr(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\isContr(A)$ are logically equivalent. 
 
 We define 
 $$
-u:\isProp(A)\to(A\to\msf{isContr}(A)),\quad v:(A\to\msf{isContr}(A))\to\isProp(A)
+u:\isProp(A)\to(A\to\isContr(A)),\quad v:(A\to\isContr(A))\to\isProp(A)
 $$ 
 by 
 $$
 \big(u(f)(a)\big)(b)\de(a,f(a,b)),\quad v(g)(a,b)\de\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
 $$%$u(f)(a)\de(a,f(a,-))$. 
 
-%We define $u:\isProp(A)\to(A\to\msf{isContr}(A))$ by $\big(u(f)(a)\big)(b)\de(a,f(a,b))$.%$u(f)(a)\de(a,f(a,-))$. 
+%We define $u:\isProp(A)\to(A\to\isContr(A))$ by $\big(u(f)(a)\big)(b)\de(a,f(a,b))$.%$u(f)(a)\de(a,f(a,-))$. 
 
-%We define $v:(A\to\msf{isContr}(A))\to\isProp(A)$ by $v(g)(a,b)\de\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
+%We define $v:(A\to\isContr(A))\to\isProp(A)$ by $v(g)(a,b)\de\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
 
-%as follows. Let $g:A\to\msf{isContr}(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
+%as follows. Let $g:A\to\isContr(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
 
 
 %%
@@ -811,7 +813,7 @@ $$%$u(f)(a)\de(a,f(a,-))$.
 
 \emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
 
-\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\msf{inl}(a_1)=\msf{inl}(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\msf{inr}(a_1')=\msf{inr}(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\msf{inl}(a)=\msf{inr}(a')$. Let $f:\mbf0\to(\msf{inl}(a)=\msf{inr}(a'))$, and note that $f(a'(a)):\msf{inl}(a)=\msf{inr}(a')$.
+\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\inl(a_1)=\inl(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\inr(a_1')=\inr(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\inl(a)=\inr(a')$. Let $f:\mbf0\to(\inl(a)=\inr(a'))$, and note that $f(a'(a)):\inl(a)=\inr(a')$.
 
 %%
 
@@ -819,13 +821,13 @@ $$%$u(f)(a)\de(a,f(a,-))$.
 
 We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is inhabited. We claim that $A+B$ is a mere proposition. It suffices to prove $x=y$ in the following cases:
 
-(a) $x=\msf{inl}(a),\ y=\msf{inl}(a')$,
+(a) $x=\inl(a),\ y=\inl(a')$,
 
-(b) $x=\msf{inr}(b),\ y=\msf{inr}(b')$,
+(b) $x=\inr(b),\ y=\inr(b')$,
 
-(c) $x=\msf{inl}(a),\ y=\msf{inr}(b)$.
+(c) $x=\inl(a),\ y=\inr(b)$.
 
-\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mbf0$ and $g:\mbf0\to(\msf{inl}(a)=\msf{inr}(b))$. We get $g(f(a,b)):\msf{inl}(a)=\msf{inr}(b)$.
+\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mbf0$ and $g:\mbf0\to(\inl(a)=\inr(b))$. We get $g(f(a,b)):\inl(a)=\inr(b)$.
 
 %%
 
@@ -904,9 +906,9 @@ $$
 $$
 \isProp(A),\quad A+\neg A,\quad \neg\neg A
 $$ 
-are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\msf{inl}(a)$ for some $a:A$ we are done. If $x\eq\msf{inr}(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
+are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
-To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x')\de(x'\circ\msf{inr})(x'\circ\msf{inl})$.
+To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x')\de(x'\circ\inr)(x'\circ\inl)$.
 
 %%
 
@@ -943,7 +945,7 @@ $$
 \transport^P(t,h)(s)=t^{-1}\cdot h(s).
 $$ 
 
-\nn(3) To complete the proof of Lemma 4.1.2, we set $f(x):\eq\msf{pr}_1(k(x))$ with $k:\prod_{x:A}B(x)$.
+\nn(3) To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}B(x)$.
 
 %%
 
@@ -1251,9 +1253,9 @@ $$
 
 If $P$ is a type family over a type $A$ and $p:x=y$ is a path in $A$, then we have 
 $$
-\msf{adp}_f(p):f(x)=^P_pf(y),
+\apd_f(p):f(x)=^P_pf(y),
 $$ 
-i.e. $\msf{apd}_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
+i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 %%
 
@@ -1267,7 +1269,7 @@ This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb 
 
 \subsection{Proof of Corollary 6.4.3} % old version: https://docs.google.com/document/d/1wShljhC0168axzA7ucAfvL1Xme5AuXp6i0fhwKzM2xQ/edit
 
-%Recall the statement of Theorem 4.4.5: For any $f:A\to B$ we have $\msf{isContr}(f)\simeq\ishae(f)$.
+%Recall the statement of Theorem 4.4.5: For any $f:A\to B$ we have $\isContr(f)\simeq\ishae(f)$.
 
 The proof of Corollary 6.4.3 uses the following claim:
 
@@ -1302,17 +1304,17 @@ f:C\to A,\quad g:C\to B:
 $$ 
 Let $D:Z\to\U$ be a type family, let 
 $$
-\alpha:\prod_{a:A}D(\msf{inl}(a)),\quad\beta:\prod_{b:B}D(\msf{inr}(b)),
+\alpha:\prod_{a:A}D(\inl(a)),\quad\beta:\prod_{b:B}D(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha\big(\msf{inl}(f(c))\big)=^D_{\msf{glue}(c)}\beta\big(\msf{inr}(g(c))\big).
+\gamma:\prod_{c:C}\ \alpha\big(\inl(f(c))\big)=^D_{\msf{glue}(c)}\beta\big(\inr(g(c))\big).
 $$ 
-Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \msf{inl}\equiv\alpha$, $h\circ \msf{inr}\equiv\beta$ and $\msf{apd}_h(\msf{glue}(c))=\gamma(c)$ for all $c:C$. 
+Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \inl\equiv\alpha$, $h\circ \inr\equiv\beta$ and $\apd_h(\msf{glue}(c))=\gamma(c)$ for all $c:C$. 
 
 %\begin{comment}
 %Here are more details about the end of the proof of Lemma 6.8.2:
 
-%Let $u\de\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z)\de(u(z)=t(z))$, define $$\alpha(a):u(\msf{inl}(a))=t(\msf{inl}(a)),\quad\beta(b):u(\msf{inr}(b))=t(\msf{inr}(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\msf{inl}(f(c)))=^D_{\msf{glue}(c)}\beta(\msf{inr}(g(c))),$$ which is equivalent to the type $$u(\msf{glue}(c))^{-1}\cdot\alpha(f(c))\cdot t(\msf{glue}(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
+%Let $u\de\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z)\de(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\msf{glue}(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\msf{glue}(c))^{-1}\cdot\alpha(f(c))\cdot t(\msf{glue}(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
 %\end{comment}
 
 %%
@@ -1352,7 +1354,7 @@ Given $P:A/R\to\U$ together with $f:\prod_{a:A}P(q(a))$ and
 $$
 \beta(a,b):f(a)=^P_{\alpha(a,b)}f(b)
 $$ 
-for all $a,b$ such that $R(a,b)$, we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$, and $\msf{apd}_g(\alpha(a,b))=\beta(a,b)$ for all $a,b$ such that $R(a,b)$.
+for all $a,b$ such that $R(a,b)$, we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$, and $\apd_g(\alpha(a,b))=\beta(a,b)$ for all $a,b$ such that $R(a,b)$.
 
 It is easy to see that if our type family $P:A/R\to\U$ is such that $P(q(b))$ is a mere proposition whenever $R(a,b)$, and if we are just given an $f:\prod_{a:A}P(q(a))$, then we get a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv g(q(b))$ for all $a,b$ such that $R(a,b)$.
 
@@ -1380,11 +1382,11 @@ We shall follow an argument given by Jason Gross in
 
 %\nn we prove that, under the Law of Excluded Middle, the type $\prod_{A:\mathcal U}A\to A$ is not contractible.
 
-\nn\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ satisfying the following conditions: $P$ is a type family $P:\U\to\U$, and we have
+\nn\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ such that the typing judgments  
 $$
-b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
+P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
 $$ 
-such that $d(\mbf2,c)$ is propositionaly equal to the nonidentity automorphism. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
+hold, and $d(\mbf2,c)$ is propositionaly equal to the nonidentity automorphism. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
 
 We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
 
@@ -1396,33 +1398,33 @@ Define
 $$
 e:\prod_{A:\U}(A+\neg A)\to A\to A
 $$ 
-by $e(A,\msf{inl}(x))\de d(A,x)$, $e(A,\msf{inr}(x))\de\id_A$; and define 
+by $e(A,\inl(x))\de d(A,x)$, $e(A,\inr(x))\de\id_A$; and define 
 $$
 f:\prod_{A:\U}A\to A
 $$ 
-by $f(A)\de e(\msf{lem}(P(A),b(A)))$. The equality $\msf{lem}(P(\mbf2),b(\mbf2))=\msf{inl}(c)$, which is easily checked, implies  
+by $f(A)\de e(\msf{lem}(P(A),b(A)))$. The equality $\msf{lem}(P(\mbf2),b(\mbf2))=\inl(c)$, which is easily checked, implies  
 $$
-f(\mbf2)\de e(\msf{lem}(P(\mbf2),b(\mbf2))=e(\msf{inl}(c))=d(\mbf2,c).\text{ qed} 
+f(\mbf2)\de e(\msf{lem}(P(\mbf2),b(\mbf2))=e(\inl(c))=d(\mbf2,c).\ \square 
 $$ 
 %This shows that $\prod_{A:\mathcal U}A\to A$ is not contractible. qed
 
-\nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\msf{isContr}$ we have a dependent function 
+\nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\isContr$ we have a dependent function 
 $$
-\msf{center}:\prod_{A:\U}\msf{isContr}(A)\to A.
+\msf{center}:\prod_{A:\U}\isContr(A)\to A.
 $$ 
 Define $Q:\U\to\U$ by 
 $$
-Q(A)\de\{f:A\to A\ |\ \msf{isequiv}(f)\text{ and }\exists\ (a:A)\ .\ f(a)\neq a\}.
+Q(A)\de\{f:A\to A\ |\ \isequiv(f)\text{ and }\exists\ (a:A)\ .\ f(a)\neq a\}.
 $$ 
 In particular we have the map 
 $
-\msf{pr}_1:Q(A)\to A\to A.
+\pr_1:Q(A)\to A\to A.
 $ 
 We define $P(A)$ by 
 $$
-P(A)\de\msf{isContr}(Q(A)).
+P(A)\de\isContr(Q(A)).
 $$ 
-The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by $d(A,x)\de\msf{pr}_1(\msf{center}(x))$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. qed
+The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by $d(A,x)\de\pr_1(\msf{center}(x))$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
 
 %%
 
