@@ -48,8 +48,8 @@
 \nc{\ishae}{\mathsf{ishae}}\nc{\ish}{\mathsf{ishae}}
 \nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}
 \nc{\la}{\lambda}
-\nc{\lv}{\lvert}\nc{\rv}{\rvert}
-\nc{\lV}{\lVert}\nc{\rV}{\rVert}
+\nc{\LEM}{\mathsf{LEM}}\nc{\lem}{\mathsf{LEM}}\nc{\LE}{\mathsf{LEM}}
+\nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
 \nc{\N}{\mathbb N}
 \nc{\na}{\mathsf{nat}}
 \nc{\nn}{\noindent}
@@ -833,9 +833,9 @@ We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is 
 
 \subsection{Exercise 3.9}
 
-We admit the Law of Excluded Middle $\msf{LEM}$ defined in (3.4.1) by 
+We admit the Law of Excluded Middle $\LEM$ defined in (3.4.1) by 
 $$
-\msf{LEM}:\prod_{A:\U}\isProp(A)\to(A+\neg A),
+\LEM:\prod_{A:\U}\isProp(A)\to(A+\neg A),
 $$ 
 and we want to prove 
 \begin{equation}\label{e39}
@@ -863,7 +863,7 @@ f_4:\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
 $$ 
 by 
 $$
-f_4(A,p):\eq f_3(A,p,\msf{LEM}(A,p)).
+f_4(A,p):\eq f_3(A,p,\LEM(A,p)).
 $$ 
 In view of $f_4$ we can define 
 $$
@@ -891,9 +891,9 @@ f_6(f_5(A,p))=(A,p).
 \end{equation}
 In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\mbf1$ or if $A=\mbf0$, which is easy. $\square$ 
 
-Note that the Law of Excluded Middle $\msf{LEM}$ is equivalent to 
+Note that the Law of Excluded Middle $\LEM$ is equivalent to 
 $$
-\msf{LEM}':\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
+\LEM':\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
 $$ 
 
 %%
@@ -1372,9 +1372,12 @@ It is easy to see that the type $(A/\sim)$ admits the same induction principle a
 
 Recall the statement:
 
-Assuming $\msf{LEM}$, construct a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2):\mbf2\to\mbf2$ is the nonidentity automorphism.
+Assuming the Law of Excluded Middle, construct a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2):\mbf2\to\mbf2$ is the nonidentity automorphism.
 
-%The statement of this additional exercise to Chapter~3 is:Is the type $\prod_{A:\mathcal U}A\to A$ contractible?
+Recall that the Law of Excluded Middle is defined in (3.4.1) by 
+$$
+\LEM:\prod_{A:\U}\isProp(A)\to(A+\neg A).
+$$ 
 
 We shall follow an argument given by Jason Gross in 
 
@@ -1390,11 +1393,7 @@ hold, and $d(\mbf2,c)$ is ``the'' nonidentity automorphism of $\mbf2$. Then ther
 
 We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
 
-\nn\emph{Proof of the claim.} By the Law of Excluded Middle there is a dependent function 
-$$
-\msf{lem}:\prod_{A:\U}\isProp(A)\to(A+\neg A).
-$$ 
-Define 
+\nn\emph{Proof of the claim.} Define 
 $$
 e:\prod_{A:\U}(A+\neg A)\to A\to A
 $$ 
@@ -1402,9 +1401,9 @@ by $e(A,\inl(x))\de d(A,x)$, $e(A,\inr(x))\de\id_A$; and define
 $$
 f:\prod_{A:\U}A\to A
 $$ 
-by $f(A)\de e(\msf{lem}(P(A),b(A)))$. The equality $\msf{lem}(P(\mbf2),b(\mbf2))=\inl(c)$, which is easily checked, implies  
+by $f(A)\de e(\LEM(P(A),b(A)))$. The equality $\LEM(P(\mbf2),b(\mbf2))=\inl(c)$, which is easily checked, implies  
 $$
-f(\mbf2)\de e(\msf{lem}(P(\mbf2),b(\mbf2))=e(\inl(c))=d(\mbf2,c).\ \square 
+f(\mbf2)\de e(\LEM(P(\mbf2),b(\mbf2))=e(\inl(c))=d(\mbf2,c).\ \square 
 $$ 
 %This shows that $\prod_{A:\mathcal U}A\to A$ is not contractible. qed
 
