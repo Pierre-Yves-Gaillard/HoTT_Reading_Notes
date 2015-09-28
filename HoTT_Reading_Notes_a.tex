@@ -1330,13 +1330,13 @@ there exists $f:\prod_{x:\lVert A\rVert}B(x)$ such that $f(\lvert a\rvert)\equiv
 
 Let us rewrite the second premise as
 
-\nn($*$) For any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y)$ is the path coming from the second constructor of $\lVert A\rVert$.
+\nn($*$) For any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
 
 We claim this is equivalent to 
 
 \nn($**$) For any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
 
-Indeed, assume ($*$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:p(x,x)=\refl_x$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
+Indeed, assume ($*$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
 $$
 u=(\refl_x)_*(u)=p(x,x)_*(u)=v,
 $$ 
