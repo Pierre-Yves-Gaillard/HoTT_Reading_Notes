@@ -159,7 +159,7 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 \nn\emph{Solution.} Recall that we have 
 $$
-\rec_\mbf2:\prod_{C:\U}C\to C\to\mbf2\to C,\quad\rec_\mbf2(C,c_0,c_1,0_\mbf2)\de c_0,\quad\rec_\mbf2(C,c_0,c_1,1_\mbf2)\de c_1.
+\rec_\mbf2:\prod_{C:\U}C\to C\to\mbf2\to C,\quad\rec_\mbf2(C,c_0,c_1,0_\mbf2):\eq c_0,\quad\rec_\mbf2(C,c_0,c_1,1_\mbf2):\eq c_1.
 $$
 We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mbf2,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
 $$
@@ -441,7 +441,7 @@ for $f,g:\prod_{x:A}B(x)$ is defined in the obvious way by path induction. If
 $$
 e:\prod_{x:A}\left(\prod_{y:A}B(y)\right)\to B(x)
 $$ 
-is the evaluation, \emph{i.e.} $e(x)(f)\de f(x)$, then we have, again by path induction, 
+is the evaluation, \emph{i.e.} $e(x)(f):\eq f(x)$, then we have, again by path induction, 
 $$
 \msf{happly}(p)(x)=\ap_{e(x)}(p)
 $$ 
@@ -464,7 +464,7 @@ Recall the statement of the Lemma: Let
 $$
 A:X\to\U,\quad B:\prod_{x:X}A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}A(x)\right)\to\U
 $$ 
-be type families such that $\widehat B(w)\de B(\pr_1w,\pr_2w)$ for all $w:\sum_{x:X}A(x)$, and let 
+be type families such that $\widehat B(w):\eq B(\pr_1w,\pr_2w)$ for all $w:\sum_{x:X}A(x)$, and let 
 $$
 p:x=y,\quad f:\prod_{a:A(x)}B(x,a),\quad g:\prod_{a:A(y)}B(y,a).
 $$ 
@@ -637,12 +637,12 @@ and by defining $Q':\U\to\V$ by
 $$ 
 Q'(A):\eq\sum_{m:P(A)}Q(A,m).
 $$
-%setting $A\de\U,P(A)\de(A\to A\to A)$ for $A:\U$, $$Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m)\de(m(x,m(y,z))=m(m(x,y),z)).$$ As \S\ref{274} we put $$Q'(A)\de(m(x,m(y,z))=m(m(x,y),z))$$ for $A:\U$. 
+%setting $A:\eq\U,P(A):\eq(A\to A\to A)$ for $A:\U$, $$Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m):\eq(m(x,m(y,z))=m(m(x,y),z)).$$ As \S\ref{274} we put $$Q'(A):\eq(m(x,m(y,z))=m(m(x,y),z))$$ for $A:\U$. 
 In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads 
 $$
 \msf t^{Q'}(p,(m,a))=\Bigg(\msf t^P(p,m),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
-with $p\de\msf{ua}(e)$.
+with $p:\eq\msf{ua}(e)$.
 
 \subsubsection{A general comment}
 
@@ -786,7 +786,7 @@ is an equivalence.
 
 \nn\emph{Solution.} Recall the definitions: 
 $$
-\isProp(A)\de\prod_{a,b:A}a=b,\quad\isContr(A)\de\sum_{a:A}\prod_{b:A}a=b.
+\isProp(A):\eq\prod_{a,b:A}a=b,\quad\isContr(A):\eq\sum_{a:A}\prod_{b:A}a=b.
 $$
 
 By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\isContr(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\isContr(A)$ are logically equivalent. 
@@ -797,19 +797,19 @@ u:\isProp(A)\to(A\to\isContr(A)),\quad v:(A\to\isContr(A))\to\isProp(A)
 $$ 
 by 
 $$
-\big(u(f)(a)\big)(b)\de(a,f(a,b)),\quad v(g)(a,b)\de\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
-$$%$u(f)(a)\de(a,f(a,-))$. 
+\big(u(f)(a)\big)(b):\eq(a,f(a,b)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
+$$%$u(f)(a):\eq(a,f(a,-))$. 
 
-%We define $u:\isProp(A)\to(A\to\isContr(A))$ by $\big(u(f)(a)\big)(b)\de(a,f(a,b))$.%$u(f)(a)\de(a,f(a,-))$. 
+%We define $u:\isProp(A)\to(A\to\isContr(A))$ by $\big(u(f)(a)\big)(b):\eq(a,f(a,b))$.%$u(f)(a):\eq(a,f(a,-))$. 
 
-%We define $v:(A\to\isContr(A))\to\isProp(A)$ by $v(g)(a,b)\de\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
+%We define $v:(A\to\isContr(A))\to\isProp(A)$ by $v(g)(a,b):\eq\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
 
-%as follows. Let $g:A\to\isContr(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b)\de g_2(a,a)^{-1}\cdot g_2(a,b)$.
+%as follows. Let $g:A\to\isContr(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b):\eq g_2(a,a)^{-1}\cdot g_2(a,b)$.
 
 
 %%
 
-\subsection{Exercise 3.6}
+\subsection{Exercise 3.6}\label{e36}
 
 \emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
 
@@ -908,7 +908,7 @@ $$
 $$ 
 are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
-To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x')\de(x'\circ\inr)(x'\circ\inl)$.
+To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\circ\inr)(x'\circ\inl)$.
 
 %%
 
@@ -955,10 +955,10 @@ Use also Theorem 2.15.7.
 
 %%
 
-%\subsection{Corollary 4.4.6}Here is a slightly more general statement:\\ To each pair of maps $f:A\to B,P:B\to\U$ is attach a map $$g:\left(\prod_{b:B}P(b)\right)\to\prod_{a:A}P(f(a))$$ defined by $$g(h)(a)\de h(f(a)).$$
+%\subsection{Corollary 4.4.6}Here is a slightly more general statement:\\ To each pair of maps $f:A\to B,P:B\to\U$ is attach a map $$g:\left(\prod_{b:B}P(b)\right)\to\prod_{a:A}P(f(a))$$ defined by $$g(h)(a):\eq h(f(a)).$$
 %For any type family $P$ over a type $A$ there is a map $$f:\left(A\to\prod_{a:A}P(a)\right)\to\prod_{a:A}P(a).$$ In words: If $A$ implies $\prod_{a:A}P(a)$, then $\prod_{a:A}P(a)$ is true.
 
-%Indeed it suffices to set $f(g,a)\de g(a,a)$.
+%Indeed it suffices to set $f(g,a):\eq g(a,a)$.
 
 %%
 
@@ -996,7 +996,7 @@ Here is a minor variant to the proof of Lemma 4.8.2.
 
 Recall Definition 4.2.4: The fiber of a map $f:A\to B$ over a point $b:B$ is 
 $$
-\fib_f(b)\de\sum_{a:A}f(a)=b.
+\fib_f(b):\eq\sum_{a:A}f(a)=b.
 $$ 
 In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have 
 \begin{equation}\label{paq}
@@ -1111,9 +1111,9 @@ the first equivalence following from Lemma 4.8.2, the second one from \eqref{asi
 
 $$h:\sum_{x:A}g(f(x))=g(b)\to\sum_{y:B}g(y)=g(b)$$ 
 
-\nn by $h(x,p)\de(f(x),p)$. (Note that $p:g(f(x))=g(b)$.) We get 
+\nn by $h(x,p):\eq(f(x),p)$. (Note that $p:g(f(x))=g(b)$.) We get 
 
-$$\fib_h(b,\refl_{g(b)})\de\sum_{w:\sum_{x:A}g(f(x))=g(b)}h(w)=(b,\refl_{g(b)})$$ 
+$$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}g(f(x))=g(b)}h(w)=(b,\refl_{g(b)})$$ 
 
 $$=\sum_{x:A}\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)}).$$ 
 
@@ -1149,7 +1149,7 @@ $$\psi:(g(f(x))=c)\to\sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$
 
 \nn defined by 
 
-$$\ph(y,q,p)\de\ap_g(p)\cdot q,\quad\psi(r):\eq(f(x),r,\refl_{f(x)})$$ 
+$$\ph(y,q,p):\eq\ap_g(p)\cdot q,\quad\psi(r):\eq(f(x),r,\refl_{f(x)})$$ 
 
 \nn are mutual quasi-inverses. This gives 
 
@@ -1161,9 +1161,9 @@ $$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ g(f(x))=c\righ
 
 \emph{Statement.} Prove that equivalences satisfy the 2-out-of-6 property: given $f:A\to B$ and $g:B\to C$ and $h:C\to D$, if $g\circ f$ and $h\circ g$ are equivalences, so are $f,g,h$, and $h\circ g\circ f$. Use this to give a higher-level proof of Theorem 2.11.1.
 
-\nn\emph{Solution.} Setting $k\de f\circ (g\circ f)^{-1}$, we get 
+\nn\emph{Solution.} Setting $k:\eq f\circ (g\circ f)^{-1}$, we get 
 \begin{align*}
-k&\de f\circ (g\circ f)^{-1}\\
+k&:\eq f\circ (g\circ f)^{-1}\\
 &=\big((h\circ g)^{-1}\circ h\circ g\big)\circ f\circ (g\circ f)^{-1}\\
 &=(h\circ g)^{-1}\circ h\circ\big(g\circ f\circ (g\circ f)^{-1}\big)\\
 &=(h\circ g)^{-1}\circ h,
@@ -1216,13 +1216,13 @@ For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ becaus
 
 Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2. 
 
-\nn$\bullet\ \msf{ppmap}(R,S)$ is inhabited: Setting $D(b,r)\de S(b),d\de s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)=s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r)\de f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)=s_0$, as required. 
+\nn$\bullet\ \msf{ppmap}(R,S)$ is inhabited: Setting $D(b,r):\eq S(b),d:\eq s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)=s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r):\eq f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)=s_0$, as required. 
 
 \nn$\bullet\ \msf{ppmap}(R,S)$ is a mere proposition: Let 
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\msf{ppmap}(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r)\de(f(b,r)=g(b,r)),d\de p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_*(p)=q$; this follows from the equalities $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+so that $(f,p),(g,q):\msf{ppmap}(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_*(p)=q$; this follows from the equalities $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
 
 %% 
 
@@ -1298,7 +1298,7 @@ The first display follows from Theorem 2.11.3.
 
 \subsection{Section 6.8}
 
-Here is the induction principle for the pushout $Z\de A\sqcup^CB$ attached to 
+Here is the induction principle for the pushout $Z:\eq A\sqcup^CB$ attached to 
 $$
 f:C\to A,\quad g:C\to B:
 $$ 
@@ -1314,7 +1314,7 @@ Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \inl\equiv\alpha$, $h\cir
 %\begin{comment}
 %Here are more details about the end of the proof of Lemma 6.8.2:
 
-%Let $u\de\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z)\de(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\msf{glue}(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\msf{glue}(c))^{-1}\cdot\alpha(f(c))\cdot t(\msf{glue}(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
+%Let $u:\eq\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z):\eq(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\msf{glue}(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\msf{glue}(c))^{-1}\cdot\alpha(f(c))\cdot t(\msf{glue}(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
 %\end{comment}
 
 %%
@@ -1372,7 +1372,7 @@ It is easy to see that the type $(A/\sim)$ admits the same induction principle a
 
 Recall the statement:
 
-Assuming the Law of Excluded Middle, construct a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2):\mbf2\to\mbf2$ is the nonidentity automorphism.
+Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mbf2):\mbf2\to\mbf2$ is the nonidentity automorphism.
 
 Recall that the Law of Excluded Middle is defined in (3.4.1) by 
 $$
@@ -1389,21 +1389,21 @@ We shall follow an argument given by Jason Gross in
 $$
 P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
 $$ 
-hold, and $d(\mbf2,c)$ is ``the'' nonidentity automorphism of $\mbf2$. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
+hold, and $d(\mbf2,c)$ is ``the'' nonidentity automorphism of $\mbf2$. Then there is a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
 
 We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
 
 \nn\emph{Proof of the claim.} Define 
 $$
-e:\prod_{A:\U}(A+\neg A)\to A\to A
+e:\prod_{A:\U}(P(A)+\neg P(A))\to A\to A
 $$ 
-by $e(A,\inl(x))\de d(A,x)$, $e(A,\inr(x))\de\id_A$; and define 
+by $e(A,\inl(x)):\eq d(A,x)$, $e(A,\inr(x)):\eq\id_A$; and define 
 $$
 f:\prod_{A:\U}A\to A
 $$ 
-by $f(A)\de e(\LEM(P(A),b(A)))$. The equality $\LEM(P(\mbf2),b(\mbf2))=\inl(c)$, which is easily checked, implies  
+by $f(A):\eq e(A,\LEM(P(A),b(A)))$. The equality $\LEM(P(\mbf2),b(\mbf2))=\inl(c)$, which follows from Exercise~3.6 (see \S\ref{e36} above), implies  
 $$
-f(\mbf2)\de e(\LEM(P(\mbf2),b(\mbf2))=e(\inl(c))=d(\mbf2,c).\ \square 
+f(\mbf2):\eq e(\mbf2,\LEM(P(\mbf2),b(\mbf2))=e(\mbf2,\inl(c))=d(\mbf2,c).\ \square 
 $$ 
 %This shows that $\prod_{A:\mathcal U}A\to A$ is not contractible. qed
 
@@ -1413,17 +1413,17 @@ $$
 $$ 
 Define $Q:\U\to\U$ by 
 $$
-Q(A)\de\{f:A\to A\ |\ \isequiv(f)\text{ and }\exists\ (a:A)\ .\ f(a)\neq a\}.
+Q(A):\eq\{f:A\to A\ |\ \isequiv(f)\text{ and }f\neq\id_A\}.
 $$ 
-In particular we have the map 
-$
-\pr_1:Q(A)\to A\to A.
-$ 
-We define $P(A)$ by 
+In particular we have the dependent function 
 $$
-P(A)\de\isContr(Q(A)).
+\pr_1:\prod_{A:\U}Q(A)\to A\to A.
 $$ 
-The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by $d(A,x)\de\pr_1(\msf{center}(x))$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
+We define $P(A)$ by $P(A):\eq\isContr(Q(A))$. The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by 
+$$
+d(A,x):\eq\pr_1(A,\msf{center}(x)).
+$$ 
+It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
 
 %%
 
@@ -1457,9 +1457,9 @@ $$
 $$ 
 at the end of \S6.5 of the HoTT Book. $\square$
 
-We prove the existence of $u$ and $v$ as follows. Defining $t:\mbb S^{n+1}\to P(h(r))$ as in the book and setting $h'(r,r')\de u\de t(\msf{base})$, $c_u(x)\de u$ for all $x:\mbb S^{n+1}$ and 
+We prove the existence of $u$ and $v$ as follows. Defining $t:\mbb S^{n+1}\to P(h(r))$ as in the book and setting $h'(r,r'):\eq u:\eq t(\msf{base})$, $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$ and 
 $$
-M\de\msf{Map}_*((\mbb S^{n+1},\msf{base}),(P(h(r)),u)),
+M:\eq\msf{Map}_*((\mbb S^{n+1},\msf{base}),(P(h(r)),u)),
 $$ 
 we get $(t,\refl_u),(c_u,\refl_u):M$. As $M$ is contractible, there is a path $v:t=c_u$.
 
@@ -1495,7 +1495,7 @@ satisfying $f'(\lvert x\rvert_n)(y)\equiv f(x,y)$ for all $x,y:A$. From $f'(u):\
 $$
 f'(\lvert x\rvert_n)'(\lvert y\rvert_n)\equiv f'(\lvert x\rvert_n)(y)\equiv f(x,y) 
 $$ 
-for all $x,y:A$, we can set $f''(u,v)\de f'(u)'(v)$ for all $u,v:\lVert A\rVert_n$. 
+for all $x,y:A$, we can set $f''(u,v):\eq f'(u)'(v)$ for all $u,v:\lVert A\rVert_n$. 
 
 It seems to me that the equality 
 $$
@@ -1611,9 +1611,9 @@ The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the 
 
 \subsection{The definition of Q in Section 11.1}
 
-The type $\mbb Q$ is defined in \S11.1 as $\mbb Q\de(\mbb Z\times\mbb N)/\approx$, where $\approx$ is defined by 
+The type $\mbb Q$ is defined in \S11.1 as $\mbb Q:\eq(\mbb Z\times\mbb N)/\approx$, where $\approx$ is defined by 
 $$
-(u,a)\approx(v,b)\de(u(b+1)=v(a+1)).
+(u,a)\approx(v,b):\eq(u(b+1)=v(a+1)).
 $$ 
 One may add something like ``We leave it to the reader to check that $\approx$ is an equivalence relation''.
 
@@ -1634,7 +1634,7 @@ $$
 
 %It seems to me that the absolute value of a Dedekind real occurs for the first time in Display (11.2.9), and has not been previously defined. Perhaps one can simply set 
 %$$
-%(\lvert x\rvert<\ep)\de(-\ep<x)\wedge(x<\ep).
+%(\lvert x\rvert<\ep):\eq(-\ep<x)\wedge(x<\ep).
 %$$
 
 %%
