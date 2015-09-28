@@ -155,13 +155,13 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 \subsection{Exercise 1.5}
 
-\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
+\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\mbf2}\rec_\mbf2(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
 
 \nn\emph{Solution.} Recall that we have 
 $$
-\rec_\two:\prod_{C:\U}C\to C\to\two\to C,\quad\rec_\two(C,c_0,c_1,0_\two)\de c_0,\quad\rec_\two(C,c_0,c_1,1_\two)\de c_1.
+\rec_\mbf2:\prod_{C:\U}C\to C\to\mbf2\to C,\quad\rec_\mbf2(C,c_0,c_1,0_\mbf2)\de c_0,\quad\rec_\mbf2(C,c_0,c_1,1_\mbf2)\de c_1.
 $$
-We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\two,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
+We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mbf2,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
 $$
 A':\equiv\prod_{a:A}C(\inl(a)),\quad B':\equiv\prod_{b:B}C(\inr(b)).
 $$
@@ -173,42 +173,42 @@ Let $g_0:A',g_1:B'$ be given. We must define
 $$
 \ind_{A+B}(C,g_0,g_1):\prod_{x:A+B}C(x).
 $$ 
-Set $T:\equiv\rec_\two(\U,A,B):\two\to\U$. We define $D:\two\to\U$ by 
+Set $T:\equiv\rec_\mbf2(\U,A,B):\mbf2\to\U$. We define $D:\mbf2\to\U$ by 
 $$
 D(n):\equiv\prod_{u:T(n)}C((n,u)).
 $$ 
-Note that $D(0_\two)\equiv A'$ and $D(1_\two)\equiv B'$. Recall that 
+Note that $D(0_\mbf2)\equiv A'$ and $D(1_\mbf2)\equiv B'$. Recall that 
 $$
-\ind_\two(D):D(0_\two)\to D(1_\two)\to\prod_{n:\two}D(n).
+\ind_\mbf2(D):D(0_\mbf2)\to D(1_\mbf2)\to\prod_{n:\mbf2}D(n).
 $$ 
 In particular we have 
 $$
-\ind_\two(D,g_0,g_1):\prod_{n:\two}\ \prod_{u:T(n)}C((n,u)).
+\ind_\mbf2(D,g_0,g_1):\prod_{n:\mbf2}\ \prod_{u:T(n)}C((n,u)).
 $$ 
 Since 
 $$
-\ind_{\sum_{n:\two}T(n)}(C):\left(\prod_{n:\two}\ \prod_{u:T(n)}C((n,u))\right)\to\prod_{x:A+B}C(x),
+\ind_{\sum_{n:\mbf2}T(n)}(C):\left(\prod_{n:\mbf2}\ \prod_{u:T(n)}C((n,u))\right)\to\prod_{x:A+B}C(x),
 $$ 
 we can put 
 $$
-\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\two}T(n)}(C,\ind_\two(D,g_0,g_1)).
+\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mbf2}T(n)}(C,\ind_\mbf2(D,g_0,g_1)).
 $$ 
 We must check 
 \begin{equation}\label{15a}
-\ind_{A+B}(C,g_0,g_1,(0_\two,a))\equiv g_0(a),
+\ind_{A+B}(C,g_0,g_1,(0_\mbf2,a))\equiv g_0(a),
 \end{equation}
 \begin{equation}\label{15b}
-\ind_{A+B}(C,g_0,g_1,(1_\two,b))\equiv g_1(b).
+\ind_{A+B}(C,g_0,g_1,(1_\mbf2,b))\equiv g_1(b).
 \end{equation} 
 We have 
 \begin{align*}
-\ind_{A+B}(C,g_0,g_1,(0_\two,a))&\equiv\ind_{\sum_{n:\two}T(n)}\big(C,\ind_\two(D,g_0,g_1),(0_\two,a)\big)\\ 
-&\equiv\ind_\two(D,g_0,g_1)(0_\two)(a)\\ 
+\ind_{A+B}(C,g_0,g_1,(0_\mbf2,a))&\equiv\ind_{\sum_{n:\mbf2}T(n)}\big(C,\ind_\mbf2(D,g_0,g_1),(0_\mbf2,a)\big)\\ 
+&\equiv\ind_\mbf2(D,g_0,g_1)(0_\mbf2)(a)\\ 
 &\equiv g_0(a),
 \end{align*}
 the three definitional equalities following respectively from the definitions of the dependent functions
 $$
-\ind_{A+B},\quad\ind_{\sum_{n:\two}T(n)},\quad\ind_\two.
+\ind_{A+B},\quad\ind_{\sum_{n:\mbf2}T(n)},\quad\ind_\mbf2.
 $$ 
 This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
@@ -216,47 +216,47 @@ This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
 \subsection{Exercise 1.6}
 
-\emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\two}\rec_\two(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
+\emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\mbf2}\rec_\mbf2(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
 
-\nn\emph{Solution.} As above put $T:\equiv\rec_\two(\U,A,B):\two\to\U$, so that $A\times B:\equiv\prod_{n:\two}T(n)$, and 
+\nn\emph{Solution.} As above put $T:\equiv\rec_\mbf2(\U,A,B):\mbf2\to\U$, so that $A\times B:\equiv\prod_{n:\mbf2}T(n)$, and 
 $$
-\ind_\two(T):A\to B\to A\times B.
+\ind_\mbf2(T):A\to B\to A\times B.
 $$ 
-For $a:A,b:B$ we abbreviate $\ind_\two(T,a,b)$ by $(a,b)$; in particular we have 
+For $a:A,b:B$ we abbreviate $\ind_\mbf2(T,a,b)$ by $(a,b)$; in particular we have 
 $$
-(a,b):A\times B,\quad(a,b)(0_\two)\equiv a,\quad(a,b)(1_\two)\equiv b.
+(a,b):A\times B,\quad(a,b)(0_\mbf2)\equiv a,\quad(a,b)(1_\mbf2)\equiv b.
 $$ 
 Let $C:A\times B\to\U$. We must define 
 $$
 \ind_{A\times B}(C):\left(\prod_{a:A}\prod_{b:B}C((a,b))\right)\to\prod_{u:A\times B}C(u).
 $$ 
-Let $u:A\times B$ and define $D:\two\to\U$ by 
+Let $u:A\times B$ and define $D:\mbf2\to\U$ by 
 $$
-D(n):\equiv\Big(\big(u(0_\two),u(1_\two)\big)(n)=u(n)\Big)
+D(n):\equiv\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)(n)=u(n)\Big)
 $$ 
 and recall that 
 $$
-\ind_\two(D):D(0_\two)\to D(1_\two)\to\prod_{n\in\two}D(n)
+\ind_\mbf2(D):D(0_\mbf2)\to D(1_\mbf2)\to\prod_{n\in\mbf2}D(n)
 $$ 
 and that 
 $$
-\fu:\left(\prod_{n\in\two}D(n)\right)\to\Big(\big(u(0_\two),u(1_\two)\big)=u\Big).
+\fu:\left(\prod_{n\in\mbf2}D(n)\right)\to\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)=u\Big).
 $$
 We get 
 $$
-\alpha:\equiv\ind_\two(D,\refl_{u(0_\two)},\refl_{u(1_\two)}):\prod_{n\in\two}D(n),\quad\fu(\alpha):\big(u(0_\two),u(1_\two)\big)=u,
+\alpha:\equiv\ind_\mbf2(D,\refl_{u(0_\mbf2)},\refl_{u(1_\mbf2)}):\prod_{n\in\mbf2}D(n),\quad\fu(\alpha):\big(u(0_\mbf2),u(1_\mbf2)\big)=u,
 $$
 $$
-\fu(\alpha)_*:C\Big(\big(u(0_\two),u(1_\two)\big)\Big)\to C(u).
+\fu(\alpha)_*:C\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)\Big)\to C(u).
 $$
 In particular we can set
 $$
-\ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*\Big(g\big(u(0_\two)\big)\big(u(1_\two)\big)\Big).
+\ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*\Big(g\big(u(0_\mbf2)\big)\big(u(1_\mbf2)\big)\Big).
 $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
 $$
-\alpha:\prod_{n\in\two}\Big((a,b)(n)=(a,b)(n)\Big).
+\alpha:\prod_{n\in\mbf2}\Big((a,b)(n)=(a,b)(n)\Big).
 $$ 
 It is easy to prove $\alpha(n)=\refl_{(a,b)(n)}$ by induction. This gives 
 $$
@@ -843,15 +843,15 @@ and we want to prove
 \end{equation}
 \emph{Proof of \eqref{e39}.} By Lemma 3.3.2 we have 
 $$
-f_1:\prod_{A:\U}\isProp(A)\to A\to(A=\one). 
+f_1:\prod_{A:\U}\isProp(A)\to A\to(A=\mbf1). 
 $$ 
 It is easy that we have 
 $$
-f_2:\prod_{A:\U}\neg A\to(A=\zero). 
+f_2:\prod_{A:\U}\neg A\to(A=\mbf0). 
 $$ 
 Define 
 $$
-f_3:\prod_{A:\U}\isProp(A)\to(A+\neg A)\to((A=\one)+(A=\zero))
+f_3:\prod_{A:\U}\isProp(A)\to(A+\neg A)\to((A=\mbf1)+(A=\mbf0))
 $$ 
 by 
 $$
@@ -859,7 +859,7 @@ f_3(A,p,\inl(a)):\eq\inl(f_1(A,p,a),\qquad f_3(A,p,\inr(a')):\eq\inr(f_2(A,a').
 $$ 
 Define 
 $$
-f_4:\prod_{A:\U}\isProp(A)\to\big((A=\one)+(A=\zero)\big)
+f_4:\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
 $$ 
 by 
 $$
@@ -867,33 +867,33 @@ f_4(A,p):\eq f_3(A,p,\msf{LEM}(A,p)).
 $$ 
 In view of $f_4$ we can define 
 $$
-f_5:\left(\sum_{A:\U}\isProp(A)\right)\to\two
+f_5:\left(\sum_{A:\U}\isProp(A)\right)\to\mbf2
 $$ 
 by 
 $$
 f_5(A,p):\eq
 \begin{cases}
-1_\two&\text{if }A=\one\\
-0_\two&\text{if }A=\zero.
+1_\mbf2&\text{if }A=\mbf1\\
+0_\mbf2&\text{if }A=\mbf0.
 \end{cases}
 $$ 
-Let $p_0:\isProp(\zero)$ and $p_1:\isProp(\one)$, and define 
+Let $p_0:\isProp(\mbf0)$ and $p_1:\isProp(\mbf1)$, and define 
 $$
-f_6:\two\to\left(\sum_{A:\U}\isProp(A)\right)
+f_6:\mbf2\to\left(\sum_{A:\U}\isProp(A)\right)
 $$ 
-by $f_6(0_\two):\eq(\zero,p_0)$ and $f_6(1_\two):\eq(\one,p_1)$.
+by $f_6(0_\mbf2):\eq(\mbf0,p_0)$ and $f_6(1_\mbf2):\eq(\mbf1,p_1)$.
 
-It is straightforward to check that $f_5\ci f_6=\id_\two$. 
+It is straightforward to check that $f_5\ci f_6=\id_\mbf2$. 
 
 Let $A:\U$ and $p:\isProp(A)$. We must show 
 \begin{equation}\label{f6f5}
 f_6(f_5(A,p))=(A,p).
 \end{equation}
-In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\one$ or if $A=\zero$, which is easy. $\square$ 
+In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\mbf1$ or if $A=\mbf0$, which is easy. $\square$ 
 
 Note that the Law of Excluded Middle $\msf{LEM}$ is equivalent to 
 $$
-\msf{LEM}':\prod_{A:\U}\isProp(A)\to\big((A=\one)+(A=\zero)\big)
+\msf{LEM}':\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
 $$ 
 
 %%
@@ -1386,7 +1386,7 @@ We shall follow an argument given by Jason Gross in
 $$
 P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
 $$ 
-hold, and $d(\mbf2,c)$ is propositionaly equal to the nonidentity automorphism. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
+hold, and $d(\mbf2,c)$ is ``the'' nonidentity automorphism of $\mbf2$. Then there is a family $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
 
 We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
 
