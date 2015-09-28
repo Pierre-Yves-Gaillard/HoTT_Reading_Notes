@@ -1412,9 +1412,10 @@ $$
 \msf{center}:\prod_{A:\U}\isContr(A)\to A.
 $$ 
 Define $Q:\U\to\U$ by 
+%$$Q(A):\eq\{f:A\to A\ |\ \isequiv(f)\text{ and }f\neq\id_A\}.$$ 
 $$
-Q(A):\eq\{f:A\to A\ |\ \isequiv(f)\text{ and }f\neq\id_A\}.
-$$ 
+Q(A):\eq\sum_{f:A\to A}\isequiv(f)\times\neg(f=\id_A).
+$$
 In particular we have the dependent function 
 $$
 \pr_1:\prod_{A:\U}Q(A)\to A\to A.
