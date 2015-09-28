@@ -43,6 +43,7 @@
 \nc{\inl}{\mathsf{inl}}
 \nc{\inr}{\mathsf{inr}}
 %\nc{\is}{\mathcal{IS}}
+\nc{\ishae}{\mathsf{ishae}}\nc{\ish}{\mathsf{ishae}}
 \nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}
 \nc{\la}{\lambda}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}
@@ -440,7 +441,7 @@ e:\prod_{x:A}\left(\prod_{y:A}B(y)\right)\to B(x)
 $$ 
 is the evaluation, \emph{i.e.} $e(x)(f)\de f(x)$, then we have, again by path induction, 
 $$
-\msf{happly}(p)(x)=\msf{ap}_{e(x)}(p)
+\msf{happly}(p)(x)=\ap_{e(x)}(p)
 $$ 
 for $p:f=g$ and $x:A$. 
 
@@ -769,7 +770,7 @@ Lemma 3.11.9 (i) yields the following strengthening of Lemma 3.5.1:
 
 In the setting of Lemma 3.5.1, the map 
 $$
-\msf{ap}_{\msf{pr}_1}:(u=v)\to(\msf{pr}_1(u)=\msf{pr}_1(v))
+\ap_{\msf{pr}_1}:(u=v)\to(\msf{pr}_1(u)=\msf{pr}_1(v))
 $$ 
 is an equivalence.
 
@@ -1258,9 +1259,7 @@ i.e. $\msf{apd}_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 \subsection{Lemma 6.4.1}
 
-Recall the statement of the lemma:
-
-The type $\mbb S^1$ satisfies $\msf{loop}\neq\refl_{\msf{base}}$. 
+Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\msf{loop}\neq\refl_{\msf{base}}$. 
 
 This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by Lemma 3.11.3, that $\mbb S^1$ is not contractible.
 
@@ -1268,17 +1267,24 @@ This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb 
 
 \subsection{Proof of Corollary 6.4.3} % old version: https://docs.google.com/document/d/1wShljhC0168axzA7ucAfvL1Xme5AuXp6i0fhwKzM2xQ/edit
 
-%Recall the statement of Theorem 4.4.5: For any $f:A\to B$ we have $\msf{isContr}(f)\simeq\msf{ishae}(f)$.
+%Recall the statement of Theorem 4.4.5: For any $f:A\to B$ we have $\msf{isContr}(f)\simeq\ishae(f)$.
 
 The proof of Corollary 6.4.3 uses the following claim:
 
-\nn If $A$ and $B$ are types, if $\pr_1:(A\simeq B)\to(A\to B)$ is the first projection, and if $u,v:A\simeq B$, then $\msf{ap}_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))$ is an equivalence.
-
-\nn Proof of the claim. By Theorem 4.4.5 it suffices to show that the fibers of $\msf{ap}_{\pr_1}$ are contractible. By Theorem 2.7.2 there is a quasi-invertible map 
+\nn Let $A$ and $B$ be types; let $\ph_1:(A\simeq B)\to(A\to B)$ and 
 $$
-f:(u=v)\to\sum_{p_1:\pr_1(u)=\pr_1(v)}p_{1*}(\pr_2(u))=\pr_2(v)
+\ph_2:\prod_{u:A\simeq B}\ishae(\ph_1(u))
 $$ 
-such that $\pr_1\circ f=\msf{ap}_{\pr_1}$. Let $q:\pr_1(u)=\pr_1(v)$. We have $\msf{fib}_{\msf{ap}_{\pr_1}}(q)\simeq\msf{fib}_{\pr_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_*(\pr_2(u))=_{\msf{ishae}(f)}\pr_2(v)$. As $\msf{ishae}(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_*(\pr_2(u))=_{\msf{ishae}(f)}\pr_2(v)$ is contractible.
+be the first and second projection; and let $u,v:A\simeq B$. Then we have 
+\begin{equation}\label{apph}
+\ap_{\ph_1}:(u=v)\to(\ph_1(u)=\ph_1(v))
+\end{equation}%$\ap_\ph:(u=v)\to(\ph(u)=\ph(v))$ is an equivalence.
+
+\nn Proof of the claim. By Theorem 4.4.5 it suffices to show that the fibers of \eqref{apph} are contractible. Set 
+$$
+C:\eq\sum_{p:\ph_1(u)=\ph(v)}p_*(\ph_2(u))=\ph_2(v)
+$$ 
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an equivalence $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_*(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_*(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible.
 
 %%
 
@@ -1344,7 +1350,7 @@ Indeed, assume ($*$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:p(x,
 $$
 u=(\refl_x)_*(u)=p(x,x)_*(u)=v,
 $$ 
-the second and third paths being respectively $\msf{ap}_{s\mapsto s_*(u)}(r)$ and $q(x,x,u,v)$. This proves ($*$). The converse is clear.
+the second and third paths being respectively $\ap_{s\mapsto s_*(u)}(r)$ and $q(x,x,u,v)$. This proves ($*$). The converse is clear.
 
 %%
 
