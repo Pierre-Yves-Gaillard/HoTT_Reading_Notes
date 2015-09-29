@@ -28,8 +28,9 @@
 \nc{\ap}{\mathsf{ap}}
 \nc{\apd}{\mathsf{apd}}
 \nc{\base}{\mathsf{base}}\nc{\ba}{\mathsf{base}}
+\nc{\boucle}{\mathsf{loop}}\nc{\Loop}{\mathsf{loop}}\nc{\lo}{\mathsf{loop}}
 \nc{\cd}{\cdot}
-\nc{\Center}{\mathsf{center}}\nc{\cen}{\mathsf{center}}
+\nc{\Center}{\mathsf{center}}\nc{\cen}{\mathsf{center}}\nc{\ce}{\mathsf{center}}
 \nc{\ci}{\circ}
 \nc{\code}{\mathsf{code}}\nc{\decode}{\mathsf{decode}}\nc{\encode}{\mathsf{encode}}
 \nc{\de}{:\equiv}
@@ -38,7 +39,7 @@
 \nc{\ep}{\varepsilon}
 \nc{\eq}{\equiv}
 \nc{\fib}{\mathsf{fib}}
-\nc{\fu}{\mathsf{funext}}
+\nc{\funext}{\mathsf{funext}}\nc{\fu}{\mathsf{funext}}
 \nc{\glue}{\mathsf{glue}}\nc{\gl}{\mathsf{glue}}
 \nc{\happly}{\mathsf{happly}}\nc{\ha}{\mathsf{happly}}
 \nc{\id}{\mathsf{id}}
@@ -54,7 +55,6 @@
 \nc{\isSet}{\mathsf{isSet}}\nc{\isS}{\mathsf{isSet}}\nc{\iss}{\mathsf{isSet}}
 \nc{\la}{\lambda}
 \nc{\LEM}{\mathsf{LEM}}\nc{\lem}{\mathsf{LEM}}\nc{\LE}{\mathsf{LEM}}
-\nc{\Loop}{\mathsf{loop}}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
 \nc{\Map}{\mathsf{Map}}
 \nc{\N}{\mathbb N}
@@ -249,18 +249,18 @@ $$
 $$ 
 and that 
 $$
-\fu:\left(\prod_{n\in\mbf2}D(n)\right)\to\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)=u\Big).
+\funext:\left(\prod_{n\in\mbf2}D(n)\right)\to\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)=u\Big).
 $$
 We get 
 $$
-\alpha:\equiv\ind_\mbf2(D,\refl_{u(0_\mbf2)},\refl_{u(1_\mbf2)}):\prod_{n\in\mbf2}D(n),\quad\fu(\alpha):\big(u(0_\mbf2),u(1_\mbf2)\big)=u,
+\alpha:\equiv\ind_\mbf2(D,\refl_{u(0_\mbf2)},\refl_{u(1_\mbf2)}):\prod_{n\in\mbf2}D(n),\quad\funext(\alpha):\big(u(0_\mbf2),u(1_\mbf2)\big)=u,
 $$
 $$
-\fu(\alpha)_*:C\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)\Big)\to C(u).
+\funext(\alpha)_*:C\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)\Big)\to C(u).
 $$
 In particular we can set
 $$
-\ind_{A\times B}(C,g,u):\equiv\fu(\alpha)_*\Big(g\big(u(0_\mbf2)\big)\big(u(1_\mbf2)\big)\Big).
+\ind_{A\times B}(C,g,u):\equiv\funext(\alpha)_*\Big(g\big(u(0_\mbf2)\big)\big(u(1_\mbf2)\big)\Big).
 $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
@@ -1270,7 +1270,7 @@ i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 \subsection{Lemma 6.4.1}
 
-Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\Loop\neq\refl_{\base}$. 
+Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\boucle\neq\refl_{\base}$. 
 
 This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by Lemma 3.11.3, that $\mbb S^1$ is not contractible.
 
