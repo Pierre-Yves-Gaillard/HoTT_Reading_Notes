@@ -29,6 +29,7 @@
 \nc{\apd}{\mathsf{apd}}
 \nc{\base}{\mathsf{base}}\nc{\ba}{\mathsf{base}}
 \nc{\cd}{\cdot}
+\nc{\Center}{\mathsf{center}}\nc{\cen}{\mathsf{center}}
 \nc{\ci}{\circ}
 \nc{\code}{\mathsf{code}}\nc{\decode}{\mathsf{decode}}\nc{\encode}{\mathsf{encode}}
 \nc{\de}{:\equiv}
@@ -38,6 +39,8 @@
 \nc{\eq}{\equiv}
 \nc{\fib}{\mathsf{fib}}
 \nc{\fu}{\mathsf{funext}}
+\nc{\glue}{\mathsf{glue}}\nc{\gl}{\mathsf{glue}}
+\nc{\happly}{\mathsf{happly}}\nc{\ha}{\mathsf{happly}}
 \nc{\id}{\mathsf{id}}
 \nc{\inc}{\subseteq}
 \nc{\ind}{\mathsf{ind}}
@@ -48,9 +51,12 @@
 \nc{\isequiv}{\mathsf{isequiv}}\nc{\iseq}{\mathsf{isequiv}}
 \nc{\ishae}{\mathsf{ishae}}\nc{\ish}{\mathsf{ishae}}
 \nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}
+\nc{\isSet}{\mathsf{isSet}}\nc{\isS}{\mathsf{isSet}}\nc{\iss}{\mathsf{isSet}}
 \nc{\la}{\lambda}
 \nc{\LEM}{\mathsf{LEM}}\nc{\lem}{\mathsf{LEM}}\nc{\LE}{\mathsf{LEM}}
+\nc{\Loop}{\mathsf{loop}}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
+\nc{\Map}{\mathsf{Map}}
 \nc{\N}{\mathbb N}
 \nc{\na}{\mathsf{nat}}
 \nc{\nn}{\noindent}
@@ -59,13 +65,15 @@
 \nc{\ps}{\mathcal P}
 \nc{\pa}{\mathsf{pair}^=}
 \nc{\ph}{\varphi}
+\nc{\ppmap}{\mathsf{ppmap}}
 \nc{\pr}{\mathsf{pr}}
 \nc{\rec}{\mathsf{rec}}
 \nc{\refl}{\mathsf{refl}}\nc{\re}{\mathsf{refl}}
 \nc{\sm}{\scriptstyle}
-\nc{\su}{\mathsf{succ}}
+\nc{\suc}{\mathsf{succ}}\nc{\su}{\mathsf{succ}}
 \nc{\transport}{\mathsf{transport}}\nc{\tr}{\mathsf{transport}}
 \nc{\two}{\mathbf2}
+\nc{\Type}{\mathsf{-Type}}\nc{\type}{\mathsf{-Type}}\nc{\ty}{\mathsf{-Type}}
 \nc{\U}{\mathcal U}\nc{\V}{\mathcal V}
 \nc{\ua}{\mathsf{ua}}
 \nc{\uniq}{\mathsf{uniq}}
@@ -436,7 +444,7 @@ $$
 
 The map 
 $$
-\msf{happly}:(f=g)\to\prod_{a:A}f(a)=g(a)
+\happly:(f=g)\to\prod_{a:A}f(a)=g(a)
 $$ 
 for $f,g:\prod_{x:A}B(x)$ is defined in the obvious way by path induction. If 
 $$
@@ -444,7 +452,7 @@ e:\prod_{x:A}\left(\prod_{y:A}B(y)\right)\to B(x)
 $$ 
 is the evaluation, \emph{i.e.} $e(x)(f):\eq f(x)$, then we have, again by path induction, 
 $$
-\msf{happly}(p)(x)=\ap_{e(x)}(p)
+\happly(p)(x)=\ap_{e(x)}(p)
 $$ 
 for $p:f=g$ and $x:A$. 
 
@@ -478,7 +486,7 @@ It is written, after the Lemma: ``We leave it to the reader to prove this and to
 
 If $q:p_*(f)=g$ corresponds under this equivalence to $\widehat q$, then for $a:A(x)$, the path 
 $$
-\msf{happly}(q,p_*(a)):(p_*(f))(p_*(a))=g(p_*(a))
+\happly(q,p_*(a)):(p_*(f))(p_*(a))=g(p_*(a))
 $$ 
 is equal to the composite 
 \begin{align*}
@@ -643,7 +651,7 @@ In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads
 $$
 \msf t^{Q'}(p,(m,a))=\Bigg(\msf t^P(p,m),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
-with $p:\eq\msf{ua}(e)$.
+with $p:\eq\ua(e)$.
 
 \subsubsection{A general comment}
 
@@ -714,11 +722,11 @@ $$
 
 Recall the statement: 
 
-If $A$ is a set (that is, $\msf{isSet}(A)$ is inhabited), then $A$ is a 1-type. 
+If $A$ is a set (that is, $\isSet(A)$ is inhabited), then $A$ is a 1-type. 
 
 Here is a slightly different wording of the proof:
 
-Suppose $f:\msf{isSet}(A)$ and let $x,y:A$. For any $p,q:x=y$ we have $f(p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
+Suppose $f:\isSet(A)$ and let $x,y:A$. For any $p,q:x=y$ we have $f(p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
 $$
 r=f(p,q)^{-1}\cdot f(p,q')
 $$ 
@@ -1016,9 +1024,9 @@ We claim that $g$ and $h$ are quasi-inverse. It is easy to check $h\ci g=\id_A$.
 
 Here are some details about the last sentence of the proof of Theorem 4.8.3:
 
-Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $t$ we have 
+Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\msf t$ we have 
 \begin{equation}\label{2.9.4}
-t^{A\to B}(p,f,a_2)=t^B(p,f(t^A(p^{-1},x)))
+\msf t^{A\to B}(p,f,a_2)=\msf t^B(p,f(\msf t^A(p^{-1},x)))
 \end{equation}
 for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
 
@@ -1036,15 +1044,15 @@ q_*(\pr_1)=f.
 \end{equation} 
 By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ C(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
 $$
-t^{I\to C}(q,\pr_1)=f.
+\msf t^{I\to C}(q,\pr_1)=f.
 $$ 
 Let $a:A$. We must show 
 $$
-t^{I\to C}(q,\pr_1,a)=f(a).
+\msf t^{I\to C}(q,\pr_1,a)=f(a).
 $$ 
 We get 
 $$
-t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=t^C(q,\pr_1(t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
+\msf t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=\msf t^C(q,\pr_1(\msf t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
 $$ 
 where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$.
 
@@ -1062,30 +1070,30 @@ at the beginning of the proof of Theorem 4.8.4. Here is how I would present thin
 \begin{equation}\label{asimeq}
 A\simeq\sum_{X:\U}X\times X=A.
 \end{equation}
-Proof: Write $t$ for ``transport''. Set $C\eq\sum_{X:\U}X\times X=A$, and define 
+Proof: Write $\msf t$ for ``transport''. Set $C\eq\sum_{X:\U}X\times X=A$, and define 
 $$
 f:A\to C,\qquad g:C\to A
 $$ 
 by 
 $$
-f(a):\eq(A,a,\re_A),\qquad g(B,b,p):\eq t^{X\mapsto X}(p,b).
+f(a):\eq(A,a,\re_A),\qquad g(B,b,p):\eq\msf t^{X\mapsto X}(p,b).
 $$ 
 
 \nn We have $g(f(a))\eq a$ for all $a:A$. Let $(B,b,p):C$. We have 
 $$
-f(g(B,b,p))=(A,t^{X\mapsto X}(p,b),\re_A)
+f(g(B,b,p))=(A,\msf t^{X\mapsto X}(p,b),\re_A)
 $$ 
 and we must show 
 $$
-(B,b,p)=(A,t^{X\mapsto X}(p,b),\re_A).
+(B,b,p)=(A,\msf t^{X\mapsto X}(p,b),\re_A).
 $$
 By Theorem 2.7.2 it suffices to verify 
 $$
-t^{X\mapsto X\times X=A}(p,(b,p))=(t^{X\mapsto X}(p,b),\refl_A).
+\msf t^{X\mapsto X\times X=A}(p,(b,p))=(\msf t^{X\mapsto X}(p,b),\refl_A).
 $$ 
 By Theorem 2.6.4 it suffices to prove 
 $$
-t^{X\mapsto X=A}(p,p)=\refl_A.
+\msf t^{X\mapsto X=A}(p,p)=\refl_A.
 $$ 
 But this follows from Lemma 2.11.2. $\square$
 
@@ -1217,13 +1225,13 @@ For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ becaus
 
 Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2. 
 
-\nn$\bullet\ \msf{ppmap}(R,S)$ is inhabited: Setting $D(b,r):\eq S(b),d:\eq s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)=s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r):\eq f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)=s_0$, as required. 
+\nn$\bullet\ \ppmap(R,S)$ is inhabited: Setting $D(b,r):\eq S(b),d:\eq s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)=s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r):\eq f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)=s_0$, as required. 
 
-\nn$\bullet\ \msf{ppmap}(R,S)$ is a mere proposition: Let 
+\nn$\bullet\ \ppmap(R,S)$ is a mere proposition: Let 
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\msf{ppmap}(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_*(p)=q$; this follows from the equalities $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_*(p)=q$; this follows from the equalities $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
 
 %% 
 
@@ -1262,7 +1270,7 @@ i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 \subsection{Lemma 6.4.1}
 
-Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\msf{loop}\neq\refl_{\base}$. 
+Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\Loop\neq\refl_{\base}$. 
 
 This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by Lemma 3.11.3, that $\mbb S^1$ is not contractible.
 
@@ -1308,14 +1316,14 @@ $$
 \alpha:\prod_{a:A}D(\inl(a)),\quad\beta:\prod_{b:B}D(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha\big(\inl(f(c))\big)=^D_{\msf{glue}(c)}\beta\big(\inr(g(c))\big).
+\gamma:\prod_{c:C}\ \alpha\big(\inl(f(c))\big)=^D_{\glue(c)}\beta\big(\inr(g(c))\big).
 $$ 
-Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \inl\equiv\alpha$, $h\circ \inr\equiv\beta$ and $\apd_h(\msf{glue}(c))=\gamma(c)$ for all $c:C$. 
+Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \inl\equiv\alpha$, $h\circ \inr\equiv\beta$ and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
 
 %\begin{comment}
 %Here are more details about the end of the proof of Lemma 6.8.2:
 
-%Let $u:\eq\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z):\eq(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\msf{glue}(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\msf{glue}(c))^{-1}\cdot\alpha(f(c))\cdot t(\msf{glue}(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
+%Let $u:\eq\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z):\eq(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\glue(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\glue(c))^{-1}\cdot\alpha(f(c))\cdot t(\glue(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
 %\end{comment}
 
 %%
@@ -1410,7 +1418,7 @@ $$
 
 \nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\isContr$ we have a dependent function 
 $$
-\msf{center}:\prod_{A:\U}\isContr(A)\to A.
+\Center:\prod_{A:\U}\isContr(A)\to A.
 $$ 
 Define $Q:\U\to\U$ by 
 %$$Q(A):\eq\{f:A\to A\ |\ \isequiv(f)\text{ and }f\neq\id_A\}.$$ 
@@ -1423,7 +1431,7 @@ $$
 $$ 
 We define $P(A)$ by $P(A):\eq\isContr(Q(A))$. The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by 
 $$
-d(A,x):\eq\pr_1(A,\msf{center}(x)).
+d(A,x):\eq\pr_1(A,\Center(x)).
 $$ 
 It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
 
@@ -1459,19 +1467,19 @@ for $p:x=y$ by based path induction.
 
 Claim: If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if the type 
 $$
-\msf{Map}_*((\mbb S^{n+1},\base),(A,a))
+\Map_*((\mbb S^{n+1},\base),(A,a))
 $$ 
 is contractible for all $a:A$.
 
 \nn Proof: Use Theorem 7.2.9 and the equivalence 
 $$
-\msf{Map}_*((\mbb S^{n+1},\base),(A,a))\simeq\Omega^{n+1}(A,a)
+\Map_*((\mbb S^{n+1},\base),(A,a))\simeq\Omega^{n+1}(A,a)
 $$ 
 at the end of \S6.5 of the HoTT Book. $\square$
 
 We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r))$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
 $$
-M:\eq\msf{Map}_*((\mbb S^{n+1},\base),(P(h(r)),u)).
+M:\eq\Map_*((\mbb S^{n+1},\base),(P(h(r)),u)).
 $$ 
 Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$.
 
@@ -1489,11 +1497,11 @@ The proof uses various times the principle of double induction for $n$-truncatio
 
 Recall the simple induction principle:
 
-To each couple $(P,f)$ with $P:\lVert A\rVert_n\to n\msf{-Type}$ and $f:\prod_{x:A}P(\lvert x\rvert_n)$ is attach a section $f':\prod_{u:\lVert A\rVert_n}P(u)$ satisfying $f'(\lvert x\rvert_n)\equiv f(x)$ for all $x:A$.
+To each couple $(P,f)$ with $P:\lVert A\rVert_n\to n\Type$ and $f:\prod_{x:A}P(\lvert x\rvert_n)$ is attach a section $f':\prod_{u:\lVert A\rVert_n}P(u)$ satisfying $f'(\lvert x\rvert_n)\equiv f(x)$ for all $x:A$.
 
 The double induction principle says:
 
-To each couple $(P,f)$ with $$P:\lVert A\rVert_n\to\lVert A\rVert_n\to n\msf{-Type}$$ and $f:\prod_{x,y:A}P(\lvert x\rvert_n,\lvert y\rvert_n)$ is attach a section $f'':\prod_{u,v:\lVert A\rVert_n}P(u,v)$ satisfying $f''(\lvert x\rvert_n,\lvert y\rvert_n)\equiv f(x,y)$ for all $x,y:A$.
+To each couple $(P,f)$ with $$P:\lVert A\rVert_n\to\lVert A\rVert_n\to n\Type$$ and $f:\prod_{x,y:A}P(\lvert x\rvert_n,\lvert y\rvert_n)$ is attach a section $f'':\prod_{u,v:\lVert A\rVert_n}P(u,v)$ satisfying $f''(\lvert x\rvert_n,\lvert y\rvert_n)\equiv f(x,y)$ for all $x,y:A$.
 
 We derive the double induction principle from the simple induction principle as follows. From 
 $$
@@ -1587,7 +1595,7 @@ Let $A$ be a type. Then $A$ is contractible if and only if $A$ is an $n$-connect
 
 \subsection{Proof of Lemma 7.5.10}
 
-I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $|-|_n$ is $n$-connected. Thus, since $f=g\circ |-|_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} above). Thus, $g$ is $n$-connected if and only if it is an equivalence (see \S\ref{751} above).
+I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $|-|_n$ is $n$-connected. Thus, since $f=g\circ |-|_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is an equivalence (see \S\ref{751} above).
 
 %%
 
@@ -1617,7 +1625,7 @@ The claim ``since $\mathbb Z$ is a set, $\Omega^{n-1}(\mathbb Z)$ is contractibl
 
 \subsection{Proof of Theorem 8.2.1}
 
-The equality $\lVert\lVert A\rVert_{n+1}\rVert_n=\lVert A\rVert_n$ follows from Theorem 7.1.7 (cumulativity of $n$-types) and Lemma 7.3.3 (universal property of truncations).
+The equality $\lVert\lVert A\rVert_{n+1}\rVert_n=\lVert A\rVert_n$ follows from Lemma 7.3.15.
 
 %%
 
@@ -1665,7 +1673,7 @@ If $q,r:\mbb Q$ and $q<r$ and $x:\mbb R_d$, then we merely have $q<x$ or $x<r$ b
 
 \subsection{Proof of Theorem 11.2.12}
 
-The claim ``Since $q+2\ep<r-2\ep$ merely $L_{x_\ep}(q+2\ep)$ or $U_{x_\ep}(q-2\ep)$'' follows from \S\ref{1122}.
+The claim ``Since $q+2\ep<r-2\ep$ merely $L_{x_\ep}(q+2\ep)$ or $U_{x_\ep}(q-2\ep)$'' follows from \S\ref{1122} above.
 
 %%
 
