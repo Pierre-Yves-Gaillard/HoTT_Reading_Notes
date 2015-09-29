@@ -30,7 +30,7 @@
 \nc{\base}{\mathsf{base}}\nc{\ba}{\mathsf{base}}
 \nc{\boucle}{\mathsf{loop}}\nc{\Loop}{\mathsf{loop}}\nc{\lo}{\mathsf{loop}}
 \nc{\cd}{\cdot}
-\nc{\Center}{\mathsf{center}}\nc{\cen}{\mathsf{center}}\nc{\ce}{\mathsf{center}}
+\nc{\centre}{\mathsf{center}}\nc{\Center}{\mathsf{center}}\nc{\cen}{\mathsf{center}}\nc{\ce}{\mathsf{center}}
 \nc{\ci}{\circ}
 \nc{\code}{\mathsf{code}}\nc{\decode}{\mathsf{decode}}\nc{\encode}{\mathsf{encode}}
 \nc{\de}{:\equiv}
@@ -1418,7 +1418,7 @@ $$
 
 \nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\isContr$ we have a dependent function 
 $$
-\Center:\prod_{A:\U}\isContr(A)\to A.
+\centre:\prod_{A:\U}\isContr(A)\to A.
 $$ 
 Define $Q:\U\to\U$ by 
 %$$Q(A):\eq\{f:A\to A\ |\ \isequiv(f)\text{ and }f\neq\id_A\}.$$ 
@@ -1431,7 +1431,7 @@ $$
 $$ 
 We define $P(A)$ by $P(A):\eq\isContr(Q(A))$. The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by 
 $$
-d(A,x):\eq\pr_1(A,\Center(x)).
+d(A,x):\eq\pr_1(A,\centre(x)).
 $$ 
 It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
 
