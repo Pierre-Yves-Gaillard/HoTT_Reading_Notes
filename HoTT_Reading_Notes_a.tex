@@ -1433,6 +1433,12 @@ It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditio
 
 %%
 
+\subsection{Theorem 7.1.8}\label{718}
+
+Here is a corollary to Theorem 7.1.8: the fibers of a map between $n$-types are $n$-types.
+
+%%
+
 \subsection{First proof of Theorem 7.2.2}
 
 We prove 
@@ -1463,7 +1469,7 @@ $$
 $$ 
 at the end of \S6.5 of the HoTT Book. $\square$
 
-We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r)$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
+We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r))$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
 $$
 M:\eq\msf{Map}_*((\mbb S^{n+1},\base),(P(h(r)),u)).
 $$ 
@@ -1536,7 +1542,7 @@ $$
 \lV g\rV_n\lv fa\rv_n\ar@{=}[d]^{\na_n^g(fa)}\\
 \lV gf\rV_n\lv a\rv_n\ar@{=}[rrr]_{\na_n^{gf}(a)}&&&\lv gfa\rv_n.}
 $$ 
-(We assume $a:A$.)
+(We assume $a:A$, and omit most of the parenthesis.)
 
 Going back to Definition 7.4.7, we may define $\lV c\rV_n$ as being $(\lV i\rV_n,\lV j\rV_n,h'_n)$, where $h'_n$ is the homotopy obtained by composing the three homotopies
 $$
@@ -1557,7 +1563,7 @@ $$
 =
 \Big(\lV i\rV_n\ci\lv-\rv^A_n\ ,\ \lV j\rV_n\ci\lv-\rv^B_n\ ,\ k\Big).
 $$
-In turn, the above equality is equivalent to the commutativity of the diagram below. [We dropped the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.] 
+In turn, the above equality is equivalent to the commutativity of the diagram below. [We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.] 
 $$ 
 \xymatrix{
 \lV i\rV\lv fz\rv\ar@{=}[d]_{\na^i(fz)}&&
@@ -1571,9 +1577,17 @@ The small squares commute by \S\ref{747} above.
 
 %%
 
+\subsection{Definition 7.5.1}\label{751}
+
+The following observation, which is an immediate consequence of Corollary 7.3.7, can be made right after Definition 7.5.1:
+
+Let $A$ be a type. Then $A$ is contractible if and only if $A$ is an $n$-connected $n$-type.
+
+%%
+
 \subsection{Proof of Lemma 7.5.10}
 
-I'm adding two parenthesis to the proof: By Corollary 7.5.8, $|-|_n$ is $n$-connected. Thus, since $f=g\circ |-|_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (Theorem 7.1.8). Thus, $g$ is $n$-connected if and only if it is an equivalence (Corollary 7.3.7).
+I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $|-|_n$ is $n$-connected. Thus, since $f=g\circ |-|_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} above). Thus, $g$ is $n$-connected if and only if it is an equivalence (see \S\ref{751} above).
 
 %%
 
