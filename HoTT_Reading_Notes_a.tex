@@ -27,9 +27,10 @@
 \nc{\ack}{\mathsf{ack}}
 \nc{\ap}{\mathsf{ap}}
 \nc{\apd}{\mathsf{apd}}
+\nc{\base}{\mathsf{base}}\nc{\ba}{\mathsf{base}}
 \nc{\cd}{\cdot}
 \nc{\ci}{\circ}
-\nc{\code}{\mathsf{code}}
+\nc{\code}{\mathsf{code}}\nc{\decode}{\mathsf{decode}}\nc{\encode}{\mathsf{encode}}
 \nc{\de}{:\equiv}
 \nc{\dr}{\right}\nc{\ga}{\left}
 \nc{\ds}{\displaystyle}
@@ -520,7 +521,7 @@ Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_
 
 The equality 
 $$
-\msf{encode}(\inl(a),\msf{decode}(\inl(a),c))=c
+\encode(\inl(a),\decode(\inl(a),c))=c
 $$ 
 for $c:a_0=a$ can be proved by based path induction.
 
@@ -1261,7 +1262,7 @@ i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 \subsection{Lemma 6.4.1}
 
-Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\msf{loop}\neq\refl_{\msf{base}}$. 
+Recall the statement of the lemma: The type $\mbb S^1$ satisfies $\msf{loop}\neq\refl_{\base}$. 
 
 This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by Lemma 3.11.3, that $\mbb S^1$ is not contractible.
 
@@ -1450,19 +1451,23 @@ for $p:x=y$ by based path induction.
 
 \subsection{Proof of Theorem 7.3.2}
 
-Claim: If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if $$\msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))$$ is contractible for all $a:A$.
+Claim: If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if the type 
+$$
+\msf{Map}_*((\mbb S^{n+1},\base),(A,a))
+$$ 
+is contractible for all $a:A$.
 
 \nn Proof: Use Theorem 7.2.9 and the equivalence 
 $$
-\msf{Map}_*((\mbb S^{n+1},\msf{base}),(A,a))\simeq\Omega^{n+1}(A,a)
+\msf{Map}_*((\mbb S^{n+1},\base),(A,a))\simeq\Omega^{n+1}(A,a)
 $$ 
 at the end of \S6.5 of the HoTT Book. $\square$
 
-We prove the existence of $u$ and $v$ as follows. Defining $t:\mbb S^{n+1}\to P(h(r))$ as in the book and setting $h'(r,r'):\eq u:\eq t(\msf{base})$, $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$ and 
+We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r)$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
 $$
-M:\eq\msf{Map}_*((\mbb S^{n+1},\msf{base}),(P(h(r)),u)),
+M:\eq\msf{Map}_*((\mbb S^{n+1},\base),(P(h(r)),u)).
 $$ 
-we get $(t,\refl_u),(c_u,\refl_u):M$. As $M$ is contractible, there is a path $v:t=c_u$.
+Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$.
 
 %%
 
@@ -1500,7 +1505,7 @@ for all $x,y:A$, we can set $f''(u,v):\eq f'(u)'(v)$ for all $u,v:\lVert A\rVert
 
 It seems to me that the equality 
 $$
-\msf{encode}(\msf{decode}(\lvert p\rvert_n))=\lvert p\rvert_n
+\encode(\decode(\lvert p\rvert_n))=\lvert p\rvert_n
 $$ 
 can be proved by path induction on $p:x=y$.
 
