@@ -1393,13 +1393,18 @@ I learnt the following argument from Jason Gross; see
 
 \nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
 
-Let $A$ be a type. We must define $f(A):A\to A$. Set 
+Let $A$ be a type. Set 
 $$
 C:\eq\sum_{f:A\to A}\isequiv(f)\times\neg(f=\id_A).
 $$ 
 In particular we have the first projection $\pr_1:C\to A\to A$. 
 
-The type $\isContr(C)$ being a mere proposition by Lemma 3.11.4, to define $f(A)$ it suffices to define a map $g:\isProp(\isContr(C))\to A\to A$. Since we have 
+%The type $\isContr(C)$ being a mere proposition by Lemma 3.11.4, 
+We must define $f(A):A\to A$. Lemma 3.11.4 providing an inhabitant of the type
+$$
+\prod_{B:\U}\isProp(\isContr(B)),
+$$
+it suffices to define a map $g:\isProp(\isContr(C))\to A\to A$. Since we have 
 $$
 \LEM:\isProp(\isContr(C))\to\big(\isContr(C)+\neg\isContr(C)\big),
 $$ 
@@ -1411,7 +1416,9 @@ that is, it suffices to define
 $$
 g_1:\isContr(C)\to A\to A\quad\text{and}\quad g_0:\neg\isContr(C)\to A\to A.
 $$ 
-We set $g_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and, for all $x:\isContr(C)$, we let $g_1(x)$ be the first projection of the center of $x$. It is straightforward to check that $f(A)$ does the job.
+We set $g_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and, for all $x:\isContr(C)$, we let $g_1(x)$ be the first projection of the center of $x$. It is straightforward to check that $f(A)$ does the job. $\square$
+
+%We used the fact that Lemma 3.11.4 provides an inhabitant of the type $$\prod_{B:\U}\isProp(\isContr(B)).$$
 
 %%
 
