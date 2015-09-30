@@ -1378,6 +1378,8 @@ It is easy to see that the type $(A/\sim)$ admits the same induction principle a
 
 \subsection{Exercise 6.9}
 
+% previous version https://docs.google.com/document/d/1KuFlAOuigg8siZvzZ8Ofe24VzrhBMv6-vxqSafXzssQ/edit
+
 Recall the statement:
 
 Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2):\mb2\to\mb2$ is the nonidentity automorphism.
@@ -1387,11 +1389,9 @@ $$
 \LEM:\prod_{A:\U}\isProp(A)\to(A+\neg A).
 $$ 
 
-We give two formulations of an argument described by Jason Gross in 
+I learnt the following argument from Jason Gross; see 
 
 \nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
-
-\subsubsection{First formulation}
 
 Let $A$ be a type. We must define $f(A):A\to A$. Set 
 $$
@@ -1401,70 +1401,17 @@ In particular we have the first projection $\pr_1:C\to A\to A$.
 
 The type $\isContr(C)$ being a mere proposition by Lemma 3.11.4, to define $f(A)$ it suffices to define a map $g:\isProp(\isContr(C))\to A\to A$. Since we have 
 $$
-\LEM:\isProp(\isContr(C))\to\big(\isContr(C)+\neg \isContr(C)\big),
+\LEM:\isProp(\isContr(C))\to\big(\isContr(C)+\neg\isContr(C)\big),
 $$ 
 it suffices to define  
 $$
-g:\big(\isContr(C)+\neg \isContr(C)\big)\to A\to A,
+g:\big(\isContr(C)+\neg\isContr(C)\big)\to A\to A,
 $$ 
 that is, it suffices to define 
 $$
 g_1:\isContr(C)\to A\to A\quad\text{and}\quad g_0:\neg\isContr(C)\to A\to A.
 $$ 
 We set $g_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and, for all $x:\isContr(C)$, we let $g_1(x)$ be the first projection of the center of $x$. It is straightforward to check that $f(A)$ does the job.
-
-%Let $A$ be a type. We must define $f(A):A\to A$. Set $$C:\eq\sum_{f:A\to A}\isequiv(f)\times\neg(f=\id_A).$$ In particular we have the first projection $\pr_1:C\to A\to A$. Since $\isContr(C)$ is a mere proposition by Lemma 3.11.4, and since we admit the law of excluded middle, we can assume that $C$ is contractible, or that $C$ is not contractible. If $C$ is not contractible, we set $f(A):\eq\id_A$. If $C$ is contractible, we pick an inhabitant of $\isContr(C)$, take its center $c:C$, and set $f(A):\eq\pr_1(c)$. It is straightforward to check that this $f$ does the job.
-
-\subsubsection{Second formulation}
-
-\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ such that the typing judgments  
-$$
-P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mb2),\quad d:\prod_{A:\U}P(A)\to A\to A
-$$ 
-hold, and $d(\mb2,c)$ is a nonidentity automorphism of $\mb2$. Then there is a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2)=d(\mb2,c)$. 
-
-We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
-
-\nn\emph{Proof of the claim.} Define 
-$$
-e:\prod_{A:\U}\big(P(A)+\neg P(A)\big)\to A\to A
-$$ 
-by $e(A,\inl(p)):\eq d(A,p)$ for $p:P(A)$ and $e(A,\inr(p')):\eq\id_A$ for $p':\neg P(A)$; and define 
-$$
-f:\prod_{A:\U}A\to A
-$$ 
-by 
-$$
-f(A):\eq e\Big(A,\LEM\big(P(A),b(A)\big)\Big).
-$$ 
-The equality 
-$$
-\LEM\big(P(\mb2),b(\mb2)\big)\ =_{P(\mb2)+\neg P(\mb2)}\ \inl(c),
-$$ 
-
-\nn which follows from Exercise~3.6 (see \S\ref{e36} p.~\pageref{e36} above), implies  
-
-$$
-f(\mb2):\eq e\Big(\mb2,\LEM\big(P(\mb2),b(\mb2)\big)\Big)=e(\mb2,\inl(c))=d(\mb2,c).\ \square 
-$$ 
-
-\nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\isContr$ we have a dependent function 
-$$
-\centre:\prod_{A:\U}\isContr(A)\to A.
-$$ 
-Define $Q:\U\to\U$ by 
-$$
-Q(A):\eq\sum_{f:A\to A}\isequiv(f)\times\neg(f=\id_A).
-$$
-In particular we have a dependent function 
-$$
-\pr_1:\prod_{A:\U}Q(A)\to A\to A.
-$$ 
-We define $P(A)$ by $P(A):\eq\isContr(Q(A))$. The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by 
-$$
-d(A,p):\eq\pr_1\big(A,\centre(Q(A),p)\big)
-$$ 
-for $p:P(A)$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
 
 %%
 
