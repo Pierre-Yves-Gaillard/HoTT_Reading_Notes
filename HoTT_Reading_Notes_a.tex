@@ -1392,48 +1392,54 @@ We shall follow an argument given by Jason Gross in
 
 \nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
 
-%\nn we prove that, under the Law of Excluded Middle, the type $\prod_{A:\mathcal U}A\to A$ is not contractible.
-
 \nn\textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ such that the typing judgments  
 $$
 P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
 $$ 
-hold, and $d(\mbf2,c)$ is ``the'' nonidentity automorphism of $\mbf2$. Then there is a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. %$\prod_{A:\mathcal U}A\to A$ is not contractible.
+hold, and $d(\mbf2,c)$ is a nonidentity automorphism of $\mbf2$. Then there is a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. 
 
 We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
 
 \nn\emph{Proof of the claim.} Define 
 $$
-e:\prod_{A:\U}(P(A)+\neg P(A))\to A\to A
+e:\prod_{A:\U}\big(P(A)+\neg P(A)\big)\to A\to A
 $$ 
-by $e(A,\inl(x)):\eq d(A,x)$, $e(A,\inr(x)):\eq\id_A$; and define 
+by $e(A,\inl(p)):\eq d(A,p)$ for $p:P(A)$ and $e(A,\inr(p')):\eq\id_A$ for $p':\neg P(A)$; and define 
 $$
 f:\prod_{A:\U}A\to A
 $$ 
-by $f(A):\eq e(A,\LEM(P(A),b(A)))$. The equality $\LEM(P(\mbf2),b(\mbf2))=\inl(c)$, which follows from Exercise~3.6 (see \S\ref{e36} p.~\pageref{e36} above), implies  
+by 
 $$
-f(\mbf2):\eq e(\mbf2,\LEM(P(\mbf2),b(\mbf2))=e(\mbf2,\inl(c))=d(\mbf2,c).\ \square 
+f(A):\eq e\Big(A,\LEM\big(P(A),b(A)\big)\Big).
 $$ 
-%This shows that $\prod_{A:\mathcal U}A\to A$ is not contractible. qed
+The equality 
+$$
+\LEM\big(P(\mbf2),b(\mbf2)\big)\ =_{P(\mbf2)+\neg P(\mbf2)}\ \inl(c),
+$$ 
+
+\nn which follows from Exercise~3.6 (see \S\ref{e36} p.~\pageref{e36} above), implies  
+
+$$
+f(\mbf2):\eq e\Big(\mbf2,\LEM\big(P(\mbf2),b(\mbf2)\big)\Big)=e(\mbf2,\inl(c))=d(\mbf2,c).\ \square 
+$$ 
 
 \nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\isContr$ we have a dependent function 
 $$
 \centre:\prod_{A:\U}\isContr(A)\to A.
 $$ 
 Define $Q:\U\to\U$ by 
-%$$Q(A):\eq\{f:A\to A\ |\ \isequiv(f)\text{ and }f\neq\id_A\}.$$ 
 $$
 Q(A):\eq\sum_{f:A\to A}\isequiv(f)\times\neg(f=\id_A).
 $$
-In particular we have the dependent function 
+In particular we have a dependent function 
 $$
 \pr_1:\prod_{A:\U}Q(A)\to A\to A.
 $$ 
 We define $P(A)$ by $P(A):\eq\isContr(Q(A))$. The existence of $b$ follows from Lemma 3.11.4. The existence of $c$ is clear. Finally we define $d$ by 
 $$
-d(A,x):\eq\pr_1(A,\centre(x)).
+d(A,p):\eq\pr_1\big(A,\centre(Q(A),p)\big)
 $$ 
-It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
+for $p:P(A)$. It is straightforward to verify that $(P,b,c,d)$ satisfies the required conditions. $\square$
 
 %%
 
