@@ -47,12 +47,11 @@
 \nc{\ind}{\mathsf{ind}}
 \nc{\inl}{\mathsf{inl}}
 \nc{\inr}{\mathsf{inr}}
-%\nc{\is}{\mathcal{IS}}
-\nc{\isContr}{\mathsf{isContr}}\nc{\co}{\mathsf{isContr}}
-\nc{\isequiv}{\mathsf{isequiv}}\nc{\iseq}{\mathsf{isequiv}}
-\nc{\ishae}{\mathsf{ishae}}\nc{\ish}{\mathsf{ishae}}
-\nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}
-\nc{\isSet}{\mathsf{isSet}}\nc{\isS}{\mathsf{isSet}}\nc{\iss}{\mathsf{isSet}}
+\nc{\isContr}{\mathsf{isContr}}\nc{\co}{\mathsf{isContr}}\nc{\iC}{\mathsf{isContr}}\nc{\ic}{\mathsf{isContr}}
+\nc{\isequiv}{\mathsf{isequiv}}\nc{\iseq}{\mathsf{isequiv}}\nc{\ieq}{\mathsf{isequiv}}
+\nc{\ishae}{\mathsf{ishae}}\nc{\ish}{\mathsf{ishae}}\nc{\ih}{\mathsf{ishae}}
+\nc{\isProp}{\mathsf{isProp}}\nc{\prop}{\mathsf{isProp}}\nc{\Prop}{\mathsf{isProp}}\nc{\iP}{\mathsf{isProp}}\nc{\ip}{\mathsf{isProp}}
+\nc{\isSet}{\mathsf{isSet}}\nc{\isS}{\mathsf{isSet}}\nc{\iss}{\mathsf{isSet}}\nc{\iS}{\mathsf{isSet}}\nc{\is}{\mathsf{isSet}}
 \nc{\la}{\lambda}
 \nc{\LEM}{\mathsf{LEM}}\nc{\lem}{\mathsf{LEM}}\nc{\LE}{\mathsf{LEM}}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
@@ -164,13 +163,13 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 
 \subsection{Exercise 1.5}
 
-\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\mbf2}\rec_\mbf2(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
+\emph{Statement.} Show that if we define $A+B:\equiv\sum_{x:\mb2}\rec_\mb2(\U,A,B,x)$, then we can give a definition of $\ind_{A+B}$ for which the definitional equalities stated in \S1.7 hold.
 
 \nn\emph{Solution.} Recall that we have 
 $$
-\rec_\mbf2:\prod_{C:\U}C\to C\to\mbf2\to C,\quad\rec_\mbf2(C,c_0,c_1,0_\mbf2):\eq c_0,\quad\rec_\mbf2(C,c_0,c_1,1_\mbf2):\eq c_1.
+\rec_\mb2:\prod_{C:\U}C\to C\to\mb2\to C,\quad\rec_\mb2(C,c_0,c_1,0_\mb2):\eq c_0,\quad\rec_\mb2(C,c_0,c_1,1_\mb2):\eq c_1.
 $$
-We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mbf2,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
+We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mb2,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
 $$
 A':\equiv\prod_{a:A}C(\inl(a)),\quad B':\equiv\prod_{b:B}C(\inr(b)).
 $$
@@ -182,42 +181,42 @@ Let $g_0:A',g_1:B'$ be given. We must define
 $$
 \ind_{A+B}(C,g_0,g_1):\prod_{x:A+B}C(x).
 $$ 
-Set $T:\equiv\rec_\mbf2(\U,A,B):\mbf2\to\U$. We define $D:\mbf2\to\U$ by 
+Set $T:\equiv\rec_\mb2(\U,A,B):\mb2\to\U$. We define $D:\mb2\to\U$ by 
 $$
 D(n):\equiv\prod_{u:T(n)}C((n,u)).
 $$ 
-Note that $D(0_\mbf2)\equiv A'$ and $D(1_\mbf2)\equiv B'$. Recall that 
+Note that $D(0_\mb2)\equiv A'$ and $D(1_\mb2)\equiv B'$. Recall that 
 $$
-\ind_\mbf2(D):D(0_\mbf2)\to D(1_\mbf2)\to\prod_{n:\mbf2}D(n).
+\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n:\mb2}D(n).
 $$ 
 In particular we have 
 $$
-\ind_\mbf2(D,g_0,g_1):\prod_{n:\mbf2}\ \prod_{u:T(n)}C((n,u)).
+\ind_\mb2(D,g_0,g_1):\prod_{n:\mb2}\ \prod_{u:T(n)}C((n,u)).
 $$ 
 Since 
 $$
-\ind_{\sum_{n:\mbf2}T(n)}(C):\left(\prod_{n:\mbf2}\ \prod_{u:T(n)}C((n,u))\right)\to\prod_{x:A+B}C(x),
+\ind_{\sum_{n:\mb2}T(n)}(C):\left(\prod_{n:\mb2}\ \prod_{u:T(n)}C((n,u))\right)\to\prod_{x:A+B}C(x),
 $$ 
 we can put 
 $$
-\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mbf2}T(n)}(C,\ind_\mbf2(D,g_0,g_1)).
+\ind_{A+B}(C,g_0,g_1):\equiv\ind_{\sum_{n:\mb2}T(n)}(C,\ind_\mb2(D,g_0,g_1)).
 $$ 
 We must check 
 \begin{equation}\label{15a}
-\ind_{A+B}(C,g_0,g_1,(0_\mbf2,a))\equiv g_0(a),
+\ind_{A+B}(C,g_0,g_1,(0_\mb2,a))\equiv g_0(a),
 \end{equation}
 \begin{equation}\label{15b}
-\ind_{A+B}(C,g_0,g_1,(1_\mbf2,b))\equiv g_1(b).
+\ind_{A+B}(C,g_0,g_1,(1_\mb2,b))\equiv g_1(b).
 \end{equation} 
 We have 
 \begin{align*}
-\ind_{A+B}(C,g_0,g_1,(0_\mbf2,a))&\equiv\ind_{\sum_{n:\mbf2}T(n)}\big(C,\ind_\mbf2(D,g_0,g_1),(0_\mbf2,a)\big)\\ 
-&\equiv\ind_\mbf2(D,g_0,g_1)(0_\mbf2)(a)\\ 
+\ind_{A+B}(C,g_0,g_1,(0_\mb2,a))&\equiv\ind_{\sum_{n:\mb2}T(n)}\big(C,\ind_\mb2(D,g_0,g_1),(0_\mb2,a)\big)\\ 
+&\equiv\ind_\mb2(D,g_0,g_1)(0_\mb2)(a)\\ 
 &\equiv g_0(a),
 \end{align*}
 the three definitional equalities following respectively from the definitions of the dependent functions
 $$
-\ind_{A+B},\quad\ind_{\sum_{n:\mbf2}T(n)},\quad\ind_\mbf2.
+\ind_{A+B},\quad\ind_{\sum_{n:\mb2}T(n)},\quad\ind_\mb2.
 $$ 
 This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
@@ -225,47 +224,47 @@ This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
 \subsection{Exercise 1.6}
 
-\emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\mbf2}\rec_\mbf2(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
+\emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\mb2}\rec_\mb2(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
 
-\nn\emph{Solution.} As above put $T:\equiv\rec_\mbf2(\U,A,B):\mbf2\to\U$, so that $A\times B:\equiv\prod_{n:\mbf2}T(n)$, and 
+\nn\emph{Solution.} As above put $T:\equiv\rec_\mb2(\U,A,B):\mb2\to\U$, so that $A\times B:\equiv\prod_{n:\mb2}T(n)$, and 
 $$
-\ind_\mbf2(T):A\to B\to A\times B.
+\ind_\mb2(T):A\to B\to A\times B.
 $$ 
-For $a:A,b:B$ we abbreviate $\ind_\mbf2(T,a,b)$ by $(a,b)$; in particular we have 
+For $a:A,b:B$ we abbreviate $\ind_\mb2(T,a,b)$ by $(a,b)$; in particular we have 
 $$
-(a,b):A\times B,\quad(a,b)(0_\mbf2)\equiv a,\quad(a,b)(1_\mbf2)\equiv b.
+(a,b):A\times B,\quad(a,b)(0_\mb2)\equiv a,\quad(a,b)(1_\mb2)\equiv b.
 $$ 
 Let $C:A\times B\to\U$. We must define 
 $$
 \ind_{A\times B}(C):\left(\prod_{a:A}\prod_{b:B}C((a,b))\right)\to\prod_{u:A\times B}C(u).
 $$ 
-Let $u:A\times B$ and define $D:\mbf2\to\U$ by 
+Let $u:A\times B$ and define $D:\mb2\to\U$ by 
 $$
-D(n):\equiv\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)(n)=u(n)\Big)
+D(n):\equiv\Big(\big(u(0_\mb2),u(1_\mb2)\big)(n)=u(n)\Big)
 $$ 
 and recall that 
 $$
-\ind_\mbf2(D):D(0_\mbf2)\to D(1_\mbf2)\to\prod_{n\in\mbf2}D(n)
+\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n\in\mb2}D(n)
 $$ 
 and that 
 $$
-\funext:\left(\prod_{n\in\mbf2}D(n)\right)\to\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)=u\Big).
+\funext:\left(\prod_{n\in\mb2}D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
 $$
 We get 
 $$
-\alpha:\equiv\ind_\mbf2(D,\refl_{u(0_\mbf2)},\refl_{u(1_\mbf2)}):\prod_{n\in\mbf2}D(n),\quad\funext(\alpha):\big(u(0_\mbf2),u(1_\mbf2)\big)=u,
+\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)},\refl_{u(1_\mb2)}):\prod_{n\in\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
 $$
 $$
-\funext(\alpha)_*:C\Big(\big(u(0_\mbf2),u(1_\mbf2)\big)\Big)\to C(u).
+\funext(\alpha)_*:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
 $$
 In particular we can set
 $$
-\ind_{A\times B}(C,g,u):\equiv\funext(\alpha)_*\Big(g\big(u(0_\mbf2)\big)\big(u(1_\mbf2)\big)\Big).
+\ind_{A\times B}(C,g,u):\equiv\funext(\alpha)_*\Big(g\big(u(0_\mb2)\big)\big(u(1_\mb2)\big)\Big).
 $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
 $$
-\alpha:\prod_{n\in\mbf2}\Big((a,b)(n)=(a,b)(n)\Big).
+\alpha:\prod_{n\in\mb2}\Big((a,b)(n)=(a,b)(n)\Big).
 $$ 
 It is easy to prove $\alpha(n)=\refl_{(a,b)(n)}$ by induction. This gives 
 $$
@@ -286,7 +285,7 @@ $$
 $$
 n^m:\equiv\rec_\N(\ \N\to\N\ ,\ \la n.1\ ,\ \la m.\la g.\la n.ng(n)\ ,\ m\ ,\ n\ ).
 $$ 
-%$$\msf{mult}:\equiv\rec_\N(\N\to\N,\la m.0,\la m.\la g.\la n.m+g(m)),$$ $$\msf{exp}:\equiv\rec_\N(\N\to\N,\la m.1,\la m.\la g.\la n.mg(m)).$$ 
+%$$\ms{mult}:\equiv\rec_\N(\N\to\N,\la m.0,\la m.\la g.\la n.m+g(m)),$$ $$\ms{exp}:\equiv\rec_\N(\N\to\N,\la m.1,\la m.\la g.\la n.mg(m)).$$ 
 We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring.
 
 For the reader's convenience we briefly recall the definition of the recursor for $\N$:
@@ -367,7 +366,7 @@ $$
 
 \emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
 
-\nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\inr)(g\ci\inl).$ Putting $B:\equiv\mbf0$ gives the desired result.
+\nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\inr)(g\ci\inl).$ Putting $B:\equiv\mb0$ gives the desired result.
 
 \begin{comment}
 
@@ -385,7 +384,7 @@ Here is a slightly stronger statement: For any types $A,B,C$ the types
 
 (f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
 
-\nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mbf0$ in (f) gives the desired result.
+\nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mb0$ in (f) gives the desired result.
 
 \end{comment}
 
@@ -429,13 +428,13 @@ for $r:w=w'$.
 
 \subsection{Theorem 2.7.4}\label{274}
 
-We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\msf t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
+We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\ms t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
 $$
-\msf t^{Q'}(p,(u,z))=\Bigg(\msf t^P(p,u),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big),z\bigg)\Bigg).
+\ms t^{Q'}(p,(u,z))=\Bigg(\ms t^P(p,u),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big),z\bigg)\Bigg).
 $$ 
 The key step to check that the above equality is well-typed is the judgment 
 $$
-\pa_P\Big(p,\refl_{\msf t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\msf t^P(p,u)\big).
+\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\ms t^P(p,u)\big).
 $$ 
 
 %%
@@ -649,7 +648,7 @@ $$
 %setting $A:\eq\U,P(A):\eq(A\to A\to A)$ for $A:\U$, $$Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m):\eq(m(x,m(y,z))=m(m(x,y),z)).$$ As \S\ref{274} we put $$Q'(A):\eq(m(x,m(y,z))=m(m(x,y),z))$$ for $A:\U$. 
 In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads 
 $$
-\msf t^{Q'}(p,(m,a))=\Bigg(\msf t^P(p,m),\msf t^Q\bigg(\pa_P\Big(p,\refl_{\msf t^P(p,m)}\Big),a\bigg)\Bigg)
+\ms t^{Q'}(p,(m,a))=\Bigg(\ms t^P(p,m),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
 with $p:\eq\ua(e)$.
 
@@ -754,9 +753,9 @@ For any type $A$, the type $\isContr(A)$ is a mere proposition.
 
 Here is a minor variant of the proof:
 
-Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mbf1$, and thus 
+Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mb1$, and thus 
 $$
-\isContr(A)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}a=x\right)=\left(\sum_{a:\mbf1}\prod_{x:\mbf1}\mbf1\right)=\left(\sum_{a:\mbf1}\mbf1\right)=\mbf1.
+\isContr(A)=\left(\sum_{a:\mb1}\prod_{x:\mb1}a=x\right)=\left(\sum_{a:\mb1}\prod_{x:\mb1}\mb1\right)=\left(\sum_{a:\mb1}\mb1\right)=\mb1.
 $$
 
 %%
@@ -822,7 +821,7 @@ $$%$u(f)(a):\eq(a,f(a,-))$.
 
 \emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
 
-\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\inl(a_1)=\inl(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\inr(a_1')=\inr(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\inl(a)=\inr(a')$. Let $f:\mbf0\to(\inl(a)=\inr(a'))$, and note that $f(a'(a)):\inl(a)=\inr(a')$.
+\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\inl(a_1)=\inl(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\inr(a_1')=\inr(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\inl(a)=\inr(a')$. Let $f:\mb0\to(\inl(a)=\inr(a'))$, and note that $f(a'(a)):\inl(a)=\inr(a')$.
 
 %%
 
@@ -836,7 +835,7 @@ We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is 
 
 (c) $x=\inl(a),\ y=\inr(b)$.
 
-\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mbf0$ and $g:\mbf0\to(\inl(a)=\inr(b))$. We get $g(f(a,b)):\inl(a)=\inr(b)$.
+\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mb0$ and $g:\mb0\to(\inl(a)=\inr(b))$. We get $g(f(a,b)):\inl(a)=\inr(b)$.
 
 %%
 
@@ -848,19 +847,19 @@ $$
 $$ 
 and we want to prove 
 \begin{equation}\label{e39}
-\left(\sum_{A:\U}\isProp(A)\right)\simeq\mbf2.
+\left(\sum_{A:\U}\isProp(A)\right)\simeq\mb2.
 \end{equation}
 \emph{Proof of \eqref{e39}.} By Lemma 3.3.2 we have 
 $$
-f_1:\prod_{A:\U}\isProp(A)\to A\to(A=\mbf1). 
+f_1:\prod_{A:\U}\isProp(A)\to A\to(A=\mb1). 
 $$ 
 It is easy that we have 
 $$
-f_2:\prod_{A:\U}\neg A\to(A=\mbf0). 
+f_2:\prod_{A:\U}\neg A\to(A=\mb0). 
 $$ 
 Define 
 $$
-f_3:\prod_{A:\U}\isProp(A)\to(A+\neg A)\to((A=\mbf1)+(A=\mbf0))
+f_3:\prod_{A:\U}\isProp(A)\to(A+\neg A)\to((A=\mb1)+(A=\mb0))
 $$ 
 by 
 $$
@@ -868,7 +867,7 @@ f_3(A,p,\inl(a)):\eq\inl(f_1(A,p,a),\qquad f_3(A,p,\inr(a')):\eq\inr(f_2(A,a').
 $$ 
 Define 
 $$
-f_4:\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
+f_4:\prod_{A:\U}\isProp(A)\to\big((A=\mb1)+(A=\mb0)\big)
 $$ 
 by 
 $$
@@ -876,33 +875,33 @@ f_4(A,p):\eq f_3(A,p,\LEM(A,p)).
 $$ 
 In view of $f_4$ we can define 
 $$
-f_5:\left(\sum_{A:\U}\isProp(A)\right)\to\mbf2
+f_5:\left(\sum_{A:\U}\isProp(A)\right)\to\mb2
 $$ 
 by 
 $$
 f_5(A,p):\eq
 \begin{cases}
-1_\mbf2&\text{if }A=\mbf1\\
-0_\mbf2&\text{if }A=\mbf0.
+1_\mb2&\text{if }A=\mb1\\
+0_\mb2&\text{if }A=\mb0.
 \end{cases}
 $$ 
-Let $p_0:\isProp(\mbf0)$ and $p_1:\isProp(\mbf1)$, and define 
+Let $p_0:\isProp(\mb0)$ and $p_1:\isProp(\mb1)$, and define 
 $$
-f_6:\mbf2\to\left(\sum_{A:\U}\isProp(A)\right)
+f_6:\mb2\to\left(\sum_{A:\U}\isProp(A)\right)
 $$ 
-by $f_6(0_\mbf2):\eq(\mbf0,p_0)$ and $f_6(1_\mbf2):\eq(\mbf1,p_1)$.
+by $f_6(0_\mb2):\eq(\mb0,p_0)$ and $f_6(1_\mb2):\eq(\mb1,p_1)$.
 
-It is straightforward to check that $f_5\ci f_6=\id_\mbf2$. 
+It is straightforward to check that $f_5\ci f_6=\id_\mb2$. 
 
 Let $A:\U$ and $p:\isProp(A)$. We must show 
 \begin{equation}\label{f6f5}
 f_6(f_5(A,p))=(A,p).
 \end{equation}
-In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\mbf1$ or if $A=\mbf0$, which is easy. $\square$ 
+In view of $f_4$ it suffices to prove that \eqref{f6f5} holds if $A=\mb1$ or if $A=\mb0$, which is easy. $\square$ 
 
 Note that the Law of Excluded Middle $\LEM$ is equivalent to 
 $$
-\LEM':\prod_{A:\U}\isProp(A)\to\big((A=\mbf1)+(A=\mbf0)\big)
+\LEM':\prod_{A:\U}\isProp(A)\to\big((A=\mb1)+(A=\mb0)\big)
 $$ 
 
 %%
@@ -915,7 +914,7 @@ $$
 $$
 \isProp(A),\quad A+\neg A,\quad \neg\neg A
 $$ 
-are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mbf0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
+are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mb0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
 To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\circ\inr)(x'\circ\inl)$.
 
@@ -1024,9 +1023,9 @@ We claim that $g$ and $h$ are quasi-inverse. It is easy to check $h\ci g=\id_A$.
 
 Here are some details about the last sentence of the proof of Theorem 4.8.3:
 
-Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\msf t$ we have 
+Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\ms t$ we have 
 \begin{equation}\label{2.9.4}
-\msf t^{A\to B}(p,f,a_2)=\msf t^B(p,f(\msf t^A(p^{-1},x)))
+\ms t^{A\to B}(p,f,a_2)=\ms t^B(p,f(\ms t^A(p^{-1},x)))
 \end{equation}
 for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
 
@@ -1044,15 +1043,15 @@ q_*(\pr_1)=f.
 \end{equation} 
 By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ C(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
 $$
-\msf t^{I\to C}(q,\pr_1)=f.
+\ms t^{I\to C}(q,\pr_1)=f.
 $$ 
 Let $a:A$. We must show 
 $$
-\msf t^{I\to C}(q,\pr_1,a)=f(a).
+\ms t^{I\to C}(q,\pr_1,a)=f(a).
 $$ 
 We get 
 $$
-\msf t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=\msf t^C(q,\pr_1(\msf t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
+\ms t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^C(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
 $$ 
 where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$.
 
@@ -1070,30 +1069,30 @@ at the beginning of the proof of Theorem 4.8.4. Here is how I would present thin
 \begin{equation}\label{asimeq}
 A\simeq\sum_{X:\U}X\times X=A.
 \end{equation}
-Proof: Write $\msf t$ for ``transport''. Set $C\eq\sum_{X:\U}X\times X=A$, and define 
+Proof: Write $\ms t$ for ``transport''. Set $C\eq\sum_{X:\U}X\times X=A$, and define 
 $$
 f:A\to C,\qquad g:C\to A
 $$ 
 by 
 $$
-f(a):\eq(A,a,\re_A),\qquad g(B,b,p):\eq\msf t^{X\mapsto X}(p,b).
+f(a):\eq(A,a,\re_A),\qquad g(B,b,p):\eq\ms t^{X\mapsto X}(p,b).
 $$ 
 
 \nn We have $g(f(a))\eq a$ for all $a:A$. Let $(B,b,p):C$. We have 
 $$
-f(g(B,b,p))=(A,\msf t^{X\mapsto X}(p,b),\re_A)
+f(g(B,b,p))=(A,\ms t^{X\mapsto X}(p,b),\re_A)
 $$ 
 and we must show 
 $$
-(B,b,p)=(A,\msf t^{X\mapsto X}(p,b),\re_A).
+(B,b,p)=(A,\ms t^{X\mapsto X}(p,b),\re_A).
 $$
 By Theorem 2.7.2 it suffices to verify 
 $$
-\msf t^{X\mapsto X\times X=A}(p,(b,p))=(\msf t^{X\mapsto X}(p,b),\refl_A).
+\ms t^{X\mapsto X\times X=A}(p,(b,p))=(\ms t^{X\mapsto X}(p,b),\refl_A).
 $$ 
 By Theorem 2.6.4 it suffices to prove 
 $$
-\msf t^{X\mapsto X=A}(p,p)=\refl_A.
+\ms t^{X\mapsto X=A}(p,p)=\refl_A.
 $$ 
 But this follows from Lemma 2.11.2. $\square$
 
@@ -1193,7 +1192,7 @@ by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ 
 
 \nn(ii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ can be used instead of univalence in the proof of Theorem 4.1.3.
 
-\nn(iii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mbf0$). Thus, the use of a ``good'' version of $\mathsf{isequiv}$ is essential in the statement of univalence.
+\nn(iii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\mathsf{isequiv}$ is essential in the statement of univalence.
 
 \nn\emph{Solution.} We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\mathsf{qinv}(f)$ is a mere proposition. 
 
@@ -1323,7 +1322,7 @@ Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \inl\equiv\alpha$, $h\cir
 %\begin{comment}
 %Here are more details about the end of the proof of Lemma 6.8.2:
 
-%Let $u:\eq\msf s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z):\eq(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\glue(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\glue(c))^{-1}\cdot\alpha(f(c))\cdot t(\glue(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
+%Let $u:\eq\ms s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z):\eq(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\glue(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\glue(c))^{-1}\cdot\alpha(f(c))\cdot t(\glue(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
 %\end{comment}
 
 %%
@@ -1381,7 +1380,7 @@ It is easy to see that the type $(A/\sim)$ admits the same induction principle a
 
 Recall the statement:
 
-Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mbf2):\mbf2\to\mbf2$ is the nonidentity automorphism.
+Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2):\mb2\to\mb2$ is the nonidentity automorphism.
 
 Recall that the Law of Excluded Middle is defined in (3.4.1) by 
 $$
@@ -1404,9 +1403,9 @@ In particular we have the first projection $\pr_1:C\to A\to A$. Since $\isContr(
 
 \textbf{Claim.} Assume there is a quadruple $(P,b,c,d)$ such that the typing judgments  
 $$
-P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mbf2),\quad d:\prod_{A:\U}P(A)\to A\to A
+P:\U\to\U,\quad b:\prod_{A:\U}\isProp(P(A)),\quad c:P(\mb2),\quad d:\prod_{A:\U}P(A)\to A\to A
 $$ 
-hold, and $d(\mbf2,c)$ is a nonidentity automorphism of $\mbf2$. Then there is a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mbf2)=d(\mbf2,c)$. 
+hold, and $d(\mb2,c)$ is a nonidentity automorphism of $\mb2$. Then there is a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2)=d(\mb2,c)$. 
 
 We shall prove firstly that the claim holds and secondly that there exists a quadruple $(P,b,c,d)$ satisfying the above conditions.
 
@@ -1424,13 +1423,13 @@ f(A):\eq e\Big(A,\LEM\big(P(A),b(A)\big)\Big).
 $$ 
 The equality 
 $$
-\LEM\big(P(\mbf2),b(\mbf2)\big)\ =_{P(\mbf2)+\neg P(\mbf2)}\ \inl(c),
+\LEM\big(P(\mb2),b(\mb2)\big)\ =_{P(\mb2)+\neg P(\mb2)}\ \inl(c),
 $$ 
 
 \nn which follows from Exercise~3.6 (see \S\ref{e36} p.~\pageref{e36} above), implies  
 
 $$
-f(\mbf2):\eq e\Big(\mbf2,\LEM\big(P(\mbf2),b(\mbf2)\big)\Big)=e(\mbf2,\inl(c))=d(\mbf2,c).\ \square 
+f(\mb2):\eq e\Big(\mb2,\LEM\big(P(\mb2),b(\mb2)\big)\Big)=e(\mb2,\inl(c))=d(\mb2,c).\ \square 
 $$ 
 
 \nn\emph{Proof of the existence of} $(P,b,c,d)$. By definition of $\isContr$ we have a dependent function 
@@ -1619,7 +1618,7 @@ I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $|-|_n$ is $n$
 
 The sentence 
 
-\nn``Then $P$ is a family of $(n-1)$-types and we have $P(a_0)$; hence we have $\prod_{(a:A)}P(a)$ since $a_0:\mbf1\to A$ is $(n-1)$-connected''
+\nn``Then $P$ is a family of $(n-1)$-types and we have $P(a_0)$; hence we have $\prod_{(a:A)}P(a)$ since $a_0:\mb1\to A$ is $(n-1)$-connected''
 
 \nn follows from Lemma 7.5.7.
 
