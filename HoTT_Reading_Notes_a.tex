@@ -1393,33 +1393,27 @@ I learnt the following argument from Jason Gross; see
 
 \nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
 
-Let $A$ be a type. Set 
+Let $A$ be a type. We must define $f(A):A\to A$. We set 
 $$
 C:\eq\sum_{f:A\to A}\isequiv(f)\times\neg(f=\id_A).
 $$ 
-In particular we have the first projection $\pr_1:C\to A\to A$. 
-
-We must define $f(A):A\to A$. Since we have 
+In particular we have the first projection $\pr_1:C\to A\to A$. By Lemma 3.11.4 we also have 
 $$
-g:\prod_{B:\U}\isProp(\isContr(B)),
+g:\prod_{B:\U}\isProp(\isContr(B)).
 $$ 
-by Lemma 3.11.4, it suffices to define a map $h:\isProp(\isContr(C))\to A\to A$. Since we have 
+We define 
 $$
-\LEM:\isProp(\isContr(C))\to\big(\isContr(C)+\neg\isContr(C)\big),
+h_1:\isContr(C)\to A\to A,\qquad\quad h_0:\neg\isContr(C)\to A\to A
 $$ 
-it suffices to define  
+by setting $h_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and by letting $h_1(x)$ be the first projection of the center of $x$, for all $x:\isContr(C)$. This induces a map 
 $$
-h:\big(\isContr(C)+\neg\isContr(C)\big)\to A\to A,
+h:\big(\isContr(C)+\neg\isContr(C)\big)\to A\to A.
 $$ 
-that is, it suffices to define 
+We finally set 
 $$
-h_1:\isContr(C)\to A\to A\quad\text{and}\quad h_0:\neg\isContr(C)\to A\to A.
-$$ 
-We set $h_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and, for all $x:\isContr(C)$, we let $h_1(x)$ be the first projection of the center of $x$. Finally we set 
+f(A):\eq h(\LEM(g(C))),
 $$
-f(A):\eq h(\LEM(g(C))).
-$$
-It is straightforward to check that this definition of $f(A)$ does the job. $\square$
+and it is straightforward to check that this definition does the job. (Here $\LEM$ stands for $\LEM_{\isContr(C)}$.) $\square$
 
 %%
 
