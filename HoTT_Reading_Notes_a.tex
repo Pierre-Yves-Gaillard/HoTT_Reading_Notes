@@ -1,4 +1,4 @@
-%\title{HoTT Reading Notes a}
+% HoTT Reading Notes a
 % http://goo.gl/Dz6r8g
 % https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit
 % https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes/edit/master/HoTT_Reading_Notes_a.tex
@@ -145,13 +145,12 @@ for all $a:A$ and all $b:B(a)$.
 \nn(c) We define
 $$
 \ind_{\sum_{a:A}B(a)}:\prod_{C:\left(\sum_{a:A}B(a)\right)\to\U} 
-\left(\prod_{a:A}\prod_{b:B(a)} C((a,b))\right) 
-\to\prod_{x:\sum_{a:A}B(a)} C(x)
+\left(\prod_{a:A}\ \prod_{b:B(a)}C((a,b))\right) 
+\to\prod_{x:\sum_{a:A}B(a)}C(x)
 $$
 thanks to the transport principle, which is indeed a concept from Chapter~2, by
 \begin{equation}\label{133}
-\ind_{\sum_{a:A}B(a)}(C,g,x):
-\equiv\uniq_{\sum_{a:A}B(a)}(x)_*\Big(g(\pr_1(x))(\pr_2(x))\Big).
+\ind_{\sum_{a:A}B(a)}(C,g,x):\equiv\left(\uniq_{\sum_{a:A}B(a)}(x)\right)_\star\Big(g\big(\pr_1(x)\big)\big(\pr_2(x)\big)\Big).
 \end{equation}
 (d) We must prove 
 $$
@@ -255,11 +254,11 @@ $$
 \alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)},\refl_{u(1_\mb2)}):\prod_{n\in\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
 $$
 $$
-\funext(\alpha)_*:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
+\funext(\alpha)_\star:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
 $$
 In particular we can set
 $$
-\ind_{A\times B}(C,g,u):\equiv\funext(\alpha)_*\Big(g\big(u(0_\mb2)\big)\big(u(1_\mb2)\big)\Big).
+\ind_{A\times B}(C,g,u):\equiv\funext(\alpha)_\star\Big(g\big(u(0_\mb2)\big)\big(u(1_\mb2)\big)\Big).
 $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
@@ -396,7 +395,7 @@ Here is a slightly stronger statement: For any types $A,B,C$ the types
 
 The map 
 \begin{equation}\label{272}
-(w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}p_*(\pr_2(w))=\pr_2(w')
+(w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}p_\star(\pr_2(w))=\pr_2(w')
 \end{equation}
 can also be defined by the formula 
 $$
@@ -409,7 +408,7 @@ $$
 
 We write 
 $$
-\pa:\left(\sum_{p:\pr_1w=\pr_1w'}(\pr_*\pr_2w=\pr_2w')\right)\to(w=w').
+\pa:\left(\sum_{p:\pr_1w=\pr_1w'}(\pr_\star\pr_2w=\pr_2w')\right)\to(w=w').
 $$ 
 for ``the'' inverse of \eqref{272}. We then have the propositional computation rules 
 $$
@@ -418,7 +417,7 @@ $$
 $$
 \apd_{\pr_2}(\pa(p,q))=q
 $$
-for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}p_*(\pr_2(w))=\pr_2(w')$, and the propositional uniqueness principle 
+for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}p_\star(\pr_2(w))=\pr_2(w')$, and the propositional uniqueness principle 
 $$
 r=\pa(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
 $$ 
@@ -459,9 +458,9 @@ for $p:f=g$ and $x:A$.
 
 \subsection{Display preceding (2.9.5)}
 
-Note that $p^{-1}_*(a)$ and $\tr^A(p^{-1},a)$ designate the same object, and that we have 
+Note that $p^{-1}_\star(a)$ and $\tr^A(p^{-1},a)$ designate the same object, and that we have 
 $$
-\pa(p^{-1},\refl_{p^{-1}_*(a)}):(x_1,p^{-1}_*(a))=_{\sum_{x:X}A(x)}(x_2,a).
+\pa(p^{-1},\refl_{p^{-1}_\star(a)}):(x_1,p^{-1}_\star(a))=_{\sum_{x:X}A(x)}(x_2,a).
 $$ 
 
 %% 
@@ -478,28 +477,28 @@ p:x=y,\quad f:\prod_{a:A(x)}B(x,a),\quad g:\prod_{a:A(y)}B(y,a).
 $$ 
 Then we have an equivalence 
 $$
-\big(p_*(f)=g\big)\simeq\prod_{a:A(x)}\tr^{\widehat B}\Big(\pa(p,\refl_{p_*(a)}),f(a)\Big)=g(p_*(a)).
+\big(p_\star(f)=g\big)\simeq\prod_{a:A(x)}\tr^{\widehat B}\Big(\pa(p,\refl_{p_\star(a)}),f(a)\Big)=g(p_\star(a)).
 $$ 
 
 It is written, after the Lemma: ``We leave it to the reader to prove this and to formulate a suitable computation rule''. I think this means the following:
 
-If $q:p_*(f)=g$ corresponds under this equivalence to $\widehat q$, then for $a:A(x)$, the path 
+If $q:p_\star(f)=g$ corresponds under this equivalence to $\widehat q$, then for $a:A(x)$, the path 
 $$
-\happly(q,p_*(a)):(p_*(f))(p_*(a))=g(p_*(a))
+\happly(q,p_\star(a)):(p_\star(f))(p_\star(a))=g(p_\star(a))
 $$ 
 is equal to the composite 
 \begin{align*}
-\big(p_*(f)\big)\big(p_*(a)\big)&=\tr^{\widehat B}\bigg(\pa\left(p^{-1},\refl_{p^{-1}_*(p_*(a))}\right)^{-1},f\Big(p^{-1}_*\big(p_*(a)\big)\Big)\bigg)\\ 
-&=\tr^{\widehat B}\Big(\pa\left(p,\refl_{p_*(a)}\right),f(a)\Big)\\
-&=g\big(p_*(a)\big),
+\big(p_\star(f)\big)\big(p_\star(a)\big)&=\tr^{\widehat B}\bigg(\pa\left(p^{-1},\refl_{p^{-1}_\star(p_\star(a))}\right)^{-1},f\Big(p^{-1}_\star\big(p_\star(a)\big)\Big)\bigg)\\ 
+&=\tr^{\widehat B}\Big(\pa\left(p,\refl_{p_\star(a)}\right),f(a)\Big)\\
+&=g\big(p_\star(a)\big),
 \end{align*}
-%$$\big(p_*(f)\big)\big(p_*(a)\big)=\tr^{\widehat B}\bigg(\pa\left(p^{-1},\refl_{p^{-1}_*(p_*(a))}\right)^{-1},f\Big(p^{-1}_*\big(p_*(a)\big)\Big)\bigg)$$ $$=\tr^{\widehat B}\Big(\pa\left(p,\refl_{p_*(a)}\right),f(a)\Big)=g\big(p_*(a)\big),$$ 
 where the first path is given by the display preceding (2.9.5), and the third path is given by $\widehat q$. Note the judgments
 $$
-\pa\left(p^{-1},\refl_{p^{-1}_*(p_*(a))}\right):\big(y,p_*(a)\big)=_{\sum_{x:X}A(x)}\Big(x,p^{-1}_*\big(p_*(a)\big)\Big),
+\pa\left(p^{-1},\refl_{p^{-1}_\star(p_\star(a))}\right):\big(y,p_\star(a)\big)=_{\sum_{x:X}A(x)}\Big(x,p^{-1}_\star\big(p_\star(a)\big)\Big),
 $$ 
+
 $$
-\pa\left(p,\refl_{p_*(a)}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_*(a)\big).
+\pa\left(p,\refl_{p_\star(a)}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_\star(a)\big).
 $$ 
 
 %%
@@ -924,7 +923,7 @@ To prove that the law of double negation implies the law of excluded middle, we 
 
 \subsection{Proof of Lemma 4.1.2}
 
-Let us denote by $(*)$ the claim 
+Let us denote by $(\star)$ the claim 
 
 \nn ``$h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
 $$
@@ -934,11 +933,9 @@ for any $s:a=x$''
 
 \nn in the proof of Lemma 4.1.2 in the HoTT Book. We make three observations:
 
-\nn(1) The fact that $(*)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2. 
+\nn(1) The fact that $(\star)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2. 
 
-\nn(2) The statement $(*)$ itself follows from 
-%The claim \nn ``It remains to show that $h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing $$h(s)=h(p)\cdot h'(p)^{-1}\cdot h'(s)$$ for any $s:a=x$'' \nn in the proof of Lemma 4.1.2 in the HoTT Book follows immediately from Theorem 2.7.2 and 
-the Lemma below, which is easily proved by path induction:
+\nn(2) The statement $(\star)$ itself follows from the Lemma below, which is easily proved by path induction:
 
 \nn\textbf{Lemma.} Let $A$ be a type; let $a,x:A$; let $q:a=a$; let $P:(x=x)\to\U$ be defined by 
 $$
@@ -974,15 +971,15 @@ Use also Theorem 2.15.7.
 
 I would replace ``applying a version of Lemma 3.11.9'' with ``using based path induction''.
 
-%I don't understand the proof of the book. It seems to me Lemma 4.7.3 results from the following computation, where most of the parenthesis are omitted \begin{align*}(Ra)_*(Ksa\cdot r'La\cdot r's'p\cdot R'b)&=(gRa)^{-1}\cdot Ksa\cdot r'La\cdot r's'p\cdot R'b\\ &=(gRa)^{-1}\cdot gRa\cdot (R'ga)^{-1}\cdot r's'p\cdot R'b\\ &=p,\end{align*} the second equality being induced by $Ha$.
+%I don't understand the proof of the book. It seems to me Lemma 4.7.3 results from the following computation, where most of the parenthesis are omitted \begin{align*}(Ra)_\star(Ksa\cdot r'La\cdot r's'p\cdot R'b)&=(gRa)^{-1}\cdot Ksa\cdot r'La\cdot r's'p\cdot R'b\\ &=(gRa)^{-1}\cdot gRa\cdot (R'ga)^{-1}\cdot r's'p\cdot R'b\\ &=p,\end{align*} the second equality being induced by $Ha$.
 
 %%
 
 \subsection{Proof of Theorem 4.7.6}
 
-Let us check Equivalence $(*)$ in the proof of Theorem 4.7.6: For $a:A$ and $p:a=x$ put 
+Let us check Equivalence $(\star)$ in the proof of Theorem 4.7.6: For $a:A$ and $p:a=x$ put 
 $$
-Q(a,p):\equiv\sum_{u:P(a)}p_*(f(a,u))=v.
+Q(a,p):\equiv\sum_{u:P(a)}p_\star(f(a,u))=v.
 $$ 
 We claim 
 $$
@@ -1008,7 +1005,7 @@ $$
 $$ 
 In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have 
 \begin{equation}\label{paq}
-p_*(a,q)=(a,q\cdot p).
+p_\star(a,q)=(a,q\cdot p).
 \end{equation}
 
 Put $C:\eq\sum_{b:B}\sum_{a:A}f(a)=b$, and define $g:A\to C$ and $h:C\to A$ by 
@@ -1039,7 +1036,7 @@ and let $\pr_1:F\to B$ be the first projection. We must show
 \end{equation} 
 We have $e:F\simeq A$. Put $q:\equiv\ua(e)$. We have $q:F=A$. We claim 
 \begin{equation}\label{3}
-q_*(\pr_1)=f.
+q_\star(\pr_1)=f.
 \end{equation} 
 By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ C(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
 $$
@@ -1230,7 +1227,7 @@ Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_*(p)=q$; this follows from the equalities $t_*(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_\star(p)=q$; this follows from the equalities $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
 
 %% 
 
@@ -1292,9 +1289,9 @@ be the first and second projection; and let $u,v:A\simeq B$. Then we have
 
 \nn Proof of the claim. By Theorem 4.4.5 it suffices to show that the fibers of \eqref{apph} are contractible. Set 
 $$
-C:\eq\sum_{p:\ph_1(u)=\ph(v)}p_*(\ph_2(u))=\ph_2(v)
+C:\eq\sum_{p:\ph_1(u)=\ph(v)}p_\star(\ph_2(u))=\ph_2(v)
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an equivalence $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_*(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_*(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible.
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an equivalence $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible.
 
 %%
 
@@ -1340,17 +1337,17 @@ there exists $f:\prod_{x:\lVert A\rVert}B(x)$ such that $f(\lvert a\rvert)\equiv
 
 Let us rewrite the second premise as
 
-\nn($*$) For any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
+\nn($\star$) For any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
 
 We claim this is equivalent to 
 
-\nn($**$) For any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
+\nn($\star\star$) For any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
 
-Indeed, assume ($*$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
+Indeed, assume ($\star$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
 $$
-u=(\refl_x)_*(u)=p(x,x)_*(u)=v,
+u=(\refl_x)_\star(u)=p(x,x)_\star(u)=v,
 $$ 
-the second and third paths being respectively $\ap_{s\mapsto s_*(u)}(r)$ and $q(x,x,u,v)$. This proves ($**$). The converse is clear.
+the second and third paths being respectively $\ap_{s\mapsto s_\star(u)}(r)$ and $q(x,x,u,v)$. This proves ($\star\star$). The converse is clear.
 
 %%
 
@@ -1447,19 +1444,19 @@ for $p:x=y$ by based path induction.
 
 Claim: If $n\ge-1$ and if $A$ is a type, then $A$ is an $n$-type if and only if the type 
 $$
-\Map_*((\mbb S^{n+1},\base),(A,a))
+\Map_\star((\mbb S^{n+1},\base),(A,a))
 $$ 
 is contractible for all $a:A$.
 
 \nn Proof: Use Theorem 7.2.9 and the equivalence 
 $$
-\Map_*((\mbb S^{n+1},\base),(A,a))\simeq\Omega^{n+1}(A,a)
+\Map_\star((\mbb S^{n+1},\base),(A,a))\simeq\Omega^{n+1}(A,a)
 $$ 
 at the end of \S6.5 of the HoTT Book. $\square$
 
 We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r))$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
 $$
-M:\eq\Map_*((\mbb S^{n+1},\base),(P(h(r)),u)).
+M:\eq\Map_\star((\mbb S^{n+1},\base),(P(h(r)),u)).
 $$ 
 Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$.
 
