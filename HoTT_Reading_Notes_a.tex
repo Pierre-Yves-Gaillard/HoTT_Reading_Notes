@@ -1620,11 +1620,11 @@ The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the 
 
 To prove Lemma 9.3.2 the following generalization of Lemma 9.2.8 is useful:
 
-In the diagram below, $A,B,C,D$ are categories; $F,G:A\to B$ and $H,K:C\to D$ are functors; $\gamma:F\to G$ and $\delta:H\to K$ are natural transformations:
+In the diagram below, $A,B,C,D$ are categories; $F,G:A\to B$ and $H,K:C\to D$ and $L:B\to C$ are functors; $\gamma:F\to G$ and $\delta:H\to K$ are natural transformations:
 $$
 \xymatrix{
 &&\ar[dd]_\delta&\ar[ll]_H&&&&\ar[dd]_\gamma&\ar[ll]_F\\
-D&&&&C&B\ar[l]&&&&&A.\\
+D&&&&C&B\ar[l]_L&&&&&A.\\
 &&&\ar[ll]^K&&&&&\ar[ll]^G}
 $$ 
 We have, in the above setting, $(\delta LG)(HL\gamma)=(KL\gamma)(\delta LF)$.
