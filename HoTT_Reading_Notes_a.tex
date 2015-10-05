@@ -1610,7 +1610,42 @@ The equality $\lVert\lVert A\rVert_{n+1}\rVert_n=\lVert A\rVert_n$ follows from 
 
 The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the proof of Lemma 8.3.2 follows from Corollary 7.3.14. A similar argument is used in the proof of Corollary 8.4.8.
 
+%%%
+
+\section{Chapter 9}
+
 %%
+
+\subsection{Lemma 9.2.8}\label{928}
+
+To prove Lemma 9.3.2 the following generalization of Lemma 9.2.8 is useful:
+
+In the diagram below, $A,B,C,D$ are categories; $F,G:A\to B$ and $H,K:C\to D$ are functors; $\gamma:F\to G$ and $\delta:H\to K$ are natural transformations:
+$$
+\xymatrix{
+&&\ar[dd]_\delta&\ar[ll]_H&&&&\ar[dd]_\gamma&\ar[ll]_F\\
+D&&&&C&B\ar[l]&&&&&A.\\
+&&&\ar[ll]^K&&&&&\ar[ll]^G}
+$$ 
+We have, in the above setting, $(\delta LG)(HL\gamma)=(KL\gamma)(\delta LF)$.
+
+\nn Proof: It suffices to check componentwise: at $a:A$ we have
+\begin{align*}
+((\delta LG)(HL\gamma))_a
+&\:\eq(\delta LG)_{a}(HL\gamma)_a\\
+&\:\eq\delta_{LGa}\circ HL(\gamma_a)\\
+&= KL(\gamma_a)\ci\delta_{LFa}&\text{by naturality of $\delta$}\\
+&\:\eq(KL\gamma)_a\ci(\delta LF)_a\\
+&\:\eq((KL\gamma)(\delta LF))_a.
+\end{align*}
+
+%%
+
+\subsection{Lemma 9.3.2}
+
+See \S\ref{928} above.
+
+%%%
 
 \section{Chapter 11}
 
