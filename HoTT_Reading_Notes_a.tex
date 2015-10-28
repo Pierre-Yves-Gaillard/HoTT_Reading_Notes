@@ -733,7 +733,29 @@ by path induction on $r$.
 
 %%
 
-%\subsection{Theorem 3.2.2} The proof of Theorem 3.2.2 shows the following:
+\subsection{Theorem 3.2.2} 
+
+Here is a minor variant. Set 
+$$
+F:\eq\prod_{A:\U}\neg\neg A\to A,\qquad G:\eq\prod_{A:\U}\lV\mb2=A\rV\to A.
+$$ 
+It suffices to prove $F\to G$ and $\neg G$. 
+
+\emph{Proof of} $F\to G$. Given $f:F$ we must define $g:G$. It suffices define 
+$$
+h:\lV\mb2=A\rV\to\neg\neg A
+$$ 
+for $A=\U$, and to set $g(A,u):\eq f(A,h(u))$. It suffices in turn to define 
+$$
+h':(\mb2=A)\to\neg\neg A.
+$$ 
+To do this, we set $h'(p,k):\eq k(p_*(0_{\mbf2}))$. 
+
+\emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book.$\square$
+
+The (limited) interest of this comment is that, given a type $B$, it might be easier to prove $B\to G$ than to prove $B\to F$ (or to prove $B\to\mbf0$ directly).
+
+%The proof of Theorem 3.2.2 shows the following:
 
 %If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition for all $A:\U$, then it is not the case that for all $A:\U$ we have $P(A)\to A$.
 
