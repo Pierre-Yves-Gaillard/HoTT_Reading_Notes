@@ -1715,10 +1715,7 @@ $$
 
 \subsection{The induction principle for \textsf{acc} in \S10.3}
 
-Let me copy the last display before Lemma 10.3.2:
-\begin{equation}\label{1032}
-f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to\acc(b)\times P(b)\right)\to P(a).
-\end{equation}
+%Let me copy the last display before Lemma 10.3.2:\begin{equation}\label{1032}f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to\acc(b)\times P(b)\right)\to P(a).\end{equation}
 
 %Recall the general induction principle for $\acc$:
 
@@ -1726,7 +1723,11 @@ f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to\acc(b)\times P(b)\right)\to P(a).
 
 Here is a first particular case of the general induction principle for $\acc$:
 
-If we have a type family $P:A\to\U$ and $f$ as in \eqref{1032}, then we get 
+If we have a type family $P:A\to\U$ and %\begin{equation}\label{1032}
+$$
+f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to\acc(b)\times P(b)\right)\to P(a),%\end{equation}
+$$ 
+then we get 
 $$
 g:\prod_{a:A}\acc(a)\to P(a)
 $$
