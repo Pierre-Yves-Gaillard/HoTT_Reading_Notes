@@ -12,7 +12,7 @@
 \usepackage{amssymb,amsmath}
 %\usepackage[a4paper]{geometry}
 \usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
-\usepackage{comment}
+%\usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \usepackage[all]{xy}
@@ -369,25 +369,21 @@ $$
 
 \nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\inr)(g\ci\inl).$ Putting $B:\equiv\mb0$ gives the desired result.
 
-\begin{comment}
+%\begin{comment} Here is a slightly stronger statement: For any types $A,B,C$ the types
 
-Here is a slightly stronger statement: For any types $A,B,C$ the types
+%(a) $\big((A+B)\to C\big)\to\big((A\to C)\times(B\to C)\big)$,
 
-(a) $\big((A+B)\to C\big)\to\big((A\to C)\times(B\to C)\big)$,
+%(b) $\big((A\to C)\times(B\to C)\big)\to\big((A+B)\to C\big)$,
 
-(b) $\big((A\to C)\times(B\to C)\big)\to\big((A+B)\to C\big)$,
+%(c) $(A\to B)\to A\to B$,
 
-(c) $(A\to B)\to A\to B$,
+%(d) $\Big(\big(A+(A\to B)\big)\to B\Big)\to\Big((A\to B)\times\big((A\to B)\to B\big)\Big)$, 
 
-(d) $\Big(\big(A+(A\to B)\big)\to B\Big)\to\Big((A\to B)\times\big((A\to B)\to B\big)\Big)$, 
+%(e) $\Big((A\to B)\times\big((A\to B)\to B\big)\Big)\to B$,
 
-(e) $\Big((A\to B)\times\big((A\to B)\to B\big)\Big)\to B$,
+%(f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
 
-(f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
-
-\nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mb0$ in (f) gives the desired result.
-
-\end{comment}
+%\nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mb0$ in (f) gives the desired result. \end{comment}
 
 %%
 
@@ -795,19 +791,9 @@ We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}a=x$ by based path inducti
 
 %%
 
-\begin{comment}
+%\begin{comment}\subsection{Lemma 3.11.9} Lemma 3.11.9 (i) yields the following strengthening of Lemma 3.5.1:
 
-\subsection{Lemma 3.11.9}
-
-Lemma 3.11.9 (i) yields the following strengthening of Lemma 3.5.1:
-
-In the setting of Lemma 3.5.1, the map 
-$$
-\ap_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))
-$$ 
-is an equivalence.
-
-\end{comment}
+%In the setting of Lemma 3.5.1, the map $$\ap_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))$$ is an equivalence.\end{comment}
 
 %%
 
@@ -1734,19 +1720,11 @@ Let me copy the last display before Lemma 10.3.2:
 f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to\acc(b)\times P(b)\right)\to P(a).
 \end{equation}
 
-Recall the general induction principle for $\acc$:
+%Recall the general induction principle for $\acc$:
 
-If we have $P:\prod_{a:A}\acc(a)\to\U$ and $f$ as in \eqref{1032}, then we get 
-$$
-g:\prod_{a:A}\acc(a)\to P(a)
-$$ 
-with
-$$
-g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\lambda b.\lambda l.g(b,\pr_1u(b,l)))
-$$
-for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$.
+%If we have $P:\prod_{a:A}\acc(a)\to\U$ and $f$ as in \eqref{1032}, then we get $$g:\prod_{a:A}\acc(a)\to P(a)$$ with $$g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\lambda b.\lambda l.g(b,\pr_1u(b,l)))$$ for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$.
 
-Here is a first particular case:
+Here is a first particular case of the general induction principle for $\acc$:
 
 If we have a type family $P:A\to\U$ and $f$ as in \eqref{1032}, then we get 
 $$
