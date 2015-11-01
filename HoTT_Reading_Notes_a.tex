@@ -1719,7 +1719,7 @@ $$
 
 %Recall the general induction principle for $\acc$:
 
-%If we have $P:\prod_{a:A}\acc(a)\to\U$ and $f$ as in \eqref{1032}, then we get $$g:\prod_{a:A}\acc(a)\to P(a)$$ with $$g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\lambda b.\lambda l.g(b,\pr_1u(b,l)))$$ for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$.
+%If we have $P:\prod_{a:A}\acc(a)\to\U$ and $f$ as in \eqref{1032}, then we get $$g:\prod_{a:A}\acc(a)\to P(a)$$ with $$g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\la b.\la l.g(b,\pr_1u(b,l)))$$ for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$.
 
 Here is a first particular case of the general induction principle for $\acc$:
 
@@ -1733,7 +1733,7 @@ g:\prod_{a:A}\acc(a)\to P(a)
 $$
 with
 $$
-g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\lambda b.\lambda l.g(b,\pr_1 u(b,l)))
+g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\la b.\la l.g(b,\pr_1 u(b,l)))
 $$
 for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$. 
 
@@ -1755,6 +1755,18 @@ for all $a:A$ and all
 $$
 u:\prod_{b:A}(b<a)\to P(b).
 $$
+
+%%
+
+\subsection{Lemma 10.3.7}
+
+In the setting of Definition 10.3.1, assuming that $<$ is well-founded, and taking Lemma 10.3.2 into account, we get:
+
+Given $P:A\to\U$ and
+$$
+f:\prod_{a:A}\left(A\times\left(\prod_{b:A}(b<a)\to P(b)\right)\right)\to A,
+$$ 
+there is a $g:\prod_{a:A}P(a)$ such that $g(a)=f(a,c,\la b.\la l.g(b))$ for all $a,c:A$.
 
 %%%
 
@@ -1802,6 +1814,6 @@ The claim ``Since $q+2\ep<r-2\ep$ merely $L_{x_\ep}(q+2\ep)$ or $U_{x_\ep}(q-2\e
 
 \section{Appendix A}
 
-It seems to me that the expression $\lambda x.b$ is defined in two conflicting ways, firstly at the beginning of A.1, and secondly in the last sentence of A.2.4. 
+It seems to me that the expression $\la x.b$ is defined in two conflicting ways, firstly at the beginning of A.1, and secondly in the last sentence of A.2.4. 
 
 \end{document}
