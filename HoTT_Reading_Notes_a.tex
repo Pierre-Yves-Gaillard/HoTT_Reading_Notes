@@ -1763,9 +1763,9 @@ $$
 In the setting of Definition 10.3.1, assuming that $<$ is well-founded, and taking Lemma 10.3.2 into account, we get:
 
 Given $P:A\to\U$ and
-\begin{equation}\label{e1037}
+$$%\begin{equation}\label{e1037}
 f:\prod_{a:A}\left(A\times\left(\prod_{b:A}(b<a)\to P(b)\right)\right)\to P(a),
-\end{equation} 
+$$%\end{equation} 
 there is a $g:\prod_{a:A}P(a)$ such that $g(a)=f(a,c,\la b.\la l.g(b))$ for all $a,c:A$.
 
 %%
@@ -1778,15 +1778,25 @@ Assuming excluded middle, $<$ is well-founded if and only if every nonempty subs
 
 Here is a slightly different phrasing of the proof.
 
-Suppose first $<$ is well-founded, and suppose $B:\mc P(A)$ is a nonempty subset with no minimal element. That is, for any $a:A$ with $a\in B$, there merely exists a $b:A$ with $b<a$ and $b\in B$. It suffices to prove $\mbf0$. 
+Suppose first $<$ is well-founded, and suppose $B:\mc P(A)$ is a %nonempty 
+subset with no minimal element. That is, for any $a:A$ with $a\in B$, there merely exists a $b:A$ with $b<a$ and $b\in B$. 
 
-By \S\ref{s1037} above, it suffices to find an $f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. Given $a,c:A$ and $k:\prod_{b:A}\neg(b<a)$, it suffices to prove $\mbf0$. Taking $a,b:A$ with $a,b\in B$ and $l:b<a$ as above, we get $k(b,l):\mbf0$. 
+We claim that there is a $g:\prod_{a:A}(a\notin B)$. It suffices to show that there is an 
+$$
+f:\prod_{a:A}\left(\prod_{a':A}(a'<a)\to(a'\notin B)\right)\to(a\notin B).
+$$ 
+Let $a:A$ and $s:\prod_{a':A}(a'<a)\to(a'\notin B)$ and assume $a\in B$. It suffices to prove $\mbf0$. As observed above, there is a $b\in B$ and an $l:b<a$, yielding the contradiction $s(b,l):b\notin B$.
+
+%It suffices to prove $\mbf0$. 
+
+%By \S\ref{s1037} above, it suffices to find an $f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. Given $a,c:A$ and $k:\prod_{b:A}\neg(b<a)$, it suffices to prove $\mbf0$. Taking $a,b:A$ with $a,b\in B$ and $l:b<a$ as above, we get $k(b,l):\mbf0$. 
 
 Now suppose each nonempty subset merely has a minimal element, and assume that
 $$
 B:\eq\{a:A\ |\ \neg\acc(a)\}
 $$ 
-is nonempty. It suffices to prove $\mbf0$. We can assume that a minimal element $a_0$ of $B$ exists purely. As in the first part of the proof, it suffices to find an 
+is nonempty. It suffices to prove $\mbf0$. We can assume that a minimal element $a_0$ of $B$ exists purely. %As in the first part of the proof, 
+It suffices to find an 
 $$
 f:\prod_{a:A}\neg\left(\left(\prod_{b:A}(b<a)\to\acc(b)\right)\times\prod_{b:A}\neg(b<a)\right)
 $$ 
