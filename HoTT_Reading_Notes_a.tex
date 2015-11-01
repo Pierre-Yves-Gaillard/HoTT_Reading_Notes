@@ -1758,15 +1758,43 @@ $$
 
 %%
 
-\subsection{Lemma 10.3.7}
+\subsection{Lemma 10.3.7}\label{s1037}
 
 In the setting of Definition 10.3.1, assuming that $<$ is well-founded, and taking Lemma 10.3.2 into account, we get:
 
 Given $P:A\to\U$ and
-$$
-f:\prod_{a:A}\left(A\times\left(\prod_{b:A}(b<a)\to P(b)\right)\right)\to A,
-$$ 
+\begin{equation}\label{e1037}
+f:\prod_{a:A}\left(A\times\left(\prod_{b:A}(b<a)\to P(b)\right)\right)\to P(a),
+\end{equation} 
 there is a $g:\prod_{a:A}P(a)$ such that $g(a)=f(a,c,\la b.\la l.g(b))$ for all $a,c:A$.
+
+%%
+
+\subsection{Lemma 10.3.8.}
+
+Recall the statement: 
+
+Assuming excluded middle, $<$ is well-founded if and only if every nonempty subset $B:\mc P(A)$ merely has a minimal element. 
+
+Here is a slightly different phrasing of the proof.
+
+Suppose first $<$ is well-founded, and suppose $B:\mc P(A)$ is a nonempty subset with no minimal element. That is, for any $a:A$ with $a\in B$, there merely exists a $b:A$ with $b<a$ and $b\in B$. It suffices to prove $\mbf0$. 
+
+By \S\ref{s1037} above, it suffices to find an $f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. Given $a,c:A$ and $k:\prod_{b:A}\neg(b<a)$, it suffices to prove $\mbf0$. Taking $a,b:A$ with $a,b\in B$ and $l:b<a$ as above, we get $k(b,l):\mbf0$. 
+
+Now suppose each nonempty subset merely has a minimal element, and assume that
+$$
+B:\eq\{a:A\ |\ \neg\acc(a)\}
+$$ 
+is nonempty. It suffices to prove $\mbf0$. We can assume that a minimal element $a_0$ of $B$ exists purely. As in the first part of the proof, it suffices to find an 
+$$
+f:\prod_{a:A}\neg\left(\left(\prod_{b:A}(b<a)\to\acc(b)\right)\times\prod_{b:A}\neg(b<a)\right)
+$$ 
+Let $h:\prod_{b:A}(b<a_0)\to\acc(b)$. It suffices to prove $\mbf0$, which we can do by noting that $\acc_<(h,a_0):\mbf0$. $\square$
+
+%$f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. 
+
+%Then if $B$ is nonempty, it merely has a minimal element. Thus there merely exists an $a:A$ with $a\in B$ such that for all $b<a$, we have $\acc(b)$. But then by definition (and induction on truncation), $a$ is merely accessible, and hence accessible, contradicting $a\in B$. Thus, $B$ is empty, so $<$ is well-founded.
 
 %%%
 
