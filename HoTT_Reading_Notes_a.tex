@@ -1770,7 +1770,7 @@ there is a $g:\prod_{a:A}P(a)$ such that $g(a)=f(a,c,\la b.\la l.g(b))$ for all 
 
 %%
 
-\subsection{Lemma 10.3.8.}
+\subsection{Lemma 10.3.8}
 
 Recall the statement: 
 
@@ -1805,6 +1805,18 @@ Let $h:\prod_{b:A}(b<a_0)\to\acc(b)$. It suffices to prove $\mbf0$, which we can
 %$f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. 
 
 %Then if $B$ is nonempty, it merely has a minimal element. Thus there merely exists an $a:A$ with $a\in B$ such that for all $b<a$, we have $\acc(b)$. But then by definition (and induction on truncation), $a$ is merely accessible, and hence accessible, contradicting $a\in B$. Thus, $B$ is empty, so $<$ is well-founded.
+
+%%
+
+\subsection{Lemma 10.3.12}
+
+Recall the statement: Any simulation is injective.
+
+Here is a slightly different phrasing of the proof:
+
+We prove by well-founded induction on $a:A$ that for any $b:A$, if $f(a)=f(b)$ then $a=b$. The inductive hypothesis for $a:A$ says that for any $a'<a$, and any $b:A$, if $f(a')=f(b)$ then $a'=b$.
+
+Suppose $f(a)=f(b)$; we must show $a=b$. By extensionality, it suffices to show that for any $c:A$ we have $(c<a)\Leftrightarrow(c<b)$. If $c<a$, then $f(c)<f(a)$ by Definition 10.3.11(i). Hence $f(c)<f(b)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<b$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<b$. We prove similarly that $c<b$ implies $c<a$.
 
 %%%
 
