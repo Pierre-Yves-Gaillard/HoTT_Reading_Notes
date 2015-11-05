@@ -1778,14 +1778,13 @@ Assuming excluded middle, $<$ is well-founded if and only if every nonempty subs
 
 Here is a slightly different phrasing of the proof.
 
-Suppose first $<$ is well-founded, and suppose $B:\mc P(A)$ is a %nonempty 
-subset with no minimal element. That is, for any $a:A$ with $a\in B$, there merely exists a $b:A$ with $b<a$ and $b\in B$. 
+Suppose first $<$ is well-founded and $A$ has no minimal element. That is, for any $a:A$ there merely exists a $b:A$ with $b<a$. 
 
-We claim that there is a $g:\prod_{a:A}(a\notin B)$. It suffices to show that there is an 
+We claim that there is a $g:\prod_{a:A}\mbf0$, that is $A=\mbf0$. It suffices to show that there is an 
 $$
-f:\prod_{a:A}\left(\prod_{a':A}(a'<a)\to(a'\notin B)\right)\to(a\notin B).
+f:\prod_{a:A}\left(\prod_{a':A}(a'<a)\to\mbf0\right)\to\mbf0.
 $$ 
-Let $a:A$ and $s:\prod_{a':A}(a'<a)\to(a'\notin B)$, and assume $a\in B$. It suffices to prove $\mbf0$. As observed above, there is a $b\in B$ and an $l:b<a$, yielding the contradiction $s(b,l):b\notin B$.
+Let $a:A$ and $s:\prod_{a':A}(a'<a)\to\mbf0$. It suffices to prove $\mbf0$. As observed above, there is a $b:A$ and an $l:b<a$, yielding $s(b,l):\mbf0$.
 
 %It suffices to prove $\mbf0$. 
 
