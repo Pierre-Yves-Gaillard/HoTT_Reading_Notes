@@ -1582,7 +1582,7 @@ Let $A$ be a type. Then $A$ is contractible if and only if $A$ is an $n$-connect
 
 \subsection{Proof of Lemma 7.5.10}
 
-I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $|-|_n$ is $n$-connected. Thus, since $f=g\circ |-|_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is an equivalence (see \S\ref{751} above).
+I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $\vert-\vert_n$ is $n$-connected. Thus, since $f=g\circ\vert-\vert_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is an equivalence (see \S\ref{751} above).
 
 %%
 
@@ -1790,7 +1790,7 @@ Let $a:A$ and $s:\prod_{a':A}(a'<a)\to\mbf0$. It suffices to prove $\mbf0$. As o
 
 Now suppose each nonempty subset merely has a minimal element, and assume that
 $$
-B:\eq\{a:A\ |\ \neg\acc(a)\}
+B:\eq\{a:A\ \vert\ \neg\acc(a)\}
 $$ 
 is nonempty. It suffices to prove $\mbf0$. We can assume that a minimal element $a_0$ of $B$ exists purely. %As in the first part of the proof, 
 It suffices to find an 
@@ -1814,6 +1814,12 @@ Here is a slightly different phrasing of the proof:
 We prove by well-founded induction on $a:A$ that for any $b:A$, if $f(a)=f(b)$ then $a=b$. The inductive hypothesis for $a:A$ says that for any $a'<a$, and any $b:A$, if $f(a')=f(b)$ then $a'=b$.
 
 Suppose $f(a)=f(b)$; we must show $a=b$. By extensionality, it suffices to show that for any $c:A$ we have $(c<a)\Leftrightarrow(c<b)$. If $c<a$, then $f(c)<f(a)$ by Definition 10.3.11(i). Hence $f(c)<f(b)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<b$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<b$. We prove similarly that $c<b$ implies $c<a$.
+
+%%
+
+\subsection{Theorem 10.4.4}
+
+In the proof of Theorem 10.4.4 the notation $\{f(x)\ \vert\ P(x)\}$, introduced after Lemma 10.1.6, is used a lot.
 
 %%%
 
