@@ -1743,18 +1743,7 @@ If $<$ is well-founded, if we have a type family $P:A\to\U$, and if we have
 $$
 f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to P(b)\right)\to P(a),
 $$
-then we get 
-$
-g:\prod_{a:A}P(a)
-$
-with
-$
-g(a)\eq f(a, u)
-$
-for all $a:A$ and all 
-$$
-u:\prod_{b:A}(b<a)\to P(b).
-$$
+then we get $g:\prod_{a:A}P(a)$ with $g(a)\eq f(a,\la b.\la l.g(b))$ for all $a:A$.
 
 %%
 
