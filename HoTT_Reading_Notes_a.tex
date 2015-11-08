@@ -1777,20 +1777,7 @@ Let $a:A$ and $s:\prod_{a':A}(a'<a)\to\mbf0$. It suffices to prove $\mbf0$. As o
 
 %By \S\ref{s1037} above, it suffices to find an $f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. Given $a,c:A$ and $k:\prod_{b:A}\neg(b<a)$, it suffices to prove $\mbf0$. Taking $a,b:A$ with $a,b\in B$ and $l:b<a$ as above, we get $k(b,l):\mbf0$. 
 
-Now suppose each nonempty subset merely has a minimal element, and assume that
-$$
-B:\eq\{a:A\ \vert\ \neg\acc(a)\}
-$$ 
-is nonempty. It suffices to prove $\mbf0$. We can assume that a minimal element $a_0$ of $B$ exists purely. %As in the first part of the proof, 
-It suffices to find an 
-$$
-f:\prod_{a:A}\neg\left(\left(\prod_{b:A}(b<a)\to\acc(b)\right)\times\prod_{b:A}\neg(b<a)\right)
-$$ 
-Let $h:\prod_{b:A}(b<a_0)\to\acc(b)$. It suffices to prove $\mbf0$, which we can do by noting that $\acc_<(h,a_0):\mbf0$. $\square$
-
-%$f$ as in \eqref{e1037} with $P(a)\eq\mbf0$ for all $a:A$. 
-
-%Then if $B$ is nonempty, it merely has a minimal element. Thus there merely exists an $a:A$ with $a\in B$ such that for all $b<a$, we have $\acc(b)$. But then by definition (and induction on truncation), $a$ is merely accessible, and hence accessible, contradicting $a\in B$. Thus, $B$ is empty, so $<$ is well-founded.
+Now suppose that each nonempty subset merely has a minimal element, and assume that an inaccessible $a_0:A$ merely exists. As it suffices to prove $\mbf0$, we can assume that $a_0$ exists purely, and that it is minimal for the property of being inaccessible, which means that we have an $h:\prod_{b:A}(b<a_0)\to\acc(b)$, yielding $\acc_<(h,a_0):\mbf0$, as required. $\square$
 
 %%
 
