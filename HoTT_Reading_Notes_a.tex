@@ -1702,6 +1702,33 @@ $\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the
 
 \section{Chapter 10}
 
+\subsection{Before Lemma 10.1.1}
+
+This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It's clear from the context that $A$ and $B$ are sets.) Let's show that this obvious candidate is the good one. It suffices to prove the statement
+
+Let $A$ and $B$ be sets, let $f:A\to B$ be a surjection, define the equivalence relation $\sim$ on $A$ by 
+$$
+a\sim a'\text{ if and only if }f(a)=f(a'),
+$$
+let $A/\!\!\sim$ be the quotient as defined at the beginning of §6.10, and let $q:A\to A/\!\!\sim$ be the canonical projection. Then there is a map $g:B\to A/\!\!\sim$ such that $g\ci f=q$:
+$$
+\xymatrix{
+&A\ar[dl]_f\ar[dr]^q\\
+B\ar[rr]_g&&A/\!\!\sim.
+}
+$$ 
+
+Proof. Given $b:B$ we define the sets and maps 
+$$
+\xymatrix{
+\fib_f(b)\ar[rr]^{\pr_1}\ar[d]_{\lv-\rv}\ar[dr]^{q_b}&&A\ar[d]^q\\ 
+\lV\fib_f(b)\rV\ar[r]_h&\fib_f(b)/\!\!\sim_b\ar[r]_{\ \ k}&A/\!\!\sim
+}
+$$ 
+as follows: Firstly $\sim_b$ is the equivalence relation defined on $\fib_f(b)$ by the requirement that $x\sim_b y$ for all $x,y:\fib_f(b)$, and $q_b$ is the canonical projection. Secondly we note that $q_b$ induces $h$, and thirdly that $q\ci\pr_1$ induces $k$. The above diagram having been constructed, we set $g(b):\eq k(h(x))$, with $x:\lV\fib_f(b)\rV$. The equality $g\ci f=q$ is easily checked. $\square$
+
+%%
+
 \subsection{Proof of Lemma 10.1.13}
 
 To prove the equality $\msf{merid}_*(\tau(N))=\tau(S)$, one can use the following lemma:
