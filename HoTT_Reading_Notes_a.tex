@@ -12,7 +12,7 @@
 \usepackage{amssymb,amsmath}
 %\usepackage[a4paper]{geometry}
 \usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
-%\usepackage{comment}
+\usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \usepackage[all]{xy}
@@ -30,8 +30,8 @@
 \nc{\apd}{\ms{apd}}
 \nc{\base}{\ms{base}}\nc{\ba}{\ms{base}}
 \nc{\boucle}{\ms{loop}}\nc{\Loop}{\ms{loop}}\nc{\lo}{\ms{loop}}
-\nc{\cd}{\cdot}
 \nc{\bu}{\bullet}
+\nc{\cd}{\cdot}
 \nc{\centre}{\ms{center}}\nc{\Center}{\ms{center}}\nc{\cen}{\ms{center}}\nc{\ce}{\ms{center}}
 \nc{\ci}{\circ}
 \nc{\code}{\ms{code}}\nc{\decode}{\ms{decode}}\nc{\encode}{\ms{encode}}
@@ -370,22 +370,6 @@ $$
 \emph{Statement.} Using propositions-as-types, derive the double negation of the principle of excluded middle, i.e. prove \emph{not (not ($P$ or not $P$))}.
 
 \nn\emph{Solution.} For any types $A,B$ we define $f:\Big(\big(A+(A\to B)\big)\to B\Big)\to B$ by $f(g):\eq(g\ci\inr)(g\ci\inl).$ Putting $B:\equiv\mb0$ gives the desired result.
-
-%\begin{comment} Here is a slightly stronger statement: For any types $A,B,C$ the types
-
-%(a) $\big((A+B)\to C\big)\to\big((A\to C)\times(B\to C)\big)$,
-
-%(b) $\big((A\to C)\times(B\to C)\big)\to\big((A+B)\to C\big)$,
-
-%(c) $(A\to B)\to A\to B$,
-
-%(d) $\Big(\big(A+(A\to B)\big)\to B\Big)\to\Big((A\to B)\times\big((A\to B)\to B\big)\Big)$, 
-
-%(e) $\Big((A\to B)\times\big((A\to B)\to B\big)\Big)\to B$,
-
-%(f) $\Big(\big(A+(A\to B)\big)\to B\Big)\to B$
-
-%\nn are inhabited. The proof that (a), (b), (c) are inhabited is left to the reader. The fact that (a) and (c) are inhabited implies that (d) and (e), and thus (f), are inhabited. Putting $B:\equiv\mb0$ in (f) gives the desired result. \end{comment}
 
 %%
 
@@ -1706,6 +1690,21 @@ $\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the
 
 \subsection{Before Lemma 10.1.1}
 
+This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It is clear from the context that $A$ and $B$ are sets.) Let us show that this obvious candidate is the good one. It suffices to prove the following statement:
+
+If $B:A\to\Set$ is a set family over a set $A$ and $\sim$ the equivalence relation $\sum_{a:A}B(a)$ defined by 
+$$
+(a,b)\sim(a',b')\text{ if and only if }a=a',
+$$ 
+then we have 
+\begin{equation}\label{1011}
+\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim\ \ =\sum_{a:A}\ \lV B(a)\rV.
+\end{equation}
+
+To prove \eqref{1011}, it suffices, by Lemma 4.8.2 of the book, to note that the left and right hand sides have the same induction principle. $\square$
+
+\begin{comment}
+
 This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It's clear from the context that $A$ and $B$ are sets.) Let's show that this obvious candidate is the good one. It suffices to prove the statement
 
 Let $A$ and $B$ be sets, let $f:A\to B$ be a surjection, define the equivalence relation $\sim$ on $A$ by 
@@ -1728,6 +1727,8 @@ $$
 }
 $$ 
 as follows: Let $\sim_b$ be the equivalence relation defined on $\fib_f(b)$ by the requirement that $x\sim_b y$ for all $x,y:\fib_f(b)$, and $q_b$ the canonical projection; and note that $q_b$ induces $h$ and that $q\ci\pr_1$ induces $k$. The above diagram having been constructed, we set $g(b):\eq k(h(x))$, with $x:\lV\fib_f(b)\rV$. The equality $g\ci f=q$ is easily checked. $\square$
+
+\end{comment}
 
 %%
 
