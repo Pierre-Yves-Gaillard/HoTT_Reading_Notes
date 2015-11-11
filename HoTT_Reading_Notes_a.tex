@@ -52,7 +52,7 @@
 \nc{\isContr}{\ms{isContr}}\nc{\co}{\ms{isContr}}\nc{\iC}{\ms{isContr}}\nc{\ic}{\ms{isContr}}
 \nc{\isequiv}{\ms{isequiv}}\nc{\iseq}{\ms{isequiv}}\nc{\ieq}{\ms{isequiv}}
 \nc{\ishae}{\ms{ishae}}\nc{\ish}{\ms{ishae}}\nc{\ih}{\ms{ishae}}
-\nc{\isProp}{\ms{isProp}}\nc{\prop}{\ms{isProp}}\nc{\Prop}{\ms{isProp}}\nc{\iP}{\ms{isProp}}\nc{\ip}{\ms{isProp}}
+\nc{\isProp}{\ms{isProp}}\nc{\prop}{\ms{isProp}}\nc{\iP}{\ms{isProp}}\nc{\ip}{\ms{isProp}}
 \nc{\isSet}{\ms{isSet}}\nc{\isS}{\ms{isSet}}\nc{\iss}{\ms{isSet}}\nc{\iS}{\ms{isSet}}\nc{\is}{\ms{isSet}}
 \nc{\la}{\lambda}
 \nc{\LEM}{\ms{LEM}}\nc{\lem}{\ms{LEM}}\nc{\LE}{\ms{LEM}}
@@ -68,8 +68,10 @@
 \nc{\ph}{\varphi}
 \nc{\ppmap}{\ms{ppmap}}
 \nc{\pr}{\ms{pr}}
+\nc{\Prop}{\ms{Prop}}
 \nc{\rec}{\ms{rec}}
 \nc{\refl}{\ms{refl}}\nc{\re}{\ms{refl}}
+\nc{\Set}{\ms{Set}}
 \nc{\sm}{\scriptstyle}
 \nc{\suc}{\ms{succ}}\nc{\su}{\ms{succ}}
 \nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
@@ -1365,7 +1367,7 @@ the second and third paths being respectively $\ap_{s\mapsto s_\star(u)}(r)$ and
 
 To spell out the induction principle for $A/R$, let $\alpha(a,b):q(a)=q(b)$ be the path given from $q(a)$ to $q(b)$ whenever $R(a,b)$. 
 
-Given $P:A/R\to\U$ together with $f:\prod_{a:A}P(q(a))$ and 
+Given $P:A/R\to\Set$ together with $f:\prod_{a:A}P(q(a))$ and 
 $$
 \beta(a,b):f(a)=^P_{\alpha(a,b)}f(b)
 $$ 
