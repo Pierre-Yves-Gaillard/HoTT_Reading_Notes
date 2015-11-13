@@ -1700,18 +1700,33 @@ $\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the
 
 \subsection{Before Lemma 10.1.1}
 
-This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It is clear from the context that $A$ and $B$ are sets.) Let us show that this obvious candidate is the good one. It suffices to prove the following statement:
+This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It is clear from the context that $A$ and $B$ are sets.) Let us show that this obvious candidate is the good one. By Lemma 4.8.2 of the book it suffices to prove the following statement:
 
 If $B:A\to\Set$ is a set family over a set $A$ and $\sim$ the equivalence relation $\sum_{a:A}B(a)$ defined by 
 $$
 (a,b)\sim(a',b')\text{ if and only if }a=a',
 $$ 
 then the resulting quotient satisfies
-$$%\begin{equation}\label{1011}
-\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim\ \ =\sum_{a:A}\ \lV B(a)\rV.
-$$%\end{equation}
+$$
+\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim\quad=\quad\sum_{a:A}\ \lV B(a)\rV.
+$$
 
-To prove this, it suffices, by Lemma 4.8.2 of the book, to note that the left and right hand sides have the same induction principle (see \S\S\ref{69}, \ref{610} above, and Theorem 7.3.2 of the book). $\square$
+Proof. Let us define a map 
+$$
+h:\left(\sum_{a:A}\ \lV B(a)\rV\right)\quad\to\quad\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim.
+$$ 
+
+It suffices to define, keeping $a_0:A$ fixed, the object $h(a_0,\beta)$ for all $\beta:\lV B(a_0)\rV$. Using the notation introduced after Lemma 10.1.6 of the book, set 
+$$
+C:\eq\{q(a_0,b)\ \vert\ b:B(a_0)\}.
+$$ 
+It is easy to see that $C$ is a mere proposition, and that we have natural maps
+$$
+f:B(a_0)\to C,\quad i:C\to\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
+$$ 
+which satisfy $i(f(b))\eq q(a_0,b)$ for all $b:B(a_0)$. By \S\ref{69} above, $f$ induces a map $g:\lV B(a_0)\rV\to C$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$. Now we can set $h(a_0,\beta):\eq i(g(\beta))$ for all $b:B(a_0)$.
+
+We leave it to the reader to check, using \S\ref{610} above, that $h$ is an equivalence. $\square$
 
 \begin{comment}
 
