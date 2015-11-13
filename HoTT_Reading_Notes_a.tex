@@ -1329,15 +1329,17 @@ The induction principle for $\lVert A\rVert$ is stated as follows:
 \item a function $g:\prod_{a:A}B(\lvert a\rvert)$, and
 \item for any $x,y:\lVert A\rVert$ and $u:B(x)$ and $v:B(y)$, a dependent path $q:u=^B_{p(x,y)}v$, where $p(x,y)$ is the path coming from the second constructor of $\lVert A\rVert$,
 \end{itemize}
-there exists $f:\prod_{x:\lVert A\rVert}B(x)$ such that $f(\lvert a\rvert)\equiv g(a)$ for $a:A$, and also another computation rule\dots''
+there exists $f:\prod_{x:\lVert A\rVert}B(x)$ such that $f(\lvert a\rvert)\equiv g(a)$ for $a:A$, and also another computation rule. However, because there can be at most one function between any two mere propositions (up to homotopy), this induction principle is not really useful (see also Exercise 3.17).''
 
-Let us rewrite the second premise as
+Let us spell out the last sentence above.
 
-\nn($\star$) For any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
+We can rewrite the second premise as
 
-We claim this is equivalent to 
+\nn($\star$) for any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
 
-\nn($\star\star$) For any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
+We claim this is equivalent to
+
+\nn($\star\star$) for any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
 
 Indeed, assume ($\star$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
 $$
