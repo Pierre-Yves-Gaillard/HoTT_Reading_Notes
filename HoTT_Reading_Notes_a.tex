@@ -1345,7 +1345,11 @@ Indeed, assume ($\star$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:
 $$
 u=(\refl_x)_\star(u)=p(x,x)_\star(u)=v,
 $$ 
-the second and third paths being respectively $\ap_{s\mapsto s_\star(u)}(r)$ and $q(x,x,u,v)$. This proves ($\star\star$). The converse is clear.
+the second and third paths being respectively $\ap_{s\mapsto s_\star(u)}(r)$ and $q(x,x,u,v)$. This proves ($\star\star$). The converse is clear. $\square$
+
+We have in particular the following induction principle:
+
+Given any $P:\lVert A\rVert\to\Prop$ together with a function $f:\prod_{a:A}P(\lvert a\rvert)$, there exists $g:\prod_{x:\lVert A\rVert}P(x)$ such that $g(\lvert a\rvert)\equiv f(a)$ for $a:A$.
 
 %%
 
@@ -1359,7 +1363,11 @@ $$
 $$ 
 for all $a,b$ such that $R(a,b)$, we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$, and $\apd_g(\alpha(a,b))=\beta(a,b)$ for all $a,b$ such that $R(a,b)$.
 
-It is easy to see that if our type family $P:A/R\to\U$ is such that $P(q(b))$ is a mere proposition whenever $R(a,b)$, and if we are just given an $f:\prod_{a:A}P(q(a))$, then we get a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))=^P_{\alpha(a,b)}g(q(b))$ for all $a,b$ satisfying $R(a,b)$.
+It is easy to see that if our type family $P:A/R\to\U$ is such that $P(q(b))$ is a mere proposition whenever $R(a,b)$, and if we are just given an $f:\prod_{a:A}P(q(a))$, then we get a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\eq f(a)$ for all $a:A$.
+
+This yields in particular the following induction principle:
+
+Assuming $R$ is reflexive, given any $P:A/R\to\Prop$ together with $$f:\prod_{a:A}P(q(a)),$$ we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$.
 
 %%
 
