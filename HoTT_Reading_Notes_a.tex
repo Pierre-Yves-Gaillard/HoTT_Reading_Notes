@@ -45,6 +45,7 @@
 \nc{\glue}{\ms{glue}}\nc{\gl}{\ms{glue}}
 \nc{\happly}{\ms{happly}}\nc{\ha}{\ms{happly}}
 \nc{\id}{\ms{id}}
+\nc{\im}{\ms{im}}
 \nc{\inc}{\subseteq}
 \nc{\ind}{\ms{ind}}
 \nc{\inl}{\ms{inl}}
@@ -1716,15 +1717,15 @@ $$
 h:\left(\sum_{a:A}\ \lV B(a)\rV\right)\quad\to\quad\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim.
 $$ 
 
-It suffices to define, keeping $a_0:A$ fixed, the object $h(a_0,\beta)$ for all $\beta:\lV B(a_0)\rV$. Using the notation introduced after Lemma 10.1.6 of the book, set 
+It suffices to define, keeping $a_0:A$ fixed, the object $h(a_0,\beta)$ for all $\beta:\lV B(a_0)\rV$. Define 
 $$
-C:\eq\{q(a_0,b)\ \vert\ b:B(a_0)\}.
+f:B(a_0)\to\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
 $$ 
-It is easy to see that $C$ is a mere proposition, and that we have natural maps
+by $f(b):\eq q(a_0,b)$ for all $b:B(a_0)$, and let 
 $$
-f:B(a_0)\to C,\quad i:C\to\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
+\tilde f:B(a_0)\to\im(f),\quad\pr_1:\im(f)\to\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
 $$ 
-which satisfy $i(f(b))\eq q(a_0,b)$ for all $b:B(a_0)$. By \S\ref{69} above, $f$ induces a map $g:\lV B(a_0)\rV\to C$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$. Now we can set $h(a_0,\beta):\eq i(g(\beta))$ for all $b:B(a_0)$.
+be the canonical factorization of $f$. It is easy to check that $\im(f)$ is a mere proposition. As a result, $f$ induces a map $g:\lV B(a_0)\rV\to\im(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq i(g(\beta))$ for all $b:B(a_0)$.
 
 We leave it to the reader to check, using \S\ref{610} above, that $h$ is an equivalence. $\square$
 
