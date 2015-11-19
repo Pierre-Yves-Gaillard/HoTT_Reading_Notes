@@ -902,6 +902,23 @@ $$
 
 %%
 
+\subsection{Exercise 3.17}%\label{69}
+
+Here is a slightly more precise statement:
+
+Show that the rules for the propositional truncation given in \S3.7 of the book are sufficient to imply the following induction principle: given $B:\lV A\rV\to\Prop$ and $f:\prod_{a:A}B(\lv a\rv)$, there is a $g:\prod_{x:\lV A\rV}B(x)$ such that $g(\lv a\rv)=f(a)$ for all $a:A$.
+
+Proof. Let $p:\ip(\lV A\rV)$ (\emph{i.e.} $p(x,y):x=y$ for all $x,y:\lV A\rV$) and $x:\lV A\rV$. The map $h:A\to B(x)$ defined by 
+$$
+h(a):\eq p(\lv a\rv,x)_*(f(a))
+$$ 
+induces a map $k:\lV A\rV\to B(x)$ such that $k(\lv a\rv)\eq h(a)$ for all $a:A$, and we can set $g(x):\eq k(x)$. This yields 
+$$
+g(\lv a\rv)\eq k(\lv a\rv)\eq h(a)\eq p(\lv a\rv,\lv a\rv)_*(f(a))=f(a).\square
+$$
+
+%%
+
 \subsection{Exercise 3.18}
 
 \emph{Statement.} Show that the law of excluded middle (3.4.1) and the law of double negation (3.4.2) are logically equivalent.
