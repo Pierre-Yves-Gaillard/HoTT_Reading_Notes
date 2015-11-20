@@ -733,7 +733,7 @@ for $A=\U$, and to set $g(A,u):\eq f(A,h(u))$. It suffices in turn to define
 $$
 h':(\mb2=A)\to\neg\neg A.
 $$ 
-To do this, we set $h'(p,k):\eq k(p_*(0_{\mbf2}))$. 
+To do this, we set $h'(p,k):\eq k(p_\star(0_{\mbf2}))$. 
 
 \emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book.$\square$
 
@@ -910,11 +910,11 @@ Show that the rules for the propositional truncation given in \S3.7 of the book 
 
 Proof. Let $p:\ip(\lV A\rV)$ (\emph{i.e.} $p(x,y):x=y$ for all $x,y:\lV A\rV$) and $x:\lV A\rV$. The map $h:A\to B(x)$ defined by 
 $$
-h(a):\eq p(\lv a\rv,x)_*(f(a))
+h(a):\eq p(\lv a\rv,x)_\star(f(a))
 $$ 
 induces a map $k:\lV A\rV\to B(x)$ such that $k(\lv a\rv)\eq h(a)$ for all $a:A$, and we can set $g(x):\eq k(x)$. This yields 
 $$
-g(\lv a\rv)\eq k(\lv a\rv)\eq h(a)\eq p(\lv a\rv,\lv a\rv)_*(f(a))=f(a).\square
+g(\lv a\rv)\eq k(\lv a\rv)\eq h(a)\eq p(\lv a\rv,\lv a\rv)_\star(f(a))=f(a).\square
 $$
 
 %%
@@ -991,15 +991,15 @@ I would replace ``applying a version of Lemma 3.11.9'' with ``using based path i
 
 \subsection{Proof of Theorem 4.7.6}
 
-Let us check Equivalence $(\star)$ in the proof of Theorem 4.7.6: For $a:A$ and $p:a=x$ put 
+Let us check Equivalence $(\star)$ in the proof of Theorem 4.7.6: Recalling that $x:A$ and $v:Q(x)$ are given, set for $a:A$ and $p:a=x$ 
 $$
-Q(a,p):\equiv\sum_{u:P(a)}p_\star(f(a,u))=v.
+R(a,p):\equiv\sum_{u:P(a)}p_\star(f(a,u))=v.
 $$ 
 We claim 
 $$
-\ga(\sum_{a:A}\sum_{p:a=x}Q(a,p)\dr)\overset{(\text a)}{\simeq}
-\ga(\sum_{q:\sum_{a:A}a=x}Q(q)\dr)\overset{(\text b)}{\simeq}
-Q(x,\refl_x).
+\ga(\sum_{a:A}\sum_{p:a=x}R(a,p)\dr)\overset{(\text a)}{\simeq}
+\ga(\sum_{z:\sum_{a:A}a=x}R(z)\dr)\overset{(\text b)}{\simeq}
+R(x,\refl_x).
 $$
 Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
 $$
@@ -1809,7 +1809,7 @@ as follows: Let $\sim_b$ be the equivalence relation defined on $\fib_f(b)$ by t
 
 \subsection{Proof of Lemma 10.1.13}
 
-To prove the equality $\msf{merid}_*(\tau(N))=\tau(S)$, one can use the following lemma:
+To prove the equality $\msf{merid}_\star(\tau(N))=\tau(S)$, one can use the following lemma:
 
 Let $P:A\to B\to\U$ be a type family, define $Q:A\to\U$ by $$Q(a):\eq\prod_{b:B}P(a,b),$$ let $p:a=a'$ be a path in $A$, let $f:Q(a)$, and let $b:B$. Then we have 
 $$
