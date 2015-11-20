@@ -1009,6 +1009,27 @@ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.
 
 %%
 
+\subsection{Proof of Lemma 4.8.1}%\label{69}
+
+Recall the statement:
+
+For any type family $B:A\to\U$, the fiber of $\pr_1:\sum_{x:A}B(x)\to A$ over $a:A$ is equivalent to $B(a)$:
+$$
+\fib_{\pr_1}(a)\simeq B(a).
+$$
+
+Proof. We have
+\begin{align*}
+\fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}B(x)}\pr_1(u)=a\\
+&\simeq\sum_{x:A}\sum_{b:B(x)}x=a&\text{ by Exercise 2.10}\\
+&\simeq\sum_{x:A}\sum_{p:x=a}B(x)\\
+&\simeq\sum_{z:\sum_{x:A}x=a}B(\pr_1(z))&\text{ by Exercise 2.10}\\
+&\simeq B(\pr_1(a,\refl_a))&\text{ by Lemmas 3.11.8 and 3.11.9(ii)}\\
+&\eq B(a).\ \square
+\end{align*}
+
+%%
+
 \subsection{Lemma 4.8.2}
 
 Here is a minor variant to the proof of Lemma 4.8.2.
