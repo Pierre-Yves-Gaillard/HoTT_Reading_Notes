@@ -496,7 +496,7 @@ $$
 $$ 
 is an equivalence.
 
-Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be a quasi-inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
+Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be an inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
 $$
 \varphi:(gfa=gfa')\to(a=a')\quad\text{by}\quad\varphi(q):\equiv\beta_a^{-1}\cdot q\cdot\beta_{a'}.
 $$ 
@@ -995,17 +995,19 @@ Let us check Equivalence $(\star)$ in the proof of Theorem 4.7.6: Recalling that
 $$
 R(a,p):\equiv\sum_{u:P(a)}p_\star(f(a,u))=v.
 $$ 
-We claim 
+
+Claim: 
 $$
 \ga(\sum_{a:A}\sum_{p:a=x}R(a,p)\dr)\overset{(\text a)}{\simeq}
 \ga(\sum_{z:\sum_{a:A}a=x}R(z)\dr)\overset{(\text b)}{\simeq}
 R(x,\refl_x).
 $$
-Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
+
+Proof: Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
 $$
 \sum_{a:A}\ a=x
 $$ 
-is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). 
+is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). $\square$
 
 %%
 
@@ -1043,11 +1045,18 @@ In particular $\fib_f$ is a type family over $B$. The corresponding transport ca
 p_\star(a,q)=(a,q\cdot p).
 \end{equation}
 
-Put $C:\eq\sum_{b:B}\sum_{a:A}f(a)=b$, and define $g:A\to C$ and $h:C\to A$ by 
+Put 
+$$
+C:\eq\sum_{b:B}\fib_f(b):\eq\sum_{b:B}\sum_{a:A}f(a)=b,
+$$ 
+and define $g:A\to C$ and $h:C\to A$ by 
 $$
 g(a):\eq(f(a),a,\re_{f(a)}),\qquad h(b,a,p):\eq a.
 $$ 
-We claim that $g$ and $h$ are quasi-inverse. It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\re_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}.
+
+Claim: $g$ and $h$ are inverses. 
+
+Proof: It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\re_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}. $\square$
 
 %%
 
@@ -1191,7 +1200,7 @@ $$\psi:(g(f(x))=c)\to\sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$
 
 $$\ph(y,q,p):\eq\ap_g(p)\cdot q,\quad\psi(r):\eq(f(x),r,\refl_{f(x)})$$ 
 
-\nn are mutual quasi-inverses. This gives 
+\nn are inverses. This gives 
 
 $$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ g(f(x))=c\right)=\fib_{g\circ f}(c).$$
 
@@ -1218,7 +1227,7 @@ and thus $g\circ k=\id_C$ and $k\circ g=(h\circ g)^{-1}\circ h\circ g=\id_B$. Th
 $$
 \mathsf{idtoqinv}_{A,B}:(A=B)\to\sum_{f:A\to B}\mathsf{qinv}(f)
 $$
-by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\mathsf{idtoqinv}_{A,B}$ has a quasi-inverse.
+by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\mathsf{idtoqinv}_{A,B}$ has an inverse.
 
 \nn(i) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ can be used instead of univalence in the proof of function extensionality in $\S$4.9.
 
@@ -1236,7 +1245,7 @@ $$
 $$
 i:\prod_{A,B:\U}\ \prod_{f:A\to B}\mathsf{ishae}(f)\to\mathsf{qinv}(f),\quad p:\prod_{A,B:\U}\ \prod_{f:A\to B}\mathsf{qinv}(f)\to\mathsf{ishae}(f).
 $$ 
-For all $A,B:\U$ let $e(A,B):(A=B)\to(A\backsimeq B)$ be the natural map (which we assume to admit a quasi-inverse).
+For all $A,B:\U$ let $e(A,B):(A=B)\to(A\backsimeq B)$ be the natural map (which we assume to admit an inverse).
 
 Claim: if $f:A\to B$ and $x:\mathsf{qinv}(f)$, then $i(A,B,f,p(A,B,f,x))=x$.
  
