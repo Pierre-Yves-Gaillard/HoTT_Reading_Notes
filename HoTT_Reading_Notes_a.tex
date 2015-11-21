@@ -1032,9 +1032,11 @@ Proof. We have
 
 %%
 
-\subsection{Lemma 4.8.2}
+\subsection{Proof of Lemma 4.8.2}
 
-Here is a minor variant to the proof of Lemma 4.8.2.
+Here is a minor variant to the proof of Lemma 4.8.2. Recall the statement:
+
+For any function $f:A\to B$, we have $A\simeq\sum_{b:B}\fib_f(b)$.
 
 Recall Definition 4.2.4: The fiber of a map $f:A\to B$ over a point $b:B$ is 
 $$
@@ -1045,18 +1047,15 @@ In particular $\fib_f$ is a type family over $B$. The corresponding transport ca
 p_\star(a,q)=(a,q\cdot p).
 \end{equation}
 
-Put 
+Set 
 $$
-C:\eq\sum_{b:B}\fib_f(b):\eq\sum_{b:B}\sum_{a:A}f(a)=b,
+C:\eq\sum_{b:B}\fib_f(b):\eq\sum_{b:B}\sum_{a:A}f(a)=b.
 $$ 
-and define $g:A\to C$ and $h:C\to A$ by 
+We must show $A\simeq C$. Define $g:A\to C$ and $h:C\to A$ by 
 $$
 g(a):\eq(f(a),a,\re_{f(a)}),\qquad h(b,a,p):\eq a.
 $$ 
-
-Claim: $g$ and $h$ are inverses. 
-
-Proof: It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\re_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}. $\square$
+We claim that $g$ and $h$ are inverses. It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\re_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}. $\square$
 
 %%
 
