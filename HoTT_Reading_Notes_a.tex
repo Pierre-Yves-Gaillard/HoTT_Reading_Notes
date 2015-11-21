@@ -1032,7 +1032,7 @@ Proof. We have
 
 %%
 
-\subsection{Proof of Lemma 4.8.2}
+\subsection{Proof of Lemma 4.8.2}\label{482}
 
 Here is a minor variant to the proof of Lemma 4.8.2. Recall the statement:
 
@@ -1099,6 +1099,19 @@ where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for 
 
 \subsection{Proof of Theorem 4.8.4}
 
+Here is the statement:
+
+\nn\emph{Let $f:A\to B$ be a function. Then the diagram
+$$
+\xymatrix{
+A\ar[r]^-{\theta_f}\ar[d]_{f}&\U_\bullet\ar[d]^{\pr_1}\\
+B\ar[r]_{\chi(A,f)} &\U}
+$$ 
+is a pullback square (see Exercise 2.11). Here the function $\theta_f$ is defined by}
+$$
+\theta_f(a):\eq\Big(\fib_f\big(f(a)\big),\big(a,\refl_{f(a)}\big)\Big).
+$$
+
 I don't understand the proof of the equivalence 
 $$
 A\simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ \fib_f(b)=X
@@ -1130,20 +1143,16 @@ By Theorem 2.7.2 it suffices to verify
 $$
 \ms t^{X\mapsto X\times X=A}(p,(b,p))=(\ms t^{X\mapsto X}(p,b),\refl_A).
 $$ 
-By Theorem 2.6.4 it suffices to prove 
-$$
-\ms t^{X\mapsto X=A}(p,p)=\refl_A.
-$$ 
-But this follows from Lemma 2.11.2. $\square$
+By Theorem 2.6.4 it suffices to prove $\ms t^{X\mapsto X=A}(p,p)=\refl_A$. But this follows from Lemma 2.11.2. $\square$
 
 Going back to the beginning of the proof of Theorem 4.8.4, we get 
 $$
-A\simeq\ga(\sum_{b:B}\ \fib_f(b)\dr)\simeq\ga(\sum_{b:B}\ \sum_{X:\U}\ C\times X=\fib_f(b)\dr)
+A\simeq\ga(\sum_{b:B}\ \fib_f(b)\dr)\simeq\ga(\sum_{b:B}\ \sum_{X:\U}\ X\times X=\fib_f(b)\dr)
 $$
 $$
 \simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ \fib_f(b)=X,
 $$ 
-the first equivalence following from Lemma 4.8.2, the second one from \eqref{asimeq}, and the third one being straightforward.
+the first equivalence following from Lemma 4.8.2 (see \S\ref{482}), the second one from \eqref{asimeq}, and the third one being straightforward.
 
 %%
 
