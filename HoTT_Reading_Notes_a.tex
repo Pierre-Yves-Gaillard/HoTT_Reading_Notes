@@ -1441,6 +1441,22 @@ $$
 $$ 
 (Recall: $t:Z\to E,\ c=(i,j,h):\ms{cocone}_{\mc D}(E)$.)
 
+Some more details about the end of the proof of Lemma 6.8.2:
+
+Set $u:\eq\ms s(t\ci c_\sqcup)$, and let $z:Z,\ x:C$. We want to show $u=t$ using the uniqueness principle. This easily reduces to verifying that 
+$$
+\refl_{t(\inl(f(x)))}=_{\gl(x)}^{z\mapsto(u(z)=t(z))}\refl_{t(\inr(g(x)))},
+$$ 
+or, equivalently, 
+$$
+\transport^{z\mapsto(u(z)=t(z))}(\gl(x),\refl_{t(\inl(f(x)))})=\refl_{t(\inr(g(x)))},
+$$ 
+is inhabited. This follows from the fact that we have, for $p:z_1=z_2$ and $q:u(z_1)=t(z_1)$, 
+$$
+\transport^{z\mapsto(u(z)=t(z))}(p,q)=u(p)^{-1}\cdot q\cdot t(p).
+$$ 
+(The above formula is easily proved by induction on $p$.)
+
 %%
 
 \subsection{Section 6.9}\label{69}
