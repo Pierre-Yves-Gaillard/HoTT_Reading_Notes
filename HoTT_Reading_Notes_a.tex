@@ -1410,19 +1410,13 @@ $$
 \alpha:\prod_{a:A}s(\inl(a))=s'(\inl(a)),\quad\beta:\prod_{b:B}s(\inr(b))=s'(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha(f(c))=^{z\mapsto s(z)=s'(z)}_{\glue(c)}\beta(g(c)).
+\gamma:\prod_{c:C}\ \alpha(f(c))=^{z\mapsto(s(z)=s'(z))}_{\glue(c)}\beta(g(c)).
 $$ 
-Then there is an $h:\prod_{z:Z}s(z)=s'(z)$ such that 
+Then there is an $h:\prod_{z:Z}(s(z)=s'(z))$ such that 
 $$
 h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta
 $$ 
 and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
-
-%\begin{comment}
-%Here are more details about the end of the proof of Lemma 6.8.2:
-
-%Let $u:\eq\ms s(t\circ c_\sqcup)$, define $D:Z\to\U$ by $D(z):\eq(u(z)=t(z))$, define $$\alpha(a):u(\inl(a))=t(\inl(a)),\quad\beta(b):u(\inr(b))=t(\inr(b))$$ for $a:A,\ b:B$ as in the book, and, for $c:C$, let $\gamma(c)$ be the obvious inhabitant of the type $$\alpha(\inl(f(c)))=^D_{\glue(c)}\beta(\inr(g(c))),$$ which is equivalent to the type $$u(\glue(c))^{-1}\cdot\alpha(f(c))\cdot t(\glue(c))=\beta(g(c)).$$ Then the induction principle yields a dependent function $h:\prod_{z:Z}u(z)=t(z)$.
-%\end{comment}
 
 %%
 
