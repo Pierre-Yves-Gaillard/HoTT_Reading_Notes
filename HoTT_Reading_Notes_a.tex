@@ -1387,12 +1387,22 @@ The sentence containing the first display follows from Theorem 2.11.3.
 
 \subsection{Section 6.8}
 
-Here is the \emph{induction principle} for the pushout $Z:\eq A\sqcup^CB$ attached to 
+Here is the \emph{recursion principle} for the pushout $Z:\eq A\sqcup^CB$ attached to 
 $$
 f:C\to A,\quad g:C\to B:
 $$ 
 
-Let $D:Z\to\U$ be a type family, let 
+Given 
+$$
+\alpha:A\to D,\quad\beta:B\to D,\quad\gamma:\prod_{c:C}\alpha(f(c))=\beta(g(c)),
+$$ 
+there is an $s:Z\to D$ such that 
+$$
+s\ci\inl\eq\alpha,\quad s\ci\inr\eq\beta,\quad\ap_s(\gl(c))=\gamma(c)
+$$ 
+for all $c:C$.
+
+Here is the \emph{induction principle}: Let $D:Z\to\U$ be a type family, let 
 $$
 \alpha:\prod_{a:A}D(\inl(a)),\quad\beta:\prod_{b:B}D(\inr(b)),
 $$
@@ -1414,9 +1424,9 @@ $$
 $$ 
 Then there is an $h:\prod_{z:Z}(s(z)=s'(z))$ such that 
 $$
-h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta
+h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta,\quad\apd_h(\glue(c))=\gamma(c)
 $$ 
-and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
+for all $c:C$. 
 
 %%
 
