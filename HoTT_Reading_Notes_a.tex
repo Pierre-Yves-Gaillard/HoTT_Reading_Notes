@@ -1387,20 +1387,34 @@ The sentence containing the first display follows from Theorem 2.11.3.
 
 \subsection{Section 6.8}
 
-Here is the induction principle for the pushout $Z:\eq A\sqcup^CB$ attached to 
+Here is the \emph{induction principle} for the pushout $Z:\eq A\sqcup^CB$ attached to 
 $$
 f:C\to A,\quad g:C\to B:
 $$ 
+
 Let $D:Z\to\U$ be a type family, let 
 $$
 \alpha:\prod_{a:A}D(\inl(a)),\quad\beta:\prod_{b:B}D(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big).
+\gamma:\prod_{c:C}\ \alpha(f(c))=^D_{\glue(c)}\beta(g(c)).
 $$ 
 Then there is an $h:\prod_{z:Z}D(z)$ such that 
 $$
-h\circ \inl\equiv\alpha,\quad h\circ \inr\equiv\beta
+h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta
+$$ 
+and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
+
+Here is the \emph{uniqueness principle}: Let $s,s':Z\to D$ and 
+$$
+\alpha:\prod_{a:A}s(\inl(a))=s'(\inl(a)),\quad\beta:\prod_{b:B}s(\inr(b))=s'(\inr(b)),
+$$
+$$
+\gamma:\prod_{c:C}\ \alpha(f(c))=^{z\mapsto s(z)=s'(z)}_{\glue(c)}\beta(g(c)).
+$$ 
+Then there is an $h:\prod_{z:Z}s(z)=s'(z)$ such that 
+$$
+h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta
 $$ 
 and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
 
