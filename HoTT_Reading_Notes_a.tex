@@ -1023,10 +1023,10 @@ $$
 Proof. We have
 \begin{align*}
 \fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}B(x)}\pr_1(u)=a\\
-&\simeq\sum_{x:A}\sum_{b:B(x)}x=a&\text{ by Exercise 2.10}\\
+&\simeq\sum_{x:A}\sum_{b:B(x)}x=a&\text{by Exercise 2.10}\\
 &\simeq\sum_{x:A}\sum_{p:x=a}B(x)\\
-&\simeq\sum_{z:\sum_{x:A}x=a}B(\pr_1(z))&\text{ by Exercise 2.10}\\
-&\simeq B(\pr_1(a,\refl_a))&\text{ by Lemmas 3.11.8 and 3.11.9(ii)}\\
+&\simeq\sum_{z:\sum_{x:A}x=a}B(\pr_1(z))&\text{by Exercise 2.10}\\
+&\simeq B(\pr_1(a,\refl_a))&\text{by Lemmas 3.11.8 and 3.11.9(ii)}\\
 &\eq B(a).\ \square
 \end{align*}
 
@@ -1396,9 +1396,13 @@ $$
 \alpha:\prod_{a:A}D(\inl(a)),\quad\beta:\prod_{b:B}D(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha\big(\inl(f(c))\big)=^D_{\glue(c)}\beta\big(\inr(g(c))\big).
+\gamma:\prod_{c:C}\ \alpha\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big).
 $$ 
-Then there is an $h:\prod_{z:Z}D(z)$ such that $h\circ \inl\equiv\alpha$, $h\circ \inr\equiv\beta$ and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
+Then there is an $h:\prod_{z:Z}D(z)$ such that 
+$$
+h\circ \inl\equiv\alpha,\quad h\circ \inr\equiv\beta
+$$ 
+and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
 
 %\begin{comment}
 %Here are more details about the end of the proof of Lemma 6.8.2:
