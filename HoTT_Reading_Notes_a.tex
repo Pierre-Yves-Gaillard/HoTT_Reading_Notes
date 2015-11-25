@@ -1321,6 +1321,31 @@ In particular: $(A\to\neg A)\to\neg A$.
 
 %%
 
+\subsection{Displays (5.6.4)--(5.6.7)}%\label{69}
+
+As Display (5.6.4), which reads 
+$$
+c:(A\to W)\to(B\to C\to W)\to D\to W\to W,
+$$ 
+can be rewritten as 
+$$
+c:(A\to W)\to((B\times C)\to W)\to D\to(\mb1\to W)\to W,
+$$ 
+we can (and do) assume that $c$ has the form 
+$$
+c:(A\to W)\to D\to W.
+$$ 
+This allows us to rewrite (5.6.6) as 
+$$
+f(c(\alpha,\beta))\eq d(\alpha,\beta)
+$$ 
+and (5.6.7) as 
+$$
+d:\prod_{\alpha:A\to W}\left(\prod_{a:A} P(\alpha(a))\right)\to\prod_{\beta:B}P(c(\alpha,\beta)).
+$$ 
+
+%%
+
 \subsection{Proof of Theorem 5.8.2}\label{582}
 
 Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2. 
