@@ -1269,6 +1269,26 @@ For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ becaus
 
 \section{Chapter 5}
 
+\subsection{Induction principle for W-types in \S5.3}%\label{69}
+
+The induction principle for the W-type $W:\eq\underset{a:A}{\ms W}\ B(a)$ can be stated as follows:
+
+Given $A:W\to\U$, the recurrence 
+$$
+r:\prod_{a:A}\prod_{f:B(a)\to W}\left(\prod_{b:B(a)}E(f(b))\right)\to E(\sup(a,f))
+$$ 
+admits a solution 
+$$
+s:\prod_{w:W}E(w)
+$$ 
+satisfying 
+$$
+s(\sup(a,f))\eq r(a,f,s\ci f)
+$$ 
+for all $a:A$ and all $f:B(a)\to W$.
+
+%%
+
 \subsection{Second bullet of \S5.6}%\label{69}
 
 This is about the comment containing the second bullet of \S5.6:
