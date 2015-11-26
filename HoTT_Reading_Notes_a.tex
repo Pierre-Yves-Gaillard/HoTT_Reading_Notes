@@ -1271,21 +1271,29 @@ For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ becaus
 
 \subsection{Induction principle for W-types in \S5.3}%\label{69}
 
-The induction principle for the W-type $W:\eq\underset{a:A}{\ms W}\ B(a)$ can be stated as follows:
+Let $W:\eq\underset{a:A}{\ms W}\ B(a)$ be a W-type. Recall the following: 
 
-Given $A:W\to\U$, the recurrence 
+We have a constructor 
 $$
-r:\prod_{a:A}\prod_{f:B(a)\to W}\left(\prod_{b:B(a)}E(f(b))\right)\to E(\sup(a,f))
+\sup:\prod_{a:A}\left(B(a)\to W\right)\to W, 
 $$ 
-admits a solution 
+and the induction principle can be stated as follows:
+
+We assume the recurrence 
 $$
-s:\prod_{w:W}E(w)
+r:\prod_{a:A}(B(a)\to W)\to W
 $$ 
-satisfying 
+if we are given a type $E:\U$ (case~1), and 
+$$
+r:\prod_{a:A}\ \prod_{f:B(a)\to W}\left(\prod_{b:B(a)}E(f(b))\right)\to E(\sup(a,f))
+$$ 
+if we are given a type family $E:W\to\U$ (case~2). 
+
+The solution $s$ to the above recurrence is a function $s:W\to E$ in case~1 and a dependent function $s:\prod_{w:W}E(w)$ in case~2. In both cases the computation rule 
 $$
 s(\sup(a,f))=r(a,f,s\ci f)
 $$ 
-for all $a:A$ and all $f:B(a)\to W$.
+holds for all $a:A$ and all $f:B(a)\to W$.
 
 %%
 
