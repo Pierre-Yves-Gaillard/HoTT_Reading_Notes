@@ -1339,18 +1339,23 @@ can be rewritten as
 $$
 c:(A\to W)\to((B\times C)\to W)\to D\to(\mb1\to W)\to W,
 $$ 
-we can (and do) assume that $c$ has the form 
+we can (and do) assume that the constructor $c$ has the form 
 $$
-c:(A\to W)\to D\to W.
+c:(A\to W)\to B\to W.
 $$ 
-This allows us to rewrite (5.6.6) as 
+The recurrence takes the form 
 $$
-f(c(\alpha,\beta))\eq d(\alpha,\beta)
+r:(A\to W)\to(A\to P)\to B\to W\to P\to P
 $$ 
-and (5.6.7) as 
+(see (5.6.5) in the book) if $P:\U$, and 
 $$
-d:\prod_{\alpha:A\to W}\left(\prod_{a:A} P(\alpha(a))\right)\to\prod_{\beta:B}P(c(\alpha,\beta)).
+r:\prod_{\alpha:A\to W}\left(\prod_{a:A} P(\alpha(a))\right)\to\prod_{b:B}P(c(\alpha,b)).
 $$ 
+(see (5.6.7) in the book) if $P:W\to\U$. The solution $s$ to the recurrence $r$ satisfies in both cases 
+$$
+s(c(\alpha,b))\eq r(\alpha,b)
+$$ 
+(see (5.6.6) in the book).
 
 %%
 
