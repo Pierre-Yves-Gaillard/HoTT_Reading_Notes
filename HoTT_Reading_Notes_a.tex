@@ -64,6 +64,7 @@
 \nc{\nn}{\noindent}
 \nc{\one}{\mb1}
 \nc{\oo}{\operatorname}
+\nc{\pd}{\prod}
 \nc{\ps}{\mc P}
 \nc{\pa}{\ms{pair}^=}
 \nc{\ph}{\varphi}
@@ -116,6 +117,28 @@ This is a work in progress. John Dougherty's text
 %%
 
 \section{Chapter 1}
+
+\subsection{Path induction implies based path induction, \S1.12.2}%\label{69}
+
+Let us show that path induction implies based path induction. Let $a:A$, 
+$$
+C_0:\prod_{x:A}(a=x)\to\U
+$$ 
+and $c_0:C_0(a,\refl_a)$. We must find an 
+$$
+f:\pd_{x:A}\ \pd_{p:a=x}C_0(x,p)
+$$ 
+such that $f(a,\re_a)\eq c_0$. Define $ D:\pd_{x,y:A}(x=y)\to\U$ by 
+$$
+D(x,y,p):\eq\pd_{C:\pd_{z:A}(x=z)\to\U}C(x,\re_x)\to C(y,p)
+$$ 
+and $d:\pd_{x:A}D(x,x,\re_x)$ by $d(x,C,c):\eq c$. By path induction we get a 
+$$
+g:\pd_{x,y:A}\ \pd_{p:x=y}D(x,y,p)
+$$ 
+such that $g(x,x,\re_x)\eq d$ for all $x:A$. We set $f(x,p):\eq g(a,x,p,C_0,c_0)$ for $x:A$ and $p:a=x$, and leave the end of the proof to the reader.
+
+%
 
 \subsection{Exercise 1.3} 
 
