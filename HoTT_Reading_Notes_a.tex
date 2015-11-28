@@ -1354,7 +1354,7 @@ In particular: $(A\to\neg A)\to\neg A$.
 
 \subsection{Displays (5.6.4)--(5.6.7)}%\label{69}
 
-As Display (5.6.4), which reads 
+As Display (5.6.4) of the book, which reads 
 $$
 c:(A\to W)\to(B\to C\to W)\to D\to W\to W,
 $$ 
@@ -1670,9 +1670,32 @@ for $p:x=y$ by based path induction.
 
 %%
 
-%\subsection{n-truncated types (Section 7.3)}
+%\subsection[Induction principle for ||A||\_n in \S7.3]{Induction principle for $\lV A\rV_n$ in \S7.3}%\label{69}
 
-%The phrase ``$A$ is $n$-truncated'' means ``$A$ is an $n$-type'' (Definition 7.1.1). The definition of $n$-truncated map is given in Definition 7.6.1: a map is $n$-truncated if all its fibers are $n$-types.
+\subsection{Induction principle for n-truncations in \S7.3}
+
+We spell out the induction principle for a higher inductive type $W$ which is slightly more general than $\lV A\rV_n$.
+
+Let $W$ be defined by the three constructors 
+$$
+c_1:A\to W,\quad c_2:(B\to W)\to W,\quad c_3:\pd_{d:B\to W}\pd_{b:B}\ d(b)=c_2(d).
+$$ 
+Let $P:W\to\U$ be a type family. We say that a dependent function $f:\pd_{w:W}P(w)$ solves the three recurrences 
+$$
+r_1:\pd_{a:A}P(c_1(a)),
+$$ 
+$$
+r_2:\pd_{d:B\to W}\left(\pd_{b:B}P(d(b))\right)\to P(c_2(d)),
+$$
+
+$$
+r_3:\pd_{d:B\to W}\ \pd_{e:\pd_{b:B}P(d(b))}\ \pd_{b:B}\ e(b)=^P_{c_3(d,b)}r_2(d,e)
+$$ 
+if we have 
+$$
+f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad f(c_3(d,b))=r_3(d,f\ci d,b)
+$$ 
+for all $a:A$, all $d:B\to W$ and all $b:B$. 
 
 %%
 
