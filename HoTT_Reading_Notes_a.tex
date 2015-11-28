@@ -1374,7 +1374,7 @@ $$
 $$
 r:\prod_{\alpha:A\to W}\left(\prod_{a:A} P(\alpha(a))\right)\to\prod_{b:B}P(c(\alpha,b)).
 $$ 
-(see (5.6.7) in the book) if $P:W\to\U$. The solution $s$ to the recurrence $r$ satisfies in both cases 
+(see (5.6.7) in the book) if $P:W\to\U$. The solution $s$ to the recurrence $r$ satisfies in both cases the computation rule
 $$
 s(c(\alpha,b))\eq r(\alpha,s\ci\alpha,b)
 $$ 
@@ -1697,11 +1697,11 @@ $$
 $$
 r_3:\pd_{d:B\to W}\ \pd_{e:\pd_{b:B}P(d(b))}\ \pd_{b:B}\ e(b)=^P_{c_3(d,b)}r_2(d,e)
 $$ 
-if we have 
+if the computation rules
 $$
 f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad\ms{apd}_f(c_3(d,b))=r_3(d,f\ci d,b)
 $$ 
-for all $a:A$, all $d:B\to W$ and all $b:B$. 
+hold for all $a:A$, all $d:B\to W$ and all $b:B$. 
 
 %%
 
@@ -1711,15 +1711,15 @@ Let $R:A\to A\to\Prop$ be a mere relation on a type $A$. Let $A/'R$ be the highe
 $$
 q':A\to A/'R,\quad c:\pd_{a,b:A}R(a,b)\to(q'(a)=q'(b)).
 $$ 
-In particular, the induction principle reads as follows: Given a type family $P:A/'R\to\U$, we say that a dependent function $f:\pd_{x:A/'R}P(x)$ satifies the recurrences 
+In particular, the induction principle reads as follows: Given a type family $P:A/'R\to\U$, we say that a dependent function $f:\pd_{x:A/'R}P(x)$ satisfies the recurrences 
 $$
 r:\pd_{a:A}P(q'(a)),\quad s:\pd_{a,b:A}R(a,b)\to(r(a)=r(b))
 $$ 
-if we have 
+if the computation rules 
 $$
 f(q'(a))\eq r(a),\quad \ms{apd}_f(c(a,b,u))=s(a,b,u)
 $$ 
-for all $a,b:A$ and all $u:R(a,b)$. 
+hold for all $a,b:A$ and all $u:R(a,b)$. 
 
 Now we can define the quotient $A/R$ by $A/R:\eq\lV A/'R\rV_0$. 
 
