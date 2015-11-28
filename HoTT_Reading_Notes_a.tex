@@ -1577,7 +1577,11 @@ Given any $P:\lVert A\rVert\to\Prop$ together with a function $f:\prod_{a:A}P(\l
 
 %%
 
-\subsection{Beginning of Section 6.10}\label{610}
+\subsection{Notion of quotient (beginning of \S6.10)}\label{610}
+
+We shall define quotients via truncations in \S\ref{qvt} below.
+
+\begin{comment}
 
 To spell out the induction principle for the quotient $A/R$, let $\alpha(a,b):q(a)=q(b)$ be the path given from $q(a)$ to $q(b)$ whenever $R(a,b)$. 
 
@@ -1588,6 +1592,8 @@ $$
 for all $a,b$ such that $R(a,b)$, we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$, and $\apd_g(\alpha(a,b))=\beta(a,b)$ for all $a,b$ such that $R(a,b)$.
 
 It is easy to see that if our type family $P:A/R\to\Set$ is such that $P(q(b))$ is a mere proposition whenever $R(a,b)$, and if we are just given an $f:\prod_{a:A}P(q(a))$, then we get a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\eq f(a)$ for all $a:A$.
+
+\end{comment}
 
 %This yields in particular the following induction principle:
 
@@ -1696,6 +1702,26 @@ $$
 f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad\ms{apd}_f(c_3(d,b))=r_3(d,f\ci d,b)
 $$ 
 for all $a:A$, all $d:B\to W$ and all $b:B$. 
+
+%%
+
+\subsection{Defining quotients via truncations}\label{qvt}
+
+Let $R:A\to A\to\Prop$ be a mere relation on a type $A$. Let $A/'R$ be the higher inductive type whose constructors are 
+$$
+q':A\to A/'R,\quad c:\pd_{a,b:A}R(a,b)\to(q'(a)=q'(b)).
+$$ 
+In particular, the induction principle reads as follows: Given a type family $P:A/'R\to\U$, we say that a dependent function $f:\pd_{x:A/'R}P(x)$ satifies the recurrences 
+$$
+r:\pd_{a:A}P(q'(a)),\quad s:\pd_{a,b:A}R(a,b)\to(r(a)=r(b))
+$$ 
+if we have 
+$$
+f(q'(a))\eq r(a),\quad \ms{apd}_f(c(a,b,u))=s(a,b,u)
+$$ 
+for all $a,b:A$ and all $u:R(a,b)$. 
+
+Now we can define the quotient $A/R$ by $A/R:\eq\lV A/'R\rV_0$. 
 
 %%
 
@@ -1979,7 +2005,7 @@ $$
 $$ 
 be the canonical factorization of $f$. It is easy to check that $\im(f)$ is a mere proposition. As a result, $f$ induces a map $g:\lV B(a_0)\rV\to\im(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq i(g(\beta))$ for all $b:B(a_0)$.
 
-We leave it to the reader to check, using \S\ref{610} above, that $h$ is an equivalence. $\square$
+We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is an equivalence. $\square$
 
 \begin{comment}
 
