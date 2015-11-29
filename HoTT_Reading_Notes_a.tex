@@ -1713,11 +1713,11 @@ q':A\to A/'R,\quad c:\pd_{a,b:A}R(a,b)\to(q'(a)=q'(b)).
 $$ 
 In particular, the induction principle reads as follows: Given a type family $P:A/'R\to\U$, we say that a dependent function $f:\pd_{x:A/'R}P(x)$ satisfies the recurrences 
 $$
-r:\pd_{a:A}P(q'(a)),\quad s:\pd_{a,b:A}R(a,b)\to(r(a)=r(b))
+r:\pd_{a:A}P(q'(a)),\quad s:\pd_{a,b:A}\ \pd_{u:R(a,b)}\Big(r(a)=^P_{c(a,b,u)}r(b)\Big)
 $$ 
 if the computation rules 
 $$
-f(q'(a))\eq r(a),\quad \ms{apd}_f(c(a,b,u))=s(a,b,u)
+f(q'(a))\eq r(a),\quad\ms{apd}_f(c(a,b,u))=s(a,b,u)
 $$ 
 hold for all $a,b:A$ and all $u:R(a,b)$. 
 
