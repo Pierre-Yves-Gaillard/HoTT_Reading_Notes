@@ -1668,11 +1668,21 @@ Here is a corollary to Theorem 7.1.8: the fibers of a map between $n$-types are 
 
 \subsection{First proof of Theorem 7.2.2}
 
-We prove 
+Recall 
 $$
-f(x,x,\rho(x))\cdot p=f(x,y,\transport^{R(x)}(p,\rho(x)))
+\rho:\pd_{x:X}R(x,x)\quad\rho:\pd_{x,y:X}R(x,y)\to(x=y).
 $$ 
-for $p:x=y$ by based path induction.
+We prove 
+\begin{equation}\label{722}
+f(x,x,\rho(x))\cdot p=f(x,y,\transport^{R(x)}(p,\rho(x)))
+\end{equation}  
+for $p:x=y$ by path induction. For $q:x=y$ we have 
+\begin{align*}
+q&=f(x,x,\rho(x))^{-1}\cdot f(x,y,\transport^{R(x)}(q,\rho(x)))\\
+&=f(x,x,\rho(x))^{-1}\cdot f(x,y,\transport^{R(x)}(p,\rho(x)))\\
+&=p,
+\end{align*} 
+where the second equality follows from the fact that $R(x,y)$ is a mere proposition, and the other equalities follow from \eqref{722}.
 
 %%
 
