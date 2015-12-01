@@ -128,7 +128,7 @@ and $c_0:C_0(a,\refl_a)$. We must find an
 $$
 f:\pd_{x:A}\ \pd_{p:a=x}C_0(x,p)
 $$ 
-such that $f(a,\re_a)\eq c_0$. Define $ D:\pd_{x,y:A}(x=y)\to\U$ by 
+such that $f(a,\re_a)\eq c_0$. Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
 $$
 D(x,y,p):\eq\pd_{C:\pd_{z:A}(x=z)\to\U}C(x,\re_x)\to C(y,p)
 $$ 
@@ -1342,13 +1342,11 @@ Just before Remark 5.6.3 we read:
 
 Here are some more details about the above parenthesis:
 
-Let $P$ be a mere proposition, and let $f:P\to P\to\mbf0$ and $g:(P\to\mbf0)\to P$. Define $u:P\to\mbf0$ by $u(p):\eq f(p,p)$ and note that $u(g(u)):\mbf0$.
-
-The key point is that we have a codiagonal map
-$$
-(A\to A\to B)\to(A\to B).
-$$ 
-In particular: $(A\to\neg A)\to\neg A$.
+If $B:A\to\U$ is a type family over a type $A$, then we have a codiagonal map 
+\begin{equation}\label{563}
+(\la f.\la a.f(a,a)):\left(A\to\pd_{a:A}B(a)\right)\to\pd_{a:A}B(a).
+\end{equation} 
+In particular we get a map $(P\to\neg P)\to\neg P$, that is, our assumption $P\Rightarrow\neg P$ implies $\neg P$ (and $\neg P$ clearly implies $\mb0$ under our assumption $P\Leftrightarrow\neg P$).
 
 %%
 
@@ -1688,10 +1686,7 @@ where the second equality follows from the fact that $R(x,y)$ is a mere proposit
 
 \subsection{Lemma 7.2.8}
 
-If $P:X\to\U$ is a type family over a type $X$, then the formula $f(g,x):\eq g(x,x)$ defines a map 
-$$
-f:\left(X\to\pd_{x:X}P(x)\right)\to\pd_{x:X}P(x).
-$$
+Lemma 7.2.8 follows immediately from \eqref{563}.
 
 %%
 
