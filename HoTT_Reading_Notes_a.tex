@@ -403,7 +403,7 @@ $$
 
 The map 
 \begin{equation}\label{272}
-(w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}p_\star(\pr_2(w))=\pr_2(w')
+(w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}\big(p_\star(\pr_2(w))=\pr_2(w')\big)
 \end{equation}
 can also be defined by the formula 
 $$
@@ -415,9 +415,9 @@ $$
 \subsection{Comment after Corollary 2.7.3}
 
 We write 
-$$
-\pa:\left(\sum_{p:\pr_1w=\pr_1w'}(\,p_\star\,\pr_2w=\pr_2w')\right)\to(w=w').
-$$ 
+\begin{equation}\label{273}
+\pa:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(p_\star(\pr_2(w))=\pr_2(w')\big)\right)\to(w=w')
+\end{equation} 
 for an inverse of \eqref{272}. We then have the propositional computation rules 
 $$
 \ap_{\pr_1}(\pa(p,q))=p,
@@ -425,24 +425,31 @@ $$
 $$
 \apd_{\pr_2}(\pa(p,q))=q
 $$
-for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}p_\star(\pr_2(w))=\pr_2(w')$, and the propositional uniqueness principle 
+for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}(p_\star(\pr_2(w))=\pr_2(w'))$, and the propositional uniqueness principle 
 $$
 r=\pa(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
 $$ 
-for $r:w=w'$.
+for $r:w=w'$. 
 
 %%
 
 \subsection{Theorem 2.7.4}\label{274}
 
 We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\ms t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
+
 $$
 \ms t^{Q'}(p,(u,z))=\Bigg(\ms t^P(p,u),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big),z\bigg)\Bigg).
 $$ 
+
 The key step to check that the above equality is well-typed is the judgment 
 $$
 \pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\ms t^P(p,u)\big).
 $$ 
+
+For the reader's convenience, we rewrite \eqref{273} more explicitly as 
+$$
+\pa:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(\ms t^P(p,\pr_2(w))=\pr_2(w')\big)\right)\to(w=w')
+$$
 
 %%
 
