@@ -435,7 +435,11 @@ for $r:w=w'$.
 
 \subsection{Theorem 2.7.4}\label{274}
 
-We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We abbreviate $\sum_{u:P(x)}Q(x,u)$ by $Q'(x)$, and $\tr$ by $\ms t$; and we write $\pa_P$ instead of $\pa$ to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
+We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We set 
+$$
+Q'(x):\eq\sum_{u:P(x)}Q(x,u)
+$$ 
+for $x:A$, we abbreviate $\tr$ by $\ms t$, and we write $\pa_P$ instead of $\pa$ (see \eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
 
 $$
 \ms t^{Q'}(p,(u,z))=\Bigg(\ms t^P(p,u),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big),z\bigg)\Bigg).
@@ -482,39 +486,74 @@ $$
 
 \subsection{Lemma 2.9.7}
 
-Recall the statement of the Lemma: Let 
+In this Section we abbreviate $\tr$ by $\ms t$. Let 
 $$
-A:X\to\U,\quad B:\prod_{x:X}A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}A(x)\right)\to\U
+A:X\to\U,\quad B:\prod_{x:X}A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}A(x)\right)\to\U,\quad B':X\to\U
 $$ 
-be type families such that $\widehat B(w):\eq B(\pr_1w,\pr_2w)$ for all $w:\sum_{x:X}A(x)$, and let 
+be type families such that $\widehat B(w):\eq B(\pr_1(w),\pr_2(w))$ for all $w:\sum_{x:X}A(x)$, and 
 $$
-p:x=y,\quad f:\prod_{a:A(x)}B(x,a),\quad g:\prod_{a:A(y)}B(y,a).
+B'(x):\eq\pd_{a:A(x)}B(x,a)
 $$ 
-Then we have an equivalence 
+for all $x:X$; let 
 $$
-\big(p_\star(f)=g\big)\simeq\prod_{a:A(x)}\tr^{\widehat B}\Big(\pa(p,\refl_{p_\star(a)}),f(a)\Big)=g(p_\star(a)).
+p:x=y,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\ms t^A(p),
 $$ 
+and define 
+$$
+h:\pd_{a:A(x)}B(y,p_\star\,a)
+$$ 
+by setting 
+$$
+h(a):\eq\ms t^{\widehat B}\Big(\pa_A\big(p,\re_{p_\star\,a}\big),f(a)\Big)
+$$ 
+for all $a:A(x)$. (We write $\pa_A$ for $\pa$ to stress the fact that the pairing is taken with respect to the type family $A$. Recall that $\pa$ is defined in \eqref{273} above.)
 
-It is written, after the Lemma: ``We leave it to the reader to prove this and to formulate a suitable computation rule''. I think this means the following:
+\nn\textbf{Claim:} \emph{The maps}
+\begin{equation}\label{297}
+\xymatrix{
+\Big(\ms t^{B'}(p,f)=g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
+\end{equation}
+\emph{defined below are inverses.}
 
-If $q:p_\star(f)=g$ corresponds under this equivalence to $\widehat q$, then for $a:A(x)$, the path 
+\nn\emph{Proof.} We define $k:\ms t^{B'}(p,f)\ci p_\star\sim h$ as follows. For $a:A(x)$ the path 
 $$
-\happly(q,p_\star(a)):(p_\star(f))(p_\star(a))=g(p_\star(a))
+k(a):\ms t^{B'}(p,f)(p_\star\,a)=h(a)
 $$ 
-is equal to the composite 
+is the composite 
 \begin{align*}
-\big(p_\star(f)\big)\big(p_\star(a)\big)&=\tr^{\widehat B}\bigg(\pa\left(p^{-1},\refl_{(p^{-1})_\star(p_\star(a))}\right)^{-1},f\Big((p^{-1})_\star\big(p_\star(a)\big)\Big)\bigg)\\ 
-&=\tr^{\widehat B}\Big(\pa\left(p,\refl_{p_\star(a)}\right),f(a)\Big)\\
-&=g\big(p_\star(a)\big),
-\end{align*}
-where the first path is given by the display preceding (2.9.5), and the third path is given by $\widehat q$. Note the judgments
+\ms t^{B'}(p,f)(p_\star\,a)&=\ms t^{\widehat B}\bigg(\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star\,a)}\right)^{-1},f\Big((p^{-1})_\star\big(p_\star\,a\big)\Big)\bigg)\\ 
+&=\ms t^{\widehat B}\Big(\pa_A\left(p,\refl_{p_\star\,a}\right),f(a)\Big)\\
+&\eq h(a),
+\end{align*} 
+where the first path is given by the display preceding (2.9.5) in the book, and the second path is the obvious one. Note the judgments
 $$
-\pa\left(p^{-1},\refl_{(p^{-1})_\star(p_\star(a))}\right):\big(y,p_\star(a)\big)=_{\sum_{x:X}A(x)}\Big(x,(p^{-1})_\star\big(p_\star(a)\big)\Big),
+\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star\,a)}\right):\big(y,p_\star\,a\big)=_{\sum_{x:X}A(x)}\Big(x,(p^{-1})_\star\big(p_\star\,a\big)\Big),
 $$ 
 
 $$
-\pa\left(p,\refl_{p_\star(a)}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_\star(a)\big).
+\pa_A\left(p,\refl_{p_\star\,a}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_\star\,a\big).
+$$  
+
+For $a':A(y)$ let 
+$$
+r(a'):\ms t^{B'}(p,f)(a')=\ms t^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)
 $$ 
+and 
+$$
+s(a'):g\Big(p_\star\ (p^{-1})_\star\ a'\Big)=g(a')
+$$ 
+be the obvious paths. 
+
+We define $u$ and $v$ in \eqref{297} as follows. For $q:\ms t^{B'}(p,f)=g$ and $a:A(x)$ we define $u(q)(a):h(a)=g(p_\star\,a)$ by 
+$$ 
+u(q)(a):\eq k(a)^{-1}\cdot\ha(q,p_\star\,a), 
+$$ 
+and, for $\alpha:h\sim g\ci p_\star$ we define $v(\alpha):\ms t^{B'}(p,f)=g$ by 
+$$
+v(\alpha):\eq\fu\Big(\la\ .\ r(a')\cd k\big((p^{-1})_\star\ a'\big)\cd\alpha\big((p^{-1})_\star\ a'\big)\cd s(a')\Big).
+$$ 
+
+The claim is easily proved by induction over the path $p:x=y$. $\square$
 
 %%
 
