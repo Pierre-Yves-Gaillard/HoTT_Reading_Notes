@@ -573,8 +573,6 @@ Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$
 
 Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} below) implies that $\ap_f$ and $\ap_g$ are equivalences.
 
-%old: https://docs.google.com/document/d/1OvMAEN0uvE18rTCHAmZAIYKiILQ_FNT5JJqNH3HH760/edit
-
 %%
 
 \subsection{Proof of Theorem 2.12.5}
@@ -587,107 +585,40 @@ for $c:a_0=a$ can be proved by based path induction.
 
 %%
 
-\subsection{Double recursion in \S2.13}
-
-(There is a short reminder of the recursor for $\N$ at the end of this section.) The statement below is used several times in \S2.13 of the book.
-
-For any type $C$, any maps 
-$$
-g,h:\N\to C,\quad k:\N\to\N\to C\to C,
-$$ 
-there is a map $f:\N\to\N\to C$ satisfying 
-$$
-f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv k(m,n,f(m,n))
-$$ 
-for all $m,n:\N$.
-
-Indeed, it suffices to put 
-$$
-f:\equiv\rec_\N(\N\to C,g,d_s),
-$$ 
-where 
-$$
-d_s:\N\to(\N\to C)\to(\N\to C)
-$$ 
-is defined by 
-$$
-d_s(m,x):\equiv\rec_\N(C,h(m),c_s),
-$$ 
-where 
-$$
-c_s:\N\to C\to C
-$$ 
-is defined by 
-$$
-c_s(n,y):\equiv k(m,n,x(n)).
-$$ 
-One can also define $f$ by the single formula
-$$
-f\equiv\rec_\N\Bigg(\N\to C,g,m\mapsto x\mapsto\rec_\N\bigg(C,h(m),n\mapsto y\mapsto k\big(m,n,x(n)\big)\bigg)\Bigg).
-$$ 
-
-For the reader's convenience we briefly recall the definition of the recursor for $\N$:
-$$\rec_\N:\prod_{C:\U}C\to(\N\to C\to C)\to\N\to C$$
-
-$$\rec_\N(C,c_0,c_s,0):\eq c_0,$$
-
-$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
-
-%%
+% old version, double induction https://docs.google.com/document/d/1L3FlutAY-CUiJ2jZylDNRHeWjxBFxnx2a_7QLJJwbeI/edit
 
 \subsection{Double induction in \S2.13}
 
-(There is a short reminder of the induction principle for $\N$ at the end of this section.) 
-
-For any type family $C:\N\to\N\to\U$, any dependent functions
+\nn\textbf{Claim.} \emph{For any type family $C:\N\to\N\to\U$, any dependent functions}
 $$
 g:\prod_{n:N}C(0,n),\quad h:\prod_{m:N}C(\su(m),0),
 $$
 $$
 k:\prod_{m,n:N}C(m,n)\to C(\su(m),\su(n)),
 $$ 
-there is a dependent function $f:\prod_{m,n:\N}C(m,n)$ satisfying 
+\emph{there is a dependent function $f:\prod_{m,n:\N}C(m,n)$ satisfying}
 $$
 f(0)\equiv g,\quad f(\su(m),0)\equiv h(m),\quad f(\su(m),\su(n))\equiv k(m,n,f(m,n))
 $$ 
-for all $m,n:\N$.
+\emph{for all} $m,n:\N$.
 
-Indeed, it suffices to define $C':\N\to\U$ by 
+\nn\emph{Proof.} Define $C':\N\to\U$ by 
 $$
-C'(m):\eq\prod_{n:\N}C(m,n)
+C'(m):\eq\prod_{n:\N}C(m,n).
 $$ 
-and to put 
+Let $m:\N$ and $x:C'(m)$, and define $c_s(m,x):C'(\su(m))$ by 
 $$
-f:\equiv\ind_\N\left(C',g,d_s\right),
+c_s(m,x)(0):\eq h(m),\quad c_s(m,x)(\su(n)):\eq k(m,n,x(n)).
 $$ 
-where 
+As  
 $$
-d_s:\prod_{m:\N}\left(\prod_{n:\N}C(m,n)\right)\to\prod_{n:\N}C(\su(m),n)
+c_s:\prod_{m:\N}C'(m)\to C'(\su(m)),
 $$ 
-is defined by 
+we can define $f:\pd_{m:\N}C'(m)$ by 
 $$
-d_s(m,x):\equiv\ind_\N\Big(C'(\su(m)),h(m),c_s\Big),
+f(0):\eq g,\quad f(\su(m)):\eq c_s(m,f(m)).
 $$ 
-where 
-$$
-c_s:\prod_{n:\N}C(\su(m),n)\to C(\su(m),\su(n))
-$$ 
-is defined by 
-$$
-c_s(n,y):\equiv k(m,n,x(n)).
-$$ 
-
-In other words, we have 
-$$
-f:\eq \ind_\N\bigg(C',g,\la m.\la x.\ind_\N\Big(C'\big(\su(m)\big),h(m),\la n.\la y.k\big(m,n,x(n)\big)\Big)\bigg).
-$$
-
-For the reader's convenience we briefly recall the definition of the induction principle for $\N$:
-$$\ind_\N:\prod_{C:\N\to\U}C(0)\to\left(\prod_{n:\N}C(n)\to C(\su(n))\right)\to\prod_{n:\N} C(n)$$
-
-$$\ind_\N(C,c_0,c_s,0):\eq c_0,$$
-
-$$\ind_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\ind_\N(C,c_0,c_s,n)).$$
+We leave the end of the proof to the reader. $\square$
 
 %%
 
