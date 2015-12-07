@@ -75,6 +75,7 @@
 \nc{\refl}{\ms{refl}}\nc{\re}{\ms{refl}}
 \nc{\Set}{\ms{Set}}
 \nc{\sm}{\scriptstyle}
+\nc{\sq}{\square}
 \nc{\suc}{\ms{succ}}\nc{\su}{\ms{succ}}
 \nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
 \nc{\two}{\mb2}
@@ -265,25 +266,25 @@ For $a:A,b:B$ we abbreviate $\ind_\mb2(T,a,b)$ by $(a,b)$; in particular we have
 $$
 (a,b):A\times B,\quad(a,b)(0_\mb2)\equiv a,\quad(a,b)(1_\mb2)\equiv b.
 $$ 
-Let $C:A\times B\to\U$. We must define 
+Let $C:(A\times B)\to\U$. We must define 
 $$
 \ind_{A\times B}(C):\left(\prod_{a:A}\prod_{b:B}C((a,b))\right)\to\prod_{u:A\times B}C(u).
 $$ 
 Let $u:A\times B$ and define $D:\mb2\to\U$ by 
 $$
-D(n):\equiv\Big(\big(u(0_\mb2),u(1_\mb2)\big)(n)=u(n)\Big)
+D(n):\equiv\Big(\big(u(0_\mb2),u(1_\mb2)\big)(n)=u(n)\Big),
 $$ 
 and recall that 
 $$
-\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n\in\mb2}D(n)
+\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n\in\mb2}D(n),
 $$ 
 and that 
 $$
 \funext:\left(\prod_{n\in\mb2}D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
+$$ 
+Setting $\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)}$, we get 
 $$
-We get 
-$$
-\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)},\refl_{u(1_\mb2)}):\prod_{n\in\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
+\alpha:\prod_{n\in\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
 $$
 $$
 \funext(\alpha)_\star:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
@@ -301,7 +302,7 @@ It is easy to prove $\alpha(n)=\refl_{(a,b)(n)}$ by induction. This gives
 $$
 \ind_{A\times B}(C,g,(a,b))=g(a)(b),
 $$ 
-as required.
+as required. $\square$
 
 %%
 
