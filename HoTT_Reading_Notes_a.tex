@@ -77,6 +77,8 @@
 \nc{\sm}{\scriptstyle}
 \nc{\sq}{\square}
 \nc{\suc}{\ms{succ}}\nc{\su}{\ms{succ}}
+\nc{\tb}{\textbf}
+\nc{\tx}{\text}
 \nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
 \nc{\two}{\mb2}
 \nc{\Type}{\ms{-Type}}\nc{\type}{\ms{-Type}}\nc{\ty}{\ms{-Type}}
@@ -276,15 +278,15 @@ D(n):\equiv\Big(\big(u(0_\mb2),u(1_\mb2)\big)(n)=u(n)\Big),
 $$ 
 and recall that 
 $$
-\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n\in\mb2}D(n),
+\ind_\mb2(D):D(0_\mb2)\to D(1_\mb2)\to\prod_{n:\mb2}D(n),
 $$ 
 and that 
 $$
-\funext:\left(\prod_{n\in\mb2}D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
+\funext:\left(\prod_{n:\mb2}D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
 $$ 
 Setting $\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)}$, we get 
 $$
-\alpha:\prod_{n\in\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
+\alpha:\prod_{n:\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
 $$
 $$
 \funext(\alpha)_\star:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
@@ -296,7 +298,7 @@ $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
 $$
-\alpha:\prod_{n\in\mb2}\Big((a,b)(n)=(a,b)(n)\Big).
+\alpha:\prod_{n:\mb2}\Big((a,b)(n)=(a,b)(n)\Big).
 $$ 
 It is easy to prove $\alpha(n)=\refl_{(a,b)(n)}$ by induction. This gives 
 $$
