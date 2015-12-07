@@ -162,7 +162,7 @@ for all $a:A$ and all $b:B(a)$.
 
 \nn(b) We also assume that, for all type family $B:A\to\U$ we have a dependent function 
 $$
-\uniq_{\sum_{a:A}B(a)}:\prod_{x:\sum_{a:A}B(a)}(\pr_1(x),\pr_2(x))=x
+\uniq_{\sum_{a:A}B(a)}:\prod_{x:\sum_{a:A}B(a)}\big((\pr_1(x),\pr_2(x))=x\big)
 $$ 
 such that 
 \begin{equation}\label{132}
@@ -196,7 +196,7 @@ for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} a
 $$
 \rec_\mb2:\prod_{C:\U}C\to C\to\mb2\to C,\quad\rec_\mb2(C,c_0,c_1,0_\mb2):\eq c_0,\quad\rec_\mb2(C,c_0,c_1,1_\mb2):\eq c_1.
 $$
-We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mb2,a)$, and we define $\inr$ similarly. Let $C:A+B\to\U$ be given, and put 
+We define $\inl:A\to A+B$ by $\inl(a):\equiv(0_\mb2,a)$, and we define $\inr$ similarly. Let $C:(A+B)\to\U$ be given, and put 
 $$
 A':\equiv\prod_{a:A}C(\inl(a)),\quad B':\equiv\prod_{b:B}C(\inr(b)).
 $$
@@ -245,7 +245,7 @@ the three definitional equalities following respectively from the definitions of
 $$
 \ind_{A+B},\quad\ind_{\sum_{n:\mb2}T(n)},\quad\ind_\mb2.
 $$ 
-This proves \eqref{15a}. The proof of \eqref{15b} is similar.
+This proves \eqref{15a}. The proof of \eqref{15b} is similar. $\square$
 
 %%
 
@@ -253,7 +253,11 @@ This proves \eqref{15a}. The proof of \eqref{15b} is similar.
 
 \emph{Statement.} Show that if we define $A\times B:\equiv\prod_{x:\mb2}\rec_\mb2(\U,A,B,x)$, then we can give a definition of  $\ind_{A\times B}$ for which the definitional equalities stated in \S1.5 hold propositionally (i.e. using equality types). \emph{(This requires the function extensionality axiom, which is introduced in \S2.9.)}
 
-\nn\emph{Solution.} As above put $T:\equiv\rec_\mb2(\U,A,B):\mb2\to\U$, so that $A\times B:\equiv\prod_{n:\mb2}T(n)$, and 
+\nn\emph{Solution.} As above put $T:\equiv\rec_\mb2(\U,A,B)$, so that $T:\mb2\to\U$ and 
+$$
+A\times B:\equiv\prod_{n:\mb2}T(n).
+$$ 
+Also set
 $$
 \ind_\mb2(T):A\to B\to A\times B.
 $$ 
