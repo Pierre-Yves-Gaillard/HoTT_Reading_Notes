@@ -10,8 +10,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
-%\usepackage[a4paper]{geometry}
-\usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
+\usepackage[a4paper]{geometry}
+%\usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
 \usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
@@ -345,50 +345,55 @@ $$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
 
 \nn\href{https://github.com/jdoughertyii/hott-exercises}{https://github.com/jdoughertyii/hott-exercises}
 
+Set 
+$$
+\ms a:\eq\ack,\quad\ms r:\eq\rec_\N,\quad\ms s:\eq\ms s.
+$$
+
 We try to solve Equation 
 \begin{equation}\label{ack1}
-\ack:\equiv\rec_\N(C,c_0,c_s)
+\ms a:\equiv\ms r(C,c_0,c_s)
 \end{equation}
-for $C:\U,c_0:C,c_s:\N\to C\to C$. We get $C:\equiv(\N\to\N)$, and evaluation at 0 gives $c_0\equiv\su$. Let $i:\N,f:\N\to\N$. It suffices to solve Equation 
+for $C:\U,c_0:C,c_s:\N\to C\to C$. We get $C:\equiv(\N\to\N)$, and evaluation at 0 gives $c_0\equiv\ms s$. Let $i:\N,f:\N\to\N$. It suffices to solve Equation 
 \begin{equation}\label{ack2}
-c_s(i,f):\equiv\rec_\N(D(i,f),d_0(i,f),d_s(i,f))
+c_s(i,f):\equiv\ms r(D(i,f),d_0(i,f),d_s(i,f))
 \end{equation}
 for 
 $$
 D(i,f):\U,\quad d_0(i,f):D(i,f),\quad d_s(i,f):\N\to D(i,f)\to D(i,f).
 $$ 
-As we have $c_s(i,f):\N\to\N$ and $\rec_\N(D(i,f),d_0(i,f),d_s(i,f)):\N\to D(i,f)$, we set $D(i,f):\equiv\N$. We have
+As we have $c_s(i,f):\N\to\N$ and $\ms r(D(i,f),d_0(i,f),d_s(i,f)):\N\to D(i,f)$, we set $D(i,f):\equiv\N$. We have
 \begin{align*}
-\ack(\su(m))&\equiv\rec_\N(C,\su,c_s,\su(m))\\
-&\equiv c_s(m,\rec_\N(C,\su,c_s,m))\\
-&\equiv c_s(m,\ack(m))\\
-&\equiv\rec_\N(\N,d_0(m,\ack(m)),d_s(m,\ack(m))),
+\ms a(\ms s(m))&\equiv\ms r(C,\ms s,c_s,\ms s(m))\\
+&\equiv c_s(m,\ms r(C,\ms s,c_s,m))\\
+&\equiv c_s(m,\ms a(m))\\
+&\equiv\ms r(\N,d_0(m,\ms a(m)),d_s(m,\ms a(m))),
 \end{align*}
-and evaluation at 0 yields $d_0(m,\ack(m))\equiv\ack(m)(1)$, prompting us to set 
+and evaluation at 0 yields $d_0(m,\ms a(m))\equiv\ms a(m)(1)$, prompting us to set 
 $$
 d_0(i,f):\equiv f(1),
 $$ 
 yielding 
 $$
-\ack(\su(m))\equiv\rec_\N\Big(\N,\ack(m,1),d_s\big(m,\ack(m)\big)\Big).
+\ms a(\ms s(m))\equiv\ms r\Big(\N,\ms a(m,1),d_s\big(m,\ms a(m)\big)\Big).
 $$
 We have 
 \begin{align*}
-\ack(m)\big(\ack(\su(m),n)\big)&\equiv\ack\big(m,\ack(\su(m),n)\big)\\ 
-&\equiv\ack(\su(m),\su(n))\\ 
-&\equiv\rec_\N\big(\N,\ack(m,1),d_s(m,\ack(m)),\su(n)\big)\\
-&\equiv d_s\big(m,\ack(m)\big)\bigg(n,\rec_N\Big(\N,\ack(m,1),d_s\big(m,\ack(m)\big)\Big)\bigg)\\
-&\equiv d_s\big(m,\ack(m)\big)\Big(n,\ack\big(\su(m),n\big)\Big),
+\ms a(m)\big(\ms a(\ms s(m),n)\big)&\equiv\ms a\big(m,\ms a(\ms s(m),n)\big)\\ 
+&\equiv\ms a(\ms s(m),\ms s(n))\\ 
+&\equiv\ms r\big(\N,\ms a(m,1),d_s(m,\ms a(m)),\ms s(n)\big)\\
+&\equiv d_s\big(m,\ms a(m)\big)\bigg(n,\ms r\Big(\N,\ms a(m,1),d_s\big(m,\ms a(m)\big),n\Big)\bigg)\\
+&\equiv d_s\big(m,\ms a(m)\big)\Big(n,\ms a\big(\ms s(m),n\big)\Big),
 \end{align*}
 prompting us to set $d_s(i,f)(x,y):\equiv f(y)$. 
 
 Abbreviating $d_s(i,f)$ by $f'$, we get 
 $$
-\ack:\equiv\rec_\N(\N\to\N,\su,c_s)
+\ms a:\equiv\ms r(\N\to\N,\ms s,c_s)
 $$ 
 with 
 $$ 
-c_s(i,f)\equiv\rec_\N(\N,f(1),f')
+c_s(i,f)\equiv\ms r(\N,f(1),f')
 $$ 
 for 
 $$ 
@@ -396,7 +401,7 @@ i:\N,\quad f:\N\to\N,\quad f':\N\to\N\to\N,\quad f'(x,y):\equiv f(y).
 $$ 
 In other words, we get 
 $$
-\ack:\eq\rec_\N\Big(\N\to\N,\su,\la i.\la f.\rec_\N\big(\N,f(1),\la x.\la y.f(y)\big)\Big).\ \sq
+\ms a:\eq\ms r\Big(\N\to\N,\ms s,\la i.\la f.\ms r\big(\N,f(1),\la x.\la y.f(y)\big)\Big).\ \sq
 $$
 
 %%
