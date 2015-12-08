@@ -788,7 +788,7 @@ Here is a minor variant of the proof:
 
 Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mb1$, and thus 
 $$
-\isContr(A)=\left(\sum_{a:\mb1}\prod_{x:\mb1}a=x\right)=\left(\sum_{a:\mb1}\prod_{x:\mb1}\mb1\right)=\left(\sum_{a:\mb1}\mb1\right)=\mb1.
+\isContr(A)=\left(\sum_{a:\mb1}\prod_{x:\mb1}(a=x)\right)=\left(\sum_{a:\mb1}\prod_{x:\mb1}\mb1\right)=\left(\sum_{a:\mb1}\mb1\right)=\mb1.
 $$
 
 %%
@@ -797,17 +797,11 @@ $$
 
 Recall the statement: 
 
-For any $A$ and any $a:A$, the type $\sum_{x:A}a=x$ is contractible with center $(a,\refl_a)$. 
+For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible with center $(a,\refl_a)$. 
 
 Here is a minor variant of the proof:
 
-We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}a=x$ by based path induction.
-
-%%
-
-%\begin{comment}\subsection{Lemma 3.11.9} Lemma 3.11.9 (i) yields the following strengthening of Lemma 3.5.1:
-
-%In the setting of Lemma 3.5.1, the map $$\ap_{\pr_1}:(u=v)\to(\pr_1(u)=\pr_1(v))$$ is an equivalence.\end{comment}
+We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}(a=x)$ by based path induction.
 
 %%
 
@@ -817,7 +811,7 @@ We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}a=x$ by based path inducti
 
 \nn\emph{Solution.} Recall the definitions: 
 $$
-\isProp(A):\eq\prod_{a,b:A}a=b,\quad\isContr(A):\eq\sum_{a:A}\prod_{b:A}a=b.
+\isProp(A):\eq\prod_{a,b:A}(a=b),\quad\isContr(A):\eq\sum_{a:A}\prod_{b:A}(a=b).
 $$
 
 By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\isContr(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\isContr(A)$ are logically equivalent. 
@@ -829,14 +823,7 @@ $$
 by 
 $$
 \big(u(f)(a)\big)(b):\eq(a,f(a,b)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
-$$%$u(f)(a):\eq(a,f(a,-))$. 
-
-%We define $u:\isProp(A)\to(A\to\isContr(A))$ by $\big(u(f)(a)\big)(b):\eq(a,f(a,b))$.%$u(f)(a):\eq(a,f(a,-))$. 
-
-%We define $v:(A\to\isContr(A))\to\isProp(A)$ by $v(g)(a,b):\eq\pr_2(g(a)(a)^{-1}\cdot \pr_2(g(a,b))$.
-
-%as follows. Let $g:A\to\isContr(A)$. For any $a:A$ we have $g(a)=(g_1(a),g_2(a))$ with $g_1(a):A$ and $g_2(a):\prod_{b:A}g_1(a)=b$. Thus we can put $v(g)(a,b):\eq g_2(a,a)^{-1}\cdot g_2(a,b)$.
-
+$$
 
 %%
 
