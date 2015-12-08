@@ -691,29 +691,34 @@ It seems to me one could argue as follows: state the above two formulas, check t
 
 \emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
 
-\nn\emph{Solution.} We denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2. Note that we have 
+\nn\emph{Solution.} Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
 $$
-\beta(z,z,\refl_{\pr_1(z)},\refl_{\pr_2(z)})\equiv\refl_z.
-$$
-
-Let 
-$$
-B:A\to\U,\quad B':A'\to\U,\quad g:A\to A',\quad h:\prod_{a:A}B(a)\to B'(g(a)).
+\pd_{z,w:\sum_{a:A}B(a)}\left(\xymatrix@1{
+(z=w)\ar@<2pt>[r]^(.25)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star\,\pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.75)\beta}\right).
 $$ 
-Cleary, there is a map 
+Note that the expression $\beta(z,w)$ has the same meaning as the expression $\pa$ introduced in the book just before Theorem 2.7.4. Let $B':A'\to\U$ and set similarly 
+$$
+\pd_{z',w':\sum_{a':A'}B'(a')}\left(\xymatrix@1{
+(z'=w')\ar@<2pt>[r]^(.25){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star\,\pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.75){\beta'}}\right).
+$$ 
+Let $g:A\to A',\ h:\prod_{a:A}B(a)\to B'(g(a))$. Cleary, there is a map 
 $$
 f:\left(\sum_{a:A}B(a)\right)\to\sum_{a':A'}B'(a')
 $$ 
 satisfying $f(a,b)\equiv (g(a),h(a,b))$ for all $a:A$ and all $b:B(a)$. 
 
-By path induction, we get a family of paths 
+By path induction, we get  
 $$
-\gamma(z,w,p):f(p)=\beta\Big(f(z),f(w),\alpha\big(f(z),f(w),f(p)\big)\Big),
+\gamma(z,w,r):f(r)=\beta'\Big(f(z),f(w),\alpha'\big(f(z),f(w),\ap_f(r)\big)\Big)
 $$ 
-where $z,w:\sum_{a:A}B(a)$ and $p:z=w$, satisfying 
+for $z,w:\sum_{a:A}B(a)$ and $r:z=w$, and
 $$
-\gamma(z,z,\refl_z)\equiv\refl_{\refl_{f(z)}}.
+\delta(z,w,p,q):\alpha'\Big(f(z),f(w),\ap_f\big(\beta(z,w,p,q)\big)\Big)=(\ap_g(p),\apd_h(q))
+$$ 
+for $p:\pr_1(z)=\pr_1(w)$ and $q:p_\star\,\pr_2(z)=\pr_2(w)$. This yields 
 $$
+f(\beta(z,w,p,q))=\beta'\big(f(z),f(w),\ap_g(p),\apd_h(q)\big).
+$$ 
 
 %%
 
