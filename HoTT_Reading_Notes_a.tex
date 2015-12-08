@@ -284,7 +284,7 @@ and that
 $$
 \funext:\left(\prod_{n:\mb2}D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
 $$ 
-Setting $\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)}$, we get 
+Setting $\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)})$, we get 
 $$
 \alpha:\prod_{n:\mb2}D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
 $$
@@ -709,7 +709,7 @@ satisfying $f(a,b)\equiv (g(a),h(a,b))$ for all $a:A$ and all $b:B(a)$.
 
 By path induction, we get  
 $$
-\gamma(z,w,r):f(r)=\beta'\Big(f(z),f(w),\alpha'\big(f(z),f(w),\ap_f(r)\big)\Big)
+\gamma(z,w,r):\ap_f(r)=\beta'\Big(f(z),f(w),\alpha'\big(f(z),f(w),\ap_f(r)\big)\Big)
 $$ 
 for $z,w:\sum_{a:A}B(a)$ and $r:z=w$, and
 $$
@@ -760,19 +760,15 @@ It suffices to prove $F\to G$ and $\neg G$.
 $$
 h:\lV\mb2=A\rV\to\neg\neg A
 $$ 
-for $A=\U$, and to set $g(A,u):\eq f(A,h(u))$. It suffices in turn to define 
+for $A:\U$, and to set $g(A,u):\eq f(A,h(u))$. It suffices in turn to define 
 $$
 h':(\mb2=A)\to\neg\neg A.
 $$ 
-To do this, we set $h'(p,k):\eq k(p_\star(0_{\mbf2}))$. 
+To do this, we set $h'(p,k):\eq k(\tr^{X\mapsto X}(p,0_{\mbf2}))$. 
 
-\emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book.$\square$
+\emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book. $\square$
 
 The (limited) interest of this comment is that, given a type $B$, it might be easier to prove $B\to G$ than to prove $B\to F$ (or to prove $B\to\mbf0$ directly).
-
-%The proof of Theorem 3.2.2 shows the following:
-
-%If $P:\U\to\U$ is a type family over $\U$ such that $P(A)$ is a mere proposition for all $A:\U$, then it is not the case that for all $A:\U$ we have $P(A)\to A$.
 
 %%
 
