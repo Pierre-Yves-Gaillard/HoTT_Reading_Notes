@@ -139,7 +139,7 @@ and $d:\pd_{x:A}D(x,x,\re_x)$ by $d(x,C,c):\eq c$. By path induction we get a
 $$
 g:\pd_{x,y:A}\ \pd_{p:x=y}D(x,y,p)
 $$ 
-such that $g(x,x,\re_x)\eq d(x)$ for all $x:A$. We set $f(x,p):\eq g(a,x,p,C_0,c_0)$ for $x:A$ and $p:a=x$, and leave the end of the proof to the reader.
+such that $g(x,x,\re_x)\eq d(x)$ for all $x:A$. We set $f(x,p):\eq g(a,x,p,C_0,c_0)$ for $x:A$ and $p:a=x$, and leave the end of the proof to the reader. $\sq$
 
 %
 
@@ -328,7 +328,7 @@ $$
 
 $$\rec_\N(C,c_0,c_s,0):\eq c_0,$$
 
-$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
+$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).\ \sq$$
 
 %%
 
@@ -424,7 +424,7 @@ The map
 \end{equation}
 can also be defined by the formula 
 $$
-r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r)).
+r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r)).\ \sq
 $$ 
 
 %%
@@ -446,7 +446,7 @@ for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}(p_\star(\pr_2(w))=\pr_2(w'))$, and the pr
 $$
 r=\pa(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
 $$ 
-for $r:w=w'$. 
+for $r:w=w'$. $\sq$
 
 %%
 
@@ -588,7 +588,7 @@ $$
 $$ 
 Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
 
-Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} below) implies that $\ap_f$ and $\ap_g$ are equivalences.
+Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} below) implies that $\ap_f$ and $\ap_g$ are equivalences. $\sq$
 
 %%
 
@@ -598,7 +598,7 @@ The equality
 $$
 \encode(\inl(a),\decode(\inl(a),c))=c
 $$ 
-for $c:a_0=a$ can be proved by based path induction.
+for $c:a_0=a$ can be proved by based path induction. $\sq$
 
 %%
 
@@ -660,7 +660,7 @@ In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads
 $$
 \ms t^{Q'}(p,(m,a))=\Bigg(\ms t^P(p,m),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
-with $p:\eq\ua(e)$.
+with $p:\eq\ua(e)$. $\sq$
 
 \subsubsection{A general comment}
 
@@ -717,7 +717,7 @@ $$
 $$ 
 for $p:\pr_1(z)=\pr_1(w)$ and $q:p_\star\,\pr_2(z)=\pr_2(w)$. This yields 
 $$
-f(\beta(z,w,p,q))=\beta'\big(f(z),f(w),\ap_g(p),\apd_h(q)\big).
+f(\beta(z,w,p,q))=\beta'\big(f(z),f(w),\ap_g(p),\apd_h(q)\big).\ \sq
 $$ 
 
 %%
@@ -726,7 +726,7 @@ $$
 
 \emph{Statement.} Suppose we add to type theory the \emph{equality reflection rule} which says that if there is an element $p:x=y$, then in fact $x\equiv y$. Prove that for any $p:x=x$ we have $p\equiv\refl_x$. (This implies that every type is a \emph{set} in the sense to be introduced in \S3.1; see \S7.2.)
 
-\nn\emph{Solution.} Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $y\equiv x$ by the equality reflection rule.
+\nn\emph{Solution.} Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $y\equiv x$ by the equality reflection rule. $\sq$
 
 %%
 
@@ -744,7 +744,7 @@ Suppose $f:\isSet(A)$ and let $x,y:A$. For any $p,q:x=y$ we have $f(p,q):p=q$. F
 $$
 r=f(p,q)^{-1}\cdot f(p,q')
 $$ 
-by path induction on $r$.
+by path induction on $r$. $\sq$
 
 %%
 
@@ -768,7 +768,7 @@ To do this, we set $h'(p,k):\eq k(\tr^{X\mapsto X}(p,0_{\mbf2}))$.
 
 \emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book. $\square$
 
-The (limited) interest of this comment is that, given a type $B$, it might be easier to prove $B\to G$ than to prove $B\to F$ (or to prove $B\to\mbf0$ directly).
+The (limited) interest of this comment is that, given a type $B$, it might be easier to prove $B\to G$ than to prove $B\to F$ (or to prove $B\to\mbf0$ directly). 
 
 %%
 
@@ -788,7 +788,7 @@ Here is a minor variant of the proof:
 
 Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mb1$, and thus 
 $$
-\isContr(A)=\left(\sum_{a:\mb1}\prod_{x:\mb1}(a=x)\right)=\left(\sum_{a:\mb1}\prod_{x:\mb1}\mb1\right)=\left(\sum_{a:\mb1}\mb1\right)=\mb1.
+\isContr(A)=\left(\sum_{a:\mb1}\prod_{x:\mb1}(a=x)\right)=\left(\sum_{a:\mb1}\prod_{x:\mb1}\mb1\right)=\left(\sum_{a:\mb1}\mb1\right)=\mb1.\ \sq
 $$
 
 %%
@@ -801,7 +801,7 @@ For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible with cente
 
 Here is a minor variant of the proof:
 
-We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}(a=x)$ by based path induction.
+We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}(a=x)$ by based path induction. $\sq$
 
 %%
 
@@ -822,7 +822,7 @@ u:\isProp(A)\to(A\to\isContr(A)),\quad v:(A\to\isContr(A))\to\isProp(A)
 $$ 
 by 
 $$
-\big(u(f)(a)\big)(b):\eq(a,f(a,b)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).
+\big(u(f)(a)\big)(b):\eq(a,f(a,b)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).\ \sq
 $$
 
 %%
@@ -831,7 +831,7 @@ $$
 
 \emph{Statement.} Show that if $A$ is a mere proposition, then so is $A+\neg A$.
 
-\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\inl(a_1)=\inl(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\inr(a_1')=\inr(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\inl(a)=\inr(a')$. Let $f:\mb0\to(\inl(a)=\inr(a'))$, and note that $f(a'(a)):\inl(a)=\inr(a')$.
+\nn\emph{Proof.} For $a_1,a_2:A$ we have $a_1=a_2$ because $A$ is a mere proposition, and thus $\inl(a_1)=\inl(a_2)$. For $a_1',a_2':\neg A$ we have $a_1'=a_2'$ because $\neg B$ is a mere proposition for any type $B$, and thus $\inr(a_1')=\inr(a_2')$. Let $a:A$ and $a':\neg A$. We must show $\inl(a)=\inr(a')$. Let $f:\mb0\to(\inl(a)=\inr(a'))$, and note that $f(a'(a)):\inl(a)=\inr(a')$. $\sq$
 
 %%
 
@@ -845,7 +845,7 @@ We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is 
 
 (c) $x=\inl(a),\ y=\inr(b)$.
 
-\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mb0$ and $g:\mb0\to(\inl(a)=\inr(b))$. We get $g(f(a,b)):\inl(a)=\inr(b)$.
+\nn We leave Cases (a) and (b) to the reader, and take up Case~(c). Let $f:A\times B\to\mb0$ and $g:\mb0\to(\inl(a)=\inr(b))$. We get $g(f(a,b)):\inl(a)=\inr(b)$.\ $\sq$
 
 %%
 
@@ -928,7 +928,7 @@ h(a):\eq p(\lv a\rv,x)_\star(f(a))
 $$ 
 induces a map $k:\lV A\rV\to B(x)$ such that $k(\lv a\rv)\eq h(a)$ for all $a:A$, and we can set $g(x):\eq k(x)$. This yields 
 $$
-g(\lv a\rv)\eq k(\lv a\rv)\eq h(a)\eq p(\lv a\rv,\lv a\rv)_\star(f(a))=f(a).\square
+g(\lv a\rv)\eq k(\lv a\rv)\eq h(a)\eq p(\lv a\rv,\lv a\rv)_\star(f(a))=f(a). \square
 $$
 
 %%
@@ -943,7 +943,7 @@ $$
 $$ 
 are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mb0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
-To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\circ\inr)(x'\circ\inl)$.
+To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By exercise 3.6, $A+\neg A$ is also a mere proposition, and thus there is a map $\neg\neg(A+\neg A)\to A+\neg A$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\circ\inr)(x'\circ\inl)$. $\sq$
 
 %%
 
@@ -978,20 +978,13 @@ $$
 \transport^P(t,h)(s)=t^{-1}\cdot h(s).
 $$ 
 
-\nn(3) To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}B(x)$.
+\nn(3) To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}B(x)$. $\sq$
 
 %%
 
 \subsection{Proof of Lemma 4.2.11}
 
-Use also Theorem 2.15.7.
-
-%%
-
-%\subsection{Corollary 4.4.6}Here is a slightly more general statement:\\ To each pair of maps $f:A\to B,P:B\to\U$ is attach a map $$g:\left(\prod_{b:B}P(b)\right)\to\prod_{a:A}P(f(a))$$ defined by $$g(h)(a):\eq h(f(a)).$$
-%For any type family $P$ over a type $A$ there is a map $$f:\left(A\to\prod_{a:A}P(a)\right)\to\prod_{a:A}P(a).$$ In words: If $A$ implies $\prod_{a:A}P(a)$, then $\prod_{a:A}P(a)$ is true.
-
-%Indeed it suffices to set $f(g,a):\eq g(a,a)$.
+Use also Theorem 2.15.7. 
 
 %%
 
@@ -1107,7 +1100,7 @@ We get
 $$
 \ms t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^C(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
 $$ 
-where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$.
+where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$. $\sq$
 
 %%
 
@@ -1166,7 +1159,7 @@ $$
 $$
 \simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ \fib_f(b)=X,
 $$ 
-the first equivalence following from Lemma 4.8.2 (see \S\ref{482}), the second one from \eqref{asimeq}, and the third one being straightforward.
+the first equivalence following from Lemma 4.8.2 (see \S\ref{482}), the second one from \eqref{asimeq}, and the third one being straightforward. $\sq$
 
 %%
 
@@ -1224,7 +1217,7 @@ $$\ph(y,q,p):\eq\ap_g(p)\cdot q,\quad\psi(r):\eq(f(x),r,\refl_{f(x)})$$
 
 \nn are inverses. This gives 
 
-$$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ g(f(x))=c\right)=\fib_{g\circ f}(c).$$
+$$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ g(f(x))=c\right)=\fib_{g\circ f}(c).\ \sq$$
 
 %%
 
@@ -1239,7 +1232,7 @@ k&:\eq f\circ (g\circ f)^{-1}\\
 &=(h\circ g)^{-1}\circ h\circ\big(g\circ f\circ (g\circ f)^{-1}\big)\\
 &=(h\circ g)^{-1}\circ h,
 \end{align*}
-and thus $g\circ k=\id_C$ and $k\circ g=(h\circ g)^{-1}\circ h\circ g=\id_B$. This implies that $g$ is an equivalence. The end of the exercise is straightforward. For the higher-level proof of Theorem 2.11.1, see \S\ref{2111}.
+and thus $g\circ k=\id_C$ and $k\circ g=(h\circ g)^{-1}\circ h\circ g=\id_B$. This implies that $g$ is an equivalence. The end of the exercise is straightforward. For the higher-level proof of Theorem 2.11.1, see \S\ref{2111}. $\sq$
 
 %%
 
@@ -1277,7 +1270,7 @@ B\equiv A,\quad f\equiv\mathsf{id}_A,\quad x\equiv e(A,A,\mathsf{refl}_A),
 $$ 
 and the claim follows easily from the definition of $i,p$ and $e$.
 
-For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required. 
+For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required. $\sq$
 
 %% 
 
@@ -1381,7 +1374,9 @@ Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%by function extensionality, and finally $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_\star(p)=q$; this follows from the equalities $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$. $\sq$
+
+%by function extensionality, and finally $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_\star(p)=q$; this follows from the equalities $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
 
 %% 
 
@@ -1393,7 +1388,7 @@ $$
 $$ 
 is equivalent to the type
 $$
-\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad g(a,a,r_0(a))=s_0(a).
+\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad g(a,a,r_0(a))=s_0(a).\ \sq
 $$
 
 %\nn(ii)$\implies$(iii) follows from (i)$\implies$(ii) in Theorem 5.8.2 (see \S\ref{582}).
@@ -1439,13 +1434,13 @@ $$
 be the first and second projection; and let $u,v:A\simeq B$. Then we have 
 \begin{equation}\label{apph}
 \ap_{\ph_1}:(u=v)\to(\ph_1(u)=\ph_1(v))
-\end{equation}%$\ap_\ph:(u=v)\to(\ph(u)=\ph(v))$ is an equivalence.
+\end{equation}
 
 \nn Proof of the claim. By Theorem 4.4.5 it suffices to show that the fibers of \eqref{apph} are contractible. Set 
 $$
 C:\eq\sum_{p:\ph_1(u)=\ph(v)}p_\star(\ph_2(u))=\ph_2(v)
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an equivalence $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible.
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an equivalence $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
 
 %%
 
@@ -1525,7 +1520,7 @@ is inhabited. This follows from the fact that we have, for $p:z_1=z_2$ and $q:u(
 $$
 \transport^{z\mapsto(u(z)=t(z))}(p,q)=u(p)^{-1}\cdot q\cdot t(p).
 $$ 
-(The above formula is easily proved by induction on $p$.)
+(The above formula is easily proved by induction on $p$.) $\sq$
 
 %%
 
@@ -1584,10 +1579,6 @@ It is easy to see that if our type family $P:A/R\to\Set$ is such that $P(q(b))$ 
 
 \end{comment}
 
-%This yields in particular the following induction principle:
-
-%Assuming $R$ is reflexive, given any $P:A/R\to\Prop$ together with $$f:\prod_{a:A}P(q(a)),$$ we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$.
-
 %%
 
 \subsection{Proof of Theorem 6.10.6}
@@ -1595,12 +1586,6 @@ It is easy to see that if our type family $P:A/R\to\Set$ is such that $P(q(b))$ 
 Recall the statement: For any equivalence relation $R$ on $A$, the type $A/\!\!/R$ is equivalent to the set-quotient $A/R$.
 
 The proof uses implicitly the fact that $A/\!\!/R$ is a set. This fact follows immediately from Theorems 7.1.8, 7.1.9 and 7.1.11. of the book. The reader can check that the proof of Theorem 7.1.8 doesn't use Theorems 7.1.8, 7.1.9 and 7.1.11.
-
-%%
-
-%\subsection{Lemma 6.10.8}
-
-%It is easy to see that the type $(A/\sim)$ admits the same induction principle as $A/\sim$ (and in particular is a set).
 
 %%
 
@@ -1647,8 +1632,6 @@ It is straightforward to check that this definition does the job. $\square$
 
 \section{Chapter 7}
 
-%%
-
 \subsection{Theorem 7.1.8}\label{718}
 
 Here is a corollary to Theorem 7.1.8: the fibers of a map between $n$-types are $n$-types.
@@ -1671,13 +1654,14 @@ q&=f(x,x,\rho(x))^{-1}\cdot f(x,y,\transport^{R(x)}(q,\rho(x)))\\
 &=f(x,x,\rho(x))^{-1}\cdot f(x,y,\transport^{R(x)}(p,\rho(x)))\\
 &=p,
 \end{align*} 
-where the second equality follows from the fact that $R(x,y)$ is a mere proposition, and the other equalities follow from \eqref{722}.
+where the second equality follows from the fact that $R(x,y)$ is a mere proposition, and the other equalities follow from \eqref{722}. $\sq$
 
 %%
 
 \subsection{Lemma 7.2.8}
 
 Lemma 7.2.8 follows immediately from the codiagonal map \eqref{563} p.~\pageref{563}.
+
 %%
 
 \subsection{Induction principle for n-truncations in \S7.3}
@@ -1745,7 +1729,7 @@ We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P
 $$
 M:\eq\Map_\star((\mbb S^{n+1},\base),(P(h(r)),u)).
 $$ 
-Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$.
+Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$. $\sq$
 
 %%
 
@@ -1779,7 +1763,7 @@ satisfying $f'(\lvert x\rvert_n)(y)\equiv f(x,y)$ for all $x,y:A$. From $f'(u):\
 $$
 f'(\lvert x\rvert_n)'(\lvert y\rvert_n)\equiv f'(\lvert x\rvert_n)(y)\equiv f(x,y) 
 $$ 
-for all $x,y:A$, we can set $f''(u,v):\eq f'(u)'(v)$ for all $u,v:\lVert A\rVert_n$. 
+for all $x,y:A$, we can set $f''(u,v):\eq f'(u)'(v)$ for all $u,v:\lVert A\rVert_n$. $\sq$
 
 It seems to me that the equality 
 $$
@@ -1927,7 +1911,7 @@ We have, in the above setting, $(\delta LG)(HL\gamma)=(KL\gamma)(\delta LF)$.
 &\:\eq\delta_{LGa}\circ HL(\gamma_a)\\
 &= KL(\gamma_a)\ci\delta_{LFa}&\text{by naturality of $\delta$}\\
 &\:\eq(KL\gamma)_a\ci(\delta LF)_a\\
-&\:\eq((KL\gamma)(\delta LF))_a.
+&\:\eq((KL\gamma)(\delta LF))_a.\ \sq
 \end{align*}
 
 %%
@@ -2051,12 +2035,6 @@ $$
 
 \subsection{The induction principle for \textsf{acc} in \S10.3}
 
-%Let me copy the last display before Lemma 10.3.2:\begin{equation}\label{1032}f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to\acc(b)\times P(b)\right)\to P(a).\end{equation}
-
-%Recall the general induction principle for $\acc$:
-
-%If we have $P:\prod_{a:A}\acc(a)\to\U$ and $f$ as in \eqref{1032}, then we get $$g:\prod_{a:A}\acc(a)\to P(a)$$ with $$g(a,\acc_<(a,\pr_1\ci u))\eq f(a,\pr_1\ci u,\la b.\la l.g(b,\pr_1u(b,l)))$$ for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$.
-
 Here is a first particular case of the general induction principle for $\acc$:
 
 If we have a type family $P:A\to\U$ and %\begin{equation}\label{1032}
@@ -2121,7 +2099,7 @@ Here is a slightly different phrasing of the proof:
 
 We prove by well-founded induction on $a:A$ that for any $b:A$, if $f(a)=f(b)$ then $a=b$. The inductive hypothesis for $a:A$ says that for any $a'<a$, and any $b:A$, if $f(a')=f(b)$ then $a'=b$.
 
-Suppose $f(a)=f(b)$; we must show $a=b$. By extensionality, it suffices to show that for any $c:A$ we have $(c<a)\Leftrightarrow(c<b)$. If $c<a$, then $f(c)<f(a)$ by Definition 10.3.11(i). Hence $f(c)<f(b)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<b$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<b$. We prove similarly that $c<b$ implies $c<a$.
+Suppose $f(a)=f(b)$; we must show $a=b$. By extensionality, it suffices to show that for any $c:A$ we have $(c<a)\Leftrightarrow(c<b)$. If $c<a$, then $f(c)<f(a)$ by Definition 10.3.11(i). Hence $f(c)<f(b)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<b$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<b$. We prove similarly that $c<b$ implies $c<a$. $\sq$
 
 %%
 
@@ -2151,15 +2129,6 @@ For $x,y:\mbb R_d$ the inequality $x<y$ implies $x\neq y$. Moreover the map $f:\
 $$
 f(q)<f(r)\iff q<r\quad\text{and}\quad f(q)\le f(r)\iff q\le r.
 $$ 
-
-%%
-
-%\subsection{Absolute value of a Dedekind real in Section 11.2}
-
-%It seems to me that the absolute value of a Dedekind real occurs for the first time in Display (11.2.9), and has not been previously defined. Perhaps one can simply set 
-%$$
-%(\lvert x\rvert<\ep):\eq(-\ep<x)\wedge(x<\ep).
-%$$
 
 %%
 
