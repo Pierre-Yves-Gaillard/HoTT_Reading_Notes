@@ -1082,23 +1082,19 @@ Here are some details about the last sentence of the proof of Theorem 4.8.3:
 
 Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\ms t$ we have 
 \begin{equation}\label{2.9.4}
-\ms t^{A\to B}(p,f,a_2)=\ms t^B(p,f(\ms t^A(p^{-1},x)))
+\ms t^{A\to B}(p,f,x)=\ms t^B(p,f(\ms t^A(p^{-1},x)))
 \end{equation}
 for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
 
-Now let us move to last sentence of the proof of Theorem 4.8.3. Put
-$$
-C:\equiv\sum_{b:B}\oo{fib}_f(b),
-$$ 
-and let $\pr_1:C\to B$ be the first projection. We must show 
+Now let us move to last sentence of the proof of Theorem 4.8.3. Let the notation of \S\ref{482} be in force. Let $\pr_1:C\to B$ be the first projection. We must show 
 \begin{equation}\label{2}
 (C,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
-We have $e:C\simeq A$ by Lemma 4.8.2 (see \S\ref{482} above). Put $q:\equiv\ua(e)$. We have $q:C=A$. We claim 
+We have $e:C\simeq A$ with $\pr_1(e)=h$ (here of course $\pr_1$ denotes the first projection $(C\simeq A)\to(C\to A)$). Put $q:\equiv\ua(e)$. We have $q:C=A$. We claim 
 \begin{equation}\label{3}
 q_\star(\pr_1)=f.
 \end{equation} 
-By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ D(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
+By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Then \eqref{3} becomes, in the notation of (2.9.4), 
 $$
 \ms t^{I\to D}(q,\pr_1)=f.
 $$ 
@@ -1108,9 +1104,9 @@ $$
 $$ 
 We get 
 $$
-\ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
+\ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\ms t^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
 $$ 
-where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$. $\sq$
+where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4, (c) follows from Lemma 2.3.5 in the book, and (c) follows from the definition of $g$. $\sq$
 
 %%
 
