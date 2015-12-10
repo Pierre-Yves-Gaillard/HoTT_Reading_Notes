@@ -1010,19 +1010,19 @@ I would replace ``applying a version of Lemma 3.11.9'' with ``using based path i
 
 Let us check Equivalence $(\star)$ in the proof of Theorem 4.7.6: Recalling that $x:A$ and $v:Q(x)$ are given, set for $a:A$ and $p:a=x$ 
 $$
-R(a,p):\equiv\sum_{u:P(a)}p_\star(f(a,u))=v.
+R(a,p):\equiv\sum_{u:P(a)}\Big(p_\star\big(f(a,u)\big)=v\Big).
 $$ 
 
 Claim: 
 $$
 \ga(\sum_{a:A}\sum_{p:a=x}R(a,p)\dr)\overset{(\text a)}{\simeq}
-\ga(\sum_{z:\sum_{a:A}a=x}R(z)\dr)\overset{(\text b)}{\simeq}
+\ga(\sum_{z:\sum_{a:A}(a=x)}R(z)\dr)\overset{(\text b)}{\simeq}
 R(x,\refl_x).
 $$
 
 Proof: Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
 $$
-\sum_{a:A}\ a=x
+\sum_{a:A}\ (a=x)
 $$ 
 is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). $\square$
 
