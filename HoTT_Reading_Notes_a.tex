@@ -1088,29 +1088,29 @@ for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$.
 
 Now let us move to last sentence of the proof of Theorem 4.8.3. Put
 $$
-F:\equiv\sum_{b:B}\oo{fib}_f(b),
+C:\equiv\sum_{b:B}\oo{fib}_f(b),
 $$ 
-and let $\pr_1:F\to B$ be the first projection. We must show 
+and let $\pr_1:C\to B$ be the first projection. We must show 
 \begin{equation}\label{2}
-(F,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
+(C,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
-We have $e:F\simeq A$. Put $q:\equiv\ua(e)$. We have $q:F=A$. We claim 
+We have $e:C\simeq A$ by Lemma 4.8.2 (see \S\ref{482} above). Put $q:\equiv\ua(e)$. We have $q:C=A$. We claim 
 \begin{equation}\label{3}
 q_\star(\pr_1)=f.
 \end{equation} 
-By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ C(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
+By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X)\equiv X,\ D(X)\equiv B$. Then \eqref{3} becomes, in the notation of (2.9.4), 
 $$
-\ms t^{I\to C}(q,\pr_1)=f.
+\ms t^{I\to D}(q,\pr_1)=f.
 $$ 
 Let $a:A$. We must show 
 $$
-\ms t^{I\to C}(q,\pr_1,a)=f(a).
+\ms t^{I\to D}(q,\pr_1,a)=f(a).
 $$ 
 We get 
 $$
-\ms t^{I\to C}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^C(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
+\ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\pr_1(e^{-1}(a))\overset{\text{(c)}}=f(a),
 $$ 
-where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalent stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$. $\sq$
+where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4, and (c) follows from the definition of $e^{-1}$. $\sq$
 
 %%
 
