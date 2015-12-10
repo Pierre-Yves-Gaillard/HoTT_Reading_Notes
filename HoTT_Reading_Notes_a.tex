@@ -1039,10 +1039,10 @@ $$
 
 Proof. We have
 \begin{align*}
-\fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}B(x)}\pr_1(u)=a\\
-&\simeq\sum_{x:A}\sum_{b:B(x)}x=a&\text{by Exercise 2.10}\\
+\fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}B(x)}(\pr_1(u)=a)\\
+&\simeq\sum_{x:A}\sum_{b:B(x)}(x=a)&\text{by Exercise 2.10}\\
 &\simeq\sum_{x:A}\sum_{p:x=a}B(x)\\
-&\simeq\sum_{z:\sum_{x:A}x=a}B(\pr_1(z))&\text{by Exercise 2.10}\\
+&\simeq\sum_{z:\sum_{x:A}(x=a)}B(\pr_1(z))&\text{by Exercise 2.10}\\
 &\simeq B(\pr_1(a,\refl_a))&\text{by Lemmas 3.11.8 and 3.11.9(ii)}\\
 &\eq B(a).\ \square
 \end{align*}
@@ -1057,7 +1057,7 @@ For any function $f:A\to B$, we have $A\simeq\sum_{b:B}\fib_f(b)$.
 
 Recall Definition 4.2.4: The fiber of a map $f:A\to B$ over a point $b:B$ is 
 $$
-\fib_f(b):\eq\sum_{a:A}f(a)=b.
+\fib_f(b):\eq\sum_{a:A}\ (f(a)=b).
 $$ 
 In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have 
 \begin{equation}\label{paq}
@@ -1066,7 +1066,7 @@ p_\star(a,q)=(a,q\cdot p).
 
 Set 
 $$
-C:\eq\sum_{b:B}\fib_f(b):\eq\sum_{b:B}\sum_{a:A}f(a)=b.
+C:\eq\sum_{b:B}\fib_f(b):\eq\sum_{b:B}\sum_{a:A}\ (f(a)=b).
 $$ 
 We must show $A\simeq C$. Define $g:A\to C$ and $h:C\to A$ by 
 $$
