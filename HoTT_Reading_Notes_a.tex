@@ -1124,16 +1124,16 @@ $$
 $$
 
 I don't understand the proof of the equivalence 
-$$
+\begin{equation}\label{484}
 A\simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ (\fib_f(b)=X)
-$$ 
+\end{equation}
 at the beginning of the proof of Theorem 4.8.4. Here is how I would present things. 
 
-\nn Claim: For any type $A$ we have 
+\nn\tb{Claim.} \emph{For any type $A$ we have} 
 \begin{equation}\label{asimeq}
 A\simeq\sum_{X:\U}\big(X\times(X=A)\big).
 \end{equation}
-Proof: Write $\ms t$ for ``transport''. Set $C:\eq\sum_{X:\U}\big(X\times(X=A)\big)$, and define 
+\emph{Proof.} Write $\ms t$ for ``transport''. Set $C:\eq\sum_{X:\U}\big(X\times(X=A)\big)$, and define 
 $$
 f:A\to C,\qquad g:C\to A
 $$ 
@@ -1163,7 +1163,7 @@ $$
 $$
 \simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ (\fib_f(b)=X),
 $$ 
-the first equivalence following from Lemma 4.8.2 (see \S\ref{482}), the second one from \eqref{asimeq}, and the third one being straightforward. $\sq$
+the first equivalence following from Lemma 4.8.2 (see \S\ref{482} above), the second one from \eqref{asimeq}, and the third one being straightforward. This proves \eqref{484}. $\sq$
 
 %%
 
@@ -1171,29 +1171,29 @@ the first equivalence following from Lemma 4.8.2 (see \S\ref{482}), the second o
 
 \emph{Statement.} (The unstable octahedral axiom). Suppose $f:A\to B$ and $g:B\to C$ and $b:B$.
 
-\nn(i) Show that there is a natural map $\fib_{g\circ f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_g(b) )$ is equivalent to $\fib_f(b)$.
+\nn(i) Show that there is a natural map $\fib_{g\circ f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_{g(b)})$ is equivalent to $\fib_f(b)$.
 
 \nn(ii) Show that $\fib_{g\circ f}(c)\simeq\sum_{w:\fib_g(c)}\fib_f(\pr_1w)$.
 
-\nn\emph{Solution.} (i) We define 
+\nn\emph{Solution.} (i) Let $b:B$. We define $h:\fib_{g\circ f}(g(b))\to\fib_g(g(b))$, that is
+$$
+h:\ga(\sum_{x:A}\big(g(f(x))=g(b)\big)\dr)\to\sum_{y:B}\ (g(y)=g(b)),
+$$ 
+by $h(x,p):\eq(f(x),p)$ for $x:A$ and $p:g(f(x))=g(b)$. We get 
 
-$$h:\sum_{x:A}g(f(x))=g(b)\to\sum_{y:B}g(y)=g(b)$$ 
+$$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}(g(f(x))=g(b))}\big(h(w)=(b,\refl_{g(b)})\big)$$ 
 
-\nn by $h(x,p):\eq(f(x),p)$. (Note that $p:g(f(x))=g(b)$.) We get 
-
-$$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}g(f(x))=g(b)}h(w)=(b,\refl_{g(b)})$$ 
-
-$$=\sum_{x:A}\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)}).$$ 
+$$=\sum_{x:A}\sum_{p:g(f(x))=g(b)}\big((f(x),p)=(b,\refl_{g(b)})\big).$$ 
 
 \nn For each $x:A$ we have
 
-$$\sum_{p:g(f(x))=g(b)}(f(x),p)=(b,\refl_{g(b)})$$ 
+$$\sum_{p:g(f(x))=g(b)}\big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
 
-$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\transport^{\la(z:C).z=g(b)}(q,p)=\refl_{g(b)}$$ 
+$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\big(\transport^{\la(z:C).z=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
 
-$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ap_g(q)^{-1}\cdot p=\refl_{g(b)}$$ 
+$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}(\ap_g(q)^{-1}\cdot p=\refl_{g(b)})$$ 
 
-$$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}p=\ap_g(q)$$ 
+$$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}(p=\ap_g(q))$$ 
 
 $$=(f(x)=b).$$ 
 
