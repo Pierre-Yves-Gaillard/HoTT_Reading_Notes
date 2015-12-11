@@ -86,6 +86,7 @@
 \nc{\ua}{\ms{ua}}
 \nc{\uniq}{\ms{uniq}}
 \nc{\vide}{\varnothing}
+\nc{\ws}{\ms{sup}}
 \nc{\zero}{\mb0}
 \title{HoTT Reading Notes}
 \author{Pierre-Yves Gaillard}
@@ -1284,23 +1285,23 @@ Let $W:\eq\underset{a:A}{\ms W}\ B(a)$ be a W-type. Recall the following:
 
 We have a constructor 
 $$
-\sup:\prod_{a:A}\left(B(a)\to W\right)\to W, 
+\ws:\prod_{a:A}\ \left(B(a)\to W\right)\to W, 
 $$ 
 and the induction principle can be stated as follows:
 
 We assume the recurrence 
 $$
-r:\prod_{a:A}(B(a)\to W)\to W
+r:\prod_{a:A}\ (B(a)\to W)\to(B(a)\to E)\to E
 $$ 
 if we are given a type $E:\U$ (case~1), and 
 $$
-r:\prod_{a:A}\ \prod_{f:B(a)\to W}\left(\prod_{b:B(a)}E(f(b))\right)\to E(\sup(a,f))
+r:\prod_{a:A}\ \prod_{f:B(a)\to W}\left(\prod_{b:B(a)}E(f(b))\right)\to E(\ws(a,f))
 $$ 
 if we are given a type family $E:W\to\U$ (case~2). 
 
 The solution $s$ to the above recurrence is a function $s:W\to E$ in case~1 and a dependent function $s:\prod_{w:W}E(w)$ in case~2. In both cases the computation rule 
 $$
-s(\sup(a,f))=r(a,f,s\ci f)
+s(\ws(a,f))=r(a,f,s\ci f)
 $$ 
 holds for all $a:A$ and all $f:B(a)\to W$.
 
