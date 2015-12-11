@@ -1185,11 +1185,13 @@ $$=\sum_{x:A}\sum_{p:g(f(x))=g(b)}\big((f(x),p)=(b,\refl_{g(b)})\big).$$
 
 $$\sum_{p:g(f(x))=g(b)}\big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
 
-$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\big(\transport^{\la(z:C).z=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
+$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\big(\transport^{\la(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
 
-$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}(\ap_g(q)^{-1}\cdot p=\refl_{g(b)})$$ 
+$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\big(\ap_g(q)^{-1}\cdot p=\refl_{g(b)}\big)$$ 
 
-$$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}(p=\ap_g(q))$$ 
+$$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}\big(p=\ap_g(q)\big)$$ 
+
+$$=\sum_{q:f(x)=b}\ \mb1$$
 
 $$=(f(x)=b).$$ 
 
@@ -1197,27 +1199,27 @@ $$=(f(x)=b).$$
 
 $$\sum_{w:\fib_g(c)}\fib_f(\pr_1w)$$ 
 
-$$=\sum_{w:\sum_{y:B}g(y)=c}\ \sum_{x:A}f(x)=\pr_1w$$ 
+$$=\sum_{w:\sum_{y:B}g(y)=c}\ \sum_{x:A}\big(f(x)=\pr_1w\big)$$ 
 
-$$=\sum_{y:B}\ \sum_{q:g(y)=c}\ \sum_{x:A}f(x)=y$$ 
+$$=\sum_{y:B}\ \sum_{q:g(y)=c}\ \sum_{x:A}\big(f(x)=y\big)$$ 
 
-$$=\sum_{x:A}\ \sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$ 
+$$=\sum_{x:A}\ \sum_{y:B}\ (g(y)=c)\times(f(x)=y).$$ 
 
 \nn For each $x:A$ we check that the maps 
 
-$$\ph:\left(\sum_{y:B}\ (g(y)=c)\times(f(x)=y)\right)\to(g(f(x))=c)$$ 
+$$\ph:\left(\sum_{y:B}\ (g(y)=c)\times(f(x)=y)\right)\to\big(g(f(x))=c\big)$$ 
 
 \nn and 
 
-$$\psi:(g(f(x))=c)\to\sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$ 
+$$\psi:\big(g(f(x))=c\big)\to\sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$ 
 
 \nn defined by 
 
-$$\ph(y,q,p):\eq\ap_g(p)\cdot q,\quad\psi(r):\eq(f(x),r,\refl_{f(x)})$$ 
+$$\ph(y,q,p):\eq\ap_g(p)\cdot q,\quad\psi(r):\eq\big(f(x),r,\refl_{f(x)}\big)$$ 
 
 \nn are inverses. This gives 
 
-$$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ g(f(x))=c\right)=\fib_{g\circ f}(c).\ \sq$$
+$$\left(\sum_{w:\fib_g(c)}\fib_f(\pr_1w)\right)=\left(\sum_{x:A}\Big(g(f(x))=c\Big)\right)=\fib_{g\circ f}(c).\ \sq$$
 
 %%
 
