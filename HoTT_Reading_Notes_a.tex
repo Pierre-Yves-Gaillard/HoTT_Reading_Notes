@@ -1309,7 +1309,7 @@ holds for all $a:A$ and all $f:B(a)\to W$.
 
 \subsection{Second bullet of \S5.6}%\label{69}
 
-This is about the comment containing the second bullet of \S5.6:
+This is about the comment containing the second bullet of \S5.6 of the book:
 $$
 k:((D\to\Prop)\to\Prop)\to D.
 $$ 
@@ -1333,7 +1333,11 @@ If $B:A\to\U$ is a type family over a type $A$, then we have a codiagonal map
 \begin{equation}\label{563}
 (\la f.\la a.f(a,a)):\left(A\to\pd_{a:A}B(a)\right)\to\pd_{a:A}B(a).
 \end{equation} 
-In particular we get a map $(P\to\neg P)\to\neg P$, that is, our assumption $P\Rightarrow\neg P$ implies $\neg P$ (and $\neg P$ clearly implies $\mb0$ under our assumption $P\Leftrightarrow\neg P$).
+In the particular case when $B:\U$ is constant, the above type becomes 
+$$
+(A\to A\to B)\to(A\to B).
+$$ 
+If we assume further $A\eq P$ and $B\eq\mb0$, we get a map $g:(P\to\neg P)\to\neg P$. Recall that we want to prove $(P\Leftrightarrow\neg P)\to\mb0$. In view of $g$, our assumption $P\to\neg P$ implies $\neg P$ (and $\neg P$ clearly implies $\mb0$ under our assumption $P\Leftrightarrow\neg P$).
 
 %%
 
