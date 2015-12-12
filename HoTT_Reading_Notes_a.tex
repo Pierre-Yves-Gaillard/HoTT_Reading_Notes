@@ -1337,7 +1337,7 @@ In the particular case when $B:\U$ is constant, the above type becomes
 $$
 (A\to A\to B)\to(A\to B).
 $$ 
-If we assume further $A\eq P$ and $B\eq\mb0$, we get a map $g:(P\to\neg P)\to\neg P$. Recall that we want to prove $(P\Leftrightarrow\neg P)\to\mb0$. In view of $g$, our assumption $P\to\neg P$ implies $\neg P$ (and $\neg P$ clearly implies $\mb0$ under our assumption $P\Leftrightarrow\neg P$).
+If we assume further $A\eq P$ and $B\eq\mb0$, we get a map $g:(P\to\neg P)\to\neg P$. Recall that we want to prove $(P\Leftrightarrow\neg P)\to\mb0$. In view of $g$, our assumption $P\to\neg P$ implies $\neg P$ (and $\neg P$ clearly implies $\mb0$ under our assumption $P\Leftrightarrow\neg P$). $\sq$
 
 %%
 
@@ -1373,17 +1373,13 @@ for all $\alpha:A\to W$ and all $b:B$ (see (5.6.6) in the book).
 
 \subsection{Proof of Theorem 5.8.2}\label{582}
 
-Here is a minor rewriting of the proof of the implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2. 
+Here is a minor rewriting of the proof of the fact that $\ppmap(R,S)$ is a mere proposition in implication (i) $\implies$ (ii) in the proof of Theorem 5.8.2: 
 
-\nn$\bullet\ \ppmap(R,S)$ is inhabited: Setting $D(b,r):\eq S(b),d:\eq s_0$, we get $f:\prod_{b:A}S(b)$ with $f(a_0)=s_0$. Define $g:\prod_{b:A}R(b)\to S(b)$ by $g(b,r):\eq f(b)$. This yields $g(a_0,r_0):\equiv f(a_0)=s_0$, as required. 
-
-\nn$\bullet\ \ppmap(R,S)$ is a mere proposition: Let 
+Let 
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$. $\sq$
-
-%by function extensionality, and finally $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$.%. It suffices to show $t_\star(p)=q$; this follows from the equalities $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p$.%, that is $(p\cdot q^{-1})^{-1}\cdot p=q$, which is clear.
+so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$. $\sq$ 
 
 %% 
 
@@ -1609,7 +1605,7 @@ $$
 \LEM:\prod_{A:\U}\isProp(A)\to(A+\neg A).
 $$ 
 
-I learnt the following argument from Jason Gross; see 
+I learned the following argument from Jason Gross; see 
 
 \nn\href{https://groups.google.com/forum/#!topic/hott-cafe/Pp7AgvKr5PI}{https://groups.google.com/forum/\#!topic/hott-cafe/Pp7AgvKr5PI}.
 
