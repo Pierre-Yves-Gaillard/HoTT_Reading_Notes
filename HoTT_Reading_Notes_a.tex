@@ -1379,7 +1379,7 @@ Let
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}f(b,r)=g(b,r)$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$. $\sq$ 
+so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}(f(b,r)=g(b,r))$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$. $\sq$ 
 
 %% 
 
@@ -1387,11 +1387,11 @@ so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $
 
 By Theorem 2.15.7 the type 
 $$
-\sum_{g:\prod_{(a,b:A)}R(a,b)\to S(a,b)}\quad\prod_{a:A}\quad g(a,a,r_0(a))=s_0(a)
+\sum_{g:\prod_{(a,b:A)}R(a,b)\to S(a,b)}\quad\prod_{a:A}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big)
 $$ 
 is equivalent to the type
 $$
-\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad g(a,a,r_0(a))=s_0(a).\ \sq
+\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big).\ \sq
 $$
 
 %\nn(ii)$\implies$(iii) follows from (i)$\implies$(ii) in Theorem 5.8.2 (see \S\ref{582}).
@@ -1430,18 +1430,19 @@ This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb 
 
 The proof of Corollary 6.4.3 uses the following claim:
 
-\nn\emph{Let $A$ and $B$ be types; let $\ph_1:(A\simeq B)\to(A\to B)$ and 
+\nn\tb{Claim.} \emph{Let $A$ and $B$ be types; let $\ph_1:(A\simeq B)\to(A\to B)$ and 
 $$
 \ph_2:\prod_{u:A\simeq B}\ishae(\ph_1(u))
 $$ 
-be the first and second projection; and let $u,v:A\simeq B$. Then we have} 
+be the first and second projection; and let $u,v:A\simeq B$. Then the map 
 \begin{equation}\label{apph}
 \ap_{\ph_1}:(u=v)\to(\ph_1(u)=\ph_1(v))
 \end{equation}
+is invertible.}
 
-\nn\emph{Proof of the claim.} By Theorem 4.4.5 it suffices to show that the fibers of \eqref{apph} are contractible. Set 
+\nn\emph{Proof.} By Theorem 4.4.5 it suffices to show that the fibers of \eqref{apph} are contractible. Set 
 $$
-C:\eq\sum_{p:\ph_1(u)=\ph(v)}p_\star(\ph_2(u))=\ph_2(v)
+C:\eq\sum_{p:\ph_1(u)=\ph(v)}(p_\star(\ph_2(u))=\ph_2(v))
 $$ 
 and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an equivalence $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
 
