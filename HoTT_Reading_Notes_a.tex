@@ -1456,10 +1456,20 @@ The sentence containing the first display follows from Theorem 2.11.3.
 
 \subsection{Section 6.8}
 
-Here is the \emph{recursion principle} for the pushout $Z:\eq A\sqcup^CB$ attached to 
+\subsection{Section 6.8}
+
+Here is the \emph{recursion principle} for the pushout 
 $$
-f:C\to A,\quad g:C\to B,\quad\gl:\pd_{c:C}\ \Big(\inl\big(f(c)\big)=\inr\big(g(c)\big)\Big).
+\boxed{Z:\eq A\sqcup^CB}
 $$ 
+attached to the diagram 
+$$
+\xymatrix{
+C\ar[rr]^g\ar[dd]_f&&B\ar[dd]^{\inr}\\ \\ 
+A\ar[rr]_{\inl}\ar@{=>}[uurr]^{\gl}&&Z,
+}
+$$ 
+where $\gl$ is a homotopy from $\inl\ci f$ to $\inr\ci g$: 
 
 Given 
 $$
