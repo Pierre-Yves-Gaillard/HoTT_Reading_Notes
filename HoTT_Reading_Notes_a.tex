@@ -1458,12 +1458,12 @@ The sentence containing the first display follows from Theorem 2.11.3.
 
 Here is the \emph{recursion principle} for the pushout $Z:\eq A\sqcup^CB$ attached to 
 $$
-f:C\to A,\quad g:C\to B:
+f:C\to A,\quad g:C\to B,\quad\gl:\pd_{c:C}\ \Big(\inl\big(f(c)\big)=\inr\big(g(c)\big)\Big).
 $$ 
 
 Given 
 $$
-\alpha:A\to D,\quad\beta:B\to D,\quad\gamma:\prod_{c:C}\alpha(f(c))=\beta(g(c)),
+\alpha:A\to D,\quad\beta:B\to D,\quad\gamma:\prod_{c:C}\Big(\alpha\big(f(c)\big)=\beta\big(g(c)\big)\Big),
 $$ 
 there is an $s:Z\to D$ such that 
 $$
@@ -1476,7 +1476,7 @@ $$
 \alpha:\prod_{a:A}D(\inl(a)),\quad\beta:\prod_{b:B}D(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha(f(c))=^D_{\glue(c)}\beta(g(c)).
+\gamma:\prod_{c:C}\Big(\alpha\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big)\Big).
 $$ 
 Then there is an $h:\prod_{z:Z}D(z)$ such that 
 $$
@@ -1486,12 +1486,12 @@ and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$.
 
 Here is the \emph{uniqueness principle}: Let $s,s':Z\to D$ and 
 $$
-\alpha:\prod_{a:A}s(\inl(a))=s'(\inl(a)),\quad\beta:\prod_{b:B}s(\inr(b))=s'(\inr(b)),
+\alpha:\prod_{a:A}\Big(s\big(\inl(a)\big)=s'\big(\inl(a)\big)\Big),\quad\beta:\prod_{b:B}\Big(s\big(\inr(b)\big)=s'\big(\inr(b)\big)\Big),
 $$
 $$
-\gamma:\prod_{c:C}\ \alpha(f(c))=^{z\mapsto(s(z)=s'(z))}_{\glue(c)}\beta(g(c)).
+\gamma:\prod_{c:C}\ga(\alpha\big(f(c)\big)=^{z\mapsto(s(z)=s'(z))}_{\glue(c)}\beta\big(g(c)\big)\dr).
 $$ 
-Then there is an $h:\prod_{z:Z}(s(z)=s'(z))$ such that 
+Then there is an $h:\prod_{z:Z}\big(s(z)=s'(z)\big)$ such that 
 $$
 h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta,\quad\apd_h(\glue(c))=\gamma(c)
 $$ 
@@ -1504,11 +1504,11 @@ In the proof of Lemma 6.8.2 let us display the definition of $t\ci c_{\sqcup}:\m
 $$
 t\ci c_{\sqcup}:\eq(t\ci\inl,t\ci\inr,\ap_t\ci\gl),
 $$ 
-
 $$
 \ms s(c)\ci\inl:\eq i,\quad\ms s(c)\ci\inr :\eq j,\quad\ap_{\ms s(c)}\ci\gl:=h.
 $$ 
-(Recall: $t:Z\to E,\ c=(i,j,h):\ms{cocone}_{\mc D}(E)$.)
+
+\nn(Recall: $t:Z\to E,\ c=(i,j,h):\ms{cocone}_{\mc D}(E)$.)
 
 Some more details about the end of the proof of Lemma 6.8.2:
 
