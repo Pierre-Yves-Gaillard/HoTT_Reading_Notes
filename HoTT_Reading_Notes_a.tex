@@ -1685,11 +1685,11 @@ in the definition of the codiagonal map \eqref{563} p.~\pageref{563}.
 
 \subsection{Induction principle for n-truncations in \S7.3}
 
-We spell out the induction principle for a higher inductive type $W$ which is slightly more general than $\lV A\rV_n$.
+We spell out the induction principle for a higher inductive type $W$ which is slightly different from that of $\lV A\rV_n$.
 
 Let $W$ be defined by the three constructors 
 $$
-c_1:A\to W,\quad c_2:(B\to W)\to W,\quad c_3:\pd_{d:B\to W}\pd_{b:B}\ d(b)=c_2(d).
+c_1:A\to W,\quad c_2:(B\to W)\to W,\quad c_3:\pd_{d:B\to W}\pd_{b:B}\ \big(d(b)=c_2(d)\big).
 $$ 
 Let $P:W\to\U$ be a type family. We say that a dependent function $f:\pd_{w:W}P(w)$ solves the three recurrences 
 $$
@@ -1700,7 +1700,7 @@ r_2:\pd_{d:B\to W}\left(\pd_{b:B}P(d(b))\right)\to P(c_2(d)),
 $$
 
 $$
-r_3:\pd_{d:B\to W}\ \pd_{e:\pd_{b:B}P(d(b))}\ \pd_{b:B}\ e(b)=^P_{c_3(d,b)}r_2(d,e)
+r_3:\pd_{d:B\to W}\ \pd_{e:\pd_{b:B}P(d(b))}\ \pd_{b:B}\ \ga(e(b)=^P_{c_3(d,b)}r_2(d,e)\dr)
 $$ 
 if the computation rules
 $$
