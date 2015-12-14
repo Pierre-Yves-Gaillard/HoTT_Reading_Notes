@@ -1473,7 +1473,7 @@ where $\gl$ is a homotopy from $\inl\ci f$ to $\inr\ci g$:
 
 Given 
 $$
-\alpha:A\to D,\quad\beta:B\to D,\quad\gamma:\prod_{c:C}\Big(\alpha\big(f(c)\big)=\beta\big(g(c)\big)\Big),
+\alpha:A\to D,\quad\beta:B\to D,\quad\gamma:\alpha\ci f\sim\beta\ci g
 $$ 
 there is an $s:Z\to D$ such that 
 $$
@@ -1488,24 +1488,24 @@ $$
 $$
 \gamma:\prod_{c:C}\Big(\alpha\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big)\Big).
 $$ 
-Then there is an $h:\prod_{z:Z}D(z)$ such that 
+Then there is an $s:\prod_{z:Z}D(z)$ such that 
 $$
-h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta
-$$ 
-and $\apd_h(\glue(c))=\gamma(c)$ for all $c:C$. 
-
-Here is the \emph{uniqueness principle}: Let $s,s':Z\to D$ and 
-$$
-\alpha:\prod_{a:A}\Big(s\big(\inl(a)\big)=s'\big(\inl(a)\big)\Big),\quad\beta:\prod_{b:B}\Big(s\big(\inr(b)\big)=s'\big(\inr(b)\big)\Big),
-$$
-$$
-\gamma:\prod_{c:C}\ga(\alpha\big(f(c)\big)=^{z\mapsto(s(z)=s'(z))}_{\glue(c)}\beta\big(g(c)\big)\dr).
-$$ 
-Then there is an $h:\prod_{z:Z}\big(s(z)=s'(z)\big)$ such that 
-$$
-h\ci\inl\equiv\alpha,\quad h\ci\inr\equiv\beta,\quad\apd_h(\glue(c))=\gamma(c)
+s\ci\inl\equiv\alpha,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
 $$ 
 for all $c:C$. 
+
+Here is the \emph{uniqueness principle}: Let $h,h':Z\to D$ and 
+$$
+\alpha:\prod_{a:A}\Big(h\big(\inl(a)\big)=h'\big(\inl(a)\big)\Big),\quad\beta:\prod_{b:B}\Big(h\big(\inr(b)\big)=h'\big(\inr(b)\big)\Big),
+$$
+$$
+\gamma:\prod_{c:C}\ga(\alpha\big(f(c)\big)=^{z\mapsto(h(z)=h'(z))}_{\glue(c)}\beta\big(g(c)\big)\dr).
+$$ 
+Then there is an $s:\prod_{z:Z}\big(h(z)=h'(z)\big)$ such that 
+$$
+s\ci\inl\equiv\alpha,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
+$$ 
+for all $c:C$.  
 $$
 \star
 $$
@@ -1530,11 +1530,11 @@ or, equivalently,
 $$
 \transport^{z\mapsto(u(z)=t(z))}(\gl(x),\refl_{t(\inl(f(x)))})=\refl_{t(\inr(g(x)))},
 $$ 
-is inhabited. This follows from the fact that we have, for $p:z_1=z_2$ and $q:u(z_1)=t(z_1)$, 
+is inhabited. We have, for $z_1,z_2:Z,\ p:z_1=z_2$ and $q:u(z_1)=t(z_1)$, 
 $$
-\transport^{z\mapsto(u(z)=t(z))}(p,q)=u(p)^{-1}\cdot q\cdot t(p).
+\transport^{z\mapsto(u(z)=t(z))}(p,q)=\ap_u(p)^{-1}\cdot q\cdot\ap_t(p).
 $$ 
-(The above formula is easily proved by induction on $p$.) $\sq$
+(The above formula is easily proved by induction on $p$.) Hence it suffices to show $\ap_u(\gl(x))=\ap_t(\gl(x))$. But this follows immediately from the definition of $u.\ \sq$
 
 %%
 
