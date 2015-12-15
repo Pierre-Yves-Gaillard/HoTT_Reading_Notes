@@ -78,6 +78,7 @@
 \nc{\sq}{\square}
 \nc{\suc}{\ms{succ}}\nc{\su}{\ms{succ}}
 \nc{\tb}{\textbf}
+\nc{\then}{\Rightarrow}
 \nc{\tx}{\text}
 \nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
 \nc{\two}{\mb2}
@@ -1648,7 +1649,9 @@ It is straightforward to check that this definition does the job. $\square$
 
 \subsection{Theorem 7.1.8}\label{718}
 
-Here is a corollary to Theorem 7.1.8: the fibers of a map between $n$-types are $n$-types.
+Here is a corollary to Theorem 7.1.8: 
+
+\emph{The fibers of a map between $n$-types are $n$-types.}
 
 %%
 
@@ -1860,7 +1863,7 @@ The small squares commute by \S\ref{747} above.
 
 The following observation, which is an immediate consequence of Corollary 7.3.7, can be made right after Definition 7.5.1:
 
-\nn\emph{Let $A$ be a type. Then $A$ is contractible if and only if $A$ is an $n$-connected $n$-type.}
+\nn\emph{Let $A$ be a type and let $n:\N$. Then $A$ is contractible if and only if $A$ is an $n$-connected $n$-type.}
 
 %%
 
@@ -1876,7 +1879,7 @@ The sentence
 
 \nn``Then $P$ is a family of $(n-1)$-types and we have $P(a_0)$; hence we have $\prod_{(a:A)}P(a)$ since $a_0:\mb1\to A$ is $(n-1)$-connected''
 
-\nn follows from Lemma 7.5.7.
+\nn follows from Lemma 7.5.7, implication (i) $\Rightarrow$ (iii).
 
 %%
 
@@ -1890,7 +1893,7 @@ In the last display of the statement of Lemma 7.6.5, the identification $\overli
 
 \subsection{Proof of Corollary 8.1.11}
 
-The claim ``since $\bb Z$ is a set, $\Omega^{n-1}(\bb Z)$ is contractible'' follows from Theorems 7.1.7 (cumulativity of $n$-types) and 7.2.7.
+The claim ``since $\bb Z$ is a set, $\Omega^{n-1}(\bb Z)$ is contractible'' follows from Theorem 7.2.7.%Theorems 7.1.7 (cumulativity of $n$-types) and 7.2.7.
 
 %%
 
@@ -1941,7 +1944,7 @@ We have, in the above setting, $(\delta LG)(HL\gamma)=(KL\gamma)(\delta LF)$.}
 
 \subsection{Lemma 9.3.2}
 
-See \S\ref{928} above. The following diagrams and equalities may help the reader:
+In the notation of \S\ref{928} above, the following diagrams and equalities may help the reader:
 $$
 \begin{array}{ccccccccccccccc}
 &\id_A&&&&FG'&&&&\id_A&&&&FG\\
@@ -1976,11 +1979,13 @@ $$
 
 $\bu$ The following observation, which could be made just before Definition 9.2.3, is used in the proof of Lemma 9.4.9.
 
-\emph{In the setting of Definition 9.2.1, let $p:F_0=G_0$; let $a,a':A_0$; and define $P:(A_0\to B_0)\to\U$ by $P(f):\eq(\hom_A(a,a')\to\hom_B(fa,fa'))$. Then we have} 
+\emph{In the setting of Definition 9.2.1, let $p:F_0=G_0$; for each $a:A_0$ let $p_a:Fa=Ga$ be the induced path; let $a,a':A_0$; and define $P:(A_0\to B_0)\to\U$ by $P(f):\eq(\hom_A(a,a')\to\hom_B(fa,fa'))$. Then we have} 
 $$
-\tr(p,F_{a,a'})(f)=\msf{idtoiso}(p_{a'})\ci F_{a,a'}(f)\ci\msf{idtoiso}(p_a^{-1}).
+p_\star(F_{a,a'})(g)=\msf{idtoiso}(p_{a'})\ci F_{a,a'}(g)\ci\msf{idtoiso}((p_a)^{-1})
 $$ 
-$\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the \emph{other} triangle identity, which we have seen in Chapter 4 is equivalent to (9.4.11)'' refers (I think) to Lemma 4.2.2.
+\emph{for all $g:\hom_A(a,a')$.}
+
+\nn$\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the \emph{other} triangle identity, which we have seen in Chapter 4 is equivalent to (9.4.11)'' refers (I think) to Lemma 4.2.2.
 
 %%%
 
@@ -1988,9 +1993,9 @@ $\bu$ In the penultimate paragraph of the proof of Lemma 9.4.9, the phrase ``the
 
 \subsection{Before Lemma 10.1.1}
 
-This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It is clear from the context that $A$ and $B$ are sets.) Let us show that this obvious candidate is the good one. By Lemma 4.8.2 of the book it suffices to prove the following statement:
+This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of $f$, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It is clear from the context that $A$ and $B$ are sets.) Let us show that this obvious candidate is the good one. By Lemma 4.8.2 of the book it suffices to prove the following statement:
 
-\emph{If $B:A\to\Set$ is a set family over a set $A$ and $\sim$ the equivalence relation $\sum_{a:A}B(a)$ defined by 
+\emph{If $B:A\to\Set$ is a set family over a set $A$ and $\sim$ is the equivalence relation $\sum_{a:A}B(a)$ defined by 
 $$
 (a,b)\sim(a',b')\text{ if and only if }a=a',
 $$ 
@@ -2012,7 +2017,7 @@ by $f(b):\eq q(a_0,b)$ for all $b:B(a_0)$, and let
 $$
 \tilde f:B(a_0)\to\im(f),\quad\pr_1:\im(f)\to\left(\sum_{a:A}B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
 $$ 
-be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). It is easy to check that $\im(f)$ is a mere proposition. As a result, $f$ induces a map $g:\lV B(a_0)\rV\to\im(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
+be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). It is easy to check that $\im(f)$ is a mere proposition. As a result, $\tilde f$ induces a map $g:\lV B(a_0)\rV\to\im(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
 
 We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is an equivalence. $\square$
 
