@@ -1815,13 +1815,17 @@ $$
 \xymatrix{
 \lV g\rV_n\lV f\rV_n\lv a\rv_n\ar@{=}[d]_{\ph_n^{g,f}(\lv a\rv_n)}\ar@{=}[rrr]^{\ap_{\lV g\rV_n}(\na_n^fa)}&&&
 \lV g\rV_n\lv fa\rv_n\ar@{=}[d]^{\na_n^g(fa)}\\
-\lV gf\rV_n\lv a\rv_n\ar@{=}[rrr]_{\na_n^{gf}(a)}&&&\lv gfa\rv_n.}
+\lV gf\rV_n\lv a\rv_n\ar@{=}[rrr]_{\na_n^{gf}(a)}&&&\lv gfa\rv_n,}
+$$ 
+that is, we set 
+$$
+\ph_n^{g,f}(\lv a\rv_n):\eq\ap_{\lV g\rV_n}(\na_n^fa)\cd\na_n^g(fa)\cd(\na_n^{gf}(a))^{-1}.
 $$ 
 (We assume $a:A$, and omit most of the parenthesis.)
 
 Going back to Definition 7.4.7, we may define $\lV c\rV_n$ as being $(\lV i\rV_n,\lV j\rV_n,h'_n)$, where $h'_n$ is the homotopy obtained by composing the three homotopies
 $$
-\lV i\rV_n\ci\lV f\rV_n\overset{\ph_n^{i,f}}{\sim}\lV i\ci f\rV_n\overset{\lV h\rV_n}{\sim}\lV j\ci g\rV_n\overset{(\ph_n^{i,f})^{-1}}{\sim}\lV j\rV_n\ci\lV g\rV_n.
+\lV i\rV_n\ci\lV f\rV_n\overset{\ph_n^{i,f}}{\sim}\lV i\ci f\rV_n\overset{\lV h\rV_n}{\sim}\lV j\ci g\rV_n\overset{(\ph_n^{j,g})^{-1}}{\sim}\lV j\rV_n\ci\lV g\rV_n.
 $$
 
 %%
