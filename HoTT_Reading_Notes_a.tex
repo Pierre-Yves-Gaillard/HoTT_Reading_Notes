@@ -2095,19 +2095,32 @@ then we get $g:\prod_{a:A}P(a)$ with $g(a)\eq f(a,\la b.\la l.g(b))$ for all $a:
 
 \subsection{Lemma 10.3.7}%\label{s1037}
 
-Trying to understand the proof of Lemma 10.3.7\dots
+Here is a minor variant:
 
-\begin{comment}
-
-In the setting of Definition 10.3.1, assuming that $<$ is well-founded, and taking Lemma 10.3.2 into account, we get:
-
-Given $P:A\to\U$ and
-$$%\begin{equation}\label{e1037}
-f:\prod_{a:A}\left(A\times\left(\prod_{b:A}(b<a)\to P(b)\right)\right)\to P(a),
-$$%\end{equation} 
-there is a $g:\prod_{a:A}P(a)$ such that $g(a)=f(a,c,\la b.\la l.g(b))$ for all $a,c:A$.
-
-\end{comment}
+\nn\emph{Suppose $P$ is a set and we have a function $h:(P\to\Prop)\to P$. Then if $<$ is a well-founded relation on $A$, there is a function $g:A\to P$ such that for all $a:A$ we have} 
+$$
+g(a)\eq h\ga(\{g(b)\ \vert\ b<a\}\dr),
+$$ 
+\emph{where $\{g(b)\ \vert\ b<a\}:P\to\Prop$ maps $p:P$ to} 
+$$
+\exists\ (b:A)\ .\ (g(b)=p)\ \wedge\ (b<a).
+$$ 
+\emph{Proof.} Define 
+$$
+f:\pd_{a:A}\ga(\pd_{b:A}(b<a)\to P\dr)\to P
+$$ 
+by 
+$$
+f(a,s):\eq h(\{s(b,l)\ \vert\ l:b<a\}),
+$$ 
+where $\{s(b,l)\ \vert\ l:b<a\}:P\to\Prop$ maps $p:P$ to 
+$$
+\exists\ (b:A)\ .\ \exists\ (l:b<a)\ .\ s(b,l)=p.
+$$ 
+We get 
+$$
+g(a)\eq f(a,\la b.\la l.g(b))\eq h(\{g(b)\ \vert\ b<a\}).\ \sq
+$$ 
 
 %%
 
