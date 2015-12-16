@@ -2115,15 +2115,15 @@ there is a $g:\prod_{a:A}P(a)$ such that $g(a)=f(a,c,\la b.\la l.g(b))$ for all 
 
 Recall the statement: 
 
-\emph{Assuming excluded middle, $<$ is well-founded if and only if every nonempty subset $B:\mc P(A)$ merely has a minimal element.} 
+\nn\emph{Assuming excluded middle, $<$ is well-founded if and only if every nonempty subset $B:\mc P(A)$ merely has a minimal element.} 
 
 Here is a slightly different phrasing of the proof.
 
-Suppose first $<$ is well-founded and $A$ has no minimal element. That is, for any $a:A$ there merely exists a $b:A$ with $b<a$. We claim 
+\nn\emph{Proof.} Suppose first $<$ is well-founded and $A$ has no minimal element. That is, for any $a:A$ there merely exists a $b:A$ with $b<a$. We shall show $A=\mbf0$. We first claim 
 \begin{equation}\label{10312}
 \prod_{a:A}\left(\prod_{a':A}(a'<a)\to\mbf0\right)\to\mbf0.
 \end{equation}
-Let $a:A$ and $s:\prod_{a':A}(a'<a)\to\mbf0$. It suffices to prove $\mbf0$. As observed above, there is a $b:A$ and an $l:b<a$, yielding $s(b,l):\mbf0$. This implies successively \eqref{10312}, $\prod_{a:A}\mbf0$ by well-founded induction, and thus $A=\mbf0$. 
+Let $a:A$ and $s:\prod_{a':A}(a'<a)\to\mbf0$. It suffices to prove $\mbf0$. As observed above, there is a $b:A$ and an $l:b<a$, yielding $s(b,l):\mbf0$. This proves \eqref{10312}. Then $\prod_{a:A}\mbf0$, that is $A\to\mbf0$, follows by well-founded induction, and implies $A=\mbf0$. 
 
 Now suppose that each nonempty subset merely has a minimal element, and assume that an inaccessible $a_0:A$ merely exists. As it suffices to prove $\mbf0$, we can assume that $a_0$ exists purely, and that it is minimal for the property of being inaccessible, which means that we have an $h:\prod_{b:A}(b<a_0)\to\acc(b)$, yielding $\acc_<(a_0,h):\mbf0$, as required. $\square$
 
@@ -2135,7 +2135,7 @@ Recall the statement: \emph{Any simulation is injective}.
 
 Here is a slightly different phrasing of the proof:
 
-We prove by well-founded induction on $a:A$ that for any $b:A$, if $f(a)=f(b)$ then $a=b$. The inductive hypothesis for $a:A$ says that for any $a'<a$, and any $b:A$, if $f(a')=f(b)$ then $a'=b$.
+\nn\emph{Proof.} We prove by well-founded induction on $a:A$ that for any $b:A$, if $f(a)=f(b)$ then $a=b$. The inductive hypothesis for $a:A$ says that for any $a'<a$, and any $b:A$, if $f(a')=f(b)$ then $a'=b$.
 
 Suppose $f(a)=f(b)$; we must show $a=b$. By extensionality, it suffices to show that for any $c:A$ we have $(c<a)\Leftrightarrow(c<b)$. If $c<a$, then $f(c)<f(a)$ by Definition 10.3.11(i). Hence $f(c)<f(b)$, so by Definition 10.3.11(ii) there merely exists $c':A$ with $c'<b$ and $f(c)=f(c')$. By the inductive hypothesis for $a$, we have $c=c'$, hence $c<b$. We prove similarly that $c<b$ implies $c<a$. $\sq$
 
@@ -2163,7 +2163,7 @@ One may add something like ``We leave it to the reader to check that $\approx$ i
 
 The following observation could be made just before Lemma 11.2.2: 
 
-For $x,y:\mbb R_d$ the inequality $x<y$ implies $x\neq y$. Moreover the map $f:\mbb Q\to\mbb R_d$, $q\mapsto(L_q,U_q)$ satisfies
+\nn\emph{For $x,y:\mbb R_d$ the inequality $x<y$ implies $x\neq y$. Moreover the map $f:\mbb Q\to\mbb R_d$, $q\mapsto(L_q,U_q)$ satisfies}
 $$
 f(q)<f(r)\iff q<r\quad\text{and}\quad f(q)\le f(r)\iff q\le r.
 $$ 
