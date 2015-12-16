@@ -2082,16 +2082,14 @@ for all $a:A$ and all $u:\prod_{b:A}(b<a)\to\acc(b)\times P(b)$.
 Here is a second particular case:
 
 If $<$ is well-founded, if we have a type family $P:A\to\U$, and if we have 
-$$
+\begin{equation}\label{103}
 f:\prod_{a:A}\left(\prod_{b:A}(b<a)\to P(b)\right)\to P(a),
-$$
+\end{equation} 
 then we get $g:\prod_{a:A}P(a)$ with $g(a)\eq f(a,\la b.\la l.g(b))$ for all $a:A$.
 
 (We are using Lemma 10.3.2 of the book.)
 
 %%
-
-
 
 \subsection{Lemma 10.3.7}%\label{s1037}
 
@@ -2105,7 +2103,7 @@ $$
 $$
 \exists\ (b:A)\ .\ (g(b)=p)\ \wedge\ (b<a).
 $$ 
-\emph{Proof.} Define 
+\emph{Proof.} We shall use the induction principle containing Display~\eqref{103} above. Define 
 $$
 f:\pd_{a:A}\ga(\pd_{b:A}(b<a)\to P\dr)\to P
 $$ 
