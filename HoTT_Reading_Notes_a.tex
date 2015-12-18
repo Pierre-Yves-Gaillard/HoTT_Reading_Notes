@@ -1919,7 +1919,7 @@ In the penultimate paragraph of the proof of Theorem 9.2.5, one can also argue b
 
 \subsection{Lemma 9.2.8}\label{928}
 
-To prove Lemma 9.3.2 the following two lemmas might be useful. (Lemma~1 below is a mild generalization of Lemma 9.2.8.)
+To prove Lemma 9.3.2 (see \S\ref{932} below) the following two lemmas might be useful. (Lemma~1 below is a mild generalization of Lemma 9.2.8.)
 
 \nn\tb{Lemma 1.} \emph{In the diagram below, $A,B,C,D$ are categories; $F,G:A\to B$, $H,K:C\to D$ and $L:B\to C$ are functors; $\gamma:F\to G$ and $\delta:H\to K$ are natural transformations:
 $$
@@ -1932,7 +1932,6 @@ We have, in the above setting,}
 \begin{equation}\label{9281}
 (\delta LG)(HL\gamma)=(KL\gamma)(\delta LF)
 \end{equation}
-
 
 \nn\emph{Proof.} It suffices to check componentwise: at $a:A$ we have
 \begin{align*}
@@ -1955,8 +1954,7 @@ $$
 \xymatrix{
 &&&\ar[ll]_K\\ \\
 D&C\ar[l]_L&\ar[uu]_\beta&B\ar[ll]_(.6)H&A.\ar[l]_F\\ \\
-&&\ar[uu]_\alpha&\ar[ll]^G
-}
+&&\ar[uu]_\alpha&\ar[ll]^G}
 $$ 
 We have, in the above setting,}
 \begin{equation}\label{9282}
@@ -1974,7 +1972,7 @@ We have, in the above setting,}
 
 %%
 
-\subsection{Lemma 9.3.2}
+\subsection{Lemma 9.3.2}\label{932}
 
 In the notation of \S\ref{928} above, the following diagrams and equalities (which follow from \eqref{9281} above) may help the reader:
 
@@ -2020,7 +2018,20 @@ $$
 \xymatrix{
 FG'FG\ar[rrr]^{(FG'\ \id_B\ \ep)}\ar[d]_{(\ep'\ \id_B\ FG)}&&&FG'\ar[d]^{(\ep'\ \id_B\ \id_B)}\\ 
 FG\ar[rrr]_{(\id_B\ \id_B\ \ep)}&&&\id_B.}
-$$
+$$ 
+
+Here are more details about the verification of the equality $\delta\gamma=1_G$ in the proof of Lemma 9.3.2: 
+\begin{align*}
+\delta\gamma &\eq(G\ep')(\eta G')(G'\ep)(\eta'G)\\
+&=(G\ep')(G F G'\ep)(\eta G' F G)(\eta'G)&\text{by \eqref{9281}}\\
+&=G\,(\ep'\,(FG'\ep))\,((\eta GF)\,\eta')\,G&\text{by \eqref{9282}}\\
+&=G\,(\ep\,(\ep'FG))\,((GF\eta')\,\eta)\,G&\text{by \eqref{9281}}\\
+&=G\,(\ep\,(\ep'F))\,((F\eta')\,\eta)\,G&\text{by \eqref{9282}}\\
+&=(G\ep)(\ep' F)(F\eta')(\eta G)\\
+&=(G\ep)(\eta G)&\text{by $\ \Delta_1$}\\
+&=1_G&\text{by $\Delta_2$,}
+\end{align*} 
+where $\Delta_1$ and $\Delta_2$ denote the first and second triangle identity.
 
 %%
 
