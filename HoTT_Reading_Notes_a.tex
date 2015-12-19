@@ -471,11 +471,11 @@ for $r:w=w'$. $\sq$
 
 \subsection{Theorem 2.7.4}\label{274}
 
-We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. We set 
+We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit way. Recall that we have type families $P:A\to\U$ and $G:(\sum_{a:A}P(a))\to\U$. Let us set 
 $$
-Q'(x):\eq\sum_{u:P(x)}Q(x,u)
+Q'(a):\eq\sum_{u:P(a)}Q(a,u)
 $$ 
-for $x:A$, we abbreviate $\tr$ by $\ms t$, and we write $\pa_P$ instead of $\pa$ (see \eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Here is the rewriting:
+for $a:A$, let us abbreviate $\tr$ by $\ms t$, and we write $\pa_P$ instead of $\pa$ (see~\eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Recall that $p:x=y$ is a path in $A$, that $u:P(x)$ and $z:Q(x,u)$, so that $(u,z):Q'(x)$. Here is the rewriting:
 
 $$
 \ms t^{Q'}(p,(u,z))=\Bigg(\ms t^P(p,u),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big),z\bigg)\Bigg).
@@ -483,12 +483,16 @@ $$
 
 The key step to check that the above equality is well-typed is the judgment 
 $$
-\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{x:A}P(x)}\big(y,\ms t^P(p,u)\big).
+\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{a:A}P(a)}\big(y,\ms t^P(p,u)\big).
 $$ 
 
 For the reader's convenience, we rewrite \eqref{273} more explicitly as 
 $$
-\pa:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(\ms t^P(p,\pr_2(w))=\pr_2(w')\big)\right)\to(w=w').
+\pa_P:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(\ms t^P(p,\pr_2(w))=\pr_2(w')\big)\right)\to(w=w'),
+$$ 
+so that we have $\pa_P(p,q):w=w'$ if and only if 
+$$
+p:\pr_1(w)=\pr_1(w')\quad\text{and}\quad q:\ms t^P(p,\pr_2(w))=\pr_2(w').
 $$
 
 %%
@@ -497,7 +501,7 @@ $$
 
 The map 
 $$
-\happly:(f=g)\to\prod_{a:A}(f(a)=g(a))
+\happly:(f=g)\to\prod_{a:A}\ \big(f(a)=g(a)\big)
 $$ 
 for $f,g:\prod_{x:A}B(x)$ is defined in the obvious way by path induction. If 
 $$
@@ -589,7 +593,7 @@ $$
 v(\alpha):\eq\fu\Big(\la\ .\ r(a')\cd k\big((p^{-1})_\star\ a'\big)\cd\alpha\big((p^{-1})_\star\ a'\big)\cd s(a')\Big).
 $$ 
 
-The claim is easily proved by induction over the path $p:x=y$. $\square$
+The claim is easily proved by induction on the path $p:x=y$. $\square$
 
 %%
 
