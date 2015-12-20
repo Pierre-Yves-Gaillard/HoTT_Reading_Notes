@@ -477,9 +477,9 @@ Q'(a):\eq\sum_{u:P(a)}Q(a,u)
 $$ 
 for $a:A$, let us abbreviate $\tr$ by $\ms t$, and we write $\pa_P$ instead of $\pa$ (see~\eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Recall that $p:x=y$ is a path in $A$, that $u:P(x)$ and $z:Q(x,u)$, so that $(u,z):Q'(x)$. Here is the rewriting:
 
-$$
+\begin{equation}\label{ld}
 \ms t^{Q'}(p,(u,z))=\Bigg(\ms t^P(p,u),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big),z\bigg)\Bigg).
-$$ 
+\end{equation}
 
 The key step to check that the above equality is well-typed is the judgment 
 $$
@@ -611,11 +611,11 @@ above is the composite of the paths
 
 \subsection{Proof of Theorem 2.11.1}\label{2111}
 
-Let $f:A\to B$ be an equivalence, and let $a,a':A$. We must show that 
+Let $f:A\to B$ be invertible, and let $a,a':A$. We must show that 
 $$
 \ap_f:(a=a')\to (fa=fa')
 $$ 
-is an equivalence.
+is invertible.
 
 Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be an inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
 $$
@@ -623,7 +623,7 @@ $$
 $$ 
 Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
 
-Step 2. Since $\varphi$ is an equivalence (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also an equivalence, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} below) implies that $\ap_f$ and $\ap_g$ are equivalences. $\sq$
+Step 2. Since $\varphi$ is a invertible (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also invertible, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} below) implies that $\ap_f$ and $\ap_g$ are invertible. $\sq$
 
 %%
 
@@ -678,7 +678,7 @@ We leave the end of the proof to the reader. $\square$
 
 \subsubsection{Use of Theorem 2.7.4}
 
-We apply Theorem 2.7.4 to \S2.14.1 by letting $\U,\V$ be universes with $\U:\V$, by defining $P:\U\to\V$ by $P(A):\eq(A\to A\to A)$, by defining 
+We apply Theorem 2.7.4 (see \S\ref{274} p.~\pageref{274}) to \S2.14.1 by letting $\U,\V$ be universes with $\U:\V$, by defining $P:\U\to\V$ by $P(A):\eq(A\to A\to A)$, by defining 
 $$
 Q:\left(\sum_{A:\U}P(A)\right)\to\V
 $$ 
@@ -689,9 +689,8 @@ $$
 and by defining $Q':\U\to\V$ by 
 $$ 
 Q'(A):\eq\sum_{m:P(A)}Q(A,m).
-$$
-%setting $A:\eq\U,P(A):\eq(A\to A\to A)$ for $A:\U$, $$Q:\left(\sum_{A:\U}(A\to A\to A)\right)\to\U,\quad Q(A,m):\eq(m(x,m(y,z))=m(m(x,y),z)).$$ As \S\ref{274} we put $$Q'(A):\eq(m(x,m(y,z))=m(m(x,y),z))$$ for $A:\U$. 
-In the notation of \S\ref{274} the last display of Theorem 2.7.4 now reads 
+$$  
+In the notation of \S\ref{274} p.~\pageref{274} the last display of Theorem 2.7.4 (see \eqref{ld} p.~\pageref{ld}) now reads 
 $$
 \ms t^{Q'}(p,(m,a))=\Bigg(\ms t^P(p,m),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
@@ -716,25 +715,28 @@ and
     &= m'(b_1,m'(b_2,b_3)).
 \end{aligned}
 \end{equation*}
-(We refer the reader to the book for the precise notation. The above chain of equalities is preceded by the sentence ``Moreover, though we do not show the proof, one can calculate that the induced proof that $m'$ is associative \dots\ is equal to a function sending $b_1,b_2,b_3:B$ to a path given by the following steps''. The main ingredient is Theorem 2.7.4.)
+(We refer the reader to the book for the precise notation. The above chain of equalities is preceded by the sentence ``Moreover, though we do not show the proof, one can calculate that the induced proof that $m'$ is associative \dots\ is equal to a function sending $b_1,b_2,b_3:B$ to a path given by the following steps''. The main ingredient is Theorem 2.7.4 --- see \S\ref{274} p.~\pageref{274}.)
 
 It seems to me one could argue as follows: state the above two formulas, check that they are well-typed, check that they hold when $A\eq B$ and $p$ is reflexivity, conclude by path induction that they hold in general.
 
 %%
 
+% old version 
+% https://docs.google.com/document/d/1fCStKUsmwYEZa7PnzmJcaWzCDNJ6TZySTKZPlUcGKA4/edit
+
 \subsection{Exercise 2.7}
 
 \emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
 
-\nn\emph{Solution.} Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
+\nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2. Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
 $$
 \pd_{z,w:\sum_{a:A}B(a)}\left(\xymatrix@1{
-(z=w)\ar@<2pt>[r]^(.25)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star\,\pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.75)\beta}\right).
+(z=w)\ \ar@<2pt>[r]^(.27)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star\,\pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
 $$ 
 Note that the expression $\beta(z,w)$ has the same meaning as the expression $\pa$ introduced in the book just before Theorem 2.7.4. Let $B':A'\to\U$ and set similarly 
 $$
 \pd_{z',w':\sum_{a':A'}B'(a')}\left(\xymatrix@1{
-(z'=w')\ar@<2pt>[r]^(.25){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star\,\pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.75){\beta'}}\right).
+(z'=w')\ \ar@<2pt>[r]^(.27){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star\,\pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
 $$ 
 Let $g:A\to A',\ h:\prod_{a:A}B(a)\to B'(g(a))$. Cleary, there is a map 
 $$
@@ -742,18 +744,24 @@ f:\left(\sum_{a:A}B(a)\right)\to\sum_{a':A'}B'(a')
 $$ 
 satisfying $f(a,b)\equiv (g(a),h(a,b))$ for all $a:A$ and all $b:B(a)$. 
 
-By path induction, we get  
+Let 
 $$
-\gamma(z,w,r):\ap_f(r)=\beta'\Big(f(z),f(w),\alpha'\big(f(z),f(w),\ap_f(r)\big)\Big)
+z,w:\sum_{a:A}B(a);\quad p:\pr_1(z)=\pr_1(w);\quad q:p_\star\,\pr_2(z)=\pr_2(w).
 $$ 
-for $z,w:\sum_{a:A}B(a)$ and $r:z=w$, and
+We claim 
+\begin{equation}\label{e27}
+\ap_f\big(\beta(z,w,p,q)\big)=\beta'\big(f(z),f(w),\ap_g(p),\apd_h(q)\big).
+\end{equation}
+
+\nn\emph{Proof of \eqref{e27}.} For $z$ and $w$ as above, and $r:z=w$ set 
 $$
-\delta(z,w,p,q):\alpha'\Big(f(z),f(w),\ap_f\big(\beta(z,w,p,q)\big)\Big)=(\ap_g(p),\apd_h(q))
+p(r):\eq\pr_3(\alpha(z,w,r)),\quad q(r):\eq\pr_4(\alpha(z,w,r)).
 $$ 
-for $p:\pr_1(z)=\pr_1(w)$ and $q:p_\star\,\pr_2(z)=\pr_2(w)$. This yields 
-$$
-f(\beta(z,w,p,q))=\beta'\big(f(z),f(w),\ap_g(p),\apd_h(q)\big).\ \sq
-$$ 
+Then we can prove 
+\begin{equation}\label{e27b}
+\ap_f\big(\beta(z,w,p(r),q(r))\big)=\beta'\big(f(z),f(w),\ap_g(p(r)),\apd_h(q(r))\big)
+\end{equation}
+by induction on $r$. Clearly \eqref{e27b} implies \eqref{e27}. $\sq$
 
 %%
 
@@ -1034,8 +1042,6 @@ Use also Theorem 2.15.7.
 \subsection{Proof of Lemma 4.7.3}
 
 I would replace ``applying a version of Lemma 3.11.9'' with ``using based path induction''.
-
-%I don't understand the proof of the book. It seems to me Lemma 4.7.3 results from the following computation, where most of the parenthesis are omitted \begin{align*}(Ra)_\star(Ksa\cdot r'La\cdot r's'p\cdot R'b)&=(gRa)^{-1}\cdot Ksa\cdot r'La\cdot r's'p\cdot R'b\\ &=(gRa)^{-1}\cdot gRa\cdot (R'ga)^{-1}\cdot r's'p\cdot R'b\\ &=p,\end{align*} the second equality being induced by $Ha$.
 
 %%
 
@@ -1906,7 +1912,7 @@ The following observation, which is an immediate consequence of Corollary 7.3.7,
 
 \subsection{Proof of Lemma 7.5.10}
 
-I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $\vert-\vert_n$ is $n$-connected. Thus, since $f=g\circ\vert-\vert_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is an equivalence (see \S\ref{751} above).
+I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $\vert-\vert_n$ is $n$-connected. Thus, since $f=g\circ\vert-\vert_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is invertible (see \S\ref{751} above).
 
 %%
 
@@ -2116,7 +2122,7 @@ $$
 $$ 
 be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). It is easy to check that $\im(f)$ is a mere proposition. As a result, $\tilde f$ induces a map $g:\lV B(a_0)\rV\to\im(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
 
-We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is an equivalence. $\square$
+We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is invertible. $\square$
 
 \begin{comment}
 
