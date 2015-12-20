@@ -133,11 +133,11 @@ and $c_0:C_0(a,\refl_a)$. We must find an
 $$
 f:\pd_{x:A}\ \pd_{p:a=x}\ C_0(x,p)
 $$ 
-such that $f(a,\re_a)\eq c_0$. Define $D:\pd_{x,y:A}\ (x=y)\to\U$ by 
+such that $f(a,\re_a)\eq c_0$. Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
 $$
 D(x,y,p):\eq\pd_{C:\pd_{z:A}\ (x=z)\to\U}C(x,\re_x)\to C(y,p)
 $$ 
-and $d:\pd_{x:A}\ D(x,x,\re_x)$ by $d(x,C,c):\eq c$. By path induction we get a 
+and $d:\pd_{x:A}D(x,x,\re_x)$ by $d(x,C,c):\eq c$. By path induction we get a 
 $$
 g:\pd_{x,y:A}\ \pd_{p:x=y}\ D(x,y,p)
 $$ 
@@ -157,7 +157,7 @@ $$
 $$ 
 and a dependent function 
 $$
-\pr_2:\prod_{x:\sum_{a:A}\ B(a)}\ B(\pr_1(x))
+\pr_2:\prod_{x:\sum_{a:A}B(a)}\ B(\pr_1(x))
 $$
 satisfying
 \begin{equation}\label{131}
@@ -167,27 +167,27 @@ for all $a:A$ and all $b:B(a)$.
 
 \nn(b) We also assume that, for all type family $B:A\to\U$ we have a dependent function 
 $$
-\uniq_{\sum_{a:A}\ B(a)}:\prod_{x:\sum_{a:A}\ B(a)}\big((\pr_1(x),\pr_2(x))=x\big)
+\uniq_{\sum_{a:A}B(a)}:\prod_{x:\sum_{a:A}B(a)}\big((\pr_1(x),\pr_2(x))=x\big)
 $$ 
 such that 
 \begin{equation}\label{132}
-\uniq_{\sum_{a:A}\ B(a)}(a,b)\equiv\refl_{(a,b)}
+\uniq_{\sum_{a:A}B(a)}(a,b)\equiv\refl_{(a,b)}
 \end{equation}
 for all $a:A$ and all $b:B(a)$. 
 
 \nn(c) We define
 $$
-\ind_{\sum_{a:A}\ B(a)}:\prod_{C:\left(\sum_{a:A}\ B(a)\right)\to\U} 
+\ind_{\sum_{a:A}B(a)}:\prod_{C:\left(\sum_{a:A}B(a)\right)\to\U} 
 \left(\prod_{a:A}\ \prod_{b:B(a)}\ C((a,b))\right) 
-\to\prod_{x:\sum_{a:A}\ B(a)}\ C(x)
+\to\prod_{x:\sum_{a:A}B(a)}\ C(x)
 $$
 thanks to the transport principle, which is indeed a concept from Chapter~2, by
 \begin{equation}\label{133}
-\ind_{\sum_{a:A}\ B(a)}(C,g,x):\equiv\left(\uniq_{\sum_{a:A}\ B(a)}(x)\right)_\star\Big(g\big(\pr_1(x)\big)\big(\pr_2(x)\big)\Big).
+\ind_{\sum_{a:A}B(a)}(C,g,x):\equiv\left(\uniq_{\sum_{a:A}B(a)}(x)\right)_\star\Big(g\big(\pr_1(x)\big)\big(\pr_2(x)\big)\Big).
 \end{equation}
 (d) We must prove 
 $$
-\ind_{\sum_{a:A}\ B(a)}(C,g,(a,b))\equiv g(a)(b)
+\ind_{\sum_{a:A}B(a)}(C,g,(a,b))\equiv g(a)(b)
 $$
 for all $a:A$ and all $b:B(a)$. But this follows from \eqref{131}, \eqref{132} and \eqref{133}. $\sq$
 
@@ -483,7 +483,7 @@ for $a:A$, let us abbreviate $\tr$ by $\ms t$, and we write $\pa_P$ instead of $
 
 The key step to check that the above equality is well-typed is the judgment 
 $$
-\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{a:A}\ P(a)}\big(y,\ms t^P(p,u)\big).
+\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{a:A}P(a)}\big(y,\ms t^P(p,u)\big).
 $$ 
 
 For the reader's convenience, we rewrite \eqref{273} more explicitly as 
@@ -519,7 +519,7 @@ for $p:f=g$ and $x:A$.
 
 Note that $(p^{-1})_\star(a)$ and $\tr^A(p^{-1},a)$ designate the same object, and that we have 
 $$
-\pa(p^{-1},\refl_{(p^{-1})_\star(a)}):(x_2,a)=_{\sum_{x:X}\ A(x)}\big(x_1,(p^{-1})_\star(a)\big).
+\pa(p^{-1},\refl_{(p^{-1})_\star(a)}):(x_2,a)=_{\sum_{x:X}A(x)}\big(x_1,(p^{-1})_\star(a)\big).
 $$ 
 
 %% 
@@ -684,7 +684,7 @@ Q:\left(\sum_{A:\U}\ P(A)\right)\to\V
 $$ 
 by 
 $$
-Q(A,m):\eq\prod_{x,y,z:A}\ m(x,m(y,z))=m(m(x,y),z),
+Q(A,m):\eq\prod_{x,y,z:A}\ \big(m(x,m(y,z))=m(m(x,y),z)\big),
 $$ 
 and by defining $Q':\U\to\V$ by 
 $$ 
@@ -730,12 +730,12 @@ It seems to me one could argue as follows: state the above two formulas, check t
 
 \nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2. Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
 $$
-\pd_{z,w:\sum_{a:A}\ B(a)}\ \left(\xymatrix@1{
+\pd_{z,w:\sum_{a:A}B(a)}\ \left(\xymatrix@1{
 (z=w)\ \ar@<2pt>[r]^(.27)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star\,\pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
 $$ 
 Note that the expression $\beta(z,w)$ has the same meaning as the expression $\pa$ introduced in the book just before Theorem 2.7.4. Let $B':A'\to\U$ and set similarly 
 $$
-\pd_{z',w':\sum_{a':A'}\ B'(a')}\left(\xymatrix@1{
+\pd_{z',w':\sum_{a':A'}B'(a')}\left(\xymatrix@1{
 (z'=w')\ \ar@<2pt>[r]^(.27){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star\,\pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
 $$ 
 Let $g:A\to A',\ h:\prod_{a:A}\ B(a)\to B'(g(a))$. Cleary, there is a map 
@@ -856,7 +856,7 @@ We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}(a=x)$ by based path induc
 
 \nn\emph{Solution.} Recall the definitions: 
 $$
-\isProp(A):\eq\prod_{a,b:A}\ (a=b),\quad\isContr(A):\eq\sum_{a:A}\prod_{b:A}\ (a=b).
+\isProp(A):\eq\prod_{a,b:A}\ (a=b),\quad\isContr(A):\eq\sum_{a:A}\ \prod_{b:A}\ (a=b).
 $$
 
 By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\isContr(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\isContr(A)$ are logically equivalent. 
@@ -965,9 +965,9 @@ $$
 
 Here is a slightly more precise statement:
 
-Show that the rules for the propositional truncation given in \S3.7 of the book are sufficient to imply the following induction principle: given $B:\lV A\rV\to\Prop$ and $f:\prod_{a:A}B(\lv a\rv)$, there is a $g:\prod_{x:\lV A\rV}B(x)$ such that $g(\lv a\rv)=f(a)$ for all $a:A$.
+\emph{Show that the rules for the propositional truncation given in \S3.7 of the book are sufficient to imply the following induction principle: given $B:\lV A\rV\to\Prop$ and $f:\prod_{a:A}B(\lv a\rv)$, there is a $g:\prod_{x:\lV A\rV}B(x)$ such that $g(\lv a\rv)=f(a)$ for all $a:A$.}
 
-Proof. Let $p:\ip(\lV A\rV)$ (\emph{i.e.} $p(x,y):x=y$ for all $x,y:\lV A\rV$), and let $x:\lV A\rV$. The map $h:A\to B(x)$ defined by 
+\nn\emph{Proof.} Let $p:\ip(\lV A\rV)$ (\emph{i.e.} $p(x,y):x=y$ for all $x,y:\lV A\rV$), and let $x:\lV A\rV$. The map $h:A\to B(x)$ defined by 
 $$
 h(a):\eq p(\lv a\rv,x)_\star(f(a))
 $$ 
@@ -1056,14 +1056,14 @@ $$
 R(a,p):\equiv\sum_{u:P(a)}\ \Big(p_\star\big(f(a,u)\big)=v\Big).
 $$ 
 
-Claim: 
+\nn\tb{Claim:}
 $$
 \ga(\sum_{a:A}\ \sum_{p:a=x}\ R(a,p)\dr)\overset{(\text a)}{\simeq}
-\ga(\sum_{z:\sum_{a:A}\ (a=x)}R(z)\dr)\overset{(\text b)}{\simeq}
+\ga(\sum_{z:\sum_{a:A}(a=x)}R(z)\dr)\overset{(\text b)}{\simeq}
 R(x,\refl_x).
 $$
 
-Proof: Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
+\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
 $$
 \sum_{a:A}\ (a=x)
 $$ 
@@ -1082,10 +1082,10 @@ $$
 
 \nn\emph{Proof.} We have
 \begin{align*}
-\fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}\ B(x)}(\pr_1(u)=a)\\
+\fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}B(x)}(\pr_1(u)=a)\\
 &\simeq\sum_{x:A}\ \sum_{b:B(x)}\ (x=a)&\text{by Exercise 2.10}\\
 &\simeq\sum_{x:A}\ \sum_{p:x=a}\ B(x)\\
-&\simeq\sum_{z:\sum_{x:A}\ (x=a)}\ B(\pr_1(z))&\text{by Exercise 2.10}\\
+&\simeq\sum_{z:\sum_{x:A}(x=a)}\ B(\pr_1(z))&\text{by Exercise 2.10}\\
 &\simeq B(\pr_1(a,\refl_a))&\text{by Lemmas 3.11.8 and 3.11.9(ii)}\\
 &\eq B(a).\ \square
 \end{align*}
@@ -1226,7 +1226,7 @@ h:\ga(\sum_{x:A}\ \big(g(f(x))=g(b)\big)\dr)\to\sum_{y:B}\ (g(y)=g(b)),
 $$ 
 by $h(x,p):\eq(f(x),p)$ for $x:A$ and $p:g(f(x))=g(b)$. We get 
 
-$$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}\ (g(f(x))=g(b))}\big(h(w)=(b,\refl_{g(b)})\big)$$ 
+$$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}(g(f(x))=g(b))}\big(h(w)=(b,\refl_{g(b)})\big)$$ 
 
 $$=\sum_{x:A}\ \sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big).$$ 
 
@@ -1248,7 +1248,7 @@ $$=(f(x)=b).$$
 
 $$\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)$$ 
 
-$$=\sum_{w:\sum_{y:B}\ g(y)=c}\ \sum_{x:A}\ \big(f(x)=\pr_1w\big)$$ 
+$$=\sum_{w:\sum_{y:B}(g(y)=c)}\ \sum_{x:A}\ \big(f(x)=\pr_1w\big)$$ 
 
 $$=\sum_{y:B}\ \sum_{q:g(y)=c}\ \sum_{x:A}\ \big(f(x)=y\big)$$ 
 
@@ -1435,11 +1435,11 @@ so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $
 
 By Theorem 2.15.7 the type 
 $$
-\sum_{g:\prod_{(a,b:A)}\ R(a,b)\to S(a,b)}\quad\prod_{a:A}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big)
+\sum_{g:\prod_{(a,b:A)}R(a,b)\to S(a,b)}\quad\prod_{a:A}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big)
 $$ 
 is equivalent to the type
 $$
-\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}\ R(a,b)\to S(a,b)}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big).\ \sq
+\prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big).\ \sq
 $$
 
 %\nn(ii)$\implies$(iii) follows from (i)$\implies$(ii) in Theorem 5.8.2 (see \S\ref{582}).
@@ -2157,7 +2157,11 @@ as follows: Let $\sim_b$ be the equivalence relation defined on $\fib_f(b)$ by t
 
 To prove the equality $\msf{merid}_\star(\tau(N))=\tau(S)$, one can use the following lemma:
 
-\emph{Let $P:A\to B\to\U$ be a type family, define $Q:A\to\U$ by $$Q(a):\eq\prod_{b:B}P(a,b),$$ let $p:a=a'$ be a path in $A$, let $f:Q(a)$, and let $b:B$. Then we have} 
+\emph{Let $P:A\to B\to\U$ be a type family, define $Q:A\to\U$ by 
+$$
+Q(a):\eq\prod_{b:B}\ P(a,b),
+$$ 
+let $p:a=a'$ be a path in $A$, let $f:Q(a)$, and let $b:B$. Then we have} 
 $$
 \tr^Q(p,f)(b)=\tr^{P(-,b)}(p,f(b)).
 $$
