@@ -755,7 +755,7 @@ We claim
 
 \nn\emph{Proof of \eqref{e27}.} For $z$ and $w$ as above, and $r:z=w$ set 
 $$
-p(r):\eq\pr_3(\alpha(z,w,r)),\quad q(r):\eq\pr_4(\alpha(z,w,r)).
+p(r):\eq\pr_1(\alpha(z,w,r)),\quad q(r):\eq\pr_2(\alpha(z,w,r)).
 $$ 
 Then we can prove 
 \begin{equation}\label{e27b}
@@ -793,9 +793,13 @@ by path induction on $r$. $\sq$
 
 \subsection{Theorem 3.2.2} 
 
+Recall the statement:
+
+\nn\emph{It is not the case that for all $A:\U$ we have $\neg\neg A\to A$.}
+
 Here is a minor variant. Set 
 $$
-F:\eq\prod_{A:\U}\neg\neg A\to A,\qquad G:\eq\prod_{A:\U}\lV\mb2=A\rV\to A.
+F:\eq\prod_{A:\U}\ \neg\neg A\to A,\qquad G:\eq\prod_{A:\U}\ \lV\mb2=A\rV\to A.
 $$ 
 It suffices to prove $F\to G$ and $\neg G$. 
 
@@ -852,7 +856,7 @@ We prove $(x,p)=(a,\refl_a)$ for any $(x,p):\sum_{x:A}(a=x)$ by based path induc
 
 \nn\emph{Solution.} Recall the definitions: 
 $$
-\isProp(A):\eq\prod_{a,b:A}(a=b),\quad\isContr(A):\eq\sum_{a:A}\prod_{b:A}(a=b).
+\isProp(A):\eq\prod_{a,b:A}\ (a=b),\quad\isContr(A):\eq\sum_{a:A}\prod_{b:A}\ (a=b).
 $$
 
 By Lemma 3.3.5 the type $\isProp(A)$ is a mere proposition. By Example 3.6.2 and Lemma 3.11.4 the type $A\to\isContr(A)$ is also a mere proposition. By Lemma 3.3.3 it suffices to show that $\isProp(A)$ and $A\to\isContr(A)$ are logically equivalent. 
@@ -863,7 +867,7 @@ u:\isProp(A)\to(A\to\isContr(A)),\quad v:(A\to\isContr(A))\to\isProp(A)
 $$ 
 by 
 $$
-\big(u(f)(a)\big)(b):\eq(a,f(a,b)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).\ \sq
+u(f,a):\eq(a,f(a)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).\ \sq
 $$
 
 %%
