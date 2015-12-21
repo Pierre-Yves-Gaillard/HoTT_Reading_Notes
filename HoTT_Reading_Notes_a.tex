@@ -1072,7 +1072,7 @@ $$
 
 Recall the statement:
 
-\emph{For any type family $B:A\to\U$, the fiber of $\pr_1:\sum_{x:A}B(x)\to A$ over $a:A$ is equivalent to $B(a)$:}
+\emph{For any type family $B:A\to\U$, the fiber of $\pr_1:(\sum_{x:A}B(x))\to A$ over $a:A$ is equivalent to $B(a)$:}
 $$
 \fib_{\pr_1}(a)\simeq B(a).
 $$
@@ -1130,11 +1130,11 @@ Now let us move to last sentence of the proof of Theorem 4.8.3. Let the notation
 \begin{equation}\label{2}
 (C,\pr_1)=_{\sum_{X:\U}\ X\to B}(A,f).
 \end{equation} 
-We have $e:C\simeq A$ with $\pr_1(e)=h$ (here of course $\pr_1$ denotes the first projection $(C\simeq A)\to(C\to A)$). Put $q:\equiv\ua(e)$. We have $q:C=A$. We claim 
+By \S\ref{482} we have an equivalence $e:C\simeq A$. Set $g:\eq\pr_1(e)$ (here of course $\pr_1$ denotes the first projection $(C\simeq A)\to(C\to A)$). Set also $q:\equiv\ua(e)$, so that we get $q:C=A$. We claim 
 \begin{equation}\label{3}
 q_\star(\pr_1)=f.
 \end{equation} 
-By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Then \eqref{3} becomes, in the notation of (2.9.4), 
+By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Then \eqref{3} becomes, in the notation of (2.9.4) (see \eqref{2.9.4}), 
 $$
 \ms t^{I\to D}(q,\pr_1)=f.
 $$ 
@@ -1146,7 +1146,7 @@ We get
 $$
 \ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\ms t^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
 $$ 
-where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4, (c) follows from Lemma 2.3.5 in the book, and (c) follows from the definition of $g$. $\sq$
+where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4 in the book, (c) follows from Lemma 2.3.5 in the book, and (c) follows from the definition of $g$. $\sq$
 
 %%
 
