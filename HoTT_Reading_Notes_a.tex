@@ -16,6 +16,7 @@
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \usepackage[all]{xy}
+\usepackage{graphicx}
 \addtolength{\parskip}{.5\baselineskip}
 %\renewcommand{\baselinestretch}{1.1}
 %\pagestyle{empty}
@@ -31,7 +32,7 @@
 \nc{\base}{\ms{base}}\nc{\ba}{\ms{base}}
 \nc{\boucle}{\ms{loop}}\nc{\Loop}{\ms{loop}}\nc{\lo}{\ms{loop}}
 \nc{\bu}{\bullet}
-\nc{\cd}{\cdot}
+\nc*{\cc}{\raisebox{-3pt}{\scalebox{2}{$\cdot$}}}
 \nc{\centre}{\ms{center}}\nc{\Center}{\ms{center}}\nc{\cen}{\ms{center}}\nc{\ce}{\ms{center}}
 \nc{\ci}{\circ}
 \nc{\code}{\ms{code}}\nc{\decode}{\ms{decode}}\nc{\encode}{\ms{encode}}
@@ -586,18 +587,18 @@ be the obvious paths.
 
 We define $u$ and $v$ in \eqref{297} as follows. For $q:\ms t^{B'}(p,f)=g$ and $a:A(x)$ we define $u(q)(a):h(a)=g(p_\star\,a)$ by 
 $$ 
-u(q)(a):\eq k(a)^{-1}\cdot\ha(q,p_\star\,a), 
+u(q)(a):\eq k(a)^{-1}\cc\ha(q,p_\star\,a), 
 $$ 
 and, for $\alpha:h\sim g\ci p_\star$ we define $v(\alpha):\ms t^{B'}(p,f)=g$ by 
 $$
-v(\alpha):\eq\fu\Big(\la a'\ .\ r(a')\cd k\big((p^{-1})_\star\ a'\big)\cd\alpha\big((p^{-1})_\star\ a'\big)\cd s(a')\Big).
+v(\alpha):\eq\fu\Big(\la a'\ .\ r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\alpha\big((p^{-1})_\star\ a'\big)\cc s(a')\Big).
 $$ 
 
 The claim is easily proved by induction on the path $p:x=y$. $\square$
 
 The path 
 $$
-r(a')\cd k\big((p^{-1})_\star\ a'\big)\cd\alpha\big((p^{-1})_\star\ a'\big)\cd s(a'):\ms t^{B'}(p,f)(a')=g(a')
+r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\alpha\big((p^{-1})_\star\ a'\big)\cc s(a'):\ms t^{B'}(p,f)(a')=g(a')
 $$ 
 above is the composite of the paths
 \begin{align*}
@@ -619,7 +620,7 @@ is invertible.
 
 Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be an inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
 $$
-\varphi:(gfa=gfa')\to(a=a')\quad\text{by}\quad\varphi(q):\equiv\beta_a^{-1}\cdot q\cdot\beta_{a'}.
+\varphi:(gfa=gfa')\to(a=a')\quad\text{by}\quad\varphi(q):\equiv\beta_a^{-1}\cc q\cc\beta_{a'}.
 $$ 
 Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
 
@@ -785,7 +786,7 @@ Here is a slightly different wording of the proof:
 
 Suppose $f:\isSet(A)$ and let $x,y:A$. For any $p,q:x=y$ we have $f(p,q):p=q$. For $q':x=y$ and $r:q=q'$ we prove 
 $$
-r=f(p,q)^{-1}\cdot f(p,q')
+r=f(p,q)^{-1}\cc f(p,q')
 $$ 
 by path induction on $r$. $\sq$
 
@@ -867,7 +868,7 @@ u:\isProp(A)\to(A\to\isContr(A)),\quad v:(A\to\isContr(A))\to\isProp(A)
 $$ 
 by 
 $$
-u(f,a):\eq(a,f(a)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cdot\pr_2(g(a))(b).\ \sq
+u(f,a):\eq(a,f(a)),\quad v(g)(a,b):\eq\pr_2(g(a))(a)^{-1}\cc\pr_2(g(a))(b).\ \sq
 $$
 
 %%
@@ -1010,7 +1011,7 @@ Let us denote by $(\star)$ the claim
 
 \nn\emph{$h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
 $$
-h(s)=h(p)\cdot h'(p)^{-1}\cdot h'(s)
+h(s)=h(p)\cc h'(p)^{-1}\cc h'(s)
 $$ 
 for any $s:a=x$}
 
@@ -1018,11 +1019,11 @@ for any $s:a=x$}
 
 \nn\tb{(1)} The fact that $(\star)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2. 
 
-\nn\tb{(2)} The statement $(\star)$ itself follows from the Lemma below, which is easily proved by path induction:
+\nn\tb{(2)} The statement $(\star)$ itself follows from the lemma below, which is easily proved by path induction:
 
 \nn\textbf{Lemma.} \emph{Let $A$ be a type; let $a,x:A$; let $q:a=a$; let $P:(x=x)\to\U$ be defined by} 
 $$
-P(r):\equiv\prod_{s:a=x}\ (r=s^{-1}\cdot q\cdot s);
+P(r):\equiv\prod_{s:a=x}\ (r=s^{-1}\cc q\cc s);
 $$ 
 \emph{and let} 
 $$
@@ -1030,7 +1031,7 @@ r,r':x=x,\qquad t:r=r',\qquad h:P(r),\qquad s:a=x.
 $$ 
 \emph{Then} 
 $$
-\transport^P(t,h)(s)=t^{-1}\cdot h(s).
+\transport^P(t,h)(s)=t^{-1}\cc h(s).\ \sq
 $$ 
 
 \nn\tb{(3)} To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}\ B(x)$. $\sq$
@@ -1063,11 +1064,7 @@ $$
 R(x,\refl_x).
 $$
 
-\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that 
-$$
-\sum_{a:A}\ (a=x)
-$$ 
-is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9 (ii). $\square$
+\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that $\sum_{a:A}(a=x)$ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9(ii). $\square$
 
 %%
 
@@ -1104,7 +1101,7 @@ $$
 $$ 
 In particular $\fib_f$ is a type family over $B$. The corresponding transport can be described as follows. Let $p:b=_Bb'$ and $(a,q):\fib_f(b)$, that is $a:A$ and $q:f(a)=b$. Then we have 
 \begin{equation}\label{paq}
-p_\star(a,q)=(a,q\cdot p).
+p_\star(a,q)=(a,q\cc p).
 \end{equation}
 
 Set 
@@ -1236,7 +1233,7 @@ $$\sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$
 
 $$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\transport^{\la(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
 
-$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\ap_g(q)^{-1}\cdot p=\refl_{g(b)}\big)$$ 
+$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\ap_g(q)^{-1}\cc p=\refl_{g(b)}\big)$$ 
 
 $$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}\ \big(p=\ap_g(q)\big)$$ 
 
@@ -1264,7 +1261,7 @@ $$\psi:\big(g(f(x))=c\big)\to\sum_{y:B}\ (g(y)=c)\times(f(x)=y)$$
 
 \nn defined by 
 
-$$\ph(y,q,p):\eq\ap_g(p)\cdot q,\quad\psi(r):\eq\big(f(x),r,\refl_{f(x)}\big)$$ 
+$$\ph(y,q,p):\eq\ap_g(p)\cc q,\quad\psi(r):\eq\big(f(x),r,\refl_{f(x)}\big)$$ 
 
 \nn are inverses. This gives 
 
@@ -1427,7 +1424,7 @@ Let
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cdot q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}(f(b,r)=g(b,r))$ with $h(a_0,r_0)=p\cdot q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cdot p=(p\cdot q^{-1})^{-1}\cdot p=q$. $\sq$ 
+so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cc q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}(f(b,r)=g(b,r))$ with $h(a_0,r_0)=p\cc q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cc p=(p\cc q^{-1})^{-1}\cc p=q$. $\sq$ 
 
 %% 
 
@@ -1578,7 +1575,7 @@ $$
 $$ 
 is inhabited. We have, for $z_1,z_2:Z,\ p:z_1=z_2$ and $q:u(z_1)=t(z_1)$, 
 $$
-\transport^{z\mapsto(u(z)=t(z))}(p,q)=\ap_u(p)^{-1}\cdot q\cdot\ap_t(p).
+\transport^{z\mapsto(u(z)=t(z))}(p,q)=\ap_u(p)^{-1}\cc q\cc\ap_t(p).
 $$ 
 (The above formula is easily proved by induction on $p$.) Hence it suffices to show $\ap_u(\gl(x))=\ap_t(\gl(x))$. But this follows immediately from the definition of $u.\ \sq$
 
@@ -1709,12 +1706,12 @@ $$
 
 We prove 
 \begin{equation}\label{722}
-f(x,x,\rho(x))\cdot p=f(x,y,\transport^{R(x)}(p,\rho(x)))
+f(x,x,\rho(x))\cc p=f(x,y,\transport^{R(x)}(p,\rho(x)))
 \end{equation}  
 for $p:x=y$ by path induction. For $q:x=y$ we have 
 \begin{align*}
-q&=f(x,x,\rho(x))^{-1}\cdot f(x,y,\transport^{R(x)}(q,\rho(x)))\\
-&=f(x,x,\rho(x))^{-1}\cdot f(x,y,\transport^{R(x)}(p,\rho(x)))\\
+q&=f(x,x,\rho(x))^{-1}\cc f(x,y,\transport^{R(x)}(q,\rho(x)))\\
+&=f(x,x,\rho(x))^{-1}\cc f(x,y,\transport^{R(x)}(p,\rho(x)))\\
 &=p,
 \end{align*} 
 where the second equality follows from the fact that $R(x,y)$ is a mere proposition, and the other equalities follow from \eqref{722}. $\sq$
@@ -1867,7 +1864,7 @@ $$
 $$ 
 that is, we set 
 $$
-\ph_n^{g,f}(\lv a\rv_n):\eq\ap_{\lV g\rV_n}(\na_n^fa)\cd\na_n^g(fa)\cd(\na_n^{gf}(a))^{-1}.
+\ph_n^{g,f}(\lv a\rv_n):\eq\ap_{\lV g\rV_n}(\na_n^fa)\cc\na_n^g(fa)\cc(\na_n^{gf}(a))^{-1}.
 $$ 
 (We assume $a:A$, and omit most of the parenthesis.)
 
