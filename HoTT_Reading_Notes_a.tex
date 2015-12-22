@@ -1439,21 +1439,13 @@ $$
 \prod_{a:A}\quad\sum_{g(a):\prod_{(b:a)}R(a,b)\to S(a,b)}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big).\ \sq
 $$
 
-%\nn(ii)$\implies$(iii) follows from (i)$\implies$(ii) in Theorem 5.8.2 (see \S\ref{582}).
-
-%\nn(iii)$\implies$(iv) is similar to (ii)$\implies$(iii) in Theorem 5.8.2.
-
-%\nn(iv)$\implies$(v) follows from (iii)$\implies$(iv) in Theorem 5.8.2.
-
-%\nn(v)$\implies$(ii) follows from (iv)$\implies$(i) in Theorem 5.8.2.
-
 %%%
 
 \section{Chapter 6}
 
 \subsection{Display (6.2.2)}
 
-If $P$ is a type family over a type $A$ and $p:x=y$ is a path in $A$, then we have 
+If $P$ is a type family over a type $A$, if $f:\pd_{a:A}P(a)$ is a dependent function, and if $p:x=y$ is a path in $A$, then we have 
 $$
 \apd_f(p):f(x)=^P_pf(y),
 $$ 
@@ -1489,7 +1481,7 @@ is invertible.}
 $$
 C:\eq\sum_{p:\ph_1(u)=\ph(v)}(p_\star(\ph_2(u))=\ph_2(v))
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $q:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(q)\simeq\fib_{\psi_1}(q)$. By Lemma 4.8.1 the latter is equivalent to $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3 implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $q_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3, (i)$\then$(ii), implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
 
 %%
 
@@ -1640,7 +1632,9 @@ It is easy to see that if our type family $P:A/R\to\Set$ is such that $P(q(b))$ 
 
 \subsection{Proof of Theorem 6.10.6}
 
-Recall the statement: For any equivalence relation $R$ on $A$, the type $A/\!\!/R$ is equivalent to the set-quotient $A/R$.
+Recall the statement of Theorem 6.10.6: 
+
+\emph{For any equivalence relation $R$ on $A$, the type $A/\!\!/R$ is equivalent to the set-quotient} $A/R$.
 
 The proof uses implicitly the fact that $A/\!\!/R$ is a set. This fact follows immediately from Theorems 7.1.8, 7.1.9 and 7.1.11. of the book. The reader can check that the proof of Theorem 6.10.6 doesn't use Theorems 7.1.8, 7.1.9 and 7.1.11.
 
@@ -1652,7 +1646,7 @@ The proof uses implicitly the fact that $A/\!\!/R$ is a set. This fact follows i
 
 Recall the statement:
 
-Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2):\mb2\to\mb2$ is the nonidentity automorphism.
+\emph{Assuming the Law of Excluded Middle, construct a dependent function $f:\prod_{A:\U}A\to A$ such that $f(\mb2):\mb2\to\mb2$ is the nonidentity automorphism.}
 
 Recall that the Law of Excluded Middle is defined in (3.4.1) by 
 $$
@@ -1681,7 +1675,7 @@ h:\big(\isContr(C)+\neg\isContr(C)\big)\to A\to A.
 $$ 
 We finally set 
 $$
-f(A):\eq h(\LEM_{\isContr(C)}(g(C))).
+f(A):\eq h\Big(\LEM\big(\isContr(C),g(C)\big)\Big).
 $$
 It is straightforward to check that this definition does the job. $\square$
 
@@ -1720,38 +1714,49 @@ where the second equality follows from the fact that $R(x,y)$ is a mere proposit
 
 \subsection{Lemma 7.2.8}
 
-One can prove Lemma 7.2.8 by setting $A:\eq X$ and 
+Recall the statement of Lemma 7.2.8;
+
+\nn\emph{Given $n\ge-1$ and $X:\U$. If, given any inhabitant of $X$ it follows that $X$ is an $n$-type, then $X$ is an $n$-type.}
+
+\nn\emph{Proof.} Set $A:\eq X$ and 
 $$
 B(a):\eq\pd_{x:X}\ \ms{is\text-}(n-1)\ms{\text-type}(a=x)
 $$ 
-in the definition of the codiagonal map \eqref{563} p.~\pageref{563}.
+in the definition of the codiagonal map \eqref{563} p.~\pageref{563}. $\sq$
 
 %%
 
+% old version
+% https://docs.google.com/document/d/1asAmtnpls7Q6M_ilqBV9XGvZr9aAtOj5YyznFGFjHpE/edit
+
 \subsection{Induction principle for n-truncations in \S7.3}
 
-We spell out the induction principle for a higher inductive type $W$ which is slightly different from that of $\lV A\rV_n$.
+Recall that $A$ is an arbitrary type and that $n:\N$ satisfies $n\ge-1$.
 
-Let $W$ be defined by the three constructors 
+We spell out the induction principle for the higher inductive type $\lV A\rV_n$.
+
+Let $\lV A\rV_n$ be defined by the three constructors 
 $$
-c_1:A\to W,\quad c_2:(B\to W)\to W,\quad c_3:\pd_{d:B\to W}\ \pd_{b:B}\ \big(d(b)=c_2(d)\big).
+c_1:A\to \lV A\rV_n,\quad c_2:(B\to \lV A\rV_n)\to \lV A\rV_n,\quad c_3:\pd_{d:B\to \lV A\rV_n}\ \pd_{b:B}\ \big(d(b)=c_2(d)\big).
 $$ 
-Let $P:W\to\U$ be a type family. We say that a dependent function $f:\pd_{w:W}P(w)$ solves the three recurrences 
+Let $P:\lV A\rV_n\to\U$ be a type family. We say that a dependent function $f:\pd_{w:\lV A\rV_n}P(w)$ solves the three recurrences 
 $$
 r_1:\pd_{a:A}\ P(c_1(a)),
 $$ 
 $$
-r_2:\pd_{d:B\to W}\ \left(\pd_{b:B}\ P(d(b))\right)\to P(c_2(d)),
+r_2:\pd_{d:B\to \lV A\rV_n}\ \left(\pd_{b:B}\ P(d(b))\right)\to P(c_2(d)),
 $$
 
 $$
-r_3:\pd_{d:B\to W}\ \pd_{e:\pd_{b:B}\ P(d(b))}\ \pd_{b:B}\ \ga(e(b)=^P_{c_3(d,b)}r_2(d,e)\dr)
+r_3:\pd_{d:B\to \lV A\rV_n}\ \pd_{e:\pd_{b:B}\ P(d(b))}\ \pd_{b:B}\ \ga(e(b)=^P_{c_3(d,b)}r_2(d,e)\dr)
 $$ 
 if the computation rules
 $$
 f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad\ms{apd}_f(c_3(d,b))=r_3(d,f\ci d,b)
 $$ 
-hold for all $a:A$, all $d:B\to W$ and all $b:B$. 
+hold for all $a:A$, all $d:B\to \lV A\rV_n$ and all $b:B$. 
+
+(In the book the last two computational rules are omitted.)
 
 %%
 
@@ -1882,12 +1887,21 @@ $$
 \xymatrix{C\ar[r]^g\ar[d]_f&B\ar[d]^j\\ A\ar[r]_i\ar@{=>}[ur]^h&D,}
 $$ 
 where the double arrow represents a homotopy $h:i\ci f\sim j\ci g$. Equality (7.4.11) reads $\lv-\rv^D_n\ci c=\lV c\rV_n\ci\lv-\rv^{\mc D}_n$, and is equivalent to
-$$
+\begin{equation}\label{7411}
 \Big(\lv-\rv^D_n\ci i\ ,\ \lv-\rv^D_n\ci j\ ,\ \ap_{\lv-\rv^D_n}\ci h\Big)
 =
 \Big(\lV i\rV_n\ci\lv-\rv^A_n\ ,\ \lV j\rV_n\ci\lv-\rv^B_n\ ,\ k\Big),
+\end{equation}
+where $k$ is the homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$ such that $k(z)$ is, for all $z:C$, the composite path
+$$
+\xymatrix{
+\lV i\rV\lv fz\rv&&
+\lV i\rV\lV f\rV\lv z\rv\ar@{=}[ll]_{\ap_{\lV i\rV}(\na^fz)^{-1}}\ar@{=}[rr]^{h'\lv z\rv}&&
+\lV j\rV\lV g\rV\lv z\rv\ar@{=}[rr]^{\ap_{\lV j\rV}(\na^gz)}&&
+\lV j\rV\lv gz\rv.}
 $$ 
-where $k$ is some homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$. In turn, the above equality is equivalent to the commutativity of the diagram below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.) 
+(Here and in the sequel of this section we drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis.) In turn, \eqref{7411} is equivalent to the commutativity of the diagram %below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.)
+%where $k$ is some homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$. In turn, the above equality is equivalent to the commutativity of the diagram below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.) 
 $$ 
 \xymatrix{
 \lV i\rV\lv fz\rv\ar@{=}[d]_{\na^i(fz)}&&
@@ -1897,7 +1911,7 @@ $$
 %
 \lv ifz\rv&&\lV if\rV\lv z\rv\ar@{=}[rr]_{\lV h\rV\lv z\rv}\ar@{=}[ll]^{\na^{if}(z)^{-1}}&&\lV jg\rV\lv z\rv\ar@{=}[rr]_{\na^{jg}(z)}&&\lv jgz\rv.}
 $$ 
-The small squares commute by \S\ref{747} above.
+for all $z:C$. The small squares commute by \S\ref{747} above.
 
 %%
 
