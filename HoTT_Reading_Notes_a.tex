@@ -1904,14 +1904,16 @@ $$
 %where $k$ is some homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$. In turn, the above equality is equivalent to the commutativity of the diagram below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.) 
 $$ 
 \xymatrix{
+\lV i\rV\lv fz\rv\ar@{=}[d]_{\re}\ar@{=}[rrrrrr]^{kz}&&&&&&\lV j\rV\lv gz\rv\ar@{=}[d]^{\re}\\
 \lV i\rV\lv fz\rv\ar@{=}[d]_{\na^i(fz)}&&
 \lV i\rV\lV f\rV\lv z\rv\ar@{=}[ll]_{\ap_{\lV i\rV}(\na^fz)^{-1}}\ar@{=}[d]_{\ph^{\lV i\rV,\lV f\rV}(\lv z\rv)}\ar@{=}[rr]^{h'\lv z\rv}&&
 \lV j\rV\lV g\rV\lv z\rv\ar@{=}[d]^{\ph^{\lV j\rV,\lV g\rV}(\lv z\rv)}\ar@{=}[rr]^{\ap_{\lV j\rV}(\na^gz)}&&
 \lV j\rV\lv gz\rv\ar@{=}[d]^{\na^j(gz)}\\
 %
-\lv ifz\rv&&\lV if\rV\lv z\rv\ar@{=}[rr]_{\lV h\rV\lv z\rv}\ar@{=}[ll]^{\na^{if}(z)^{-1}}&&\lV jg\rV\lv z\rv\ar@{=}[rr]_{\na^{jg}(z)}&&\lv jgz\rv.}
+\lv ifz\rv&&\lV if\rV\lv z\rv\ar@{=}[rr]_{\lV h\rV\lv z\rv}\ar@{=}[ll]^{\na^{if}(z)^{-1}}&&\lV jg\rV\lv z\rv\ar@{=}[rr]_{\na^{jg}(z)}&&\lv jgz\rv\\ 
+\lv ifz\rv\ar@{=}[u]^{\re}\ar@{=}[rrrrrr]_{\ap_{\lv-\rv}(hz)}&&&&&&\lv jgz\rv\ar@{=}[u]_{\re}}
 $$ 
-for all $z:C$. The small squares commute by \S\ref{747} above.
+for all $z:C$. The upper rectangle commutes by definition of $k$, the small squares commute by \S\ref{747} above, and the lower rectangle commutes by Lemma 7.3.5 in the book.
 
 %%
 
