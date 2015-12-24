@@ -435,26 +435,30 @@ $$
 
 \section{Chapter 2}
 
-\subsection{Proof of Theorem 2.7.2}
+\subsection{Theorem 2.7.2}\label{272}
+
+Recall that $P:A\to\U$ is a type family over a type $A$, and that $w,w':\sum_{a:A}P(a)$. Theorem 2.7.2 can also be stated as follows: 
 
 The map 
-\begin{equation}\label{272}
+\begin{equation}\label{e272}
 (w=w')\to\sum_{p:\pr_1(w)=\pr_1(w')}\ \big(p_\star(\pr_2(w))=\pr_2(w')\big)
 \end{equation}
-can also be defined by the formula 
+defined 
 $$
-r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r)).\ \sq
+r\mapsto(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
 $$ 
+admits an inverse 
+\begin{equation}\label{273}
+\pa:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\ \big(p_\star(\pr_2(w))=\pr_2(w')\big)\right)\to(w=w').
+\end{equation}
+
+We often write $\pa_P$ for $\pa$ to stress the dependence on the type family $P:A\to\U$. 
 
 %%
 
 \subsection{Comment after Corollary 2.7.3}
 
-We write 
-\begin{equation}\label{273}
-\pa:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\ \big(p_\star(\pr_2(w))=\pr_2(w')\big)\right)\to(w=w')
-\end{equation} 
-for an inverse of \eqref{272}. We then have the propositional computation rules 
+In the above context, we have the propositional computation rules 
 $$
 \ap_{\pr_1}(\pa(p,q))=p,
 $$
@@ -465,7 +469,7 @@ for $(p,q):\sum_{p:\pr_1(w)=\pr_1(w')}(p_\star(\pr_2(w))=\pr_2(w'))$, and the pr
 $$
 r=\pa(\ap_{\pr_1}(r),\apd_{\pr_2}(r))
 $$ 
-for $r:w=w'$. $\sq$
+for $r:w=w'$. 
 
 %%
 
@@ -728,7 +732,7 @@ It seems to me one could argue as follows: state the above two formulas, check t
 
 \emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
 
-\nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2. Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
+\nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
 $$
 \pd_{z,w:\sum_{a:A}B(a)}\ \left(\xymatrix@1{
 (z=w)\ \ar@<2pt>[r]^(.27)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star\,\pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
@@ -762,6 +766,25 @@ Then we can prove
 \ap_f\big(\beta(z,w,p(r),q(r))\big)=\beta'\big(f(z),f(w),\ap_g(p(r)),\apd_h(q(r))\big)
 \end{equation}
 by induction on $r$. Clearly \eqref{e27b} implies \eqref{e27}. $\sq$
+
+%%
+
+\subsection{Exercise 2.10}\label{210}
+
+The result of Exercise 2.10 can be stated as follows:
+
+\emph{If $B:A\to\U$ and $C:(\sum_{a:A}B(a))\to\U$ are type families, then the maps
+$$
+\xymatrix{
+\displaystyle\ga(\sum_{a:A}\ \sum_{b:B(a)}\ C((a,b))\dr)\ar@<2pt>[r]^(.55)f&\displaystyle\ga(\sum_{z:\sum_{a:A}B(a)}C(z)\dr)\ar@<2pt>[l]^(.45)g}
+$$ 
+defined by 
+$$
+f(a,b,c):\eq((a,b),c),\quad g(z,c):\eq(\pr_1 z,\pr_2z,c)
+$$ 
+are inverses.}
+
+The proof is straightforward.
 
 %%
 
@@ -961,6 +984,51 @@ $$
 
 %%
 
+\subsection{Contractibility (Section 3.11)}\label{311}
+
+% old version
+% https://docs.google.com/document/d/1u03Hc4479119LIX9PQfbjI0XlasKmSNN8WzEXUTeRBE/edit
+
+For the reader's convenience we paste below most of the statements in \S3.11 of the book.
+
+\nn\tb{Definition 3.11.1.} A type $A$ is \tb{contractible}, or a \tb{singleton}, if there is $a:A$, called the \tb{center of contraction}, such that $a=x$ for all $x:A$. We denote the specified path $a=x$ by $\ms{contr}_x$.
+
+In other words, the type $\ms{isContr}(A)$ is defined to be
+$$
+\ms{isContr}(A):\eq\sum_{a:A}\ \pd_{x:A}\ (a=x).
+$$
+
+\nn\tb{Lemma 3.11.3.} \emph{For a type $A$, the following are logically equivalent}
+\begin{enumerate}
+\item $A$ \emph{is contractible in the sense of Definition 3.11.1.
+\item $A$ is a mere proposition, and there is a point $a:A$.
+\item $A$ is equivalent to} $\mb1$.
+\end{enumerate}
+
+\nn\tb{Lemma 3.11.4.} \emph{For any type $A$, the type $\ms{isContr}(A)$ is a mere proposition.}
+
+\nn\tb{Corollary 3.11.5.} \emph{If $A$ is contractible, then so is} $\ms{isContr}(A)$.
+
+\nn\tb{Lemma 3.11.6.} \emph{If $P:A\to\U$ is a type family such that each $P(a)$ is contractible, then $\pd_{x:A}P(x)$ is contractible.}
+
+Of course, if $A$ is equivalent to $B$ and $A$ is contractible, then so is $B$. More generally, it suffices for $B$ to be a \emph{retract} of $A$. By definition, a \tb{retraction} is a function $r:A\to B$ such that there exists a function $s:B\to A$, called its \tb{section}, and a homotopy $\ep:\pd_{y:B}(r(s(y))=y)$; then we say that $B$ is a \tb{retract} of $A$.
+
+\nn\tb{Lemma 3.11.7.} \emph{If $B$ is a retract of $A$, and $A$ is contractible, then so is} $B$.
+
+\nn\tb{Lemma 3.11.8.} \emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible.}
+
+When this happens, it can allow us to simplify a complicated construction up to equivalence, using the informal principle that contractible data can be freely ignored. This principle consists of many lemmas, most of which we leave to the reader; the following is an example.
+
+\nn\tb{Lemma 3.11.9.} \emph{Let $P:A\to\U$ be a type family.}
+\begin{enumerate}
+\item \emph{If each $P(x)$ is contractible, then $\sum_{x:A}P(x)$ is equivalent to $A$.
+\item If $A$ is contractible with center $a$, then $\sum_{x:A} P(x)$ is equivalent to} $P(a)$.
+\end{enumerate}
+
+\nn\tb{Lemma 3.11.810.} \emph{A type $A$ is a mere proposition if and only if for all $x,y:A$, the type $x=_Ay$ is contractible.}
+
+%%
+
 \subsection{Exercise 3.17}%\label{69}
 
 Here is a slightly more precise statement:
@@ -1016,7 +1084,7 @@ for any $s:a=x$}
 
 \nn in the proof of Lemma 4.1.2 in the HoTT Book. We make three observations:
 
-\nn\tb{(1)} The fact that $(\star)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2. 
+\nn\tb{(1)} The fact that $(\star)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). 
 
 \nn\tb{(2)} The statement $(\star)$ itself follows from the lemma below, which is easily proved by path induction:
 
@@ -1033,7 +1101,17 @@ $$
 \transport^P(t,h)(s)=t^{-1}\cc h(s).\ \sq
 $$ 
 
-\nn\tb{(3)} To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}\ B(x)$. $\sq$
+\nn\tb{(3)} Let us spell out the end of the proof. Recall that $B(x)$ is defined by
+$$
+B(x):\eq\sum_{r:x=x}\ \pd_{s:a=x}\ (r=s^{-1}\cc q\cc s).
+$$ 
+Let $k:\prod_{x:A}B(x)$, and set $f(x):\eq\pr_1(k(x))$ for all $x:A$. We must show 
+$$
+\text{(a) }f:\pd_{x:A}(x=x)\quad\text{and}\quad\text{(b) }f(a)=q.
+$$ 
+Claim (a) is clear. Let us prove (b). By assumption (iii) of Lemma 4.1.2, there is a $u:\pd_{s:a=a}(q=s^{-1}\cc q\cc s)$. In particular we have $(q,u):B(a)$. As $B(a)$ is a mere proposition, this implies $k(a)=(q,u)$, and thus $f(a)=q$. $\sq$
+
+%To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}\ B(x)$. $\sq$
 
 %%
 
@@ -1063,7 +1141,7 @@ $$
 R(x,\refl_x).
 $$
 
-\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10. As Lemma 3.11.8 implies that $\sum_{a:A}(a=x)$ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9(ii). $\square$
+\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). As Lemma 3.11.8 implies that $\sum_{a:A}(a=x)$ is contractible with center $(x,\refl_x)$, Equivalence (b) follows from Lemma 3.11.9(ii). $\square$
 
 %%
 
@@ -1077,14 +1155,13 @@ $$
 $$
 
 \nn\emph{Proof.} We have
-\begin{align*}
-\fib_{\pr_1}(a)&:\eq\sum_{u:\sum_{x:A}B(x)}(\pr_1(u)=a)\\
-&\simeq\sum_{x:A}\ \sum_{b:B(x)}\ (x=a)&\text{by Exercise 2.10}\\
-&\simeq\sum_{x:A}\ \sum_{p:x=a}\ B(x)\\
-&\simeq\sum_{z:\sum_{x:A}(x=a)}\ B(\pr_1(z))&\text{by Exercise 2.10}\\
-&\simeq B(\pr_1(a,\refl_a))&\text{by Lemmas 3.11.8 and 3.11.9(ii)}\\
-&\eq B(a).\ \square
-\end{align*}
+$$\fib_{\pr_1}(a):\eq\sum_{u:\sum_{x:A}B(x)}(\pr_1(u)=a)$$
+
+$$\overset{\text{(a)}}\simeq\sum_{x:A}\ \sum_{b:B(x)}\ (x=a)\simeq\sum_{x:A}\ \sum_{p:x=a}\ B(x)$$
+
+$$\overset{\text{(b)}}\simeq\sum_{z:\sum_{x:A}(x=a)}\ B(\pr_1(z))\overset{\text{(c)}}\simeq B(\pr_1(a,\refl_a))\eq B(a),$$ 
+
+\nn where (a) and (b) follow from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}), and (c) follows from Lemmas 3.11.8 and 3.11.9(ii).
 
 %%
 
@@ -1127,13 +1204,13 @@ for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$.
 
 Now let us move to last sentence of the proof of Theorem 4.8.3. Let the notation of \S\ref{482} above be in force. Let $\pr_1:C\to B$ be the first projection. We must show 
 \begin{equation}\label{2}
-(C,\pr_1)=_{\sum_{X:\U}\ X\to B}(A,f).
+(C,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
 By \S\ref{482} we have an equivalence $e:C\simeq A$. Set $g:\eq\pr_1(e)$ (here of course $\pr_1$ denotes the first projection $(C\simeq A)\to(C\to A)$). Set also $q:\equiv\ua(e)$, so that we get $q:C=A$. We claim 
 \begin{equation}\label{3}
 q_\star(\pr_1)=f.
 \end{equation} 
-By Theorem 2.7.2, \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Then \eqref{3} becomes, in the notation of (2.9.4) (see \eqref{2.9.4}), 
+By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Then \eqref{3} becomes, in the notation of (2.9.4) (see \eqref{2.9.4}), 
 $$
 \ms t^{I\to D}(q,\pr_1)=f.
 $$ 
@@ -1191,7 +1268,7 @@ and we must show
 $$
 (B,b,p)=(A,\ms t^{X\mapsto X}(p,b),\re_A).
 $$
-By Theorem 2.7.2 it suffices to verify 
+By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) it suffices to verify 
 $$
 \ms t^{X\mapsto X\times(X=A)}(p,(b,p))=(\ms t^{X\mapsto X}(p,b),\refl_A).
 $$ 
@@ -1480,7 +1557,7 @@ is invertible.}
 $$
 C:\eq\sum_{p:\ph_1(u)=\ph(v)}(p_\star(\ph_2(u))=\ph_2(v))
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3, (i)$\then$(ii), implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3, (i)$\then$(ii), implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
 
 %%
 
