@@ -865,8 +865,8 @@ $$
 \nn\tb{Lemma 3.11.3.} \emph{For a type $A$, the following are logically equivalent}
 \begin{enumerate}
 \item $A$ \emph{is contractible in the sense of Definition 3.11.1.
-\item $A$ is a mere proposition, and there is a point $a:A$.
-\item $A$ is equivalent to} $\mb1$.
+\item $A$ is a mere proposition, and there is a point} $a:A$.
+\item $A=\mb1$.
 \end{enumerate}
 
 \nn\tb{Lemma 3.11.4.} \emph{For any type $A$, the type $\ms{isContr}(A)$ is a mere proposition.}
@@ -879,17 +879,17 @@ Of course, if $A$ is equivalent to $B$ and $A$ is contractible, then so is $B$. 
 
 \nn\tb{Lemma 3.11.7.} \emph{If $B$ is a retract of $A$, and $A$ is contractible, then so is} $B$.
 
-\nn\tb{Lemma 3.11.8.} \emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible with center $(x,\refl_x)$.}
+\nn\tb{Lemma 3.11.8.} \emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible.}
 
 When this happens, it can allow us to simplify a complicated construction up to equivalence, using the informal principle that contractible data can be freely ignored. This principle consists of many lemmas, most of which we leave to the reader; the following is an example.
 
 \nn\tb{Lemma 3.11.9.} \emph{Let $P:A\to\U$ be a type family.}
 \begin{enumerate}
 \item \emph{If each $P(x)$ is contractible, then $\sum_{x:A}P(x)$ is equivalent to $A$.
-\item If $A$ is contractible with center $a$, then $\sum_{x:A} P(x)$ is equivalent to} $P(a)$.
+\item If $A$ is contractible and $a:A$, then $\sum_{x:A} P(x)$ is equivalent to} $P(a)$.
 \end{enumerate}
 
-\nn\tb{Lemma 3.11.810.} \emph{A type $A$ is a mere proposition if and only if for all $x,y:A$, the type $x=_Ay$ is contractible.}
+\nn\tb{Lemma 3.11.10.} \emph{A type $A$ is a mere proposition if and only if for all $x,y:A$, the type $x=_Ay$ is contractible.}
 
 %%
 
@@ -910,7 +910,7 @@ $$
 
 Recall the statement (see \S\ref{311}): 
 
-\nn\emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible with center $(a,\refl_a)$.}
+\nn\emph{For any $A$ and any $a:A$, the type $\sum_{x:A}(a=x)$ is contractible.}
 
 Here is a minor variant of the proof:
 
@@ -1141,7 +1141,7 @@ $$
 R(x,\refl_x).
 $$
 
-\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). Equivalence (b) follows from Lemmas 3.11.8 and 3.11.9(ii) (see \S\ref{311} p.~\pageref{311}). $\square$
+\nn\emph{Proof.} Equivalence (a) follows from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). Equivalence (b) follows from \S\ref{311} p.~\pageref{311}. $\sq$
 
 %%
 
@@ -1161,7 +1161,7 @@ $$\overset{\text{(a)}}\simeq\sum_{x:A}\ \sum_{b:B(x)}\ (x=a)\simeq\sum_{x:A}\ \s
 
 $$\overset{\text{(b)}}\simeq\sum_{z:\sum_{x:A}(x=a)}\ B(\pr_1(z))\overset{\text{(c)}}\simeq B(\pr_1(a,\refl_a))\eq B(a),$$ 
 
-\nn where (a) and (b) follow from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}), and (c) follows from Lemmas 3.11.8 and 3.11.9(ii) (see \S\ref{311} p.~\pageref{311}).
+\nn where (a) and (b) follow from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}), and (c) follows from \S\ref{311} p.~\pageref{311}.
 
 %%
 
@@ -1533,7 +1533,7 @@ i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 Recall the statement of the lemma: \emph{The type $\mbb S^1$ satisfies} $\boucle\neq\refl_{\base}$. 
 
-This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by Lemma 3.11.3 (see \S\ref{311} p.~\pageref{311}), that $\mbb S^1$ is not contractible.
+This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by \S\ref{311} p.~\pageref{311}, that $\mbb S^1$ is not contractible.
 
 %%
 
@@ -1557,7 +1557,7 @@ is invertible.}
 $$
 C:\eq\sum_{p:\ph_1(u)=\ph(v)}(p_\star(\ph_2(u))=\ph_2(v))
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, Lemma 3.11.3, (i)$\then$(ii) (see \S\ref{311} p.~\pageref{311}), implies that it is a mere proposition, and Lemma 3.3.4 implies that it is a set. In particular $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, the results of \S\ref{311} p.~\pageref{311} implies that it is a mere proposition, and Lemma 3.3.4 imply that it is a set. In particular $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
 
 %%
 
@@ -1737,7 +1737,7 @@ Let $A$ be a type. We must define $f(A):A\to A$. We set
 $$
 C:\eq\sum_{f:A\to A}\ \isequiv(f)\times\neg(f=\id_A).
 $$ 
-In particular we have the first projection $\pr_1:C\to A\to A$. By Lemma 3.11.4 (see \S\ref{311} p.~\pageref{311}) we also have 
+In particular we have the first projection $\pr_1:C\to A\to A$. By \S\ref{311} p.~\pageref{311} we also have 
 $$
 g:\prod_{B:\U}\ \isProp(\isContr(B)).
 $$ 
@@ -1932,7 +1932,7 @@ $$
 A\ar[r]^f\ar[d]&B\ar[r]^g\ar[d]&C\ar[d]\\
 \lV A\rV_n\ar[r]_{\lV f\rV_n}&\lV B\rV_n\ar[r]_{\lV g\rV_n}&\lV C\rV_n,}
 $$ 
-where the vertical maps are the obvious ones, define 
+where the vertical maps are the obvious ones, we define 
 $$
 \ph_n^{g,f}:\lV g\rV_n\ci\lV f\rV_n\sim\lV g\ci f\rV_n
 $$ 
