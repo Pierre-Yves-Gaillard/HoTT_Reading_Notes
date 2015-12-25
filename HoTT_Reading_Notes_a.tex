@@ -17,6 +17,7 @@
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \usepackage[all]{xy}
 \usepackage{graphicx}
+%\usepackage{showkeys}%%\usepackage{showlabels}
 \addtolength{\parskip}{.5\baselineskip}
 %\renewcommand{\baselinestretch}{1.1}
 %\pagestyle{empty}
@@ -1222,7 +1223,7 @@ We get
 $$
 \ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\ms t^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
 $$ 
-where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4 in the book, (c) follows from Lemma 2.3.5 in the book, and (c) follows from the definition of $g$. $\sq$
+where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4 in the book, (c) follows from Lemma 2.3.5 in the book, and (d) follows from the definition of $g$. $\sq$
 
 %%
 
@@ -1281,13 +1282,13 @@ $$
 $$
 \simeq\sum_{b:B}\ \sum_{X:\U}\ \sum_{x:X}\ (\fib_f(b)=X),
 $$ 
-the first equivalence following from Lemma 4.8.2 (see \S\ref{482} above), the second one from \eqref{asimeq}, and the third one being straightforward. This proves \eqref{484}. $\sq$
+the first equivalence following from Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}), the second one from \eqref{asimeq}, and the third one being straightforward. This proves \eqref{484}. $\sq$
 
 %%
 
 \subsection{Exercise 4.4}
 
-\emph{Statement.} (The unstable octahedral axiom). Suppose $f:A\to B$ and $g:B\to C$ and $b:B$.
+\emph{Statement.} (The unstable octahedral axiom.) Suppose $f:A\to B$ and $g:B\to C$ and $b:B$.
 
 \nn(i) Show that there is a natural map $\fib_{g\circ f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_{g(b)})$ is equivalent to $\fib_f(b)$.
 
@@ -1301,33 +1302,35 @@ by $h(x,p):\eq(f(x),p)$ for $x:A$ and $p:g(f(x))=g(b)$. We get
 
 $$\fib_h(b,\refl_{g(b)}):\eq\sum_{w:\sum_{x:A}(g(f(x))=g(b))}\big(h(w)=(b,\refl_{g(b)})\big)$$ 
 
-$$=\sum_{x:A}\ \sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big).$$ 
+$$=\sum_{x:A}\ \sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
 
-\nn For each $x:A$ we have
+\nn by Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). For each $x:A$ we have
 
 $$\sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
 
-$$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\transport^{\la(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
+$$\overset{\text{(a)}}=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\transport^{\la(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
 
 $$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\ap_g(q)^{-1}\cc p=\refl_{g(b)}\big)$$ 
 
 $$=\sum_{q:f(x)=b}\ \sum_{p:g(f(x))=g(b)}\ \big(p=\ap_g(q)\big)$$ 
 
-$$=\sum_{q:f(x)=b}\ \mb1$$
+$$\overset{\text{(b)}}=\sum_{q:f(x)=b}\ \mb1$$
 
-$$=(f(x)=b).$$ 
+$$\overset{\text{(c)}}=(f(x)=b),$$ 
+
+\nn where (a) follows from Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), and (b) and (c) follow from \S\ref{311} p.~\pageref{311}.
 
 \nn(ii) We have 
 
 $$\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)$$ 
 
-$$=\sum_{w:\sum_{y:B}(g(y)=c)}\ \sum_{x:A}\ \big(f(x)=\pr_1w\big)$$ 
+$$\eq\sum_{w:\sum_{y:B}(g(y)=c)}\ \sum_{x:A}\ \big(f(x)=\pr_1w\big)$$ 
 
-$$=\sum_{y:B}\ \sum_{q:g(y)=c}\ \sum_{x:A}\ \big(f(x)=y\big)$$ 
+$$\overset{\text{(a)}}=\sum_{y:B}\ \sum_{q:g(y)=c}\ \sum_{x:A}\ \big(f(x)=y\big)$$ 
 
 $$=\sum_{x:A}\ \sum_{y:B}\ (g(y)=c)\times(f(x)=y).$$ 
 
-\nn For each $x:A$ we check that the maps 
+\nn where (a) follows from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}). For each $x:A$ we check that the maps 
 
 $$\ph:\left(\sum_{y:B}\ (g(y)=c)\times(f(x)=y)\right)\to\big(g(f(x))=c\big)$$ 
 
@@ -1341,7 +1344,9 @@ $$\ph(y,q,p):\eq\ap_g(p)\cc q,\quad\psi(r):\eq\big(f(x),r,\refl_{f(x)}\big)$$
 
 \nn are inverses. This gives 
 
-$$\left(\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ \Big(g(f(x))=c\Big)\right)=\fib_{g\circ f}(c).\ \sq$$
+$$\left(\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ \Big(g(f(x))=c\Big)\right)=\fib_{g\circ f}(c),$$
+
+\nn where the last equality follows from \S\ref{311} p.~\pageref{311}.
 
 %%
 
@@ -1500,7 +1505,22 @@ Let
 $$
 f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
-so that $(f,p),(g,q):\ppmap(R,S)$. It suffices to prove $(f,p)=(g,q)$. Setting $D(b,r):\eq(f(b,r)=g(b,r)),d:\eq p\cc q^{-1}$, we get $h:\prod_{b:A}\prod_{r:R(b)}(f(b,r)=g(b,r))$ with $h(a_0,r_0)=p\cc q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying $t_\star(p)=h(a_0,r_0)^{-1}\cc p=(p\cc q^{-1})^{-1}\cc p=q$. $\sq$ 
+so that 
+$$
+(f,p),(g,q):\ppmap(R,S).
+$$ 
+It suffices to prove $(f,p)=(g,q)$. Setting 
+$$
+D(b,r):\eq(f(b,r)=g(b,r)),\quad d:\eq p\cc q^{-1},
+$$ 
+we get 
+$$
+h:\prod_{b:A}\ \prod_{r:R(b)}\ (f(b,r)=g(b,r))
+$$ 
+with $h(a_0,r_0)=p\cc q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying 
+$$
+t_\star(p)=h(a_0,r_0)^{-1}\cc p=(p\cc q^{-1})^{-1}\cc p=q.\ \sq
+$$
 
 %% 
 
@@ -1543,9 +1563,9 @@ This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb 
 
 The proof of Corollary 6.4.3 uses the following claim:
 
-\nn\tb{Claim.} \emph{Let $A$ and $B$ be types; let $\ph_1:(A\simeq B)\to(A\to B)$ and 
+\nn\tb{Claim.} \emph{Let $A$ and $B$ be types; let  
 $$
-\ph_2:\prod_{u:A\simeq B}\ishae(\ph_1(u))
+\ph_1:(A\simeq B)\to(A\to B),\quad\ph_2:\prod_{u:A\simeq B}\ishae(\ph_1(u))
 $$ 
 be the first and second projection; and let $u,v:A\simeq B$. Then the map 
 \begin{equation}\label{apph}
@@ -1557,7 +1577,11 @@ is invertible.}
 $$
 C:\eq\sum_{p:\ph_1(u)=\ph(v)}(p_\star(\ph_2(u))=\ph_2(v))
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$. As $\ishae(f)$ is contractible by Theorem 4.2.13, the results of \S\ref{311} p.~\pageref{311} implies that it is a mere proposition, and Lemma 3.3.4 imply that it is a set. In particular $p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v)$ is contractible. $\sq$
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to 
+\begin{equation}\label{psp2u}
+p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v).
+\end{equation}  
+As $\ishae(f)$ is contractible by Theorem 4.2.13, the results of \S\ref{311} p.~\pageref{311} implies that it is a mere proposition, and Lemma 3.3.4 imply that it is a set. In particular \eqref{psp2u} is contractible. $\sq$
 
 %%
 
@@ -2063,7 +2087,7 @@ D&&&&C&B\ar[l]_L&&&&&A.\\
 &&&\ar[ll]^K&&&&&\ar[ll]^G}
 $$ 
 We have, in the above setting,}
-\begin{equation}\label{9281}
+\begin{equation}\label{928a}
 (\delta LG)(HL\gamma)=(KL\gamma)(\delta LF)
 \end{equation}
 
@@ -2077,7 +2101,7 @@ We have, in the above setting,}
 &\eq((KL\gamma)(\delta LF))_a.\ \sq
 \end{align*}
 
-Equality \eqref{9281} can be illustrated by the commutative square 
+Equality \eqref{928a} can be illustrated by the commutative square 
 $$
 \xymatrix{
 HLF\ar[rrr]^{(HL\gamma)}\ar[d]_{(\delta LF)}&&&HLG\ar[d]^{(\delta LG)}\\ 
@@ -2091,7 +2115,7 @@ D&C\ar[l]_L&\ar[uu]_\beta&B\ar[ll]_(.6)H&A.\ar[l]_F\\ \\
 &&\ar[uu]_\alpha&\ar[ll]^G}
 $$ 
 We have, in the above setting,}
-\begin{equation}\label{9282}
+\begin{equation}\label{928b}
 (L\beta F)(L\alpha F)=L(\beta\alpha)F.
 \end{equation}
 \emph{Proof.} It suffices to check componentwise: at $a:A$ we have
@@ -2106,11 +2130,13 @@ We have, in the above setting,}
 
 %%
 
+%\newpage
+
 \subsection{Lemma 9.3.2}\label{932}
 
-In the notation of \S\ref{928} above, the following diagrams and equalities (which follow from \eqref{9281} above) may help the reader:
+In the notation of \S\ref{928} above, the following diagrams and equalities (which follow from \eqref{928a} above) may help the reader:
 
-%\newpage
+\newpage
 
 $$
 \begin{array}{ccccccccccccccc}
@@ -2122,9 +2148,9 @@ A&\eta'\downarrow&A&\leftarrow&B&\ep'\downarrow&B&\leftarrow&A&\eta\downarrow&A&
 \end{array}
 $$ 
 
-$$
+\begin{equation}\label{928c}
 (\eta\ G'\ \id_B)(\id_A\ G'\ \ep)=(GF\ G'\ \ep)(\eta\ G'\ FG),
-$$
+\end{equation}
 
 $$
 \xymatrix{
@@ -2132,7 +2158,11 @@ G'FG\ar[rrr]^{(\id_A\ G'\ \ep)}\ar[d]_{(\eta\ G'\ FG)}&&&G'\ar[d]^{(\eta\ G'\ \i
 GFG'FG\ar[rrr]_{(GF\ G'\ \ep)}&&&GFG',}
 $$
 
-\newpage
+%\begin{equation}\label{928d'}(\eta'\ G\ \id_B)(\id_A\ G\ \ep')=(G'F\ G\ \ep')(\eta'\ G\ FG'),\end{equation}
+
+%$$\xymatrix{GFG'\ar[rrr]^{(\id_A\ G\ \ep')}\ar[d]_{(\eta'\ G\ FG')}&&&G'\ar[d]^{(\eta'\ G\ \id_B)}\\ GFG'FG\ar[rrr]_{(G'F\ G\ \ep')}&&&GFG',}$$
+
+%\newpage
 
 $$
 \begin{array}{ccccccc}
@@ -2144,9 +2174,9 @@ B&\ep'\downarrow&B&\leftarrow&B&\ep\downarrow&B,\\
 \end{array}
 $$
 
-$$
+\begin{equation}\label{928d}
 (\ep'\ \id_B\ \id_B)(FG'\ \id_B\ \ep)=(\id_B\ \id_B\ \ep)(\ep'\ \id_B\ FG).
-$$
+\end{equation}
 
 $$
 \xymatrix{
@@ -2154,13 +2184,37 @@ FG'FG\ar[rrr]^{(FG'\ \id_B\ \ep)}\ar[d]_{(\ep'\ \id_B\ FG)}&&&FG'\ar[d]^{(\ep'\ 
 FG\ar[rrr]_{(\id_B\ \id_B\ \ep)}&&&\id_B.}
 $$ 
 
+\newpage
+
+$$
+\begin{array}{ccccccc}
+&\id_A&&&&\id_A\\
+&\leftarrow&&\id_A&&\leftarrow\\
+A&\eta\downarrow&A&\leftarrow&A&\eta'\downarrow&A,\\
+&\leftarrow&&&&\leftarrow\\
+&GF&&&&G'F
+\end{array}
+$$
+
+\begin{equation}\label{928e}
+(\eta\ \id_A\ G'F)(\id_A\ \id_A\ \eta')=(GF\ \id_A\ \eta')(\eta\ \id_A\ \id_A).
+\end{equation}
+
+$$
+\xymatrix{
+\id_A\ar[rrr]^{(\id_A\ \id_A\ \eta')}\ar[d]_{(\eta\ \id_A\ \id_A)}&&&G'F\ar[d]^{(\eta\ \id_A\ G'F)}\\ 
+GF\ar[rrr]_{(GF\ \id_A\ \eta')}&&&GFG'F.}
+$$ 
+
+%\newpage
+
 Here are more details about the verification of the equality $\delta\gamma=1_G$ in the proof of Lemma 9.3.2: 
 \begin{align*}
 \delta\gamma &\eq(G\ep')(\eta G')(G'\ep)(\eta'G)\\
-&=(G\ep')(G F G'\ep)(\eta G' F G)(\eta'G)&\text{by \eqref{9281}}\\
-&=G\,(\ep'\,(FG'\ep))\,((\eta GF)\,\eta')\,G&\text{by \eqref{9282}}\\
-&=G\,(\ep\,(\ep'FG))\,((GF\eta')\,\eta)\,G&\text{by \eqref{9281}}\\
-&=G\,(\ep\,(\ep'F))\,((F\eta')\,\eta)\,G&\text{by \eqref{9282}}\\
+&=(G\ep')(G F G'\ep)(\eta G' F G)(\eta'G)&\text{by \eqref{928c}}\\
+&=G\,(\ep'\,(FG'\ep))\,((\eta G'F)\,\eta')\,G&\text{by \eqref{928b}}\\
+&=G\,(\ep\,(\ep'FG))\,((GF\eta')\,\eta)\,G&\text{by \eqref{928d} and \eqref{928e}}\\
+&=G\,(\ep\,(\ep'F))\,((F\eta')\,\eta)\,G&\text{by \eqref{928b}}\\
 &=(G\ep)(\ep' F)(F\eta')(\eta G)\\
 &=(G\ep)(\eta G)&\text{by $\ \Delta_1$}\\
 &=1_G&\text{by $\Delta_2$,}
