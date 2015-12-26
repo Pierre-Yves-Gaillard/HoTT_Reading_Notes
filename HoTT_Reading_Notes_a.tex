@@ -1942,6 +1942,19 @@ can be proved by path induction on $p:x=y$.
 
 %%
 
+\subsection{Paths between cocones}\label{742}
+
+The following observation might be made just after Definition 7.4.2: 
+
+If $(i,j,h)$ and $(i',j',h')$ are cocones under $\mc D$ with base $D$, then a path $(i,j,h)=(i',j',h')$ is given by attaching to each $c:C$ a path $p(c):i(f(c))=i'(f(c))$, a path $q(c):j(g(c))=j'(g(c))$, and a path $r(c):p(c)\cc h'(c)=h(c)\cc q(c)$: 
+$$
+\xymatrix{
+i(f(c))\ar@{=}[r]^{h(c)}\ar@{=}[d]_{p(c)}&j(g(c))\ar@{=}[d]^{q(c)}\\ 
+i'(f(c))\ar@{=}[r]_{h'(c)}&j'(g(c)).}
+$$
+
+%%
+
 \subsection{Definition 7.4.7}\label{747}
 
 Definition 7.4.7 contains the judgment 
@@ -1986,7 +1999,7 @@ The setting can be summarized by the diagram
 $$
 \xymatrix{C\ar[r]^g\ar[d]_f&B\ar[d]^j\\ A\ar[r]_i\ar@{=>}[ur]^h&D,}
 $$ 
-where the double arrow represents a homotopy $h:i\ci f\sim j\ci g$. Equality (7.4.11) reads $\lv-\rv^D_n\ci c=\lV c\rV_n\ci\lv-\rv^{\mc D}_n$, and is equivalent to
+where the double arrow represents a homotopy $h:i\ci f\sim j\ci g$. Equality (7.4.11) reads $\lv-\rv^D_n\ci c=\lV c\rV_n\ci\lv-\rv^{\mc D}_n$, and, by \S\ref{742} p.~\pageref{742}, is equivalent to
 \begin{equation}\label{7411}
 \Big(\lv-\rv^D_n\ci i\ ,\ \lv-\rv^D_n\ci j\ ,\ \ap_{\lv-\rv^D_n}\ci h\Big)
 =
