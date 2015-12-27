@@ -545,11 +545,11 @@ p:x=y,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\ms t^A(p),
 $$ 
 and define 
 $$
-h:\pd_{a:A(x)}\ B(y,p_\star\,a)
+h:\pd_{a:A(x)}\ B(y,p_\star a)
 $$ 
 by setting 
 $$
-h(a):\eq\ms t^{\widehat B}\Big(\pa_A\big(p,\re_{p_\star\,a}\big),f(a)\Big)
+h(a):\eq\ms t^{\widehat B}\Big(\pa_A\big(p,\re_{p_\star a}\big),f(a)\Big)
 $$ 
 for all $a:A(x)$. (We write $\pa_A$ for $\pa$ to stress the fact that the pairing is taken with respect to the type family $A$. Recall that $\pa$ is defined in \eqref{273} p.~\pageref{273}.)
 
@@ -562,21 +562,21 @@ for all $a:A(x)$. (We write $\pa_A$ for $\pa$ to stress the fact that the pairin
 
 \nn\emph{Proof.} We define $k:\ms t^{B'}(p,f)\ci p_\star\sim h$ as follows. For $a:A(x)$ the path 
 $$
-k(a):\ms t^{B'}(p,f)(p_\star\,a)=h(a)
+k(a):\ms t^{B'}(p,f)(p_\star a)=h(a)
 $$ 
 is the composite 
 \begin{align*}
-\ms t^{B'}(p,f)(p_\star\,a)&=\ms t^{\widehat B}\bigg(\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star\,a)}\right)^{-1},f\Big((p^{-1})_\star\big(p_\star\,a\big)\Big)\bigg)\\ 
-&=\ms t^{\widehat B}\Big(\pa_A\left(p,\refl_{p_\star\,a}\right),f(a)\Big)\\
+\ms t^{B'}(p,f)(p_\star a)&=\ms t^{\widehat B}\bigg(\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star a)}\right)^{-1},f\Big((p^{-1})_\star\big(p_\star a\big)\Big)\bigg)\\ 
+&=\ms t^{\widehat B}\Big(\pa_A\left(p,\refl_{p_\star a}\right),f(a)\Big)\\
 &\eq h(a),
 \end{align*} 
 where the first path is given by the display preceding (2.9.5) in the book, and the second path is the obvious one. Note the judgments
 $$
-\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star\,a)}\right):\big(y,p_\star\,a\big)=_{\sum_{x:X}A(x)}\Big(x,(p^{-1})_\star\big(p_\star\,a\big)\Big),
+\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star a)}\right):\big(y,p_\star a\big)=_{\sum_{x:X}A(x)}\Big(x,(p^{-1})_\star\big(p_\star a\big)\Big),
 $$ 
 
 $$
-\pa_A\left(p,\refl_{p_\star\,a}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_\star\,a\big).
+\pa_A\left(p,\refl_{p_\star a}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_\star a\big).
 $$  
 
 For $a':A(y)$ let 
@@ -589,9 +589,9 @@ s(a'):g\Big(p_\star\ (p^{-1})_\star\ a'\Big)=g(a')
 $$ 
 be the obvious paths. 
 
-We define $u$ and $v$ in \eqref{297} as follows. For $q:\ms t^{B'}(p,f)=g$ and $a:A(x)$ we define $u(q)(a):h(a)=g(p_\star\,a)$ by 
+We define $u$ and $v$ in \eqref{297} as follows. For $q:\ms t^{B'}(p,f)=g$ and $a:A(x)$ we define $u(q)(a):h(a)=g(p_\star a)$ by 
 $$ 
-u(q)(a):\eq k(a)^{-1}\cc\ha(q,p_\star\,a), 
+u(q)(a):\eq k(a)^{-1}\cc\ha(q,p_\star a), 
 $$ 
 and, for $\alpha:h\sim g\ci p_\star$ we define $v(\alpha):\ms t^{B'}(p,f)=g$ by 
 $$
@@ -736,12 +736,12 @@ It seems to me one could argue as follows: state the above two formulas, check t
 \nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
 $$
 \pd_{z,w:\sum_{a:A}B(a)}\ \left(\xymatrix@1{
-(z=w)\ \ar@<2pt>[r]^(.27)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star\,\pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
+(z=w)\ \ar@<2pt>[r]^(.27)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star \pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
 $$ 
 Note that the expression $\beta(z,w)$ has the same meaning as the expression $\pa$ introduced in the book just before Theorem 2.7.4. Let $B':A'\to\U$ and set similarly 
 $$
 \pd_{z',w':\sum_{a':A'}B'(a')}\left(\xymatrix@1{
-(z'=w')\ \ar@<2pt>[r]^(.27){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star\,\pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
+(z'=w')\ \ar@<2pt>[r]^(.27){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star \pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
 $$ 
 Let $g:A\to A',\ h:\prod_{a:A}\ B(a)\to B'(g(a))$. Cleary, there is a map 
 $$
@@ -751,7 +751,7 @@ satisfying $f(a,b)\equiv (g(a),h(a,b))$ for all $a:A$ and all $b:B(a)$.
 
 Let 
 $$
-z,w:\sum_{a:A}\ B(a);\quad p:\pr_1(z)=\pr_1(w);\quad q:p_\star\,\pr_2(z)=\pr_2(w).
+z,w:\sum_{a:A}\ B(a);\quad p:\pr_1(z)=\pr_1(w);\quad q:p_\star \pr_2(z)=\pr_2(w).
 $$ 
 We claim 
 \begin{equation}\label{e27}
