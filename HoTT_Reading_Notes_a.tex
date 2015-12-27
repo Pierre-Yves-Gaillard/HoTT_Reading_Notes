@@ -85,7 +85,7 @@
 \nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
 \nc{\two}{\mb2}
 \nc{\Type}{\text-\ms{Type}}\nc{\type}{\text-\ms{Type}}\nc{\ty}{\text-\ms{Type}}
-\nc{\U}{\mc U}\nc{\V}{\mc V}
+\nc{\U}{\mc U}%\nc{\V}{\mc V}
 \nc{\ua}{\ms{ua}}
 \nc{\uniq}{\ms{uniq}}
 \nc{\vide}{\varnothing}
@@ -669,15 +669,18 @@ We leave the end of the proof to the reader. $\square$
 
 \subsubsection{Use of Theorem 2.7.4}
 
-We apply Theorem 2.7.4 (see \S\ref{274} p.~\pageref{274}) to \S2.14.1 of the book by letting $\U,\V$ be universes with $\U:\V$, by defining $P:\U\to\V$ by $P(A):\eq(A\to A\to A)$, by defining 
+% old version
+% https://docs.google.com/document/d/1PA3JFqvxt3lhpQtuaX3i_aQJ9ROR91oNSkp6qyqtrU0/edit
+
+We apply Theorem 2.7.4 (see \S\ref{274} p.~\pageref{274}) to \S2.14.1 of the book by defining $P:\U\to\U$ by $P(A):\eq(A\to A\to A)$, by defining 
 $$
-Q:\left(\sum_{A:\U}\ P(A)\right)\to\V
+Q:\left(\sum_{A:\U}\ P(A)\right)\to\U
 $$ 
 by 
 $$
 Q(A,m):\eq\prod_{x,y,z:A}\ \big(m(x,m(y,z))=m(m(x,y),z)\big),
 $$ 
-and by defining $Q':\U\to\V$ by 
+and by defining $Q':\U\to\U$ by 
 $$ 
 Q'(A):\eq\sum_{m:P(A)}\ Q(A,m).
 $$  
