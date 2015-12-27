@@ -531,6 +531,9 @@ $$
 
 \subsection{Lemma 2.9.7}
 
+% old version
+% https://docs.google.com/document/d/1NL5bhNemPURKbARsmsA6bXbagycEZ79CvihnPT9xTtU/edit
+
 In this Section we abbreviate $\tr$ by $\ms t$. Let 
 $$
 A:X\to\U,\quad B:\prod_{x:X}\ A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}\ A(x)\right)\to\U,\quad B':X\to\U
@@ -564,26 +567,7 @@ $$
 \end{equation}
 \emph{defined below are inverses.}
 
-\nn\emph{Proof.} We define $k:\ms t^{B'}(p,f)\ci p_\star\sim h$ as follows. For $a:A(x)$ the path 
-$$
-k(a):\ms t^{B'}(p,f)(p_\star a)=h(a)
-$$ 
-is the composite 
-\begin{align*}
-\ms t^{B'}(p,f)(p_\star a)&=\ms t^{\widehat B}\bigg(\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star a)}\right)^{-1},f\Big((p^{-1})_\star\big(p_\star a\big)\Big)\bigg)\\ 
-&=\ms t^{\widehat B}\Big(\pa_A\left(p,\refl_{p_\star a}\right),f(a)\Big)\\
-&\eq h(a),
-\end{align*} 
-where the first path is given by the display preceding (2.9.5) in the book, and the second path is the obvious one. Note the judgments
-$$
-\pa_A\left(p^{-1},\refl_{(p^{-1})_\star(p_\star a)}\right):\big(y,p_\star a\big)=_{\sum_{x:X}A(x)}\Big(x,(p^{-1})_\star\big(p_\star a\big)\Big),
-$$ 
-
-$$
-\pa_A\left(p,\refl_{p_\star a}\right):(x,a)=_{\sum_{x:X}A(x)}\big(y,p_\star a\big).
-$$  
-
-For $a':A(y)$ let 
+\nn\emph{Proof.} We define $k:\ms t^{B'}(p,f)\ci p_\star\sim h$ by induction on the path $p:x=y$. For $a':A(y)$ let 
 $$
 r(a'):\ms t^{B'}(p,f)(a')=\ms t^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)
 $$ 
