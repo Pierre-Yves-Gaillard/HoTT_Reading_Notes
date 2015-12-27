@@ -532,7 +532,7 @@ $$
 \subsection{Lemma 2.9.7}
 
 % old version
-% https://docs.google.com/document/d/1NL5bhNemPURKbARsmsA6bXbagycEZ79CvihnPT9xTtU/edit
+% https://docs.google.com/document/d/197ZjivVJusz2215MEB2JCDhvx6Y4YDs-vAkmr5oyJcY/edit
 
 In this Section we abbreviate $\tr$ by $\ms t$. Let 
 $$
@@ -563,7 +563,7 @@ $$
 \textbf{Claim:} \emph{The maps}
 \begin{equation}\label{297}
 \xymatrix{
-\Big(\ms t^{B'}(p,f)=g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
+\Big(\ms t^{B'}(p,f)\sim g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
 \end{equation}
 \emph{defined below are inverses.}
 
@@ -575,28 +575,26 @@ and
 $$
 s(a'):g\Big(p_\star\ (p^{-1})_\star\ a'\Big)=g(a')
 $$ 
-be the obvious paths. 
-
-We define $u$ and $v$ in \eqref{297} as follows. For $q:\ms t^{B'}(p,f)=g$ and $a:A(x)$ we define $u(q)(a):h(a)=g(p_\star a)$ by 
+be the obvious paths. We now define $u$ and $v$ in \eqref{297} as follows. For $\alpha:\ms t^{B'}(p,f)\sim g$ and $a:A(x)$ we define $u(\alpha)(a):h(a)=g(p_\star a)$ by 
 $$ 
-u(q)(a):\eq k(a)^{-1}\cc\ha(q,p_\star a), 
+u(\alpha)(a):\eq k(a)^{-1}\cc\alpha(p_\star a), 
 $$ 
-and, for $\alpha:h\sim g\ci p_\star$ we define $v(\alpha):\ms t^{B'}(p,f)=g$ by 
+and for $\beta:h\sim g\ci p_\star$ we define $v(\beta):\ms t^{B'}(p,f)\sim g$ by 
 $$
-v(\alpha):\eq\fu\Big(\la a'\ .\ r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\alpha\big((p^{-1})_\star\ a'\big)\cc s(a')\Big).
+v(\beta)(a'):\eq r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a').
 $$ 
 
 The claim is easily proved by induction on the path $p:x=y$. $\square$
 
 The path 
 $$
-r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\alpha\big((p^{-1})_\star\ a'\big)\cc s(a'):\ms t^{B'}(p,f)(a')=g(a')
+r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a'):\ms t^{B'}(p,f)(a')=g(a')
 $$ 
 above is the composite of the paths
 \begin{align*}
 \ms t^{B'}(p,f)(a')&\xymatrix{\ar@1{=}[r]^{r(a')}&}\ms t^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
 &\xymatrix{\ar@1{=}[rr]^{k((p^{-1})_\star a')}&&}h\Big((p^{-1})_\star\ a'\Big)\\ 
-&\xymatrix{\ar@1{=}[rr]^{\alpha((p^{-1})_\star a')}&&}g\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
+&\xymatrix{\ar@1{=}[rr]^{\beta((p^{-1})_\star a')}&&}g\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
 &\xymatrix{\ar@1{=}[r]^{s(a')}&}g(a').
 \end{align*}
 
@@ -616,7 +614,7 @@ $$
 $$ 
 Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
 
-Step 2. Since $\varphi$ is a invertible (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also invertible, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} p.~\pageref{45}) implies that $\ap_f$ and $\ap_g$ are invertible. $\sq$
+Step 2. Since $\varphi$ is invertible (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also invertible, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} p.~\pageref{45}) implies that $\ap_f$ and $\ap_g$ are invertible. $\sq$
 
 %%
 
