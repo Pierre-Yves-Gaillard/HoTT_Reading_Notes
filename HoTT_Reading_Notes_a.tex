@@ -323,7 +323,7 @@ $$
 $$
 n^m:\equiv\rec_\N(\ \N\to\N\ ,\ \la n.1\ ,\ \la m.\la g.\la n.ng(n)\ ,\ m\ ,\ n\ ).
 $$ 
-We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring.
+We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring. $\sq$
 
 For the reader's convenience we briefly recall the definition of the recursor for $\N$:
 $$
@@ -332,7 +332,7 @@ $$
 
 $$\rec_\N(C,c_0,c_s,0):\eq c_0,$$
 
-$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).\ \sq$$
+$$\rec_\N(C,c_0,c_s,\su(n)):\eq c_s(n,\rec_\N(C,c_0,c_s,n)).$$
 
 %%
 
@@ -541,19 +541,23 @@ B'(x):\eq\pd_{a:A(x)}\ B(x,a)
 $$ 
 for all $x:X$; let 
 $$
-p:x=y,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\ms t^A(p),
+p:x=_Xy,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\ms t^A(p);
 $$ 
 and define 
 $$
 h:\pd_{a:A(x)}\ B(y,p_\star a)
 $$ 
 by setting 
-$$
+\begin{equation}\label{ha}
 h(a):\eq\ms t^{\widehat B}\Big(\pa_A\big(p,\re_{p_\star a}\big),f(a)\Big)
-$$ 
-for all $a:A(x)$. (We write $\pa_A$ for $\pa$ to stress the fact that the pairing is taken with respect to the type family $A$. Recall that $\pa$ is defined in \eqref{273} p.~\pageref{273}.)
+\end{equation}
+for all $a:A(x)$. 
 
-\nn\textbf{Claim:} \emph{The maps}
+Here are more details about \eqref{ha}: We write $\pa_A$ for $\pa$ to stress the fact that the pairing is taken with respect to the type family $A$. Recall that $\pa$ is defined in \eqref{273} p.~\pageref{273}, and note that we have 
+$$
+\pa_A\big(p,\re_{p_\star a}\big):(x,a)=_{\sum_{x:X}A(x)}(y,p_\star a).
+$$
+\textbf{Claim:} \emph{The maps}
 \begin{equation}\label{297}
 \xymatrix{
 \Big(\ms t^{B'}(p,f)=g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
@@ -2143,13 +2147,13 @@ We have, in the above setting,}
 
 %%
 
-%\newpage
+\newpage
 
 \subsection{Lemma 9.3.2}\label{932}
 
 In the notation of \S\ref{928} above, the following diagrams and equalities (which follow from \eqref{928a} above) may help the reader:
 
-\newpage
+%\newpage
 
 $$
 \begin{array}{ccccccccccccccc}
