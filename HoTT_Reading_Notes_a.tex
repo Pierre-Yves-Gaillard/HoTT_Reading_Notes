@@ -1128,9 +1128,9 @@ B(x):\eq\sum_{r:x=x}\ \pd_{s:a=x}\ (r=s^{-1}\cc q\cc s).
 $$ 
 Let $k:\prod_{x:A}B(x)$, and set $f(x):\eq\pr_1(k(x))$ for all $x:A$. We must show 
 $$
-\text{(a) }f:\pd_{x:A}(x=x)\quad\text{and}\quad\text{(b) }f(a)=q.
+\text{(a) }f:\pd_{x:A}\ (x=x)\quad\text{and}\quad\text{(b) }f(a)=q.
 $$ 
-Claim (a) is clear. Let us prove (b). By assumption (iii) of Lemma 4.1.2, there is a $u:\pd_{s:a=a}(q=s^{-1}\cc q\cc s)$. In particular we have $(q,u):B(a)$. As $B(a)$ is a mere proposition, this implies $k(a)=(q,u)$, and thus $f(a)=q$. $\sq$
+Claim (a) is clear. Let us prove (b). By assumption (iii) of Lemma 4.1.2 (see above), there is a $u:\pd_{s:a=a}(q=s^{-1}\cc q\cc s)$. In particular we have $(q,u):B(a)$. As $B(a)$ is a mere proposition, this implies $k(a)=(q,u)$, and thus $f(a)=q$. $\sq$
 
 %To complete the proof of Lemma 4.1.2, we set $f(x):\eq\pr_1(k(x))$ with $k:\prod_{x:A}\ B(x)$. $\sq$
 
@@ -1166,7 +1166,7 @@ $$
 
 %%
 
-\subsection{Proof of Lemma 4.8.1}%\label{69}
+\subsection{Proof of Lemma 4.8.1}\label{481}
 
 Recall the statement:
 
@@ -1182,7 +1182,7 @@ $$\overset{\text{(a)}}\simeq\sum_{x:A}\ \sum_{b:B(x)}\ (x=a)\simeq\sum_{x:A}\ \s
 
 $$\overset{\text{(b)}}\simeq\sum_{z:\sum_{x:A}(x=a)}\ B(\pr_1(z))\overset{\text{(c)}}\simeq B(\pr_1(a,\refl_a))\eq B(a),$$ 
 
-\nn where (a) and (b) follow from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}), and (c) follows from \S\ref{311} p.~\pageref{311}.
+\nn where (a) and (b) follow from Exercise 2.10 (see \S\ref{210} p.~\pageref{210}), and (c) follows from \S\ref{311} p.~\pageref{311}. $\sq$
 
 %%
 
@@ -1215,7 +1215,31 @@ We claim that $g$ and $h$ are inverses. It is easy to check $h\ci g=\id_A$. Let 
 
 \subsection{Proof of Theorem 4.8.3}
 
-Here are some details about the last sentence of the proof of Theorem 4.8.3:
+For the reader's convenience we paste the statement and proof of Theorem 4.8.3:
+
+\nn\tb{Theorem 4.8.3.} \emph{For any type $B$ there is an equivalence}
+$$
+\chi:\ga(\sum_{A:\U}\ (A\to B)\dr)\simeq(B\to\U).
+$$
+
+\nn\emph{Proof.} We have to construct quasi-inverses
+\begin{align*}
+\chi&:\ga(\sum_{A:\U}(A\to B)\dr)\to B\to\U\\
+\psi&:(B\to\U)\to\ga(\sum_{A:\U}(A\to B)\dr).
+\end{align*}
+We define $\chi$ by $\chi((A,f),b):\eq\fib_f(b)$, and $\psi$ by $\psi(P):\eq((\sum_{b:B} P(b)),\pr_1)$. 
+
+Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\circ\chi\simeq\id$. 
+
+\nn(a) Let $P:B\to\U$. By Lemma 4.8.1 (see \S\ref{481} p.~\pageref{481}), $\fib_{\pr_1}(b)\simeq P(b)$ for any $b:B$, so it follows immediately that $P\simeq\chi(\psi(P))$.
+
+\nn(b) Let $f:A\to B$ be a function. We have to find a path
+$$
+\ga(\sum_{b:B}\ \fib_f(b),\,\pr_1\dr)=(A,f).
+$$ 
+First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\re_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{2.9.4} below), we have $\ua(e)_\star(\pr_1)=\pr_1\circ e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\circ e^{-1}\eq f$. $\sq$
+
+Here are some details about the last sentence of the above proof: 
 
 Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\ms t$ we have 
 \begin{equation}\label{2.9.4}
@@ -1223,7 +1247,7 @@ Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\ms t$ we have
 \end{equation}
 for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
 
-Now let us move to last sentence of the proof of Theorem 4.8.3. Let the notation of \S\ref{482} above be in force. Let $\pr_1:C\to B$ be the first projection. We must show 
+Let the notation of \S\ref{482} above be in force. Let $\pr_1:C\to B$ be the first projection. We must show 
 \begin{equation}\label{2}
 (C,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
