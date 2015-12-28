@@ -824,7 +824,7 @@ for $A:\U$, and to set $g(A,u):\eq f(A,h(u))$. It suffices in turn to define
 $$
 h':(\mb2=A)\to\neg\neg A.
 $$ 
-To do this, we set $h'(p,k):\eq k(\tr^{X\mapsto X}(p,0_{\mbf2}))$. 
+To do this, we set $h'(p,k):\eq k(\tr^{X\mapsto X}(p,0_{\mbf2}))$ for all $k:\neg A$. 
 
 \nn\emph{Proof of} $\neg G$. Similar to the proof of $\neg F$ (that is, the proof of Theorem 3.2.2) in the book. $\square$
 
@@ -889,7 +889,7 @@ Recall the statement (see \S\ref{311}): \emph{For any type $A$, the type $\isCon
 
 Here is a minor variant of the proof:
 
-Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 implies $A=\mb1$, and thus 
+Let $c,c':\isContr(A)$. Since $A$ is contractible (by $c$ or $c'$), Lemma 3.11.3 (see \S\ref{311} above) implies $A=\mb1$, and thus 
 $$
 \isContr(A)=\left(\sum_{a:\mb1}\ \prod_{x:\mb1}\ (a=x)\right)=\left(\sum_{a:\mb1}\ \prod_{x:\mb1}\ \mb1\right)=\left(\sum_{a:\mb1}\ \mb1\right)=\mb1.\ \sq
 $$
@@ -940,7 +940,10 @@ $$
 
 \subsection{Exercise 3.7}
 
-We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is inhabited. We claim that $A+B$ is a mere proposition. It suffices to prove $x=y$ in the following cases:
+\emph{Statement.} Show that if $A$ and $B$ are mere propositions and $\neg(A\times B)$, then $A+B$ is also a mere proposition.
+
+\emph{Proof.} %We assume that $A$ and $B$ are mere propositions, and that $\neg(A\times B)$ is inhabited. We claim that $A+B$ is a mere proposition. 
+It suffices to prove $x=y$ in the following cases:
 
 (a) $x=\inl(a),\ y=\inl(a')$,
 
@@ -1064,6 +1067,34 @@ To prove that the law of double negation implies the law of excluded middle, we 
 
 \subsection{Proof of Lemma 4.1.2}
 
+For the reader's convenience we paste the statement and proof of Lemma 4.1.2:
+
+\nn\tb{Lemma 4.1.2.} \emph{Suppose we have a type $A$ with $a:A$ and $q:a=a$ such that
+\begin{enumerate}
+\item[(i)] The type $a=a$ is a set.%\label{item:autohtpy1}
+\item[(ii)] For all $x:A$ we have $\lV a=x\rV$.%\label{item:autohtpy2}
+\item[(iii)] For all $p:a=a$ we have $p\cc q=q\cc p$.%\label{item:autohtpy3}
+\end{enumerate}
+Then there exists $f:\pd_{x:A}(x=x)$ with} $f(a)=q$.\bigskip
+
+\nn\emph{Proof.} Let $g:\pd_{x:A}\lV a=x\rV$ be as given by~(ii). First we observe that each type $x=_Ay$ is a set. For since being a set is a mere proposition, we may apply the induction principle of propositional truncation, and assume that $g(x)=\lv p\rv$ and $g(y)=\lv p'\rv$ for $p:a=x$ and $p':a=y$. In this case, composing with $p$ and $p'^{-1}$ yields an equivalence $(x=y)\simeq(a=a)$. But $a=a$ is a set by~(i), so $x=y$ is also a set.
+
+Now, we would like to define $f$ by assigning to each $x$ the path $g(x)^{-1}\cc q\cc g(x)$, but this does not work because $g(x)$ does not inhabit $a=x$ but rather $\lV a=x\rV$, and the type $x=x$ may not be a mere proposition, so we cannot use induction on propositional truncation. Instead we can apply the technique mentioned in \S3.9: we characterize uniquely the object we wish to construct. Let us define, for each $x:A$, the type
+$$
+B(x):\eq\sum_{r:x=x}\ \pd_{s:a=x}\ (r=s^{-1}\cc q\cc s).
+$$
+We claim that $B(x)$ is a mere proposition for each $x:A$. Since this claim is itself a mere proposition, we may again apply induction on truncation and assume that $g(x)= \lv p\rv$ for some $p:a=x$. Now suppose given $(r,h)$ and $(r',h')$ in $B(x)$; then we have
+$$
+h(p)\cc h'(p)^{-1}:r=r'.
+$$
+It remains to show that $h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types (\S\S2.9 and 2.11), reduces to showing
+$$
+h(s)=h(p)\cc h'(p)^{-1}\cc h'(s)
+$$
+for any $s:a=x$. But each side of this is an equality between elements of $x=x$, so it follows from our above observation that $x=x$ is a set.
+
+Thus, each $B(x)$ is a mere proposition; we claim that $\pd_{x:A}B(x)$. Given $x:A$, we may now invoke the induction principle of propositional truncation to assume that $g(x)= \lv p\rv$ for $p:a=x$. We define $r:\eq p^{-1}\cc q\cc p$; to inhabit $B(x)$ it remains to show that for any $s:a=x$ we have $r=s^{-1}\cc q\cc s$. Manipulating paths, this reduces to showing that $q\cc (p\cc s^{-1}) = (p\cc s^{-1}) \cc q$. But this is just an instance of~(iii). $\sq$
+
 Let us denote by $(\star)$ the claim 
 
 \nn\emph{$h$ is identified with $h'$ when transported along this equality, which by transport in identity types and function types, reduces to showing 
@@ -1072,7 +1103,7 @@ h(s)=h(p)\cc h'(p)^{-1}\cc h'(s)
 $$ 
 for any $s:a=x$}
 
-\nn in the proof of Lemma 4.1.2 in the HoTT Book. We make three observations:
+\nn in the proof of Lemma 4.1.2 (see above). We make three observations:
 
 \nn\tb{(1)} The fact that $(\star)$ implies that $B(x)$ is a mere proposition follows from Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). 
 
