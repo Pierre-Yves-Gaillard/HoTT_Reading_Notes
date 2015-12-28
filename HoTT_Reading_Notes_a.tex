@@ -2082,12 +2082,16 @@ In the penultimate paragraph of the proof of Theorem 9.2.5, one can also argue b
 To prove Lemma 9.3.2 (see \S\ref{932} below) the following two lemmas might be useful. (Lemma~1 below is a mild generalization of Lemma 9.2.8.)
 
 \nn\tb{Lemma 1.} \emph{In the diagram below, $A,B,C,D$ are precategories; $F,G:A\to B$, $H,K:C\to D$ and $L:B\to C$ are functors; $\gamma:F\to G$ and $\delta:H\to K$ are natural transformations:
+%$$\xymatrix{&&\ar[dd]_\delta&\ar[ll]_H&&&&\ar[dd]_\gamma&\ar[ll]_F\\ D&&&&C&B\ar[l]_L&&&&&A.\\ &&&\ar[ll]^K&&&&&\ar[ll]^G}$$ 
 $$
-\xymatrix{
-&&\ar[dd]_\delta&\ar[ll]_H&&&&\ar[dd]_\gamma&\ar[ll]_F\\
-D&&&&C&B\ar[l]_L&&&&&A.\\
-&&&\ar[ll]^K&&&&&\ar[ll]^G}
-$$ 
+\begin{array}{ccccccc}
+&H&&&&F\\
+&\leftarrow&&L&&\leftarrow\\
+D&\delta\downarrow&C&\leftarrow&B&\gamma\downarrow&A,\\
+&\leftarrow&&&&\leftarrow\\
+&K&&&&G
+\end{array}
+$$
 We have, in the above setting,}
 \begin{equation}\label{928a}
 (\delta LG)(HL\gamma)=(KL\gamma)(\delta LF).
@@ -2140,13 +2144,15 @@ In the notation of \S\ref{928} above, the following diagrams and equalities (whi
 
 %\newpage
 
+%$$\begin{array}{ccccccccccccccc}&1_A&&&&FG'&&&&1_A&&&&FG\\ &\leftarrow&&G&&\leftarrow&&F&&\leftarrow&&G'&&\leftarrow\\ A&\eta'\downarrow&A&\leftarrow&B&\ep'\downarrow&B&\leftarrow&A&\eta\downarrow&A&\leftarrow&B&\ep\downarrow&B,\\ &\leftarrow&&&&\leftarrow&&&&\leftarrow&&&&\leftarrow\\ &G'F&&&&1_B&&&&GF&&&&1_B\end{array}$$ 
+
 $$
-\begin{array}{ccccccccccccccc}
-&1_A&&&&FG'&&&&1_A&&&&FG\\
-&\leftarrow&&G&&\leftarrow&&F&&\leftarrow&&G'&&\leftarrow\\
-A&\eta'\downarrow&A&\leftarrow&B&\ep'\downarrow&B&\leftarrow&A&\eta\downarrow&A&\leftarrow&B&\ep\downarrow&B,\\
-&\leftarrow&&&&\leftarrow&&&&\leftarrow&&&&\leftarrow\\
-&G'F&&&&1_B&&&&GF&&&&1_B
+\begin{array}{ccccccc}
+&1_A&&&&FG\\
+&\leftarrow&&G'&&\leftarrow\\
+A&\eta\downarrow&A&\leftarrow&B&\ep\downarrow&B,\\
+&\leftarrow&&&&\leftarrow\\
+&GF&&&&1_B
 \end{array}
 $$ 
 
