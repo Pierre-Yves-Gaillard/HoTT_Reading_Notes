@@ -1136,9 +1136,20 @@ Claim (a) is clear. Let us prove (b). By assumption (iii) of Lemma 4.1.2 (see ab
 
 %%
 
-\subsection{Proof of Lemma 4.2.11}
+\subsection{Proof of Lemma 4.2.11}\label{4211}
 
 Use also Theorem 2.15.7. 
+
+For the reader's convenience we paste the statement of Theorem 2.15.7:
+
+Suppose suppose we have a type $X$ and type families $A:X\to\U$ and $P:\pd_{x:X}A(x)\to\U$. Then we have a function
+\begin{equation}\label{eq:sigma-ump-map}
+\ga(\pd_{x:X}\ \sum_{a:A(x)}P(x,a)\dr)\to
+\ga(\sum_{g:\pd_{x:X}A(x)}\ \ \pd_{x:X}P(x,g(x))\dr).
+\end{equation}
+defined by $f\mapsto(\pr_1\circ f,\pr_2\circ f)$.
+
+\nn\tb{Theorem 2.15.7.} \emph{\eqref{eq:sigma-ump-map} is an equivalence.}
 
 %%
 
@@ -1570,7 +1581,7 @@ $$
 
 \subsection{Proof of Theorem 5.8.4 (iii)}
 
-By Theorem 2.15.7 the type 
+By Theorem 2.15.7 (see \S\ref{4211} p.~\pageref{4211}) the type 
 $$
 \sum_{g:\prod_{(a,b:A)}R(a,b)\to S(a,b)}\quad\prod_{a:A}\quad\Big(g\big(a,a,r_0(a)\big)=s_0(a)\Big)
 $$ 
