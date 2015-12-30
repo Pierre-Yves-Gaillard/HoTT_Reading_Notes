@@ -78,10 +78,12 @@
 \nc{\refl}{\ms{refl}}\nc{\re}{\ms{refl}}
 \nc{\Set}{\ms{Set}}
 \nc{\sm}{\scriptstyle}
+\nc{\sms}{\ms s}
 \nc{\sq}{\square}
 \nc{\suc}{\ms{succ}}\nc{\su}{\ms{succ}}
 \nc{\tb}{\textbf}
 \nc{\then}{\Rightarrow}
+\nc{\tms}{\ms t}
 \nc{\tx}{\text}
 \nc{\transport}{\ms{transport}}\nc{\tr}{\ms{transport}}
 \nc{\two}{\mb2}
@@ -89,6 +91,7 @@
 \nc{\U}{\mc U}%\nc{\V}{\mc V}
 \nc{\ua}{\ms{ua}}
 \nc{\uniq}{\ms{uniq}}
+\nc{\univalence}{\ms{univalence}}
 \nc{\vide}{\varnothing}
 \nc{\ws}{\ms{sup}}
 \nc{\zero}{\mb0}
@@ -136,15 +139,15 @@ and $c_0:C_0(a,\refl_a)$. We must find an
 $$
 f:\pd_{x:A}\ \pd_{p:a=x}\ C_0(x,p)
 $$ 
-such that $f(a,\re_a)\eq c_0$. Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
+such that $f(a,\refl_a)\eq c_0$. Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
 $$
-D(x,y,p):\eq\pd_{C:\pd_{z:A}(x=z)\to\U}C(x,\re_x)\to C(y,p)
+D(x,y,p):\eq\pd_{C:\pd_{z:A}(x=z)\to\U}C(x,\refl_x)\to C(y,p)
 $$ 
-and $d:\pd_{x:A}D(x,x,\re_x)$ by $d(x,C,c):\eq c$. By path induction we get a 
+and $d:\pd_{x:A}D(x,x,\refl_x)$ by $d(x,C,c):\eq c$. By path induction we get a 
 $$
 g:\pd_{x,y:A}\ \pd_{p:x=y}\ D(x,y,p)
 $$ 
-such that $g(x,x,\re_x)\eq d(x)$ for all $x:A$. We set $f(x,p):\eq g(a,x,p,C_0,c_0)$ for $x:A$ and $p:a=x$, and leave the end of the proof to the reader. $\sq$
+such that $g(x,x,\refl_x)\eq d(x)$ for all $x:A$. We set $f(x,p):\eq g(a,x,p,C_0,c_0)$ for $x:A$ and $p:a=x$, and leave the end of the proof to the reader. $\sq$
 
 %
 
@@ -481,24 +484,24 @@ We wish to rewrite the last display of Theorem 2.7.4 in a slightly more explicit
 $$
 Q'(a):\eq\sum_{u:P(a)}\ Q(a,u)
 $$ 
-for $a:A$, let us abbreviate $\tr$ by $\ms t$, and let us write $\pa_P$ instead of $\pa$ (see~\eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Recall that $p:x=y$ is a path in $A$, that $u:P(x)$ and $z:Q(x,u)$, so that $(u,z):Q'(x)$. Here is the rewriting:
+for $a:A$, let us abbreviate $\tr$ by $\tms$, and let us write $\pa_P$ instead of $\pa$ (see~\eqref{273} above) to emphasize the fact that this operation is taken with respect to the type family $P:A\to\U$. Recall that $p:x=y$ is a path in $A$, that $u:P(x)$ and $z:Q(x,u)$, so that $(u,z):Q'(x)$. Here is the rewriting:
 
 \begin{equation}\label{ld}
-\ms t^{Q'}(p,(u,z))=\Bigg(\ms t^P(p,u),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big),z\bigg)\Bigg).
+\tms^{Q'}(p,(u,z))=\Bigg(\tms^P(p,u),\tms^Q\bigg(\pa_P\Big(p,\refl_{\tms^P(p,u)}\Big),z\bigg)\Bigg).
 \end{equation}
 
 The key step to check that the above equality is well-typed is the judgment 
 $$
-\pa_P\Big(p,\refl_{\ms t^P(p,u)}\Big):(x,u)=_{\sum_{a:A}P(a)}\big(y,\ms t^P(p,u)\big).
+\pa_P\Big(p,\refl_{\tms^P(p,u)}\Big):(x,u)=_{\sum_{a:A}P(a)}\big(y,\tms^P(p,u)\big).
 $$ 
 
 For the reader's convenience, we rewrite \eqref{273} more explicitly as 
 $$
-\pa_P:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(\ms t^P(p,\pr_2(w))=\pr_2(w')\big)\right)\to(w=w'),
+\pa_P:\left(\sum_{p:\pr_1(w)=\pr_1(w')}\big(\tms^P(p,\pr_2(w))=\pr_2(w')\big)\right)\to(w=w'),
 $$ 
 so that we have $\pa_P(p,q):w=w'$ if and only if 
 $$
-p:\pr_1(w)=\pr_1(w')\quad\text{and}\quad q:\ms t^P(p,\pr_2(w))=\pr_2(w').
+p:\pr_1(w)=\pr_1(w')\quad\text{and}\quad q:\tms^P(p,\pr_2(w))=\pr_2(w').
 $$
 
 %%
@@ -535,7 +538,7 @@ $$
 % old version
 % https://docs.google.com/document/d/197ZjivVJusz2215MEB2JCDhvx6Y4YDs-vAkmr5oyJcY/edit
 
-In this Section we abbreviate $\tr$ by $\ms t$. Let 
+In this Section we abbreviate $\tr$ by $\tms$. Let 
 $$
 A:X\to\U,\quad B:\prod_{x:X}\ A(x)\to\U,\quad\widehat B:\left(\sum_{x:X}\ A(x)\right)\to\U,\quad B':X\to\U
 $$ 
@@ -545,7 +548,7 @@ B'(x):\eq\pd_{a:A(x)}\ B(x,a)
 $$ 
 for all $x:X$; let 
 $$
-p:x=_Xy,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\ms t^A(p);
+p:x=_Xy,\quad f:B'(x),\quad g:B'(y),\quad p_\star:\eq\tms^A(p);
 $$ 
 and define 
 $$
@@ -553,34 +556,34 @@ h:\pd_{a:A(x)}\ B(y,p_\star a)
 $$ 
 by setting 
 \begin{equation}\label{ha}
-h(a):\eq\ms t^{\widehat B}\Big(\pa_A\big(p,\re_{p_\star a}\big),f(a)\Big)
+h(a):\eq\tms^{\widehat B}\Big(\pa_A\big(p,\refl_{p_\star a}\big),f(a)\Big)
 \end{equation}
 for all $a:A(x)$. 
 
 Here are more details about \eqref{ha}: We write $\pa_A$ for $\pa$ to stress the fact that the pairing is taken with respect to the type family $A$. Recall that $\pa$ is defined in \eqref{273} p.~\pageref{273}, and note that we have 
 $$
-\pa_A\big(p,\re_{p_\star a}\big):(x,a)=_{\sum_{x:X}A(x)}(y,p_\star a).
+\pa_A\big(p,\refl_{p_\star a}\big):(x,a)=_{\sum_{x:X}A(x)}(y,p_\star a).
 $$
 \textbf{Claim:} \emph{The maps}
 \begin{equation}\label{297}
 \xymatrix{
-\Big(\ms t^{B'}(p,f)\sim g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
+\Big(\tms^{B'}(p,f)\sim g\Big)\ar@<2pt>[r]^(.5)u&\Big(h\sim g\ci p_\star\Big)\ar@<2pt>[l]^(.45)v}
 \end{equation}
 \emph{defined below are inverses.}
 
-\nn\emph{Proof.} We define $k:\ms t^{B'}(p,f)\ci p_\star\sim h$ by induction on the path $p:x=y$. For $a':A(y)$ let 
+\nn\emph{Proof.} We define $k:\tms^{B'}(p,f)\ci p_\star\sim h$ by induction on the path $p:x=y$. For $a':A(y)$ let 
 $$
-r(a'):\ms t^{B'}(p,f)(a')=\ms t^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)
+r(a'):\tms^{B'}(p,f)(a')=\tms^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)
 $$ 
 and 
 $$
 s(a'):g\Big(p_\star\ (p^{-1})_\star\ a'\Big)=g(a')
 $$ 
-be the obvious paths. We now define $u$ and $v$ in \eqref{297} as follows. For $\alpha:\ms t^{B'}(p,f)\sim g$ and $a:A(x)$ we define $u(\alpha)(a):h(a)=g(p_\star a)$ by 
+be the obvious paths. We now define $u$ and $v$ in \eqref{297} as follows. For $\alpha:\tms^{B'}(p,f)\sim g$ and $a:A(x)$ we define $u(\alpha)(a):h(a)=g(p_\star a)$ by 
 $$ 
 u(\alpha)(a):\eq k(a)^{-1}\cc\alpha(p_\star a), 
 $$ 
-and for $\beta:h\sim g\ci p_\star$ we define $v(\beta):\ms t^{B'}(p,f)\sim g$ by 
+and for $\beta:h\sim g\ci p_\star$ we define $v(\beta):\tms^{B'}(p,f)\sim g$ by 
 $$
 v(\beta)(a'):\eq r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a').
 $$ 
@@ -589,11 +592,11 @@ The claim is easily proved by induction on the path $p:x=y$. $\square$
 
 The path 
 $$
-r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a'):\ms t^{B'}(p,f)(a')=g(a')
+r(a')\cc k\big((p^{-1})_\star\ a'\big)\cc\beta\big((p^{-1})_\star\ a'\big)\cc s(a'):\tms^{B'}(p,f)(a')=g(a')
 $$ 
 above is the composite of the paths
 \begin{align*}
-\ms t^{B'}(p,f)(a')&\xymatrix{\ar@1{=}[r]^{r(a')}&}\ms t^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
+\tms^{B'}(p,f)(a')&\xymatrix{\ar@1{=}[r]^{r(a')}&}\tms^{B'}(p,f)\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
 &\xymatrix{\ar@1{=}[rr]^{k((p^{-1})_\star a')}&&}h\Big((p^{-1})_\star\ a'\Big)\\ 
 &\xymatrix{\ar@1{=}[rr]^{\beta((p^{-1})_\star a')}&&}g\Big(p_\star\ (p^{-1})_\star\ a'\Big)\\ 
 &\xymatrix{\ar@1{=}[r]^{s(a')}&}g(a').
@@ -687,7 +690,7 @@ Q'(A):\eq\sum_{m:P(A)}\ Q(A,m).
 $$  
 In the notation of \S\ref{274} p.~\pageref{274} the last display of Theorem 2.7.4 (see \eqref{ld} p.~\pageref{ld}) now reads 
 $$
-\ms t^{Q'}(p,(m,a))=\Bigg(\ms t^P(p,m),\ms t^Q\bigg(\pa_P\Big(p,\refl_{\ms t^P(p,m)}\Big),a\bigg)\Bigg)
+\tms^{Q'}(p,(m,a))=\Bigg(\tms^P(p,m),\tms^Q\bigg(\pa_P\Big(p,\refl_{\tms^P(p,m)}\Big),a\bigg)\Bigg)
 $$ 
 with $p:\eq\ua(e)$. $\sq$
 
@@ -848,9 +851,9 @@ For the reader's convenience we paste below most of the statements in \S3.11 of 
 
 \nn\tb{Definition 3.11.1.} A type $A$ is \tb{contractible}, or a \tb{singleton}, if there is $a:A$, called the \tb{center of contraction}, such that $a=x$ for all $x:A$. We denote the specified path $a=x$ by $\ms{contr}_x$.
 
-In other words, the type $\ms{isContr}(A)$ is defined to be
+In other words, the type $\isContr(A)$ is defined to be
 $$
-\ms{isContr}(A):\eq\sum_{a:A}\ \pd_{x:A}\ (a=x).
+\isContr(A):\eq\sum_{a:A}\ \pd_{x:A}\ (a=x).
 $$
 
 \nn\tb{Lemma 3.11.3.} \emph{For a type $A$, the following are logically equivalent}
@@ -860,9 +863,9 @@ $$
 \item $A=\mb1$.
 \end{enumerate}
 
-\nn\tb{Lemma 3.11.4.} \emph{For any type $A$, the type $\ms{isContr}(A)$ is a mere proposition.}
+\nn\tb{Lemma 3.11.4.} \emph{For any type $A$, the type $\isContr(A)$ is a mere proposition.}
 
-\nn\tb{Corollary 3.11.5.} \emph{If $A$ is contractible, then so is} $\ms{isContr}(A)$.
+\nn\tb{Corollary 3.11.5.} \emph{If $A$ is contractible, then so is} $\isContr(A)$.
 
 \nn\tb{Lemma 3.11.6.} \emph{If $P:A\to\U$ is a type family such that each $P(a)$ is contractible, then $\pd_{x:A}P(x)$ is contractible.}
 
@@ -1219,9 +1222,9 @@ C:\eq\sum_{b:B}\ \fib_f(b):\eq\sum_{b:B}\ \sum_{a:A}\ (f(a)=b).
 $$ 
 We must show $A\simeq C$. Define $g:A\to C$ and $h:C\to A$ by 
 $$
-g(a):\eq(f(a),a,\re_{f(a)}),\qquad h(b,a,p):\eq a.
+g(a):\eq(f(a),a,\refl_{f(a)}),\qquad h(b,a,p):\eq a.
 $$ 
-We claim that $g$ and $h$ are inverses. It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\re_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}. $\square$
+We claim that $g$ and $h$ are inverses. It is easy to check $h\ci g=\id_A$. Let $(b,a,p):C$. It only remains to show $(f(a),a,\refl_{f(a)})=(b,a,p)$. But this follows from \eqref{paq}. $\square$
 
 %%
 
@@ -1249,13 +1252,13 @@ Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\ci\chi\simeq\id
 $$
 \ga(\sum_{b:B}\ \fib_f(b),\,\pr_1\dr)=(A,f).
 $$ 
-First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\re_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{294} below), we have $\ua(e)_\star(\pr_1)=\pr_1\ci e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\ci e^{-1}\eq f$. $\sq$
+First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\refl_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{294} below), we have $\ua(e)_\star(\pr_1)=\pr_1\ci e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\ci e^{-1}\eq f$. $\sq$
 
 Here are some details about the last sentence of the above proof: 
 
-Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\ms t$ we have 
+Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\tms$ we have 
 \begin{equation}\label{294}
-\ms t^{A\to B}(p,f,x)=\ms t^B(p,f(\ms t^A(p^{-1},x)))
+\tms^{A\to B}(p,f,x)=\tms^B(p,f(\tms^A(p^{-1},x)))
 \end{equation}
 for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
 
@@ -1269,19 +1272,19 @@ q_\star(\pr_1)=f.
 \end{equation} 
 By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Let the notation of \eqref{294} be in force. In particular, the computation rule for univalence stated right after Remark 2.10.4 in the book reads 
 \begin{equation}\label{cru}
-\ms t^I(q^{-1})=g,
+\tms^I(q^{-1})=g,
 \end{equation}
 and \eqref{3} becomes 
 $$
-\ms t^{I\to D}(q,\pr_1)=f.
+\tms^{I\to D}(q,\pr_1)=f.
 $$ 
 Let $a:A$. We must show 
 $$
-\ms t^{I\to D}(q,\pr_1,a)=f(a).
+\tms^{I\to D}(q,\pr_1,a)=f(a).
 $$ 
 We get 
 $$
-\ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\ms t^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
+\tms^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\tms^D(q,\pr_1(\tms^I(q^{-1},a)))\overset{\text{(b)}}=\tms^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
 $$ 
 where (a) follows from \eqref{294}, (b) follows from \eqref{cru}, (c) follows from Lemma 2.3.5 in the book (see below), and (d) follows from the definition of $g$. $\sq$
 
@@ -1317,28 +1320,28 @@ at the beginning of the proof of Theorem 4.8.4. Here is how I would present thin
 \begin{equation}\label{asimeq}
 A\simeq\sum_{X:\U}\ \big(X\times(X=A)\big).
 \end{equation}
-\emph{Proof.} Write $\ms t$ for ``transport''. Set $C:\eq\sum_{X:\U}\big(X\times(X=A)\big)$, and define 
+\emph{Proof.} Write $\tms$ for ``transport''. Set $C:\eq\sum_{X:\U}\big(X\times(X=A)\big)$, and define 
 $$
 f:A\to C,\qquad g:C\to A
 $$ 
 by 
 $$
-f(a):\eq(A,a,\re_A),\qquad g(B,b,p):\eq\ms t^{X\mapsto X}(p,b).
+f(a):\eq(A,a,\refl_A),\qquad g(B,b,p):\eq\tms^{X\mapsto X}(p,b).
 $$ 
 
 \nn We have $g(f(a))\eq a$ for all $a:A$. Let $(B,b,p):C$. We have 
 $$
-f(g(B,b,p))=(A,\ms t^{X\mapsto X}(p,b),\re_A)
+f(g(B,b,p))=(A,\tms^{X\mapsto X}(p,b),\refl_A)
 $$ 
 and we must show 
 $$
-(B,b,p)=(A,\ms t^{X\mapsto X}(p,b),\re_A).
+(B,b,p)=(A,\tms^{X\mapsto X}(p,b),\refl_A).
 $$
 By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) it suffices to verify 
 $$
-\ms t^{X\mapsto X\times(X=A)}(p,(b,p))=(\ms t^{X\mapsto X}(p,b),\refl_A).
+\tms^{X\mapsto X\times(X=A)}(p,(b,p))=(\tms^{X\mapsto X}(p,b),\refl_A).
 $$ 
-By Theorem 2.6.4 it suffices to prove $\ms t^{X\mapsto(X=A)}(p,p)=\refl_A$. But this follows from Lemma 2.11.2. $\square$
+By Theorem 2.6.4 it suffices to prove $\tms^{X\mapsto(X=A)}(p,p)=\refl_A$. But this follows from Lemma 2.11.2. $\square$
 
 Going back to the beginning of the proof of Theorem 4.8.4, we get 
 $$
@@ -1442,15 +1445,15 @@ Now \eqref{45a} and \eqref{45b} show that $g$ is an equivalence. The end of the 
 
 \emph{Statement.} For $A,B:\U$, define
 $$
-\mathsf{idtoqinv}_{A,B}:(A=B)\to\sum_{f:A\to B}\qinv(f)
+\ms{idtoqinv}_{A,B}:(A=B)\to\sum_{f:A\to B}\qinv(f)
 $$
-by path induction in the obvious way. Let $\qinv$-$\mathsf{univalence}$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\mathsf{idtoqinv}_{A,B}$ has an inverse.
+by path induction in the obvious way. Let $\qinv$-$\univalence$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\ms{idtoqinv}_{A,B}$ has an inverse.
 
-\nn(i) Show that $\qinv$-$\mathsf{univalence}$ can be used instead of univalence in the proof of function extensionality in $\S$4.9.
+\nn(i) Show that $\qinv$-$\univalence$ can be used instead of univalence in the proof of function extensionality in $\S$4.9.
 
-\nn(ii) Show that $\qinv$-$\mathsf{univalence}$ can be used instead of univalence in the proof of Theorem 4.1.3.
+\nn(ii) Show that $\qinv$-$\univalence$ can be used instead of univalence in the proof of Theorem 4.1.3.
 
-\nn(iii) Show that $\qinv$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\isequiv$ is essential in the statement of univalence.
+\nn(iii) Show that $\qinv$-$\univalence$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\isequiv$ is essential in the statement of univalence.
 
 \nn\emph{Solution.} Recall that, given a map $f:A\to B$, the type $\qinv(f)$ is defined by 
 \begin{equation}\label{qinv}
@@ -1466,11 +1469,11 @@ We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 i
 
 For any types $A$ and $B$ we put 
 $$
-(A\simeq B):\equiv\sum_{f:A\to B}\mathsf{ishae}(f),\quad(A\backsimeq B):\equiv\sum_{f:A\to B}\qinv(f).
+(A\simeq B):\equiv\sum_{f:A\to B}\ishae(f),\quad(A\backsimeq B):\equiv\sum_{f:A\to B}\qinv(f).
 $$ 
-(Recall that $\mathsf{ishae}(f)$ stands for ``$f$ is a half-adjoint equivalence''.) By Theorem 4.2.3 and the comment preceding it, there are dependent functions 
+(Recall that $\ishae(f)$ stands for ``$f$ is a half-adjoint equivalence''.) By Theorem 4.2.3 and the comment preceding it, there are dependent functions 
 $$
-i:\prod_{A,B:\U}\ \prod_{f:A\to B}\mathsf{ishae}(f)\to\qinv(f),\quad p:\prod_{A,B:\U}\ \prod_{f:A\to B}\ \qinv(f)\to\mathsf{ishae}(f).
+i:\prod_{A,B:\U}\ \prod_{f:A\to B}\ishae(f)\to\qinv(f),\quad p:\prod_{A,B:\U}\ \prod_{f:A\to B}\ \qinv(f)\to\ishae(f).
 $$ 
 For all $A,B:\U$ let $e(A,B):(A=B)\to(A\backsimeq B)$ be the natural map (which we assume to admit an inverse).
 
@@ -1478,11 +1481,11 @@ Claim: if $f:A\to B$ and $x:\qinv(f)$, then $i(A,B,f,p(A,B,f,x))=x$.
  
 Since $(f,x):A\backsimeq B$, we can assume by $\qinv$-univalence and path induction that 
 $$
-B\equiv A,\quad f\equiv\mathsf{id}_A,\quad x\equiv e(A,A,\mathsf{refl}_A),
+B\equiv A,\quad f\equiv\id_A,\quad x\equiv e(A,A,\refl_A),
 $$ 
 and the claim follows easily from the definition of $i,p$ and $e$.
 
-For $f:A\to B$ and $x,y:\qinv(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required. $\sq$
+For $f:A\to B$ and $x,y:\qinv(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\ishae(f)$ is a mere proposition, and the claim implies $x=y$, as required. $\sq$
 
 %% 
 
@@ -1731,19 +1734,19 @@ $$
 \star
 $$
 
-In the proof of Lemma 6.8.2 let us display the definition of $t\ci c_{\sqcup}:\ms{cocone}_{\mc D}(E)$ and of $\ms s(c):Z\to E$: 
+In the proof of Lemma 6.8.2 let us display the definition of $t\ci c_{\sqcup}:\ms{cocone}_{\mc D}(E)$ and of $\sms(c):Z\to E$: 
 $$
 t\ci c_{\sqcup}:\eq(t\ci\inl,t\ci\inr,\ap_t\ci\gl),
 $$ 
 $$
-\ms s(c)\ci\inl:\eq i,\quad\ms s(c)\ci\inr :\eq j,\quad\ap_{\ms s(c)}\ci\gl:=h.
+\sms(c)\ci\inl:\eq i,\quad\sms(c)\ci\inr :\eq j,\quad\ap_{\sms(c)}\ci\gl:=h.
 $$ 
 
 \nn(Recall: $t:Z\to E,\ c=(i,j,h):\ms{cocone}_{\mc D}(E)$.)
 
 Some more details about the end of the proof of Lemma 6.8.2:
 
-Set $u:\eq\ms s(t\ci c_\sqcup)$, and let $z:Z,\ x:C$. We want to show $u=t$ using the uniqueness principle. This easily reduces to verifying that 
+Set $u:\eq\sms(t\ci c_\sqcup)$, and let $z:Z,\ x:C$. We want to show $u=t$ using the uniqueness principle. This easily reduces to verifying that 
 $$
 \refl_{t(\inl(f(x)))}=_{\gl(x)}^{z\mapsto(u(z)=t(z))}\refl_{t(\inr(g(x)))},
 $$ 
@@ -1938,7 +1941,7 @@ r_3:\pd_{d:B\to \lV A\rV_n}\ \pd_{e:\pd_{b:B}\ P(d(b))}\ \pd_{b:B}\ \ga(e(b)=^P_
 $$ 
 if the computation rules
 $$
-f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad\ms{apd}_f(c_3(d,b))=r_3(d,f\ci d,b)
+f(c_1(a))\eq r_1(a),\quad f(c_2(d))\eq r_2(d,f\ci d),\quad\apd_f(c_3(d,b))=r_3(d,f\ci d,b)
 $$ 
 hold for all $a:A$, all $d:B\to \lV A\rV_n$ and all $b:B$. 
 
@@ -1958,7 +1961,7 @@ r:\pd_{a:A}\ P(q'(a)),\quad s:\pd_{a,b:A}\ \pd_{u:R(a,b)}\ \Big(r(a)=^P_{c(a,b,u
 $$ 
 if the computation rules 
 $$
-f(q'(a))\eq r(a),\quad\ms{apd}_f(c(a,b,u))=s(a,b,u)
+f(q'(a))\eq r(a),\quad\apd_f(c(a,b,u))=s(a,b,u)
 $$ 
 hold for all $a,b:A$ and all $u:R(a,b)$. 
 
@@ -2103,14 +2106,14 @@ $$
 %where $k$ is some homotopy from $\lV i\rV_n\ci\lv-\rv^A_n\ci f$ to $\lV j\rV_n\ci\lv-\rv^B_n\ci g$. In turn, the above equality is equivalent to the commutativity of the diagram below. (We drop the subscripts $n$, the superscripts $A,B,C,D$, and most of the parenthesis. We assume $z:C$.) 
 $$ 
 \xymatrix{
-\lV i\rV\lv fz\rv\ar@{=}[d]_{\re}\ar@{=}[rrrrrr]^{kz}&&&&&&\lV j\rV\lv gz\rv\ar@{=}[d]^{\re}\\
+\lV i\rV\lv fz\rv\ar@{=}[d]_{\refl}\ar@{=}[rrrrrr]^{kz}&&&&&&\lV j\rV\lv gz\rv\ar@{=}[d]^{\refl}\\
 \lV i\rV\lv fz\rv\ar@{=}[d]_{\na^i(fz)}&&
 \lV i\rV\lV f\rV\lv z\rv\ar@{=}[ll]_{\ap_{\lV i\rV}(\na^fz)^{-1}}\ar@{=}[d]_{\ph^{\lV i\rV,\lV f\rV}(\lv z\rv)}\ar@{=}[rr]^{h'\lv z\rv}&&
 \lV j\rV\lV g\rV\lv z\rv\ar@{=}[d]^{\ph^{\lV j\rV,\lV g\rV}(\lv z\rv)}\ar@{=}[rr]^{\ap_{\lV j\rV}(\na^gz)}&&
 \lV j\rV\lv gz\rv\ar@{=}[d]^{\na^j(gz)}\\
 %
 \lv ifz\rv&&\lV if\rV\lv z\rv\ar@{=}[rr]_{\lV h\rV\lv z\rv}\ar@{=}[ll]^{\na^{if}(z)^{-1}}&&\lV jg\rV\lv z\rv\ar@{=}[rr]_{\na^{jg}(z)}&&\lv jgz\rv\\ 
-\lv ifz\rv\ar@{=}[u]^{\re}\ar@{=}[rrrrrr]_{\ap_{\lv-\rv}(hz)}&&&&&&\lv jgz\rv\ar@{=}[u]_{\re}}
+\lv ifz\rv\ar@{=}[u]^{\refl}\ar@{=}[rrrrrr]_{\ap_{\lv-\rv}(hz)}&&&&&&\lv jgz\rv\ar@{=}[u]_{\refl}}
 $$ 
 for all $z:C$. The upper rectangle commutes by definition of $k$, the small squares commute by \S\ref{747} above, and the lower rectangle commutes by Lemma 7.3.5 in the book.
 
@@ -2334,7 +2337,7 @@ $\bu$ The following observation, which could be made just before Definition 9.2.
 
 \emph{In the setting of Definition 9.2.1, let $p:F_0=G_0$; for each $a:A_0$ let $p_a:Fa=Ga$ be the induced path; let $a,a':A_0$; and define $P:(A_0\to B_0)\to\U$ by $P(f):\eq(\hom_A(a,a')\to\hom_B(fa,fa'))$. Then we have} 
 $$
-p_\star(F_{a,a'})(g)=\msf{idtoiso}(p_{a'})\ci F_{a,a'}(g)\ci\msf{idtoiso}((p_a)^{-1})
+p_\star(F_{a,a'})(g)=\ms{idtoiso}(p_{a'})\ci F_{a,a'}(g)\ci\ms{idtoiso}((p_a)^{-1})
 $$ 
 \emph{for all $g:\hom_A(a,a')$.}
 
@@ -2411,7 +2414,7 @@ as follows: Let $\sim_b$ be the equivalence relation defined on $\fib_f(b)$ by t
 
 \subsection{Proof of Lemma 10.1.13}
 
-To prove the equality $\msf{merid}_\star(\tau(N))=\tau(S)$, one can use the following lemma:
+To prove the equality $\ms{merid}_\star(\tau(N))=\tau(S)$, one can use the following lemma:
 
 \emph{Let $P:A\to B\to\U$ be a type family, define $Q:A\to\U$ by 
 $$
