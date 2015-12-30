@@ -57,7 +57,7 @@
 \nc{\ishae}{\ms{ishae}}\nc{\ish}{\ms{ishae}}\nc{\ih}{\ms{ishae}}
 \nc{\isProp}{\ms{isProp}}\nc{\prop}{\ms{isProp}}\nc{\iP}{\ms{isProp}}\nc{\ip}{\ms{isProp}}
 \nc{\isSet}{\ms{isSet}}\nc{\isS}{\ms{isSet}}\nc{\iss}{\ms{isSet}}\nc{\iS}{\ms{isSet}}\nc{\is}{\ms{isSet}}
-\nc{\la}{\lambda}
+\nc{\la}{\lambda}\nc{\lam}{\lambda}
 \nc{\LEM}{\ms{LEM}}\nc{\lem}{\ms{LEM}}\nc{\LE}{\ms{LEM}}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
 \nc{\Map}{\ms{Map}}
@@ -322,10 +322,10 @@ as required. $\square$
 
 \nn\emph{Solution.} We put 
 $$
-mn:\equiv\rec_\N(\ \N\to\N\ ,\ \la n.0\ ,\ \la m.\la g.\la n.n+g(n)\ ,\ m\ ,\ n\ ),
+mn:\equiv\rec_\N(\ \N\to\N\ ,\ \lam n.0\ ,\ \lam m.\lam g.\lam n.n+g(n)\ ,\ m\ ,\ n\ ),
 $$
 $$
-n^m:\equiv\rec_\N(\ \N\to\N\ ,\ \la n.1\ ,\ \la m.\la g.\la n.ng(n)\ ,\ m\ ,\ n\ ).
+n^m:\equiv\rec_\N(\ \N\to\N\ ,\ \lam n.1\ ,\ \lam m.\lam g.\lam n.ng(n)\ ,\ m\ ,\ n\ ).
 $$ 
 We omit the verification of the fact that $(\N,+,0,\times,1)$ is a semiring. $\sq$
 
@@ -425,7 +425,7 @@ i:\N,\quad f:\N\to\N,\quad f':\N\to\N\to\N,\quad f'(x,y):\equiv f(y),
 $$ 
 that is
 $$
-\ack:\eq\rec_\N\Big(\N\to\N,\su,\la i.\la f.\rec_\N\big(\N,f(1),\la x.\la y.f(y)\big)\Big).\ \sq
+\ack:\eq\rec_\N\Big(\N\to\N,\su,\lam i.\lam f.\rec_\N\big(\N,f(1),\lam x.\lam y.f(y)\big)\Big).\ \sq
 $$ 
 
 %%
@@ -1376,7 +1376,7 @@ $$=\sum_{x:A}\ \sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$
 
 $$\sum_{p:g(f(x))=g(b)}\ \big((f(x),p)=(b,\refl_{g(b)})\big)$$ 
 
-$$\overset{\text{(a)}}=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\transport^{\la(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
+$$\overset{\text{(a)}}=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\transport^{\lam(y:B).g(y)=g(b)}(q,p)=\refl_{g(b)}\big)$$ 
 
 $$=\sum_{p:g(f(x))=g(b)}\ \sum_{q:f(x)=b}\ \big(\ap_g(q)^{-1}\cc p=\refl_{g(b)}\big)$$ 
 
@@ -1543,7 +1543,7 @@ Here are some more details about the above parenthesis:
 
 If $B:A\to\U$ is a type family over a type $A$, then we have a codiagonal map 
 \begin{equation}\label{563}
-(\la f.\la a.f(a,a)):\left(A\to\pd_{a:A}\ B(a)\right)\to\pd_{a:A}\ B(a).
+(\lam f.\lam a.f(a,a)):\left(A\to\pd_{a:A}\ B(a)\right)\to\pd_{a:A}\ B(a).
 \end{equation} 
 In the particular case when $B:\U$ is constant, the above type becomes 
 $$
@@ -2439,7 +2439,7 @@ g:\prod_{a:A}\ \acc(a)\to P(a)
 $$
 with
 $$
-g\big(a,\acc_<(a,\pr_1\ci u)\big)\eq f\bigg(a\ ,\ \la b.\la l.\Big(\pr_1 u(b,l)\ ,\ g\big(b,\pr_1 u(b,l)\big)\Big)\bigg)
+g\big(a,\acc_<(a,\pr_1\ci u)\big)\eq f\bigg(a\ ,\ \lam b.\lam l.\Big(\pr_1 u(b,l)\ ,\ g\big(b,\pr_1 u(b,l)\big)\Big)\bigg)
 $$
 for all $a:A$ and all $u:\prod_{b:A}\ (b<a)\to\acc(b)\times P(b)$. 
 
@@ -2449,7 +2449,7 @@ If $<$ is well-founded, if we have a type family $P:A\to\U$, and if we have
 \begin{equation}\label{103}
 f:\prod_{a:A}\ \left(\prod_{b:A}\ (b<a)\to P(b)\right)\to P(a),
 \end{equation} 
-then we get $g:\prod_{a:A}P(a)$ with $g(a)\eq f(a,\la b.\la l.g(b))$ for all $a:A$.
+then we get $g:\prod_{a:A}P(a)$ with $g(a)\eq f(a,\lam b.\lam l.g(b))$ for all $a:A$.
 
 (We are using Lemma 10.3.2 of the book.)
 
@@ -2481,7 +2481,7 @@ $$
 $$ 
 We get 
 $$
-g(a)\eq f(a,\la b.\la l.g(b))\eq h(\{g(b)\ \vert\ b<a\}).\ \sq
+g(a)\eq f(a,\lam b.\lam l.g(b))\eq h(\{g(b)\ \vert\ b<a\}).\ \sq
 $$ 
 
 %%
@@ -2561,6 +2561,6 @@ The claim ``Since $q+2\ep<r-2\ep$ merely $L_{x_\ep}(q+2\ep)$ or $U_{x_\ep}(q-2\e
 
 \section{Appendix A}
 
-It seems to me that the expression $\la x.b$ is defined in two conflicting ways, firstly at the beginning of A.1, and secondly in the last sentence of A.2.4. 
+It seems to me that the expression $\lam x.b$ is defined in two conflicting ways, firstly at the beginning of A.1, and secondly in the last sentence of A.2.4. 
 
 \end{document}
