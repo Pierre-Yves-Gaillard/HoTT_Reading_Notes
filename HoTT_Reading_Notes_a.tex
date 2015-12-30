@@ -1451,7 +1451,17 @@ by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ 
 
 \nn(iii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\mathsf{isequiv}$ is essential in the statement of univalence.
 
-\nn\emph{Solution.} We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\mathsf{qinv}(f)$ is a mere proposition. 
+\nn\emph{Solution.} Recall that, given a map $f:A\to B$, the type $\ms{qinv}(f)$ is defined by 
+$$
+\ms{qinv}(f):\eq\sum_{g:B\to A}\ (f\ci g)\sim\id_B)\times(g\ci f)\sim\id_A)
+$$ 
+(see beginning of Chapter~4 in the book), and that $\ms{ishae}(f)$ is defined by 
+$$
+\ms{ishae}(f):\eq\sum_{g:B\to A}\ \sum_{\eta:g\ci f\sim\id_A}\ \sum_{\ep:f\ci g\sim\id_B}\ \pd_{x:A}\ f(\eta x)=\ep(fx)
+$$ 
+(see beginning of Definition 4.2.1 in the book). 
+
+We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\mathsf{qinv}(f)$ is a mere proposition. 
 
 For any types $A$ and $B$ we put 
 $$
