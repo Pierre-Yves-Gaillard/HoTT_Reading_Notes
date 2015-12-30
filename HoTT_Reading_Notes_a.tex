@@ -1248,12 +1248,12 @@ Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\circ\chi\simeq\
 $$
 \ga(\sum_{b:B}\ \fib_f(b),\,\pr_1\dr)=(A,f).
 $$ 
-First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\re_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{2.9.4} below), we have $\ua(e)_\star(\pr_1)=\pr_1\circ e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\circ e^{-1}\eq f$. $\sq$
+First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\re_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{294} below), we have $\ua(e)_\star(\pr_1)=\pr_1\circ e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\circ e^{-1}\eq f$. $\sq$
 
 Here are some details about the last sentence of the above proof: 
 
 Firstly we rewrite (2.9.4) as follows. Abbreviating transport by $\ms t$ we have 
-\begin{equation}\label{2.9.4}
+\begin{equation}\label{294}
 \ms t^{A\to B}(p,f,x)=\ms t^B(p,f(\ms t^A(p^{-1},x)))
 \end{equation}
 for $p:x_1=_Xx_2,\ f:A(x_1)\to B(x_1),\ a_2:A(x_2)$. 
@@ -1262,11 +1262,15 @@ Let the notation of \S\ref{482} above be in force. Let $\pr_1:C\to B$ be the fir
 \begin{equation}\label{2}
 (C,\pr_1)=_{\sum_{X:\U}X\to B}(A,f).
 \end{equation} 
-By \S\ref{482} we have an equivalence $e:C\simeq A$. Set $g:\eq\pr_1(e)$ (here of course $\pr_1$ denotes the first projection $(C\simeq A)\to(C\to A)$). Set also $q:\equiv\ua(e)$, so that we get $q:C=A$. We claim 
+By \S\ref{482} we have an equivalence $e:C\simeq A$. Set $g:\eq\pr_1(e^{-1})$ (here of course $\pr_1$ denotes the first projection $(A\simeq C)\to(A\to C)$). Set also $q:\equiv\ua(e)$, so that we get $q:C=A$. We claim 
 \begin{equation}\label{3}
 q_\star(\pr_1)=f.
 \end{equation} 
-By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Then \eqref{3} becomes, in the notation of (2.9.4) (see \eqref{2.9.4}), 
+By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), \eqref{3} will imply \eqref{2}. For all $X:\U$ set $I(X):\equiv X,\ D(X):\equiv A$. Let the notation of \eqref{294} be in force. In particular, the computation rule for univalence stated right after Remark 2.10.4 in the book reads 
+\begin{equation}\label{cru}
+\ms t^I(q^{-1})=g,
+\end{equation}
+and \eqref{3} becomes 
 $$
 \ms t^{I\to D}(q,\pr_1)=f.
 $$ 
@@ -1278,7 +1282,12 @@ We get
 $$
 \ms t^{I\to D}(q,\pr_1,a)\overset{\text{(a)}}=\ms t^D(q,\pr_1(\ms t^I(q^{-1},a)))\overset{\text{(b)}}=\ms t^D(q,\pr_1(g(a)))\overset{\text{(c)}}=\pr_1(g(a))\overset{\text{(d)}}=f(a),
 $$ 
-where (a) follows from \eqref{2.9.4}, (b) follows from the computation rule for univalence stated right after Remark 2.10.4 in the book, (c) follows from Lemma 2.3.5 in the book, and (d) follows from the definition of $g$. $\sq$
+where (a) follows from \eqref{294}, (b) follows from \eqref{cru}, (c) follows from Lemma 2.3.5 in the book (see below), and (d) follows from the definition of $g$. $\sq$
+
+\nn\tb{Lemma 2.3.5.} \emph{If $P:A\to\U$ is defined by $P(x):\eq B$ for a fixed $B:\U$, then for any $x,y:A$ and $p:x=y$ and $b:B$ we have a path}
+$$
+\ms{transportconst}^B_p(b):\tr^P(p,b)=b.
+$$
 
 %%
 
