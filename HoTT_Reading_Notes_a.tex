@@ -1442,15 +1442,15 @@ Now \eqref{45a} and \eqref{45b} show that $g$ is an equivalence. The end of the 
 
 \emph{Statement.} For $A,B:\U$, define
 $$
-\mathsf{idtoqinv}_{A,B}:(A=B)\to\sum_{f:A\to B}\mathsf{qinv}(f)
+\mathsf{idtoqinv}_{A,B}:(A=B)\to\sum_{f:A\to B}\qinv(f)
 $$
-by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\mathsf{idtoqinv}_{A,B}$ has an inverse.
+by path induction in the obvious way. Let $\qinv$-$\mathsf{univalence}$ denote the modified form of the univalence axiom which asserts that for all $A,B:\U$ the function $\mathsf{idtoqinv}_{A,B}$ has an inverse.
 
-\nn(i) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ can be used instead of univalence in the proof of function extensionality in $\S$4.9.
+\nn(i) Show that $\qinv$-$\mathsf{univalence}$ can be used instead of univalence in the proof of function extensionality in $\S$4.9.
 
-\nn(ii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ can be used instead of univalence in the proof of Theorem 4.1.3.
+\nn(ii) Show that $\qinv$-$\mathsf{univalence}$ can be used instead of univalence in the proof of Theorem 4.1.3.
 
-\nn(iii) Show that $\mathsf{qinv}$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\mathsf{isequiv}$ is essential in the statement of univalence.
+\nn(iii) Show that $\qinv$-$\mathsf{univalence}$ is inconsistent (i.e. allows construction of an inhabitant of $\mb0$). Thus, the use of a ``good'' version of $\isequiv$ is essential in the statement of univalence.
 
 \nn\emph{Solution.} Recall that, given a map $f:A\to B$, the type $\qinv(f)$ is defined by 
 \begin{equation}\label{qinv}
@@ -1462,27 +1462,27 @@ by path induction in the obvious way. Let $\mathsf{qinv}$-$\mathsf{univalence}$ 
 \end{equation}
 (see beginning of Definition 4.2.1 in the book). 
 
-We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\mathsf{qinv}(f)$ is a mere proposition. 
+We leave (i) and (ii) to the reader, and prove (iii). In view of Theorem 4.1.3 it suffices to show that, for any map $f:A\to B$, the type $\qinv(f)$ is a mere proposition. 
 
 For any types $A$ and $B$ we put 
 $$
-(A\simeq B):\equiv\sum_{f:A\to B}\mathsf{ishae}(f),\quad(A\backsimeq B):\equiv\sum_{f:A\to B}\mathsf{qinv}(f).
+(A\simeq B):\equiv\sum_{f:A\to B}\mathsf{ishae}(f),\quad(A\backsimeq B):\equiv\sum_{f:A\to B}\qinv(f).
 $$ 
 (Recall that $\mathsf{ishae}(f)$ stands for ``$f$ is a half-adjoint equivalence''.) By Theorem 4.2.3 and the comment preceding it, there are dependent functions 
 $$
-i:\prod_{A,B:\U}\ \prod_{f:A\to B}\mathsf{ishae}(f)\to\mathsf{qinv}(f),\quad p:\prod_{A,B:\U}\ \prod_{f:A\to B}\ \mathsf{qinv}(f)\to\mathsf{ishae}(f).
+i:\prod_{A,B:\U}\ \prod_{f:A\to B}\mathsf{ishae}(f)\to\qinv(f),\quad p:\prod_{A,B:\U}\ \prod_{f:A\to B}\ \qinv(f)\to\mathsf{ishae}(f).
 $$ 
 For all $A,B:\U$ let $e(A,B):(A=B)\to(A\backsimeq B)$ be the natural map (which we assume to admit an inverse).
 
-Claim: if $f:A\to B$ and $x:\mathsf{qinv}(f)$, then $i(A,B,f,p(A,B,f,x))=x$.
+Claim: if $f:A\to B$ and $x:\qinv(f)$, then $i(A,B,f,p(A,B,f,x))=x$.
  
-Since $(f,x):A\backsimeq B$, we can assume by $\mathsf{qinv}$-univalence and path induction that 
+Since $(f,x):A\backsimeq B$, we can assume by $\qinv$-univalence and path induction that 
 $$
 B\equiv A,\quad f\equiv\mathsf{id}_A,\quad x\equiv e(A,A,\mathsf{refl}_A),
 $$ 
 and the claim follows easily from the definition of $i,p$ and $e$.
 
-For $f:A\to B$ and $x,y:\mathsf{qinv}(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required. $\sq$
+For $f:A\to B$ and $x,y:\qinv(f)$ we have $p(A,B,f,x)=p(A,B,f,y)$ because $\mathsf{ishae}(f)$ is a mere proposition, and the claim implies $x=y$, as required. $\sq$
 
 %% 
 
@@ -1639,7 +1639,11 @@ This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4 (which says 
 
 \subsection{Proof of Corollary 6.4.3} % old version: https://docs.google.com/document/d/1wShljhC0168axzA7ucAfvL1Xme5AuXp6i0fhwKzM2xQ/edit
 
-%Recall the statement of Theorem 4.4.5: For any $f:A\to B$ we have $\isContr(f)\simeq\ishae(f)$.
+For the reader's convenience we paste the statement and the proof of Corollary 6.4.3:
+
+\nn\tb{Corollary 6.4.3.} \emph{If the type $\mbb S^1$ belongs to some universe $\U$, then $\U$ is not a 1-type.}
+
+\nn\emph{Proof.} The type $\mbb S^1=\mbb S^1$ in $\U$ is, by univalence, equivalent to the type $\mbb S^1\simeq\mbb S^1$ of auto\-equivalences of $\mbb S^1$, so it suffices to show that $\mbb S^1\simeq\mbb S^1$ is not a set. For this, it suffices to show that its equality type $\id_{\mbb S^1}=_{(\mbb S^1=\mbb S^1)}\id_{\mbb S^1}$ is not a mere proposition. Since being an equivalence is a mere proposition, this type is equivalent to $\id_{\mbb S^1}=_{(\mbb S^1\to\mbb S^1)}\id_{\mbb S^1}$. But by function extensionality, this is equivalent to $\pd_{x:\mbb S^1}(x=x)$, which as we have seen in Lemma 6.4.2 contains two unequal elements. $\sq$
 
 The proof of Corollary 6.4.3 uses the following claim:
 
