@@ -832,9 +832,9 @@ The (limited) interest of this comment is that, given a type $B$, it might be ea
 
 %%
 
-\subsection{Proof of Lemma 3.3.4}
+\subsection{Proof of Lemma 3.3.4}%\label{334}
 
-Recall the statement: \emph{Every mere proposition is a set.} In the proof of Lemma 3.1.8 in \S\ref{318} above we derived the conclusion that $x=y$ is a set using only the assumption that $x=y$ is a mere proposition.
+Recall the statement of Lemma 3.3.4: \emph{Every mere proposition is a set.} In the proof of Lemma 3.1.8 in \S\ref{318} above we derived the conclusion that $x=y$ is a set using only the assumption that $x=y$ is a mere proposition.
 
 %%
 
@@ -1539,7 +1539,7 @@ Here are some more details about the above parenthesis:
 
 If $B:A\to\U$ is a type family over a type $A$, then we have a codiagonal map 
 \begin{equation}\label{563}
-(\la f.\la a.f(a,a)):\left(A\to\pd_{a:A}B(a)\right)\to\pd_{a:A}B(a).
+(\la f.\la a.f(a,a)):\left(A\to\pd_{a:A}\ B(a)\right)\to\pd_{a:A}\ B(a).
 \end{equation} 
 In the particular case when $B:\U$ is constant, the above type becomes 
 $$
@@ -1585,7 +1585,7 @@ Here is a minor rewriting of the proof of the fact that $\ppmap(R,S)$ is a mere 
 
 Let 
 $$
-f,g:\prod_{b:A}R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
+f,g:\prod_{b:A}\ R(b)\to S(b),\qquad p:f(a_0,r_0)=s_0,\qquad q:g(a_0,r_0)=s_0,
 $$ 
 so that 
 $$
@@ -1595,10 +1595,7 @@ It suffices to prove $(f,p)=(g,q)$. Setting
 $$
 D(b,r):\eq(f(b,r)=g(b,r)),\quad d:\eq p\cc q^{-1},
 $$ 
-we get 
-$$
-h:\prod_{b:A}\ \prod_{r:R(b)}\ (f(b,r)=g(b,r))
-$$ 
+we get $h:f\sim g$ %$$h:\prod_{b:A}\ \prod_{r:R(b)}\ (f(b,r)=g(b,r))$$ 
 with $h(a_0,r_0)=p\cc q^{-1}$. Function extensionality yields a path $t:f=g$ satisfying 
 $$
 t_\star(p)=h(a_0,r_0)^{-1}\cc p=(p\cc q^{-1})^{-1}\cc p=q.\ \sq
@@ -1635,7 +1632,7 @@ i.e. $\apd_f(p)$ is a dependent path from $f(x)$ to $f(y)$ over $p$.
 
 Recall the statement of the lemma: \emph{The type $\mbb S^1$ satisfies} $\boucle\neq\refl_{\base}$. 
 
-This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4, that $\mbb S^1$ is not a mere proposition, and thus, by \S\ref{311} p.~\pageref{311}, that $\mbb S^1$ is not contractible.
+This implies that $\mbb S^1$ is not a set, and thus, by Lemma 3.3.4 (which says that every mere proposition is a set), that $\mbb S^1$ is not a mere proposition, and thus, by \S\ref{311} p.~\pageref{311}, that $\mbb S^1$ is not contractible.
 
 %%
 
@@ -1663,7 +1660,7 @@ and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2
 \begin{equation}\label{psp2u}
 p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v).
 \end{equation}  
-As $\ishae(f)$ is contractible by Theorem 4.2.13, the results of \S\ref{311} p.~\pageref{311} implies that it is a mere proposition, and Lemma 3.3.4 imply that it is a set. In particular \eqref{psp2u} is contractible. $\sq$
+As $\ishae(f)$ is contractible by Theorem 4.2.13, the results of \S\ref{311} p.~\pageref{311} implies that it is a mere proposition, and Lemma 3.3.4 (which says that every mere proposition is a set) implies that it is a set. In particular \eqref{psp2u} is contractible. $\sq$
 
 %%
 
