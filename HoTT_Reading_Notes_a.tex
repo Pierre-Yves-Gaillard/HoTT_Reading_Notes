@@ -608,13 +608,13 @@ $$
 $$ 
 is invertible.
 
-Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be an inverse to $f$, let $\beta:g\circ f=\id_A$, and define 
+Step 1. (This step is the the same as in the book; I spell it out for the reader's convenience.) Let $g:B\to A$ be an inverse to $f$, let $\beta:g\ci f=\id_A$, and define 
 $$
 \varphi:(gfa=gfa')\to(a=a')\quad\text{by}\quad\varphi(q):\equiv\beta_a^{-1}\cc q\cc\beta_{a'}.
 $$ 
-Note, as in the book, that the equality $\varphi\circ\ap_g\circ\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
+Note, as in the book, that the equality $\varphi\ci\ap_g\ci\ap_f=\id_{a=a'}$ follows from the functoriality of $\ap$ and the naturality of homotopies, Lemmas 2.2.2 and 2.4.3. (Here $\ap_g:(fa=fa')\to (gfa=gfa')$.)
 
-Step 2. Since $\varphi$ is invertible (see Example 2.4.8 in the book), $\ap_g\circ\ap_f$ is also invertible, and so is, by symmetry, $\ap_f\circ\ap_g$. Exercise 4.5 (see \S\ref{45} p.~\pageref{45}) implies that $\ap_f$ and $\ap_g$ are invertible. $\sq$
+Step 2. Since $\varphi$ is invertible (see Example 2.4.8 in the book), $\ap_g\ci\ap_f$ is also invertible, and so is, by symmetry, $\ap_f\ci\ap_g$. Exercise 4.5 (see \S\ref{45} p.~\pageref{45}) implies that $\ap_f$ and $\ap_g$ are invertible. $\sq$
 
 %%
 
@@ -1059,7 +1059,7 @@ $$
 $$ 
 are inhabited, and we show that so is $A$ as follows. Let $x:A+\neg A$. If $x\eq\inl(a)$ for some $a:A$ we are done. If $x\eq\inr(a')$ for some $a':\neg A$, we let $f:\mb0\to A$ and $a'':\neg\neg A$, and get $f(a''(a')):A$. 
 
-To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By Exercise 3.6 (see \S\ref{e36} p.~\pageref{e36} above), $A+\neg A$ is also a mere proposition, and thus, by double negation, there is a map $\neg\neg(A+\neg A)\to(A+\neg A)$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\circ\inr)(x'\circ\inl)$. $\sq$
+To prove that the law of double negation implies the law of excluded middle, we let $A$ be a mere proposition, and we show that $A+\neg A$ is inhabited as follows. By Exercise 3.6 (see \S\ref{e36} p.~\pageref{e36} above), $A+\neg A$ is also a mere proposition, and thus, by double negation, there is a map $\neg\neg(A+\neg A)\to(A+\neg A)$. Hence it suffices to check that $\neg\neg(A+\neg A)$ is inhabited. To this end, we define $x'':\neg\neg(A+\neg A)$ by $x''(x'):\eq(x'\ci\inr)(x'\ci\inl)$. $\sq$
 
 %%
 
@@ -1147,7 +1147,7 @@ Suppose suppose we have a type $X$ and type families $A:X\to\U$ and $P:\pd_{x:X}
 \ga(\pd_{x:X}\ \sum_{a:A(x)}P(x,a)\dr)\to
 \ga(\sum_{g:\pd_{x:X}A(x)}\ \ \pd_{x:X}P(x,g(x))\dr).
 \end{equation}
-defined by $f\mapsto(\pr_1\circ f,\pr_2\circ f)$.
+defined by $f\mapsto(\pr_1\ci f,\pr_2\ci f)$.
 
 \nn\tb{Theorem 2.15.7.} \emph{\eqref{eq:sigma-ump-map} is an equivalence.}
 
@@ -1240,7 +1240,7 @@ $$
 \end{align*}
 We define $\chi$ by $\chi((A,f),b):\eq\fib_f(b)$, and $\psi$ by $\psi(P):\eq((\sum_{b:B} P(b)),\pr_1)$. 
 
-Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\circ\chi\simeq\id$. 
+Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\ci\chi\simeq\id$. 
 
 \nn(a) Let $P:B\to\U$. By Lemma 4.8.1 (see \S\ref{481} p.~\pageref{481}), $\fib_{\pr_1}(b)\simeq P(b)$ for any $b:B$, so it follows immediately that $P\simeq\chi(\psi(P))$.
 
@@ -1248,7 +1248,7 @@ Now we have to verify that $\chi\ci\psi\simeq\id$ and that $\psi\circ\chi\simeq\
 $$
 \ga(\sum_{b:B}\ \fib_f(b),\,\pr_1\dr)=(A,f).
 $$ 
-First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\re_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{294} below), we have $\ua(e)_\star(\pr_1)=\pr_1\circ e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\circ e^{-1}\eq f$. $\sq$
+First note that by Lemma 4.8.2 (see \S\ref{482} p.~\pageref{482}, we have $e:\sum_{b:B}\fib_f(b)\simeq A$ with $e(b,a,p):\eq a$ and $$e^{-1}(a):\eq(f(a),a,\re_f(a)).$$ By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}), it remains to show $\ua(e)_\star(\pr_1)=f$. But by the computation rule for univalence and (2.9.4) (see \eqref{294} below), we have $\ua(e)_\star(\pr_1)=\pr_1\ci e^{-1}$, and the definition of $e^{-1}$ immediately yields $\pr_1\ci e^{-1}\eq f$. $\sq$
 
 Here are some details about the last sentence of the above proof: 
 
@@ -1354,11 +1354,11 @@ the first equivalence following from Lemma 4.8.2 (see \S\ref{482} p.~\pageref{48
 
 \emph{Statement.} (The unstable octahedral axiom.) Suppose $f:A\to B$ and $g:B\to C$ and $b:B$.
 
-\nn(i) Show that there is a natural map $\fib_{g\circ f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_{g(b)})$ is equivalent to $\fib_f(b)$.
+\nn(i) Show that there is a natural map $\fib_{g\ci f}(g(b))\to\fib_g(g(b))$ whose fiber over $(b, \refl_{g(b)})$ is equivalent to $\fib_f(b)$.
 
-\nn(ii) Show that $\fib_{g\circ f}(c)\simeq\sum_{w:\fib_g(c)}\fib_f(\pr_1w)$.
+\nn(ii) Show that $\fib_{g\ci f}(c)\simeq\sum_{w:\fib_g(c)}\fib_f(\pr_1w)$.
 
-\nn\emph{Solution.} (i) Let $b:B$. We define $h:\fib_{g\circ f}(g(b))\to\fib_g(g(b))$, that is
+\nn\emph{Solution.} (i) Let $b:B$. We define $h:\fib_{g\ci f}(g(b))\to\fib_g(g(b))$, that is
 $$
 h:\ga(\sum_{x:A}\ \big(g(f(x))=g(b)\big)\dr)\to\sum_{y:B}\ (g(y)=g(b)),
 $$ 
@@ -1408,7 +1408,7 @@ $$\ph(y,q,p):\eq\ap_g(p)\cc q,\quad\psi(r):\eq\big(f(x),r,\refl_{f(x)}\big)$$
 
 \nn are inverses. This gives 
 
-$$\left(\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ \Big(g(f(x))=c\Big)\right)=\fib_{g\circ f}(c),$$
+$$\left(\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ \Big(g(f(x))=c\Big)\right)=\fib_{g\ci f}(c),$$
 
 \nn where the last equality follows from \S\ref{311} p.~\pageref{311}.
 
@@ -1416,16 +1416,24 @@ $$\left(\sum_{w:\fib_g(c)}\ \fib_f(\pr_1w)\right)=\left(\sum_{x:A}\ \Big(g(f(x))
 
 \subsection{Exercise 4.5}\label{45}
 
-\emph{Statement.} Prove that equivalences satisfy the 2-out-of-6 property: given $f:A\to B$ and $g:B\to C$ and $h:C\to D$, if $g\circ f$ and $h\circ g$ are equivalences, so are $f,g,h$, and $h\circ g\circ f$. Use this to give a higher-level proof of Theorem 2.11.1.
+\emph{Statement.} Prove that equivalences satisfy the 2-out-of-6 property: given $f:A\to B$ and $g:B\to C$ and $h:C\to D$, if $g\ci f$ and $h\ci g$ are equivalences, so are $f,g,h$, and $h\ci g\ci f$. Use this to give a higher-level proof of Theorem 2.11.1.
 
-\nn\emph{Solution.} Setting $k:\eq f\circ (g\circ f)^{-1}$, we get 
+\nn\emph{Solution.} Let $(g\ci f)^{-1}$ be an inverse of $g\ci f$ and $(h\ci g)^{-1}$ an inverse of $h\ci g$. Setting $k:\eq f\ci(g\ci f)^{-1}$, we get 
+\begin{equation}\label{45a}
+g\ci k=\id_C
+\end{equation}
+and
 \begin{align*}
-k&:\eq f\circ (g\circ f)^{-1}\\
-&=\big((h\circ g)^{-1}\circ h\circ g\big)\circ f\circ (g\circ f)^{-1}\\
-&=(h\circ g)^{-1}\circ h\circ\big(g\circ f\circ (g\circ f)^{-1}\big)\\
-&=(h\circ g)^{-1}\circ h,
+k&:\eq f\ci (g\ci f)^{-1}\\
+&=\big((h\ci g)^{-1}\ci h\ci g\big)\ci f\ci (g\ci f)^{-1}\\
+&=(h\ci g)^{-1}\ci h\ci\big(g\ci f\ci (g\ci f)^{-1}\big)\\
+&=(h\ci g)^{-1}\ci h,
 \end{align*}
-and thus $g\circ k=\id_C$ and $k\circ g=(h\circ g)^{-1}\circ h\circ g=\id_B$. This implies that $g$ is an equivalence. The end of the exercise is straightforward. For the higher-level proof of Theorem 2.11.1, see \S\ref{2111}. $\sq$
+which implies $k\ci g=(h\ci g)^{-1}\ci h\ci g=\id_B$.
+\begin{equation}\label{45b}
+k\ci g=(h\ci g)^{-1}\ci h\ci g=\id_B.
+\end{equation} 
+Now \eqref{45a} and \eqref{45b} show that $g$ is an equivalence. The end of the exercise is straightforward. For the higher-level proof of Theorem 2.11.1, see \S\ref{2111}. $\sq$
 
 %%
 
@@ -1641,7 +1649,7 @@ is invertible.}
 $$
 C:\eq\sum_{p:\ph_1(u)=\ph(v)}(p_\star(\ph_2(u))=\ph_2(v))
 $$ 
-and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\circ f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to 
+and let $\psi_1:C\to(\ph_1(u)=\ph(v))$ be the first projection. By Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}) there is an invertible map $f:(u=v)\to C$ such that $\psi_1\ci f=\ap_{\ph_1}$. Let $p:\ph_1(u)=\ph_1(v)$. We have $\fib_{\ap_{\ph_1}}(p)\simeq\fib_{\psi_1}(p)$. By Lemma 4.8.1 the latter is equivalent to 
 \begin{equation}\label{psp2u}
 p_\star(\ph_2(u))=_{\ishae(f)}\ph_2(v).
 \end{equation}  
@@ -2104,7 +2112,7 @@ The following observation, which is an immediate consequence of Corollary 7.3.7,
 
 \subsection{Proof of Lemma 7.5.10}
 
-I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $\vert-\vert_n$ is $n$-connected. Thus, since $f=g\circ\vert-\vert_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is invertible (see \S\ref{751} above).
+I'm just adding two parenthesis to the proof: By Corollary 7.5.8, $\vert-\vert_n$ is $n$-connected. Thus, since $f=g\ci\vert-\vert_n$, by Lemma 7.5.6 $f$ is $n$-connected if and only if $g$ is $n$-connected. But since $g$ is a function between $n$-types, its fibers are also $n$-types (see \S\ref{718} p.~\pageref{718} above). Thus, $g$ is $n$-connected if and only if it is invertible (see \S\ref{751} above).
 
 %%
 
