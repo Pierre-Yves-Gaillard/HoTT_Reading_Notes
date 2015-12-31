@@ -1867,7 +1867,7 @@ g:\prod_{B:\U}\ \isProp(\isContr(B)).
 $$ 
 We define 
 $$
-h_1:\isContr(C)\to A\to A,\qquad\quad h_0:\neg\isContr(C)\to A\to A
+h_0:\neg\isContr(C)\to A\to A,\qquad\quad h_1:\isContr(C)\to A\to A
 $$ 
 by setting $h_0(x):\eq\id_A$ for all $x:\neg\isContr(C)$, and by letting $h_1(x)$ be the first projection of the center of $x$, for all $x:\isContr(C)$. This induces a map 
 $$
@@ -1897,12 +1897,15 @@ For the reader's convenience we paste the statement of Theorem 7.1.8:
 
 \subsection{First proof of Theorem 7.2.2}
 
-Recall that $R:X\to X\to\Prop$ is a mere relation on a type $X$, and that we have 
-$$
-\rho:\pd_{x:X}\ R(x,x),\quad f:\pd_{x,y:X}\ R(x,y)\to(x=y).
-$$ 
+We must prove  
 
-We prove 
+\nn\tb{Claim.} \emph{If $R:X\to X\to\Prop$ is a mere relation on a type $X$ and we have 
+$$
+\rho:\pd_{x:X}\ R(x,x),\quad f:\pd_{x,y:X}\ R(x,y)\to(x=y),
+$$ 
+then $X$ is a set.}
+
+\nn\emph{Proof.} We prove 
 \begin{equation}\label{722}
 f(x,x,\rho(x))\cc p=f(x,y,\transport^{R(x)}(p,\rho(x)))
 \end{equation}  
@@ -1992,23 +1995,39 @@ $$
 $$ 
 is contractible for all $a:A$.}
 
-\nn\emph{Proof.} Use Theorem 7.2.9 and the equivalence 
+\nn\emph{Proof.} Use Theorem 7.2.9 (see below) and the equivalence 
 $$
 \Map_\star\big((\mbb S^{n+1},\base),(A,a)\big)\simeq\Omega^{n+1}(A,a)
 $$ 
 at the end of \S6.5 of the book. $\square$
 
-We prove the existence of $u$ and $v$ as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r))$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
+We verify the existence of $u$ and $v$ in the proof of Theorem 7.3.2 as follows. We define $t:\mbb S^{n+1}\to P(h(r))$ as in the book, we set $h'(r,r'):\eq u:\eq t(\base)$, we define $c_u:\mbb S^{n+1}\to P(h(r))$ by $c_u(x):\eq u$ for all $x:\mbb S^{n+1}$, and we set
 $$
 M:\eq\Map_\star\Big(\big(\mbb S^{n+1},\base\big),\big(P(h(r)),u\big)\Big).
 $$ 
 Since $(t,\refl_u),(c_u,\refl_u):M$ and $M$ is contractible, there is a path $v:t=c_u$. $\sq$
 
+For the reader's convenience we paste the statement of Theorem 7.2.9:
+
+\nn\tb{Theorem 7.2.9.} \emph{For every $n\ge-1$, a type $A$ is an $n$-type if and only if $\Omega^{n+1}(A,a)$ is contractible for all $a:A$.}
+
 %%
 
 \subsection{Proof of Theorem 7.3.5}
 
-Theorem 7.3.5 can also be proved by path induction.
+Theorem 7.3.5 (see below) can also be proved by path induction.
+
+For the reader's convenience we paste the statement and the proof of Theorem 7.2.9:
+
+\nn\tb{Theorem 7.2.9.} \emph{Given $f,g:A\to B$ and a homotopy $h:f\sim g$, there is an induced homotopy $\lV h\rV_n:\lV f\rV_n\sim\lV g\rV_n$ such that the composite
+\begin{equation}\label{735}
+\xymatrix@C=50pt{
+\lv f(a)\rv_n\ar@{=}[r]^{\na^f_n(a)^{-1}}&
+\lV f\rV_n(\lv a\rv_n)\ar@{=}[r]^{\lV h\rV_n(\lv a\rv_n)}&
+\lV g\rV_n(\lv a\rv_n)\ar@{=}[r]^{\na^g_n(a)}&
+\lv g(a)\rv_n}
+\end{equation}
+is equal to $\ap_{\lv-\rv_n}(h(a))$.}
 
 %%
 
@@ -2065,7 +2084,7 @@ Definition 7.4.7 contains the judgment
 $$
 \lV h\rV_n:\lV i\rV_n\ci\lV f\rV_n\sim\lV j\rV_n\ci\lV g\rV_n.
 $$ 
-In fact we have $\lV h\rV_n:\lV i\ci f\rV_n\sim\lV j\ci g\rV_n$. Here is a fix. 
+(See \eqref{735} p.~\pageref{735}.) In fact we have $\lV h\rV_n:\lV i\ci f\rV_n\sim\lV j\ci g\rV_n$. Here is a fix. 
 
 Given the commutative diagram
 $$
@@ -2130,7 +2149,7 @@ $$
 \lv ifz\rv&&\lV if\rV\lv z\rv\ar@{=}[rr]_{\lV h\rV\lv z\rv}\ar@{=}[ll]^{\na^{if}(z)^{-1}}&&\lV jg\rV\lv z\rv\ar@{=}[rr]_{\na^{jg}(z)}&&\lv jgz\rv\\ 
 \lv ifz\rv\ar@{=}[u]^{\refl}\ar@{=}[rrrrrr]_{\ap_{\lv-\rv}(hz)}&&&&&&\lv jgz\rv\ar@{=}[u]_{\refl}}
 $$ 
-for all $z:C$. The upper rectangle commutes by definition of $k$, the small squares commute by \S\ref{747} above, and the lower rectangle commutes by Lemma 7.3.5 in the book.
+for all $z:C$. The upper rectangle commutes by definition of $k$, the small squares commute by \S\ref{747} above, and the lower rectangle commutes by Lemma 7.3.5 in the book (see \eqref{735} p.~\pageref{735}).
 
 %%
 
