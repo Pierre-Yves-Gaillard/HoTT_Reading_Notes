@@ -1781,11 +1781,16 @@ We can rewrite the second premise as
 
 \nn($\star$) for any $x,y:\lVert A\rVert$, any $u:B(x)$ and any $v:B(y)$, we are given a dependent path $q(x,y,u,v):u=^B_{p(x,y)}v$, where $p(x,y):x=y$ is the path coming from the second constructor of $\lVert A\rVert$.
 
-We claim this is equivalent to
+Consider the condition
 
 \nn($\star\star$) for any $x:\lVert A\rVert$ the type $B(x)$ is a mere proposition.
 
-Indeed, assume ($\star$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
+We claim
+\begin{equation}\label{***}
+(\star)\iff(\star\star).
+\end{equation}
+
+\nn\emph{Proof of \eqref{***}.} Indeed, assume ($\star$). Letting $x:\lVert A\rVert$ and $u,v:B(x)$, we have $r:\refl_x=p(x,x)$ (because $\lVert A\rVert$ is a mere proposition and thus a set) and 
 $$
 u=(\refl_x)_\star(u)=p(x,x)_\star(u)=v,
 $$ 
@@ -1817,13 +1822,21 @@ It is easy to see that if our type family $P:A/R\to\Set$ is such that $P(q(b))$ 
 
 %%
 
-\subsection{Proof of Theorem 6.10.6}
+\subsection{Proof of Theorem 6.10.6}%\label{6106}
 
 Recall the statement of Theorem 6.10.6: 
 
 \emph{For any equivalence relation $R$ on $A$, the type $A/\!\!/R$ is equivalent to the set-quotient} $A/R$.
 
-The proof uses implicitly the fact that $A/\!\!/R$ is a set. This fact follows immediately from Theorems 7.1.8, 7.1.9 and 7.1.11. of the book. The reader can check that the proof of Theorem 6.10.6 doesn't use Theorems 7.1.8, 7.1.9 and 7.1.11.
+The proof uses implicitly the fact that $A/\!\!/R$ is a set. This fact follows immediately from Theorems 7.1.8, 7.1.9 and 7.1.11 (see below) of the book. The reader can check that the proof of Theorem 6.10.6 doesn't use Theorems 7.1.8, 7.1.9 and 7.1.11.
+
+For the reader's convenience we paste the statement of Theorems 7.1.8, 7.1.9 and 7.1.11:
+
+\nn\tb{Theorem 7.1.8.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If $A$ is an $n$-type and for all $a:A$, $B(a)$ is an $n$-type, then so is $\sum_{x:A}B(x)$.}
+
+\nn\tb{Theorem 7.1.9.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If for all $a:A$, $B(a)$ is an $n$-type, then so is $\pd_{x : A}B(x)$.}
+
+\nn\tb{Theorem 7.1.11.} \emph{For any $n\geq-2$, the type $n\Type$ is an $(n+1)$-type.}
 
 %%
 
@@ -1875,6 +1888,10 @@ It is straightforward to check that this definition does the job. $\square$
 Here is a corollary to Theorem 7.1.8: 
 
 \emph{The fibers of a map between $n$-types are $n$-types.}
+
+For the reader's convenience we paste the statement of Theorem 7.1.8:
+
+\nn\tb{Theorem 7.1.8.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If $A$ is an $n$-type and for all $a:A$, $B(a)$ is an $n$-type, then so is $\sum_{x:A}B(x)$.}
 
 %%
 
