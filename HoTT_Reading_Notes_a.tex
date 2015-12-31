@@ -47,7 +47,7 @@
 \nc{\glue}{\ms{glue}}\nc{\gl}{\ms{glue}}
 \nc{\happly}{\ms{happly}}\nc{\ha}{\ms{happly}}
 \nc{\id}{\ms{id}}
-\nc{\im}{\ms{im}}
+\nc{\ima}{\ms{im}}%\nc{\im}{\ms{im}}
 \nc{\inc}{\subseteq}
 \nc{\ind}{\ms{ind}}
 \nc{\inl}{\ms{inl}}
@@ -2383,9 +2383,17 @@ $$
 
 \subsection{A Lemma}
 
+Recall the notion of image (Definition 7.6.3 of the book):
+
+\nn\tb{Definition 7.6.3.} Let $f:A\to B$ be a function. The $n$\tb{-image} of $f$ is defined as
+$$
+\ima_n(f):\eq\sum_{b:B}\ \lV\fib_f(b)\rV_n.
+$$ 
+When $n=-1$, we write simply $\ima(f)$ and call it the \tb{image} of $f$.
+
 The following lemma, whose proof is straightforward, will be used in \S\ref{1011} below.
 
-\tb{Lemma.} \emph{Let $f:A\to B$ be a map. Then $\im(f)$ is a mere proposition if and only if we have $f(a)=f(a')$ for all $a,a':A$.} $\sq$
+\nn\tb{Lemma.} \emph{Let $f:A\to B$ be a map. Then $\ima(f)$ is a mere proposition if and only if we have $f(a)=f(a')$ for all $a,a':A$.} $\sq$
 
 %%
 
@@ -2413,9 +2421,9 @@ f:B(a_0)\to\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
 $$ 
 by $f(b):\eq q(a_0,b)$ for all $b:B(a_0)$, and let 
 $$
-\tilde f:B(a_0)\to\im(f),\quad\pr_1:\im(f)\to\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
+\tilde f:B(a_0)\to\ima(f),\quad\pr_1:\ima(f)\to\left(\sum_{a:A}\ B(a)\right)\!\!\!\Bigg/\!\!\!\!\sim
 $$ 
-be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). The lemma in \S\ref{imfmp} above implies that $\im(f)$ is a mere proposition. As a result, $\tilde f$ induces a map $g:\lV B(a_0)\rV\to\im(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
+be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). The lemma in \S\ref{imfmp} above implies that $\ima(f)$ is a mere proposition. As a result, $\tilde f$ induces a map $g:\lV B(a_0)\rV\to\ima(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
 
 We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is invertible. $\square$
 
