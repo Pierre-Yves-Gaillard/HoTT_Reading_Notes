@@ -75,7 +75,7 @@
 \nc{\Prop}{\ms{Prop}}
 \nc{\qinv}{\ms{qinv}}\nc{\qin}{\ms{qinv}}\nc{\qi}{\ms{qinv}}
 \nc{\rec}{\ms{rec}}
-\nc{\refl}{\ms{refl}}\nc{\re}{\ms{refl}}
+\nc{\refl}{\ms{refl}}%\nc{\re}{\ms{refl}}
 \nc{\Set}{\ms{Set}}
 \nc{\sm}{\scriptstyle}
 \nc{\sms}{\ms s}
@@ -2393,7 +2393,17 @@ When $n=-1$, we write simply $\ima(f)$ and call it the \tb{image} of $f$.
 
 The following lemma, whose proof is straightforward, will be used in \S\ref{1011} below.
 
-\nn\tb{Lemma.} \emph{Let $f:A\to B$ be a map between sets. Then $\ima(f)$ is a mere proposition if and only if we have $f(a)=f(a')$ for all $a,a':A$.} $\sq$
+\nn\tb{Lemma.} \emph{Let $f:A\to B$ be a map. Assume that $B$ is a set. Then $\ima(f)$ is a mere proposition if and only if $f(a)=f(a')$ for all $a,a':A$.}
+
+\nn\emph{Proof.} Suppose $\ima(f)$ is a mere proposition and let $a,a':A$. As 
+$$
+\Big(f(a),\lv(a,\refl_{f(a)})\rv\Big),\Big(f(a'),\lv(a',\refl_{f(a')})\rv\Big):\ima(f),
+$$ 
+we have $f(a)=f(a')$. Conversely, assume $f(a)=f(a')$ for all $a,a':A$. Let $x,x':\ima(f)$. We claim $x=y$. We may suppose $x\eq(b,u),x'\eq(b',u')$ (obvious notation). It suffices to show $b=b'$. As $b=b'$ is a mere proposition, we may assume $u\eq\lv(a,p)\rv$ and $u'\eq\lv(a',p'))\rv$ with 
+$$
+a,a':A,\quad p:f(a)=b,\quad p':f(a')=b'.
+$$ 
+This implies $b=b'$, as required. $\sq$
 
 %%
 
