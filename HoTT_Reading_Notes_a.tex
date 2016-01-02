@@ -12,7 +12,7 @@
 \usepackage{amssymb,amsmath}
 \usepackage[a4paper]{geometry}
 %\usepackage[a4paper,hmargin=88pt,vmargin=88pt]{geometry}
-\usepackage{comment}
+%\usepackage{comment}
 \usepackage{datetime}
 \usepackage[pdfusetitle]{hyperref}%colorlinks, urlbordercolor={0 1 1}?
 \usepackage[all]{xy}
@@ -1806,20 +1806,6 @@ Given any $P:\lVert A\rVert\to\Prop$ together with a function $f:\prod_{a:A}P(\l
 
 We shall define quotients via truncations in \S\ref{qvt} below.
 
-\begin{comment}
-
-To spell out the induction principle for the quotient $A/R$, let $\alpha(a,b):q(a)=q(b)$ be the path given from $q(a)$ to $q(b)$ whenever $R(a,b)$. 
-
-Given $P:A/R\to\Set$ together with $f:\prod_{a:A}\ P(q(a))$ and 
-$$
-\beta(a,b):f(a)=^P_{\alpha(a,b)}f(b)
-$$ 
-for all $a,b$ such that $R(a,b)$, we have a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\equiv f(a)$ for all $a:A$, and $\apd_g(\alpha(a,b))=\beta(a,b)$ for all $a,b$ such that $R(a,b)$.
-
-It is easy to see that if our type family $P:A/R\to\Set$ is such that $P(q(b))$ is a mere proposition whenever $R(a,b)$, and if we are just given an $f:\prod_{a:A}P(q(a))$, then we get a $g:\prod_{x:A/R}P(x)$ such that $g(q(a))\eq f(a)$ for all $a:A$.
-
-\end{comment}
-
 %%
 
 \subsection{Proof of Theorem 6.10.6}%\label{6106}
@@ -1837,6 +1823,26 @@ For the reader's convenience we paste the statement of Theorems 7.1.8, 7.1.9 and
 \nn\tb{Theorem 7.1.9.} \emph{Let $n\geq-2$, and let $A:\U$ and $B:A\to\U$. If for all $a:A$, $B(a)$ is an $n$-type, then so is $\pd_{x : A}B(x)$.}
 
 \nn\tb{Theorem 7.1.11.} \emph{For any $n\geq-2$, the type $n\Type$ is an $(n+1)$-type.}
+
+%%
+
+\subsection{After Lemma 6.12.1}
+
+Let us spell out the induction principle for the higher inductive type $W$ defined right after Lemma 6.12.1. 
+
+Recall that we are given $f,g:B\to A$, and that the constructors defining $W$ are 
+$$
+\ms c:A\to W,\quad\ms p:\pd_{b:B}\ \Big(\ms c(f(b))=\ms c(g(b))\Big).
+$$ 
+Given a type family $P:W\to\U$, the solution $s:\pd_{w:W}P(w)$ to the recurrences 
+$$
+h:\pd_{a:A}\ P(\ms c(a)),\quad q:\pd_{b:B}\ \Big(h(f(b))=^P_{\ms p(b)}h(g(b))\Big)
+$$ 
+satisfies the computation rules 
+$$
+s(\ms c(a)):\eq h(a),\quad \apd_s(\ms p(b)):=q(b)
+$$ 
+for all $a:A$ and all $b:B$. 
 
 %%
 
@@ -2436,31 +2442,6 @@ $$
 be the canonical factorization of $f$ (see Lemma 7.6.4 of the book). The lemma in \S\ref{imfmp} above implies that $\ima(f)$ is a mere proposition. As a result, $\tilde f$ induces a map $g:\lV B(a_0)\rV\to\ima(f)$ satisfying $g(\lv b\rv)\eq f(b)$ for all $b:B(a_0)$, and we can set $h(a_0,\beta):\eq\pr_1(g(\beta))$ for all $b:B(a_0)$.
 
 We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is invertible. $\square$
-
-\begin{comment}
-
-This is about the sentence ``The obvious candidate for the coequalizer of the kernel pair of $f:A\to B$ is the image of f, as defined in \S7.6'' a few paragraphs before Lemma 10.1.1. (It's clear from the context that $A$ and $B$ are sets.) Let's show that this obvious candidate is the good one. It suffices to prove the statement
-
-Let $A$ and $B$ be sets, let $f:A\to B$ be a surjection, define the equivalence relation $\sim$ on $A$ by 
-$$
-a\sim a'\text{ if and only if }f(a)=f(a'),
-$$
-let $A/\!\!\sim$ be the quotient as defined at the beginning of \S6.10, and let $q:A\to A/\!\!\sim$ be the canonical projection. Then there is a map $g:B\to A/\!\!\sim$ such that $g\ci f=q$:
-$$
-\xymatrix{
-&A\ar[dl]_f\ar[dr]^q\\
-B\ar[rr]_g&&A/\!\!\sim.}
-$$ 
-
-Proof. Given $b:B$ we define the sets and maps 
-$$
-\xymatrix{
-\fib_f(b)\ar[rr]^{\pr_1}\ar[d]_{\lv-\rv}\ar[dr]^{q_b}&&A\ar[d]^q\\ 
-\lV\fib_f(b)\rV\ar[r]_h&\fib_f(b)/\!\!\sim_b\ar[r]_{\ \ k}&A/\!\!\sim}
-$$ 
-as follows: Let $\sim_b$ be the equivalence relation defined on $\fib_f(b)$ by the requirement that $x\sim_b y$ for all $x,y:\fib_f(b)$, and $q_b$ the canonical projection; and note that $q_b$ induces $h$ and that $q\ci\pr_1$ induces $k$. The above diagram having been constructed, we set $g(b):\eq k(h(x))$, with $x:\lV\fib_f(b)\rV$. The equality $g\ci f=q$ is easily checked. $\square$
-
-\end{comment}
 
 %%
 
