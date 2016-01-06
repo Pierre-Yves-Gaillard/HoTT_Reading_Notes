@@ -506,7 +506,7 @@ $$
 
 %%
 
-\subsection{Commutative diagram summarizing \S2.9 and 2.10}
+\subsection{Commutative diagram summarizing \S\S\ 2.9 and 2.10}\label{209210}
 
 Let $f,g:\pd_{a:A}B(a)$, where $B:A\to\U$ is a type family. Recall that 
 $$
@@ -519,7 +519,7 @@ $$
 \boxed{f=g}\ar[ddr]_{\ms{ev}'_a}\ar@<2pt>[rr]^\ha&&\boxed{f\sim g}\ar[ddl]^{\ms{ev}_a}\ar@<2pt>[ll]^\fu\\ \\
 &\boxed{f(a)=g(a)}}
 $$ 
-where $\ms{ev}_a$ and $\ms{ev}'_a$ are the obvious maps.
+where $\ms{ev}_a$ and $\ms{ev}'_a$ are the obvious maps ($\ms{ev}$ stands for \emph{evaluation}).
 
 For $A,B:\U$ we have the commutative diagram
 
@@ -528,6 +528,8 @@ $$
 \boxed{A=B}\ar[ddr]_{\tr^{X\mapsto X}}\ar@<2pt>[rr]^{\ms{idtoeqv}}&&\boxed{A\simeq B}\ar[ddl]^{\pr_1}\ar@<2pt>[ll]^\ua\\ \\
 &\boxed{A\to B}}
 $$
+
+The key point is of course the fact that, in each of the two above diagrams, the horizontal maps are inverses.
 
 %%
 
@@ -2301,6 +2303,39 @@ The equality $\lVert\lVert A\rVert_{n+1}\rVert_n=\lVert A\rVert_n$ follows from 
 
 The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the proof of Lemma 8.3.2 follows from Corollary 7.3.14. A similar argument is used in the proof of Corollary 8.4.8.
 
+%%
+
+\subsection{Exercise 8.7}
+
+\emph{Statement.} Define a \textbf{pointed equivalence} to be a pointed map whose underlying function is an equivalence.
+\begin{enumerate}
+\item Show that the type of pointed equivalences between pointed types $(X,x_0)$ and $(Y,y_0)$ is equivalent to $(X,x_0)=_{\U_\bullet}(Y,y_0)$.
+\item Reformulate the notion of pointed equivalence in terms of a pointed quasi-inverse and pointed homotopies, in one of the coherent styles from Chapter~4.
+\end{enumerate}
+\emph{Solution.} It might help the reader to take a look at \S\ref{209210} p.~\pageref{209210} above. The first idea would be to define the type $(X,x_0)\simeq(Y,y_0)$ as being
+$$
+\sum_{f:(X,x_0)\to(Y,y_0)}\ \ieq(\pr_1(f)),
+$$ 
+but we prefer the equivalent definition
+$$
+((X,x_0)\simeq(Y,y_0)):\eq\sum_{f_1:X\to Y}\ \ieq(f_1)\times(f_1(x_0)=y_0).
+$$ 
+We shall define the maps $a,b$ and $c$ in the diagram 
+$$
+\xymatrix{
+\boxed{(X,x_0)=(Y,y_0)}\ar[d]_{\pr_1}\ar@<2pt>[r]^a&\boxed{(X,x_0)\simeq(Y,y_0)}\ar@<2pt>[l]^b\ar[d]\ar[d]^c\\ 
+\boxed{X=Y}&\boxed{X\simeq Y}}
+$$ 
+We define $a$ by path induction in the obvious way. We define $c$ by the formula 
+$$
+c(f_1,u,f_0):\eq(f_1,u).
+$$ 
+We define $b$ by setting 
+$$
+b(f_1,u,f_0):\eq(p_1,p_0),
+$$ 
+with $p_1:\eq\ua(f_1,u)$ and $p_0:\eq q\cc f_0$, where $q$ is the obvious path from $p_{1\star}(x_0)$ to $f_1(x_0)$ in $Y$. We leave the end of the proof to the reader.
+
 %%%
 
 \section{Chapter 9}
@@ -2370,7 +2405,7 @@ We have, in the above setting,}
 
 %%
 
-\newpage
+%\newpage
 
 \subsection{Lemma 9.3.2}\label{932}
 
@@ -2398,6 +2433,8 @@ G'FG\ar[rrr]^{(1_A\ G'\ \ep)}\ar[d]_{(\eta\ G'\ FG)}&&&G'\ar[d]^{(\eta\ G'\ 1_B)
 GFG'FG\ar[rrr]_{(GF\ G'\ \ep)}&&&GFG',}
 $$
 
+\newpage
+
 $$
 \begin{array}{ccccccc}
 &FG'&&&&FG\\
@@ -2418,7 +2455,7 @@ FG'FG\ar[rrr]^{(FG'\ 1_B\ \ep)}\ar[d]_{(\ep'\ 1_B\ FG)}&&&FG'\ar[d]^{(\ep'\ 1_B\
 FG\ar[rrr]_{(1_B\ 1_B\ \ep)}&&&1_B,}
 $$ 
 
-\newpage
+%\newpage
 
 $$
 \begin{array}{ccccccc}
