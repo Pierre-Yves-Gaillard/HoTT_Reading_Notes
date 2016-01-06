@@ -506,6 +506,31 @@ $$
 
 %%
 
+\subsection{Commutative diagram summarizing \S2.9 and 2.10}
+
+Let $f,g:\pd_{a:A}B(a)$, where $B:A\to\U$ is a type family. Recall that 
+$$
+(f\sim g):\eq\pd_{a:A}\ (f(a)=g(a)).
+$$ 
+For $a:A$ we have the commutative diagram
+
+$$
+\xymatrix{
+\boxed{f=g}\ar[ddr]_{\ms{ev}'_a}\ar@<2pt>[rr]^\ha&&\boxed{f\sim g}\ar[ddl]^{\ms{ev}_a}\ar@<2pt>[ll]^\fu\\ \\
+&\boxed{f(a)=g(a)}}
+$$ 
+where $\ms{ev}_a$ and $\ms{ev}'_a$ are the obvious maps.
+
+For $A,B:\U$ we have the commutative diagram
+
+$$
+\xymatrix{
+\boxed{A=B}\ar[ddr]_{\tr^{X\mapsto X}}\ar@<2pt>[rr]^{\ms{idtoeqv}}&&\boxed{A\simeq B}\ar[ddl]^{\pr_1}\ar@<2pt>[ll]^\ua\\ \\
+&\boxed{A\to B}}
+$$
+
+%%
+
 \subsection{Definition of the map \textsf{happly} in (2.9.2)}
 
 The map 
