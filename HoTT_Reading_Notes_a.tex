@@ -2328,6 +2328,104 @@ The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the 
 
 %%
 
+\subsection{Lemma 8.5.9}%\label{7511}
+
+\nn\tb{Lemma 8.5.9.} \emph{The operation of join is associative: if $A$, $B$ and $C$ are three types then we have an equivalence} $(A*B)*C\simeq A*(B*C)$.
+
+\nn\tb{Claim.} \emph{For all $a:A,b:B,c:C$ there is a path 
+$$
+\glue(a,\inl(b))^{-1}\cc\glue(a,\inr(c))=\inr(\glue(b,c))
+$$ 
+in $\inr(\inl(b))=_{A*(B*C)}\inr(\inr(c))$.}
+
+\nn\emph{Proof of the claim.} Define $P:B*C\to\U$ by $P(x):\eq(\inl(a)=_{A*(B*C)}\inr(x))$. We get successively 
+$$
+\glue(a,-):\pd_{x:B*C}P(x),
+$$ 
+$$
+\apd_{\glue(a,-)}(\glue(b,c)):\glue(a,\inl(b))=^P_{\glue(b,c)}\glue(a,\inr(c)),
+$$ 
+$$
+\apd_{\glue(a,-)}(\glue(b,c)):\tr^P(\glue(b,c),\glue(a,\inl(b)))=\glue(a,\inr(c)),
+$$ 
+and thus 
+\begin{align*}
+\glue(a,\inl(b))\cc\inr(\glue(b,c))&=\tr^P(\glue(b,c),\glue(a,\inl(b)))\\
+&=\glue(a,\inr(c)),
+\end{align*} 
+where the last path is $\apd_{\glue(a,-)}(\glue(b,c)).\ \sq$
+
+The proof below differs from the proof in the book only by a few details.
+
+\nn\emph{Proof of Lemma 8.5.9.} We define a map $f:(A*B)*C\to A*(B*C)$ by induction. We first need to define $f\circ\inl:A*B\to A*(B*C)$ and $f\circ\inr:C\to A*(B*C)$, which will be done by induction, and then 
+\begin{equation}\label{ftab}
+\ap_f\circ\glue:\pd_{t:(A*B)\times C}f(\inl(\pr_1(t)))=f(\inr(\pr_2(t))),
+\end{equation}  
+which will be done by induction on the first component of $t$. 
+
+First we define $f\circ\inl:A*B\to A*(B*C)$ and $f\circ\inr:C\to A*(B*C)$ by 
+$$
+(f\circ\inl)(\inl(a))):\eq\inl(a),
+$$ 
+$$
+(f\circ\inl)(\inr(b))):\eq\inr(\inl(b)),
+$$ 
+\begin{equation}\label{fabbb}
+(f\circ\inl)(\glue(a,b)):=\glue(a,\inl(b)),
+\end{equation}
+$$
+f(\inr(c)):\eq\inr(\inr(c)).
+$$
+
+We start the definition of \eqref{ftab}. 
+
+Let $c:C$ and define $Q:A*B\to\U$ by 
+$$
+Q(x):\eq(f(\inl(x))=_{A*(B*C)}f(\inr(c))).
+$$ 
+We first define 
+\begin{equation}\label{defofg}
+g:\pd_{x:A*B}Q(x).
+\end{equation}
+Let $a:A$ and define $g_1(a):Q(a)$, that is
+$$
+g_1(a):\inl(a)=_{A*(B*C)}\inr(\inr(c))n
+$$ 
+by $g_1(a):\eq\glue(a,\inr(c))$. Let $b:B$ and define $g_2(b):Q(b)$, that is
+$$
+g_2(b):\inr(\inl(b))=_{A*(B*C)}\inr(\inr(c))
+$$ 
+by $g_2(b):\eq\inr(\glue(b,c))$. Let $a:A,b:B$ and define 
+$$
+g_3(a,b):g_1(a)=^Q_{\glue(a,b)}g_2(b),
+$$ 
+that is 
+$$
+g_3(a,b):\glue(a,\inr(c))=^Q_{\glue(a,b)}\inr(\glue(b,c)),
+$$ 
+that is 
+$$
+g_3(a,b):\tr^Q(\glue(a,b),\glue(a,\inr(c)))=\inr(\glue(b,c)),
+$$ 
+as being the composite of the paths 
+$$
+\tr^Q(\glue(a,b),\glue(a,\inr(c)))=f(\inl(\glue(a,b)^{-1}))\cc\glue(a,\inr(c))
+$$ 
+$$
+=\glue(a,\inl(b))^{-1}\cc\glue(a,\inr(c))=\inr(\glue(b,c)),
+$$ 
+where the last two paths are respectively given by \eqref{fabbb} and the claim. Then we get a dependent function $g$ as in \eqref{defofg} satisfying 
+$$
+g(\inl(a))\eq g_1(a),\quad g(\inr(b))\eq g_2(b),\quad \apd_g(\glue(a,b))=g_3(a,b)
+$$ 
+for all $a:A$ and all $b:B$. 
+
+We can set $f(\glue(x,c)):=g(x)$ for all $x:A*B$, so that $f(\glue(t))$ is now defined for all $t:(A*B)\times C$. This completes the definition of \eqref{ftab}.
+
+We get our desired map $f:(A*B)*C\to A*(B*C)$. Similarly, we can define a map $h:A*(B*C)\to(A*B)*C$, and checking that $f$ and $h$ are inverse to each other is a long and tedious but essentially straightforward computation. $\sq$
+
+%%
+
 \subsection{Theorem 8.5.11}%\label{8511}
 
 The proof of Theorem 8.5.11 uses implicitly the connectedness of the circle $\mbb S^1$, connectedness which has been observed in \S\ref{7512} p.~\pageref{7512} above.
