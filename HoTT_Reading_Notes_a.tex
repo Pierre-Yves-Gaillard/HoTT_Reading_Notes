@@ -28,9 +28,11 @@
 \nc{\msf}{\mathsf}\nc{\ms}{\mathsf}
 \nc{\acc}{\ms{acc}}
 \nc{\ack}{\ms{ack}}
+\nc{\alp}{\alpha}\nc{\gka}{\alpha}
 \nc{\ap}{\ms{ap}}
 \nc{\apd}{\ms{apd}}
 \nc{\base}{\ms{base}}\nc{\ba}{\ms{base}}
+\nc{\bet}{\beta}\nc{\gkb}{\beta}
 \nc{\boucle}{\ms{loop}}\nc{\Loop}{\ms{loop}}\nc{\lo}{\ms{loop}}
 \nc{\bu}{\bullet}
 \nc*{\cc}{\raisebox{-3pt}{\scalebox{2}{$\cdot$}}}
@@ -2463,9 +2465,38 @@ where the paths are respectively given by (2.9.4) and} $\happly(\apd_C(m),b)$.
 Here is a minor rephrasing: 
 
 \nn\emph{If $p:C(a_1,\tr^B(m^{-1},b))=C(a_2,b)$ is the above path, then we have} 
-\begin{equation}\label{tzz}
+\begin{equation*}%\label{tzz}
 \tr^{Z\mapsto Z}(p)=\tr^{\widehat C}(\pa_B(m,t)).
-\end{equation}
+\end{equation*}
+
+%%
+
+\subsection{Proof of Theorem 8.6.4}%\label{7511}
+
+Theorem 8.6.4 is proved just before the statement of Corollary 8.6.14. The last display of the proof contains eight underscores; denote them by $u_1,\dots,u_8$. We read, after the display:
+
+\nn``\dots the underscore ought to be filled in with suitable coherence paths. Here the first step is functoriality of transport, the second invokes (8.6.12), and the third invokes (8.6.11) (with transport moved to the other side). Thus we have the same first component as the left-hand side of (8.6.13). We leave it to the reader to verify that the coherence paths all cancel, giving reflexivity in the second component.''
+
+To fill in the underscores, we introduce the following notation: If $p:y_1=y_2$ and $q:N=y_1$ are paths in $\Sigma X$, we denote by 
+$$
+\alp(p,q):\tr^{\hat{\ms{code}}}(p,q)=q\cc p
+$$ 
+the obvious path in $N=y_2$. We also denote by 
+$$
+\bet:\ms{merid}(x_0)\cc\ms{merid}(x_0)^{-1}=\refl_N
+$$ 
+the obvious path in $N=N$. 
+
+The underscores $u_1,\dots,u_8$ can be chosen as follows:
+$$
+u_1:\eq\alp(\ms{merid}(x_1)\cc\ms{merid}(x_0)^{-1},\refl_N),\quad u_2:\eq u_5:\eq\bet,
+$$ 
+$$
+u_3:\eq u_6:\eq\alp(\ms{merid}(x_0)^{-1},\ms{merid}(x_1)),\quad u_4:\eq\alp(\ms{merid}(x_1),\refl_N),
+$$ 
+$$
+u_7:\eq\refl_{\ms{merid}(x_1)},\quad u_8:\eq\refl_{\ms{merid}(x_1)\cc\ms{merid}(x_0)^{-1}}.
+$$
 
 %%
 
