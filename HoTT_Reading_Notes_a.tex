@@ -57,7 +57,7 @@
 \nc{\ishae}{\ms{ishae}}\nc{\ish}{\ms{ishae}}\nc{\ih}{\ms{ishae}}
 \nc{\isProp}{\ms{isProp}}\nc{\prop}{\ms{isProp}}\nc{\iP}{\ms{isProp}}\nc{\ip}{\ms{isProp}}
 \nc{\isSet}{\ms{isSet}}\nc{\isS}{\ms{isSet}}\nc{\iss}{\ms{isSet}}\nc{\iS}{\ms{isSet}}\nc{\is}{\ms{isSet}}
-\nc{\la}{\lambda}\nc{\lam}{\lambda}
+\nc{\lam}{\lambda}%\nc{\la}{\lambda}
 \nc{\LEM}{\ms{LEM}}\nc{\lem}{\ms{LEM}}\nc{\LE}{\ms{LEM}}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
 \nc{\Map}{\ms{Map}}
@@ -2439,6 +2439,33 @@ The penultimate sentence of the proof of Definition 8.6.5 is
 \nn``To show that it is a family of equivalences, since being an equivalence is a mere proposition and $x_0:1\to X$ is (at least) $(-1)$-connected, it suffices to assume $x_1$ is $x_0$.''
 
 This follows from Lemma 8.6.1 (even from Lemma 7.5.7).
+
+%%
+
+\subsection{Lemma 8.6.10}%\label{7511}
+
+Recall the statement
+
+\nn\tb{Lemma 8.6.10.} \emph{Let $A:\U$, $B:A\to \U$, and $C:\pd_{a:A} B(a)\to\U$, and also $a_1,a_2:A$ with $m:a_1=a_2$ and $b:B(a_2)$. Then the function
+$$
+\tr^{\widehat C}(\pa_B(m,t),-):C(a_1,\tr^B)(m^{-1},b))\to C(a_2,b),
+$$ 
+where $t:\tr^B(m,\tr^B(m^{-1},b))=b$ is the obvious coherence path and $\widehat C:(\sum_{a:A}B(a))\to\U$ is the uncurried form of $C$, is equal to the equivalence obtained by univalence from the composite 
+\begin{align*}
+C(a_1,\tr^B(m^{-1},b))
+&=\tr^{\lam a.(B(a)\to\U)}(m,C(a_1))(b)\\
+&=C(a_2,b),
+\end{align*} 
+where the paths are respectively given by (2.9.4) and} $\happly(\apd_C(m),b)$. 
+
+(I have written $\pa_B$ instead of $\pa$ to stress the fact that this operation is taken with respect to the type family $B$.)
+
+Here is a minor rephrasing: 
+
+\nn\emph{If $p:C(a_1,\tr^B(m^{-1},b))=C(a_2,b)$ is the above path, then we have} 
+\begin{equation}\label{tzz}
+\tr^{Z\mapsto Z}(p)=\tr^{\widehat C}(\pa_B(m,t)).
+\end{equation}
 
 %%
 
