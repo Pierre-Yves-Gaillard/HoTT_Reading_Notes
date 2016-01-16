@@ -38,7 +38,7 @@
 \nc*{\cc}{\raisebox{-3pt}{\scalebox{2}{$\cdot$}}}
 \nc{\centre}{\ms{center}}\nc{\Center}{\ms{center}}\nc{\cen}{\ms{center}}\nc{\ce}{\ms{center}}
 \nc{\ci}{\circ}
-\nc{\code}{\ms{code}}\nc{\decode}{\ms{decode}}\nc{\encode}{\ms{encode}}
+\nc{\code}{\ms{code}}\nc{\cod}{\ms{code}}\nc{\decode}{\ms{decode}}\nc{\encode}{\ms{encode}}
 \nc{\de}{:\equiv}
 \nc{\dr}{\right}\nc{\ga}{\left}
 \nc{\ds}{\displaystyle}
@@ -63,6 +63,7 @@
 \nc{\LEM}{\ms{LEM}}\nc{\lem}{\ms{LEM}}\nc{\LE}{\ms{LEM}}
 \nc{\lv}{\lvert}\nc{\rv}{\rvert}\nc{\lV}{\lVert}\nc{\rV}{\rVert}
 \nc{\Map}{\ms{Map}}
+\nc{\merid}{\ms{merid}}\nc{\meri}{\ms{merid}}\nc{\mer}{\ms{merid}}\nc{\me}{\ms{merid}}
 \nc{\N}{\bb N}
 \nc{\na}{\ms{nat}}
 \nc{\nn}{\noindent}
@@ -2479,23 +2480,23 @@ Theorem 8.6.4 is proved just before the statement of Corollary 8.6.14. The last 
 
 To fill in the underscores, we introduce the following notation: If $p:y_1=y_2$ and $q:N=y_1$ are paths in $\Sigma X$, we denote by 
 $$
-\alp(p,q):\tr^{\hat{\ms{code}}}(p,q)=q\cc p
+\alp(p,q):\tr^{\hat{\cod}}(p,q)=q\cc p
 $$ 
 the obvious path in $N=y_2$. We also denote by 
 $$
-\bet:\ms{merid}(x_0)\cc\ms{merid}(x_0)^{-1}=\refl_N
+\bet:\me(x_0)\cc\me(x_0)^{-1}=\refl_N
 $$ 
 the obvious path in $N=N$. 
 
 The underscores $u_1,\dots,u_8$ can be chosen as follows:
 $$
-u_1:\eq\alp(\ms{merid}(x_1)\cc\ms{merid}(x_0)^{-1},\refl_N),\quad u_2:\eq u_5:\eq\bet,
+u_1:\eq\alp(\me(x_1)\cc\me(x_0)^{-1},\refl_N),\quad u_2:\eq u_5:\eq\bet,
 $$ 
 $$
-u_3:\eq u_6:\eq\alp(\ms{merid}(x_0)^{-1},\ms{merid}(x_1)),\quad u_4:\eq\alp(\ms{merid}(x_1),\refl_N),
+u_3:\eq u_6:\eq\alp(\me(x_0)^{-1},\me(x_1)),\quad u_4:\eq\alp(\me(x_1),\refl_N),
 $$ 
 $$
-u_7:\eq\refl_{\ms{merid}(x_1)},\quad u_8:\eq\refl_{\ms{merid}(x_1)\cc\ms{merid}(x_0)^{-1}}.
+u_7:\eq\refl_{\me(x_1)},\quad u_8:\eq\refl_{\me(x_1)\cc\me(x_0)^{-1}}.
 $$
 
 %%
@@ -2519,6 +2520,12 @@ $$
 \pi_k(C)=\Omega^k(\lV C\rV_k)=\Omega^k(\lV\lV C\rV_n\rV_k)=\pi_k(\lV C\rV_n),
 $$ 
 the three equalities resulting respectively from Corollary 7.3.14, Lemma 7.3.15 and Corollary 7.3.14 again. $\sq$
+
+Let us spell out the proof of the contractibility of $\lV\fib_f(f(a))\rV_n$: Lemma 7.3.15 implies 
+$$
+\lV\lV\fib_f(f(a))\rV_n\rV_0=\lV\fib_f(f(a))\rV_0,
+$$ 
+and the first part of the proof shows that $\lV\fib_f(f(a))\rV_0$ is contractible. $\sq$
 
 %%
 
@@ -2789,7 +2796,7 @@ We leave it to the reader to check, using \S\ref{qvt} above, that $h$ is inverti
 
 \subsection{Proof of Lemma 10.1.13}
 
-To prove the equality $\ms{merid}_\star(\tau(N))=\tau(S)$, one can use the following lemma, whose proof is straightforward:
+To prove the equality $\me_\star(\tau(N))=\tau(S)$, one can use the following lemma, whose proof is straightforward:
 
 \nn\tb{Lemma.} \emph{Let $P:A\to B\to\U$ be a type family, define $Q:A\to\U$ by 
 $$
