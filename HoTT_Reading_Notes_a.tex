@@ -1,11 +1,11 @@
 % HoTT Reading Notes a
+% !TEX encoding = UTF-8 Unicode
 % http://goo.gl/Dz6r8g
 % https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit
 % https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes/edit/master/HoTT_Reading_Notes_a.tex
 % https://github.com/Pierre-Yves-Gaillard/HoTT_Reading_Notes/blob/master/HoTT_Reading_Notes_a.tex 
 % http://iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/HoTT/ReadingNotes
 % https://docs.google.com/document/d/15-yaLYocktW8PtUeiKjTupslbpdnDs0HH5GIZA20Sxc/edit?usp=sharing
-% !TEX encoding = UTF-8 Unicode
 \documentclass[12pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -28,7 +28,7 @@
 \nc{\msf}{\mathsf}\nc{\ms}{\mathsf}
 \nc{\acc}{\ms{acc}}
 \nc{\ack}{\ms{ack}}
-\nc{\alp}{\alpha}\nc{\gka}{\alpha}
+\nc{\alp}{\alpha}\nc{\al}{\alpha}\nc{\gka}{\alpha}
 \nc{\ap}{\ms{ap}}
 \nc{\apd}{\ms{apd}}
 \nc{\base}{\ms{base}}\nc{\ba}{\ms{base}}
@@ -295,23 +295,23 @@ and that
 $$
 \funext:\left(\prod_{n:\mb2}\ D(n)\right)\to\Big(\big(u(0_\mb2),u(1_\mb2)\big)=u\Big).
 $$ 
-Setting $\alpha:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)},\refl_{u(1_\mb2)})$, we get 
+Setting $\al:\equiv\ind_\mb2(D,\refl_{u(0_\mb2)},\refl_{u(1_\mb2)})$, we get 
 $$
-\alpha:\prod_{n:\mb2}\ D(n),\quad\funext(\alpha):\big(u(0_\mb2),u(1_\mb2)\big)=u,
+\al:\prod_{n:\mb2}\ D(n),\quad\funext(\al):\big(u(0_\mb2),u(1_\mb2)\big)=u,
 $$
 $$
-\funext(\alpha)_\star:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
+\funext(\al)_\star:C\Big(\big(u(0_\mb2),u(1_\mb2)\big)\Big)\to C(u).
 $$
 In particular we can set
 $$
-\ind_{A\times B}(C,g,u):\equiv\funext(\alpha)_\star\Big(g\big(u(0_\mb2)\big)\big(u(1_\mb2)\big)\Big).
+\ind_{A\times B}(C,g,u):\equiv\funext(\al)_\star\Big(g\big(u(0_\mb2)\big)\big(u(1_\mb2)\big)\Big).
 $$
 
 To show that the definitional equalities stated in \S1.5 hold propositionally, we assume $u\equiv(a,b)$. In particular we have 
 $$
-\alpha:\prod_{n:\mb2}\ \Big((a,b)(n)=(a,b)(n)\Big).
+\al:\prod_{n:\mb2}\ \Big((a,b)(n)=(a,b)(n)\Big).
 $$ 
-It is easy to prove $\alpha(n)=\refl_{(a,b)(n)}$ by induction. This gives 
+It is easy to prove $\al(n)=\refl_{(a,b)(n)}$ by induction. This gives 
 $$
 \ind_{A\times B}(C,g,(a,b))=g(a)(b),
 $$ 
@@ -609,9 +609,9 @@ and
 $$
 s(a'):g\Big(p_\star\ (p^{-1})_\star\ a'\Big)=g(a')
 $$ 
-be the obvious paths. We now define $u$ and $v$ in \eqref{297} as follows. For $\alpha:\tms^{B'}(p,f)\sim g$ and $a:A(x)$ we define $u(\alpha)(a):h(a)=g(p_\star a)$ by 
+be the obvious paths. We now define $u$ and $v$ in \eqref{297} as follows. For $\al:\tms^{B'}(p,f)\sim g$ and $a:A(x)$ we define $u(\al)(a):h(a)=g(p_\star a)$ by 
 $$ 
-u(\alpha)(a):\eq k(a)^{-1}\cc\alpha(p_\star a), 
+u(\al)(a):\eq k(a)^{-1}\cc\al(p_\star a), 
 $$ 
 and for $\beta:h\sim g\ci p_\star$ we define $v(\beta):\tms^{B'}(p,f)\sim g$ by 
 $$
@@ -756,15 +756,15 @@ It seems to me one could argue as follows: state the above two formulas, check t
 
 \emph{Statement.} State and prove a generalization of Theorem 2.6.5 from cartesian products to $\Sigma$-types. 
 
-\nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). Let $B:A\to\U$, and let us denote respectively by $\alpha$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
+\nn\emph{Solution.} We shall freely use the proof of Theorem 2.7.2 (see \S\ref{272} p.~\pageref{272}). Let $B:A\to\U$, and let us denote respectively by $\al$ and $\beta$ the dependent functions $f$ and $g$ in the proof of Theorem 2.7.2:
 $$
 \pd_{z,w:\sum_{a:A}B(a)}\ \left(\xymatrix@1{
-(z=w)\ \ar@<2pt>[r]^(.27)\alpha&\displaystyle\sum_{p:\pr_1(z)=\pr_1(w)}p_\star \pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
+(z=w)\ \ar@<2pt>[r]^(.27)\al&\ds\sum_{p:\pr_1(z)=\pr_1(w)}p_\star \pr_2(z)=\pr_2(w)\ar@<2pt>[l]^(.73)\beta}\right).
 $$ 
 Note that the expression $\beta(z,w)$ has the same meaning as the expression $\pa$ introduced in the book just before Theorem 2.7.4. Let $B':A'\to\U$ and set similarly 
 $$
 \pd_{z',w':\sum_{a':A'}B'(a')}\left(\xymatrix@1{
-(z'=w')\ \ar@<2pt>[r]^(.27){\alpha'}&\displaystyle\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star \pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
+(z'=w')\ \ar@<2pt>[r]^(.27){\al'}&\ds\sum_{p':\pr_1(z')=\pr_1(w')}p'_\star \pr_2(z')=\pr_2(w')\ar@<2pt>[l]^(.73){\beta'}}\right).
 $$ 
 Let $g:A\to A',\ h:\prod_{a:A}\ B(a)\to B'(g(a))$. Cleary, there is a map 
 $$
@@ -783,7 +783,7 @@ We claim
 
 \nn\emph{Proof of \eqref{e27}.} For $z$ and $w$ as above, and $r:z=w$ set 
 $$
-p(r):\eq\pr_1(\alpha(z,w,r)),\quad q(r):\eq\pr_2(\alpha(z,w,r)).
+p(r):\eq\pr_1(\al(z,w,r)),\quad q(r):\eq\pr_2(\al(z,w,r)).
 $$ 
 Then we can prove 
 \begin{equation}\label{e27b}
@@ -800,7 +800,7 @@ The result of Exercise 2.10 can be stated as follows:
 \emph{If $B:A\to\U$ and $C:(\sum_{a:A}B(a))\to\U$ are type families, then the maps
 $$
 \xymatrix{
-\displaystyle\ga(\sum_{a:A}\ \sum_{b:B(a)}\ C((a,b))\dr)\ar@<2pt>[r]^(.55)f&\displaystyle\ga(\sum_{z:\sum_{a:A}B(a)}C(z)\dr)\ar@<2pt>[l]^(.45)g}
+\ds\ga(\sum_{a:A}\ \sum_{b:B(a)}\ C((a,b))\dr)\ar@<2pt>[r]^(.55)f&\ds\ga(\sum_{z:\sum_{a:A}B(a)}C(z)\dr)\ar@<2pt>[l]^(.45)g}
 $$ 
 defined by 
 $$
@@ -1619,13 +1619,13 @@ r:(A\to W)\to(A\to P)\to B\to P
 $$ 
 (see (5.6.5) in the book) if $P:\U$, and 
 $$
-r:\prod_{\alpha:A\to W}\ \left(\prod_{a:A}\ P(\alpha(a))\right)\to\prod_{b:B}\ P(c(\alpha,b)).
+r:\prod_{\al:A\to W}\ \left(\prod_{a:A}\ P(\al(a))\right)\to\prod_{b:B}\ P(c(\al,b)).
 $$ 
 (see (5.6.7) in the book) if $P:W\to\U$. The solution $s$ to the recurrence $r$ satisfies in both cases the computation rule
 $$
-s(c(\alpha,b))\eq r(\alpha,s\ci\alpha,b)
+s(c(\al,b))\eq r(\al,s\ci\al,b)
 $$ 
-for all $\alpha:A\to W$ and all $b:B$ (see (5.6.6) in the book).
+for all $\al:A\to W$ and all $b:B$ (see (5.6.6) in the book).
 
 %%
 
@@ -1741,37 +1741,37 @@ where $\gl$ is a homotopy from $\inl\ci f$ to $\inr\ci g$:
 
 Given 
 $$
-\alpha:A\to D,\quad\beta:B\to D,\quad\gamma:\alpha\ci f\sim\beta\ci g
+\al:A\to D,\quad\beta:B\to D,\quad\gamma:\al\ci f\sim\beta\ci g
 $$ 
 there is an $s:Z\to D$ such that 
 $$
-s\ci\inl\eq\alpha,\quad s\ci\inr\eq\beta,\quad\ap_s(\gl(c))=\gamma(c)
+s\ci\inl\eq\al,\quad s\ci\inr\eq\beta,\quad\ap_s(\gl(c))=\gamma(c)
 $$ 
 for all $c:C$.
 
 Here is the \emph{induction principle}: Let $D:Z\to\U$ be a type family, let 
 $$
-\alpha:\prod_{a:A}\ D(\inl(a)),\quad\beta:\prod_{b:B}\ D(\inr(b)),
+\al:\prod_{a:A}\ D(\inl(a)),\quad\beta:\prod_{b:B}\ D(\inr(b)),
 $$
 $$
-\gamma:\prod_{c:C}\ \Big(\alpha\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big)\Big).
+\gamma:\prod_{c:C}\ \Big(\al\big(f(c)\big)=^D_{\glue(c)}\beta\big(g(c)\big)\Big).
 $$ 
 Then there is an $s:\prod_{z:Z}D(z)$ such that 
 $$
-s\ci\inl\equiv\alpha,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
+s\ci\inl\equiv\al,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
 $$ 
 for all $c:C$. 
 
 Here is the \emph{uniqueness principle}: Let $h,h':Z\to D$ and 
 $$
-\alpha:\prod_{a:A}\ \Big(h\big(\inl(a)\big)=h'\big(\inl(a)\big)\Big),\quad\beta:\prod_{b:B}\ \Big(h\big(\inr(b)\big)=h'\big(\inr(b)\big)\Big),
+\al:\prod_{a:A}\ \Big(h\big(\inl(a)\big)=h'\big(\inl(a)\big)\Big),\quad\beta:\prod_{b:B}\ \Big(h\big(\inr(b)\big)=h'\big(\inr(b)\big)\Big),
 $$
 $$
-\gamma:\prod_{c:C}\ \ga(\alpha\big(f(c)\big)=^{z\mapsto(h(z)=h'(z))}_{\glue(c)}\beta\big(g(c)\big)\dr).
+\gamma:\prod_{c:C}\ \ga(\al\big(f(c)\big)=^{z\mapsto(h(z)=h'(z))}_{\glue(c)}\beta\big(g(c)\big)\dr).
 $$ 
 Then there is an $s:\prod_{z:Z}\ \big(h(z)=h'(z)\big)$ such that 
 $$
-s\ci\inl\equiv\alpha,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
+s\ci\inl\equiv\al,\quad s\ci\inr\equiv\beta,\quad\apd_s(\glue(c))=\gamma(c)
 $$ 
 for all $c:C$.  
 $$
@@ -2333,13 +2333,15 @@ The equality $\lVert\Omega^k(A,a)\rVert_0=\Omega^k(\lVert(A,a)\rVert_k)$ in the 
 
 \subsection{Lemma 8.5.9}%\label{7511}
 
+Recall the statement:
+
 \nn\tb{Lemma 8.5.9.} \emph{The operation of join is associative: if $A$, $B$ and $C$ are three types then we have an equivalence} $(A*B)*C\simeq A*(B*C)$.
 
-\nn\tb{Claim.} \emph{For all $a:A,b:B,c:C$ there is a path 
+\nn\tb{Claim.} \emph{For all $a\!:\!A,\ b\!:\!B,\ c\!:\!C$ there is a path
 $$
 \glue(a,\inl(b))^{-1}\cc\glue(a,\inr(c))=\inr(\glue(b,c))
 $$ 
-in $\inr(\inl(b))=_{A*(B*C)}\inr(\inr(c))$.}
+in} $\inr(\inl(b))=_{A*(B*C)}\inr(\inr(c))$.
 
 \nn\emph{Proof of the claim.} Define $P:B*C\to\U$ by $P(x):\eq(\inl(a)=_{A*(B*C)}\inr(x))$. We get successively 
 $$
@@ -2480,7 +2482,7 @@ Theorem 8.6.4 is proved just before the statement of Corollary 8.6.14. The last 
 
 To fill in the underscores, we introduce the following notation: If $p:y_1=y_2$ and $q:N=y_1$ are paths in $\Sigma X$, we denote by 
 $$
-\alp(p,q):\tr^{\hat{\cod}}(p,q)=q\cc p
+\al(p,q):\tr^{\hat{\cod}}(p,q)=q\cc p
 $$ 
 the obvious path in $N=y_2$. We also denote by 
 $$
@@ -2490,10 +2492,10 @@ the obvious path in $N=N$.
 
 The underscores $u_1,\dots,u_8$ can be chosen as follows:
 $$
-u_1:\eq\alp(\me(x_1)\cc\me(x_0)^{-1},\refl_N),\quad u_2:\eq u_5:\eq\bet,
+u_1:\eq\al(\me(x_1)\cc\me(x_0)^{-1},\refl_N),\quad u_2:\eq u_5:\eq\bet,
 $$ 
 $$
-u_3:\eq u_6:\eq\alp(\me(x_0)^{-1},\me(x_1)),\quad u_4:\eq\alp(\me(x_1),\refl_N),
+u_3:\eq u_6:\eq\al(\me(x_0)^{-1},\me(x_1)),\quad u_4:\eq\al(\me(x_1),\refl_N),
 $$ 
 $$
 u_7:\eq\refl_{\me(x_1)},\quad u_8:\eq\refl_{\me(x_1)\cc\me(x_0)^{-1}}.
@@ -2501,15 +2503,17 @@ $$
 
 %%
 
-\subsection{Proof of Theorem 8.8.1}
+\subsection{Proofs of Theorem 8.8.1 and Corollary 8.8.2}
 
-The assertion ``hence $\lV f(a)=b\rV_{-1}$'' in the proof of Theorem 8.8.1 follows from Theorem 7.3.12.
+The assertions ``hence $\lV f(a)=b\rV_{-1}$'' in the proof of Theorem 8.8.1 and ``hence $\lV x=y\rV_{-1}$'' in the proof of Corollary 8.8.2 follow from Theorem 7.3.12.
 
 %%
 
 \subsection{Proof of Corollary 8.8.5}
 
-The proof of Corollary 8.8.5 uses implicitly the following fact:
+\subsubsection{First part}
+
+The first part of the proof of Corollary 8.8.5 uses implicitly the following fact:
 
 \nn\emph{If $C$ is a pointed type and $k,n:\N$ satisfy $0\le k\le n$, then we have} 
 $$
@@ -2526,6 +2530,10 @@ $$
 \lV\lV\fib_f(f(a))\rV_n\rV_0=\lV\fib_f(f(a))\rV_0,
 $$ 
 and the first part of the proof shows that $\lV\fib_f(f(a))\rV_0$ is contractible. As a result, $\lV\fib_f(f(a))\rV_n$ is 0-connected, and Corollary 8.8.4 implies that $\lV\fib_f(f(a))\rV_n$ is contractible. $\sq$
+
+\subsubsection{Second part}
+
+In the second part of the proof of Corollary 8.8.5, the assertion ``therefore $\lV b=f(a)\rV_{-1}$'' follows from Theorem 7.3.12.
 
 %%
 
@@ -2606,25 +2614,25 @@ $$
 HLF\ar[rrr]^{(HL\gamma)}\ar[d]_{(\delta LF)}&&&HLG\ar[d]^{(\delta LG)}\\ 
 KLF\ar[rrr]_{(KL\gamma)}&&&KLG.}
 $$ 
-\tb{Lemma 2.} \emph{In the diagram below, $A,B,C,D$ are precategories; $F:A\to B$, $G,H,K:B\to C$ and $L:C\to D$ are functors; $\alpha:G\to H$ and $\beta:H\to K$ are natural transformations:
+\tb{Lemma 2.} \emph{In the diagram below, $A,B,C,D$ are precategories; $F:A\to B$, $G,H,K:B\to C$ and $L:C\to D$ are functors; $\al:G\to H$ and $\beta:H\to K$ are natural transformations:
 $$
 \xymatrix{
 &&&\ar[ll]_K\\ \\
 D&C\ar[l]_L&\ar[uu]_\beta&B\ar[ll]_(.6)H&A.\ar[l]_F\\ \\
-&&\ar[uu]_\alpha&\ar[ll]^G}
+&&\ar[uu]_\al&\ar[ll]^G}
 $$ 
 We have, in the above setting,}
 \begin{equation}\label{928b}
-(L\beta F)(L\alpha F)=L(\beta\alpha)F.
+(L\beta F)(L\al F)=L(\beta\al)F.
 \end{equation}
 \emph{Proof.} It suffices to check componentwise: at $a:A$ we have
 \begin{align*}
-((L\beta F)(L\alpha F))_a
-&\eq(L\beta F)_a(L\alpha F)_a\\
-&\eq L(\beta_{Fa})\ci L(\alpha_{Fa})\\
-&=L(\beta_{Fa}\ci\alpha_{Fa})\\
-&=L((\beta\alpha)_{Fa})\\ 
-&=(L(\beta\alpha)F)_a.\ \sq
+((L\beta F)(L\al F))_a
+&\eq(L\beta F)_a(L\al F)_a\\
+&\eq L(\beta_{Fa})\ci L(\al_{Fa})\\
+&=L(\beta_{Fa}\ci\al_{Fa})\\
+&=L((\beta\al)_{Fa})\\ 
+&=(L(\beta\al)F)_a.\ \sq
 \end{align*}
 
 %%
