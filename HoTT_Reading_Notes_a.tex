@@ -2477,10 +2477,12 @@ where the paths are respectively given by (2.9.4) and} $\happly(\apd_C(m),b)$.
 
 Here is a minor rephrasing: 
 
-\nn\emph{If $p:C(a_1,\tr^B(m^{-1},b))=C(a_2,b)$ is the above path, then we have} 
-\begin{equation*}%\label{tzz}
+\nn\emph{If $p:C(a_1,\tr^B(m^{-1},b))=C(a_2,b)$ is the above path, then we have a path
+$$
 \tr^{Z\mapsto Z}(p)=\tr^{\widehat C}(\pa_B(m,t)).
-\end{equation*}
+$$ 
+in} $
+C(a_1,\tr^B(m^{-1},b))\to C(a_2,b).$
 
 %%
 
@@ -2521,6 +2523,24 @@ $$
 $$=\ms t\Bigg(\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg),\bigg\lv(x_1,\ms r_{\ms m(x_1)})\bigg\rv_{2n}\Bigg)$$ 
 
 $$=\big\lv(x_1,\ms r_{\ms m(x_1)\cc\ms m(x_0)^{-1}})\big\rv_{2n}.$$
+
+For the reader's convenience we spell out the following judgments:
+
+$$\code(N,p):\eq\ga\lV\sum_{x:X}\Big(\ms m(x)\cc\ms m(x_0)^{-1}=p\Big)\dr\rV_{2n},$$
+
+$$\code(S,q):\eq\ga\lV\sum_{x:X}\Big(\ms m(x)=q\Big)\dr\rV_{2n},$$
+
+$$\lv(x_0,\bet)\rv_{2n}:\code(N,\ms r_N),$$ 
+
+$$\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\al\Big(\ms m(x_1)\cc\ms m(x_0)^{-1},\ms r_N\Big)\bigg):(N,\ms r_N)=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$
+
+$$\ms p\bigg(\ms m(x_1),\al\Big(\ms m(x_1),\ms r_N\Big)\bigg):(N,\ms r_N)=(S,\ms m(x_1)),$$
+
+$$\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg):(S,\ms m(x_1))=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$ 
+
+$$\lv(x_1,\ms r_{\ms m(x_1)}))\rv_{2n}:\code(S,\ms m(x_1)),$$ 
+
+$$\lv(x_1,\ms r_{\ms m(x_1)\cc\ms m(x_0)^{-1}}))\rv_{2n}:\code(N,\ms m(x_1)\cc\ms m(x_0)^{-1}).$$
 
 %%
 
