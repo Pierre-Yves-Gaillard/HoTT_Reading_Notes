@@ -2392,8 +2392,12 @@ We start the definition of \eqref{ftab}.
 
 Let $c:C$ and define $Q:A*B\to\U$ by 
 $$
-Q(x):\eq\Big(f(\inl(x))=_{A*(B*C)}f(\inr(c))\Big).
+Q(x):\eq\Big(f(\inl(x))=_{A*(B*C)}f(\inr(c))\Big),
 $$ 
+that is,
+$$
+Q(x):\eq\Big(f(\inl(x))=_{A*(B*C)}\inr(\inl(b))\Big).
+$$
 We first define 
 \begin{equation}\label{defofg}
 g:\pd_{x:A*B}Q(x).
@@ -2447,9 +2451,9 @@ The proof of Theorem 8.5.11 uses implicitly the 0-connectedness of the circle $\
 
 The penultimate sentence of the proof of Definition 8.6.5 is
 
-``To show that it is a family of equivalences, since being an equivalence is a mere proposition and $x_0:1\to X$ is (at least) $(-1)$-connected, it suffices to assume $x_1$ is $x_0$.''
+\nn``To show that it is a family of equivalences, since being an equivalence is a mere proposition and $x_0:1\to X$ is (at least) $(-1)$-connected, it suffices to assume $x_1$ is $x_0$.''
 
-This follows from Lemma 8.6.1 (even from Lemma 7.5.7).
+\nn This follows from Lemma 8.6.1 (even from Lemma 7.5.7).
 
 %%
 
@@ -2459,7 +2463,7 @@ Recall the statement:
 
 \nn\tb{Lemma 8.6.10.} \emph{Let $A:\U$, $B:A\to \U$, and $C:\pd_{a:A} B(a)\to\U$, and also $a_1,a_2:A$ with $m:a_1=a_2$ and $b:B(a_2)$. Then the function
 $$
-\tr^{\widehat C}(\pa_B(m,t),-):C(a_1,\tr^B)(m^{-1},b))\to C(a_2,b),
+\tr^{\widehat C}(\pa_B(m,t),-):C(a_1,\tr^B(m^{-1},b))\to C(a_2,b),
 $$ 
 where $t:\tr^B(m,\tr^B(m^{-1},b))=b$ is the obvious coherence path and $\widehat C:(\sum_{a:A}B(a))\to\U$ is the uncurried form of $C$, is equal to the equivalence obtained by univalence from the composite 
 \begin{align*}
