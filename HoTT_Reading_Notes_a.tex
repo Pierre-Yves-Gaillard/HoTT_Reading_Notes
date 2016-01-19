@@ -2570,13 +2570,20 @@ Let us spell out the proof of the contractibility of $\lV\fib_f(f(a))\rV_n$. Lem
 $$
 \lV\lV\fib_f(f(a))\rV_n\rV_0=\lV\fib_f(f(a))\rV_0,
 $$ 
-and the first part of the proof shows that $\lV\fib_f(f(a))\rV_0$ is contractible. As a result, $\lV\fib_f(f(a))\rV_n$ is 0-connected, and Corollary 8.8.4 implies that $\lV\fib_f(f(a))\rV_n$ is contractible. $\sq$
+and we already know that $\lV\fib_f(f(a))\rV_0$ is contractible. As a result, $\lV\fib_f(f(a))\rV_n$ is 0-connected, and Corollary 8.8.4 implies that $\lV\fib_f(f(a))\rV_n$ is contractible. $\sq$
 
 \subsubsection{Second part}
 
 In the second part of the proof of Corollary 8.8.5, the assertion ``therefore $\lV b=f(a)\rV_{-1}$'' follows from Theorem 7.3.12.
 
 %%
+
+\subsection{Exercise 8.7}
+
+Let $f,g:\pd_{a:A}B(a)$, where $B:A\to\U$ is a type family. Recall that 
+$$
+(f\sim g):\eq\pd_{a:A}\ (f(a)=g(a)).
+$$ 
 
 \subsection{Exercise 8.7}
 
@@ -2605,9 +2612,25 @@ c(f_1,u,f_0):\eq(f_1,u).
 $$ 
 We define $b$ by setting 
 $$
-b(f_1,u,f_0):\eq(p_1,p_0),
+b(f_1,u,f_0):\eq\Big(\ua(f_1,u),\ q(f_1,u)\cc f_0\Big),
 $$ 
-with $p_1:\eq\ua(f_1,u)$ and $p_0:\eq q\cc f_0$, where $q$ is the obvious path from $p_{1\star}(x_0)$ to $f_1(x_0)$ in $Y$. We claim that $a$ and $b$ are inverse, and leave the proof of this claim to the reader.
+where $q(f_1,u)$ is the obvious path from $p_{1\star}(x_0)$ to $f_1(x_0)$ in $Y$. We claim that $a$ and $b$ are inverse. We prove 
+$$
+b\ci a=\id_{(X,x_0)=(Y,y_0)}
+$$ 
+by path induction. Let us check 
+$$
+a\ci b=\id_{(X,x_0)\simeq(Y,y_0)}.
+$$ 
+Let $(f_1,u,f_0):(X,x_0)\simeq(Y,y_0)$. We must show 
+\begin{equation}\label{af1}
+a\Big(\ua(f_1,u),\ q(f_1,u)\cc f_0\Big)=(f_1,u,f_0).
+\end{equation} 
+Defining $p_1:X=Y$ by $p_1:\eq\ua(f_1,u)$, Equality~\eqref{af1} is equivalent to 
+$$
+a\bigg(p_1,\ q\Big(\ms{idtoeqv}(p_1)\Big)\cc f_0\bigg)=(p_1,f_0),
+$$ 
+which is easily proved by path induction on $p_1$.
 
 %%%
 
