@@ -46,6 +46,7 @@
 \nc{\eq}{\equiv}
 \nc{\fib}{\ms{fib}}
 \nc{\funext}{\ms{funext}}\nc{\fu}{\ms{funext}}
+\nc{\gam}{\gamma}
 \nc{\glue}{\ms{glue}}\nc{\gl}{\ms{glue}}
 \nc{\happly}{\ms{happly}}\nc{\ha}{\ms{happly}}
 \nc{\id}{\ms{id}}
@@ -2494,27 +2495,31 @@ Theorem 8.6.4 is proved just before the statement of Corollary 8.6.14. The last 
 
 To fill in the underscores, we introduce the following notation: If $p:y_1=y_2$ and $q:N=y_1$ are paths in $\Sigma X$, we denote by 
 $$
-\al(p,q):\tr^{\hat{\cod}}(p,q)=q\cc p
+\al(p,q):\tr^{\hat{\cod}}(p,q)=q\cc p%£
 $$ 
-the obvious path in $N=y_2$. We also denote by 
+the obvious path in $N=y_2$. If $y_1\eq N$ and $q\eq\refl_N$, we define 
 $$
-\bet:\me(x_0)\cc\me(x_0)^{-1}=\refl_N
+\bet(p):\tr^{\hat{\cod}}(p,\refl_N)=p
+$$ 
+by $\bet(p):\eq\al(p,\refl_N)\cc\omega$, where $\omega:\refl_y\cc p=p$ is the obvious path in $N=y_2$. We also denote by 
+$$
+\gam:\me(x_0)\cc\me(x_0)^{-1}=\refl_N
 $$ 
 the obvious path in $N=N$. 
 
 The underscores $u_1,\dots,u_8$ can be chosen as follows:
 
-$$u_1:\eq\al(\me(x_1)\cc\me(x_0)^{-1},\refl_N),\quad u_2:\eq u_5:\eq\bet,$$ 
+$$u_1:\eq\beta(\me(x_1)\cc\me(x_0)^{-1}),\quad u_2:\eq u_5:\eq\gam,$$ 
 
-$$u_3:\eq u_6:\eq\al(\me(x_0)^{-1},\me(x_1)),\quad u_4:\eq\al(\me(x_1),\refl_N),$$ 
+$$u_3:\eq u_6:\eq\al(\me(x_0)^{-1},\me(x_1)),\quad u_4:\eq\bet(\me(x_1)),$$ 
 
 $$u_7:\eq\refl_{\me(x_1)},\quad u_8:\eq\refl_{\me(x_1)\cc\me(x_0)^{-1}}.$$ 
 
 \nn In other words, abbreviating $\tr^{\hat\code}$ by $\ms t$, $\me$ by $\ms m$, $\pa$ by $\ms p$, $\refl$ by $\ms r$, we get 
 
-$$\ms t\Bigg(\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\al\Big(\ms m(x_1)\cc\ms m(x_0)^{-1},\ms r_N\Big)\bigg),\bigg\lv(x_0,\bet)\bigg\rv_{2n}\Bigg)$$ 
+$$\ms t\Bigg(\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\bet\Big(\ms m(x_1)\cc\ms m(x_0)^{-1}\Big)\bigg),\bigg\lv(x_0,\gam)\bigg\rv_{2n}\Bigg)$$ 
 
-$$=\ms t\Bigg(\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg),\ms t\bigg(\ms p\Big(\ms m(x_1),\al\big(\ms m(x_1),\ms r_N\big)\Big),\Big\lv(x_0,\bet)\Big\rv_{2n}\bigg)\Bigg)$$ 
+$$=\ms t\Bigg(\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg),\ms t\bigg(\ms p\Big(\ms m(x_1),\bet\big(\ms m(x_1)\big)\Big),\Big\lv(x_0,\gam)\Big\rv_{2n}\bigg)\Bigg)$$ 
 
 $$=\ms t\Bigg(\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg),\bigg\lv(x_1,\ms r_{\ms m(x_1)})\bigg\rv_{2n}\Bigg)$$ 
 
@@ -2526,11 +2531,11 @@ $$\code(N,p):\eq\ga\lV\sum_{x:X}\Big(\ms m(x)\cc\ms m(x_0)^{-1}=p\Big)\dr\rV_{2n
 
 \nn for $p:N=N$,
 
-$$\lv(x_0,\bet)\rv_{2n}:\code(N,\ms r_N),$$ 
+$$\lv(x_0,\gam)\rv_{2n}:\code(N,\ms r_N),$$ 
 
-$$\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\al\Big(\ms m(x_1)\cc\ms m(x_0)^{-1},\ms r_N\Big)\bigg):(N,\ms r_N)=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$
+$$\ms p\bigg(\ms m(x_1)\cc\ms m(x_0)^{-1},\bet\Big(\ms m(x_1)\cc\ms m(x_0)^{-1}\Big)\bigg):(N,\ms r_N)=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$
 
-$$\ms p\bigg(\ms m(x_1),\al\Big(\ms m(x_1),\ms r_N\Big)\bigg):(N,\ms r_N)=(S,\ms m(x_1)),$$
+$$\ms p\bigg(\ms m(x_1),\bet\Big(\ms m(x_1)\Big)\bigg):(N,\ms r_N)=(S,\ms m(x_1)),$$
 
 $$\ms p\bigg(\ms m(x_0)^{-1},\al\Big(\ms m(x_0)^{-1},\ms m(x_1)\Big)\bigg):(S,\ms m(x_1))=(N,\ms m(x_1)\cc\ms m(x_0)^{-1}),$$ 
 
