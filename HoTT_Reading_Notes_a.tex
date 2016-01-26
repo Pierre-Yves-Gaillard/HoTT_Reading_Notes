@@ -81,6 +81,7 @@
 \nc{\qinv}{\ms{qinv}}\nc{\qin}{\ms{qinv}}\nc{\qi}{\ms{qinv}}
 \nc{\rec}{\ms{rec}}
 \nc{\refl}{\ms{refl}}%\nc{\re}{\ms{refl}}
+\nc{\seg}{\ms{seg}}
 \nc{\Set}{\ms{Set}}
 \nc{\sm}{\scriptstyle}
 \nc{\sms}{\ms s}
@@ -128,7 +129,7 @@ This is a work in progress. John Dougherty's text
 
 \nn has been most helpful.
 
-\tableofcontents%\newpage
+\tableofcontents
 
 %%
 
@@ -535,6 +536,83 @@ $$
 $$
 
 The key point is of course the fact that, in each of the two above diagrams, the horizontal maps are inverses.
+
+%%
+
+\subsection{Function Extensionality Axiom (\S2.9)}
+
+The comments below have been inspired by Lemma 6.3.2 in the HoTT Book. 
+
+\subsubsection{Part 1}
+
+Let $f,g:A\to B$ be two maps between two types, and let $h:f\sim g$ be a homotopy from $f$ to $g$. Define $h':A\to I\to B$ by
+\begin{equation}\label{fea1}
+h'(a,0):\eq f(a),\quad h'(a, 1):\eq g(a),\quad h'(a,\seg):=h(a).
+\end{equation} 
+($I$ is the interval, with the three constructors $0\!:\!I,\ 1\!:\!I,\ \seg\!:\!0=1$. 
+See beginning of \S6.3 in the book.) Next define $h'':I\to A\to B$ by 
+$$
+h''(i,a):\eq h'(a,i).
+$$ 
+
+Let $a:A$. We claim 
+\begin{equation}\label{fea2}
+\ha(h''(\seg),a)=h'(a,\seg).
+\end{equation} 
+Let $p:i=j$ be a path in $I$. It suffices to show $\ha(h''(p),a)=h'(a,p)$, and even, by path induction, $\ha(h''(\refl_i),a)=h'(a,\refl_i)$. But we have 
+$$
+\ha(h''(\refl_i),a)=\ha(\refl_f,a)=\refl_{f(a)}=h'(a,\refl_i).
+$$ 
+This proves \eqref{fea2}. Obviously \eqref{fea1} and \eqref{fea2} imply 
+\begin{equation}\label{fea3}
+\ha(h''(\seg),a)=h(a).
+\end{equation} 
+
+\subsubsection{Part 2}
+
+We denote the function extensionality axiom by $\ms{FEA}$, and we introduce an axiom which we call $\ms{FEA'}$ and which is clearly implied by $\ms{FEA}$, and we'll prove in Part~3 that $\ms{FEA'}$ implies $\ms{FEA}$. $\ms{FEA'}$ says that for all loop $\ell:f=f$ we have 
+\begin{equation}\label{fea'}
+\ms{FEA'}:\ga(\pd_{a:A}\ (\ha(\ell,a)=\refl_{f(a)})\dr)\to(\ell=\refl_f).
+\end{equation}
+
+In Part~2 we admit $\ms{FEA}$ (and thus $\ms{FEA'}$). Let $h:f\sim g$. We claim 
+\begin{equation}\label{fea4}
+\boxed{\fu(h)=h''(\seg)}
+\end{equation} 
+Let $a:A$. By $\ms{FEA}$ and path induction we can assume 
+\begin{equation}\label{fea5}
+h(a)\eq\refl_{f(a)}.
+\end{equation} 
+By $\ms{FEA}$ again, it suffices to show 
+$$
+\refl_{f(a)}=\ha(h''(\seg),a).
+$$ 
+But this follows from \eqref{fea5} and \eqref{fea3}. This proves \eqref{fea4}. 
+
+\subsubsection{Part 3}
+
+Recall that $\ms{FEA}$ stands for ``function extensionality axiom'' and $\ms{FEA'}$ is defined in \eqref{fea'}. We prove 
+\begin{equation}\label{fea'a}
+\boxed{\ms{FEA'}\text{ implies } \ms{FEA}}
+\end{equation}
+as follows. We assume $\ms{FEA'}$. Let $h,h',h''$ be as in Part~1, and set 
+\begin{equation}\label{fea6}
+\fu(h):\eq h''(\seg).
+\end{equation} 
+We claim 
+\begin{equation}\label{fea7}
+\fu\ci\ha=\id_{f=g}.
+\end{equation} 
+Let 
+\begin{equation}\label{fea8}
+h:\eq\ha(\refl_f).
+\end{equation} 
+By path induction and \eqref{fea6} it suffices to show $h''(\seg)=\refl_f$. Let $a:A$. By $\ms{FEA'}$ it even suffices to show $\ha(h''(\seg),a)=\refl_{f(a)}$. But this follows from \eqref{fea3} and \eqref{fea8}. This proves \eqref{fea7}. 
+We claim 
+\begin{equation}\label{fea9}
+\ha\ci\fu=\id_{f\sim g}.
+\end{equation} 
+Let $h:f\sim g$. We must show $\ha(\fu(h))=h$. Let $a:A$. By $\ms{FEA'}$ it suffices to show $\ha(\fu(h),a)=h(a)$. But this follows from \eqref{fea6} and \eqref{fea3}. This proves \eqref{fea9}. Now \eqref{fea7} and \eqref{fea9} imply \eqref{fea'a}. 
 
 %%
 
@@ -2700,7 +2778,7 @@ We have, in the above setting,}
 
 %%
 
-%\newpage
+\newpage
 
 \subsection{Lemma 9.3.2}\label{932}
 
@@ -2728,7 +2806,7 @@ G'FG\ar[rrr]^{(1_A\ G'\ \ep)}\ar[d]_{(\eta\ G'\ FG)}&&&G'\ar[d]^{(\eta\ G'\ 1_B)
 GFG'FG\ar[rrr]_{(GF\ G'\ \ep)}&&&GFG',}
 $$
 
-\newpage
+%\newpage
 
 $$
 \begin{array}{ccccccc}
@@ -2750,7 +2828,7 @@ FG'FG\ar[rrr]^{(FG'\ 1_B\ \ep)}\ar[d]_{(\ep'\ 1_B\ FG)}&&&FG'\ar[d]^{(\ep'\ 1_B\
 FG\ar[rrr]_{(1_B\ 1_B\ \ep)}&&&1_B,}
 $$ 
 
-%\newpage
+\newpage
 
 $$
 \begin{array}{ccccccc}
