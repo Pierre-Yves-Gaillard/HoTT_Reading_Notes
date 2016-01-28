@@ -545,6 +545,10 @@ The comments below have been inspired by Lemma 6.3.2 in the HoTT Book.
 
 \subsubsection{Part 1}
 
+\begin{comment}
+
+% old
+
 Let $f,g:A\to B$ be two maps between two types, and let $h:f\sim g$ be a homotopy from $f$ to $g$. Define $h':A\to I\to B$ by
 \begin{equation}\label{fea1}
 h'(a,0):\eq f(a),\quad h'(a, 1):\eq g(a),\quad h'(a,\seg):=h(a).
@@ -554,6 +558,18 @@ See beginning of \S6.3 in the book.) Next define $h'':I\to A\to B$ by
 $$
 h''(i,a):\eq h'(a,i).
 $$ 
+
+\end{comment}
+
+Let $B:A\to\U$ be a type family over a type $A$, let $f,g:\pd_{a:A}B(a)$ be two dependent functions, and let $h:f\sim g$ be a homotopy from $f$ to $g$. Define $h':\pd_{a:A}(I\to B(a))$ by
+\begin{equation}\label{fea1}
+h'(a,0):\eq f(a),\quad h'(a, 1):\eq g(a),\quad h'(a,\seg):=h(a).
+\end{equation} 
+($I$ is the interval, with the three constructors $0\!:\!I,\ 1\!:\!I,\ \seg\!:\!0=1$. 
+See beginning of \S6.3 in the book.) Next define $h'':I\to\pd_{a:A}B(a)$ by 
+$$
+h''(i,a):\eq h'(a,i).
+$$
 
 Let $a:A$. We claim 
 \begin{equation}\label{fea2}
