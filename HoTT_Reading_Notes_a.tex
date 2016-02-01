@@ -137,23 +137,52 @@ This is a work in progress. John Dougherty's text
 
 \subsection{Path induction implies based path induction, \S1.12.2}%\label{69}
 
-Let us show that path induction implies based path induction. Let $A$ be a type, let $a:A$, let
+Let us show that path induction implies based path induction. Let $A$ be a type, let $a:A$, let 
 $$
 C_0:\prod_{x:A}\ (a=x)\to\U,
 $$ 
-and $c_0:C_0(a,\refl_a)$. We must find an 
-$$
+and let $c_0:C_0(a,\refl_a)$. We must find an 
+\begin{equation}\label{pi1}
 f:\pd_{x:A}\ \pd_{p:a=x}\ C_0(x,p)
-$$ 
-such that $f(a,\refl_a)\eq c_0$. Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
-$$
+\end{equation} 
+such that 
+\begin{equation}\label{pi2}
+f(a,\refl_a)\eq c_0.
+\end{equation} 
+
+Define $D:\pd_{x,y:A}(x=y)\to\U$ by 
+\begin{equation}\label{pi3}
 D(x,y,p):\eq\pd_{C:\pd_{z:A}(x=z)\to\U}C(x,\refl_x)\to C(y,p)
-$$ 
-and $d:\pd_{x:A}D(x,x,\refl_x)$ by $d(x,C,c):\eq c$. By path induction we get a 
-$$
+\end{equation} 
+and $d:\pd_{x:A}D(x,x,\refl_x)$ by 
+\begin{equation}\label{pi4}
+d(x,C,c):\eq c. 
+\end{equation} 
+By path induction we get a 
+\begin{equation}\label{pi5}
 g:\pd_{x,y:A}\ \pd_{p:x=y}\ D(x,y,p)
+\end{equation} 
+such that 
+\begin{equation}\label{pi6}
+g(x,x,\refl_x)\eq d(x)
+\end{equation} 
+for all $x:A$. We set 
+\begin{equation}\label{pi7}
+f(x,p):\eq g(a,x,p,C_0,c_0)
+\end{equation} 
+for $x:A$ and $p:a=x$. 
+
+We prove \eqref{pi1}. Let $x:A,\ p:a=x$. We must show $f(x,p):C_0(x,p)$. By \eqref{pi7} it suffices to show 
+\begin{equation}\label{pi8}
+g(a,x,p,C_0,c_0):C_0(x,p).
+\end{equation} 
+Judgment \eqref{pi5} implies $g(a,x,p):D(a,x,p)$. Now \eqref{pi3} implies \eqref{pi8}. This proves \eqref{pi1}. 
+
+To prove \eqref{pi2}, observe 
+$$
+f(a,\refl_a)\overset{\text{(a)}}\eq g(a,a,\refl_a,C_0,c_0)\overset{\text{(b)}}\eq d(a,C_0,c_0)\overset{\text{(c)}}\eq c_0,
 $$ 
-such that $g(x,x,\refl_x)\eq d(x)$ for all $x:A$. We set $f(x,p):\eq g(a,x,p,C_0,c_0)$ for $x:A$ and $p:a=x$, and leave the end of the proof to the reader. $\sq$
+where (a) follows from \eqref{pi7}, (b) follows from \eqref{pi6}, and (c) follows from \eqref{pi4}. $\sq$
 
 %
 
