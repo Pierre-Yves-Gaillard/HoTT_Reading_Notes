@@ -311,7 +311,7 @@ Recall that we have
 $$
 \ind_\mb2(T):A\to B\to A\times B.
 $$ 
-For $a:A,b:B$ we abbreviate $\ind_\mb2(T,a,b)$ by $(a,b)$; in particular we have 
+For $a\!:\!A,\ b\!:\!B$ we abbreviate $\ind_\mb2(T,a,b)$ by $(a,b)$; in particular we have 
 $$
 (a,b):A\times B,\quad(a,b)(0_\mb2)\equiv a,\quad(a,b)(1_\mb2)\equiv b.
 $$ 
@@ -945,7 +945,9 @@ The proof is straightforward.
 
 \emph{Statement.} Suppose we add to type theory the \emph{equality reflection rule} which says that if there is an element $p:x=y$, then in fact $x\equiv y$. Prove that for any $p:x=x$ we have $p\equiv\refl_x$. (This implies that every type is a \emph{set} in the sense to be introduced in \S3.1; see \S7.2.)
 
-\nn\emph{Solution.} Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $y\equiv x$ by the equality reflection rule. $\sq$
+\nn\emph{Solution.} Let $p:x=y$. We have $p:x=x$ by the equality reflection rule, and $p=\refl_x$ by path induction. $\sq$
+
+%Given $x$ we construct $f(y,p):p=\refl_x$ for $p:x=y$ by based path induction. Note that $p=\refl_x$ is a well-defined type because $p:x=y$ (our current assumption) implies $y\equiv x$ by the equality reflection rule. $\sq$
 
 %%
 
